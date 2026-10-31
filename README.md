@@ -19,7 +19,7 @@ At this stage, it looks like a wish list. However, it's worth writing down long-
   - Multiple language and language switching support.
 - Visualization:
   - Conversation flow graph.
-  - Dialog viewer (terminal, HTML).
+  - Dialog viewer (terminal, HTML, MarkDown).
   - Dialog diff.
 - Verification & Testing
   - LLM as a judge verifies whether the generated dialogue complies with the specification.
@@ -34,6 +34,7 @@ At this stage, it looks like a wish list. However, it's worth writing down long-
   - JSpeech Grammar Format (JSGF) processing (optional).
  - Transforming:
    - Anonymization.
-   - Augmentation: paraphrases, noise, original, change of style or person.
+   - Augmentation: paraphrases, noise, original, change of style or persona.
+   - Information injection.
    - Compression (summary, essence).
    - Conversion (knowledge base).
