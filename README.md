@@ -36,5 +36,13 @@ At this stage, it looks like a wish list. However, it's worth writing down long-
    - Anonymization.
    - Augmentation: paraphrases, noise, original, change of style or persona.
    - Information injection.
+- Integration:
+  - JSON/JSONL
+  - ASR results as input.
+  - Subtitles (SRT/VTT/..).
+  - Hugging Face Datasets.
+  - spaCy.
+  - Ontology (RDF/OWL).
+  - Taxonomies (SKOS).
    - Compression (summary, essence).
    - Conversion (knowledge base).
