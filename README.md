@@ -4,7 +4,7 @@ Generate, manage, and analyze dialogues in Python. Create synthetic multi-party 
 # This project is work in progress (WIP).
 
 # The Idea
-My adventure with ASR and NLP touched upon dialogues.
-Before the LLMs based AI, I was fortunate enough to work extensively on real-world dialogue processing, and I find it a fascinating field, though unfortunately, one that lacks proven and bulletproof tools.
+My work in ASR and NLP has repeatedly brought me to dialogues. Before the rise of LLMs, I was fortunate to work extensively with real-world dialogue data, and I've found it a fascinating field, though one that still lacks proven, reliable tooling.
 
-Today, in the era of LLMs, generating, analyzing, testing, and managing dialogues is orders of magnitude easier. However, I still haven't found a "golden tool," something that would be like a master craftsman in this field. So I decided to prototype something.
+Today, generating, analyzing, testing, and managing dialogues is orders of magnitude easier. Yet I still haven't found a "golden tool", something like a master craftsman for this domain. So I decided to build a prototype myself.
+DialogKit is my attempt to build it.
