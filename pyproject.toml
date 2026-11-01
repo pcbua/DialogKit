@@ -1,0 +1,12 @@
+[project]
+name = "DialogKit"
+version = "0.1.0"
+description = "Generate, manage, and analyze dialogues in Python. Create synthetic multi-party conversations, store them in a clean structured format, and run analytics on turns, speakers, and content. Ideal for NLP research, chatbot testing, and training-data pipelines."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=3.42.0",
+    "toml>=0.10.2",
+    "tomli-w>=1.2.0",
+    "dspm-memory>=0.2.2",
+]
