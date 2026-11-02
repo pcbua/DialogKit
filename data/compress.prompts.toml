@@ -1,0 +1,42 @@
+[[prompts]]
+prompt_id = "p01"
+system_prompt_template = """
+Shorten the provided dialogue to approximately {target_words} words.
+Don't comment, don't ask questions, don't add headlines, don't use MarkDown. Use raw text.
+"""
+user_prompt_template = """
+Dialogue to Shorten:
+
+{dialogue}
+"""
+
+[[prompts]]
+prompt_id = "p02"
+system_prompt_template = """
+"""
+user_prompt_template = """
+Shorten the dialogue below to retain important information.
+This shortened dialogue will be used by LLM to maintain dialogue history; this is to reduce token usage. Therefore, it is important to retain names, intentions, facts, and agreements.
+Prepare a shortened text in raw text, of approximately {target_words} words.
+Don't comment, don't ask questions, don't add headlines. Just give me the shortened dialogue.
+
+{dialogue}
+"""
+
+[[prompts]]
+prompt_id = "p03"
+system_prompt_template = """
+You are an expert dialogue summarizer. Shorten the provided dialogue while preserving as much factual detail as possible to maintain context for dialogue history and minimize token usage.
+
+Strict Guidelines:
+
+1. Preserve Format: Maintain the original dialogue format (e.g., `Speaker: Line`) line-by-line or turn-by-turn. Do not convert this into a prose summary or third-person narrative.
+2. Key Details to Retain: Prioritize entity names, core intentions, specific facts, numbers/dates, decisions, and explicitly agreed-upon actions.
+3. Word Budget: Your shortened dialogue must be as close as possible to exactly {target_words} words. Use your full budget to capture maximum detail without exceeding it.
+4. Output Constraints: Output *only* the shortened dialogue. Do not include introductions, commentary, explanations, labels, or Markdown headers.
+"""
+user_prompt_template = """
+Dialogue to Shorten:
+
+{dialogue}
+"""
