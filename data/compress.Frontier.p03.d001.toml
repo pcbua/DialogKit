@@ -17,11 +17,11 @@ Dialogue to Shorten:
 """
 
 [[results]]
-type         = "Compressed Dialogue"
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+type = "Compressed Dialogue"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -29,7 +29,7 @@ Caregiver: Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I pi
 Agent: Hi Julia, good to hear from you. I'm calling for our Friday check-in. How's he been doing this week?
 Caregiver: Honestly? Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it.
 Agent: Please, go ahead. That's really helpful.
-Caregiver: So, the swelling in his ankles is back. Not terrible, but on Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's been getting out of breath on the stairs to the bathroom. He says it's "just age."
+Caregiver: So, the swelling in his ankles is back. Not terrible, but on Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's been getting out of breath on the stairs to the bathroom. He says it's \"just age.\"
 Agent: Okay. Has he been weighing himself every morning like we discussed?
 Caregiver: Most days. Monday he was 83.4 kilos, and this morning he was 85.1. I wrote it down on the sheet on the fridge.
 Agent: That's a gain of 1.7 kilos in four days. I'm going to flag that for the nurse today. Anything else?
@@ -51,7 +51,7 @@ Agent: Okay, thank you for checking, that helps me. And the breathing? When you 
 Patient: I stop once, in the middle. To admire the wallpaper.
 Agent: (laughs) A very patient wallpaper admirer. How about at night, are you comfortable lying flat?
 Patient: Not really. I put another pillow under my head. It's better. I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it. Then I go to the armchair and it passes.
-Agent: That's something I'd like the nurse to hear about, Mr. Nowak. It isn't "just age." It could mean fluid is building up again, and we can adjust your medication to help. Would it be okay if I asked her to call you today?
+Agent: That's something I'd like the nurse to hear about, Mr. Nowak. It isn't \"just age.\" It could mean fluid is building up again, and we can adjust your medication to help. Would it be okay if I asked her to call you today?
 Patient: Do I have to go to hospital? Because I'm not going back there. The food was a crime.
 Agent: I can't promise anything yet, it depends on what the nurse and the doctor decide. But often it's just a dose change, and you stay home. That's exactly why it's good we caught it now and not next week.
 Patient: Fine. Fine. She can call.
@@ -92,14 +92,14 @@ Patient: Cold gel. I remember. Last time they didn't warm it up.
 Agent: I'll mention that to them. Next, the cardiology consultation with Dr. Wiśniewska, two days after that, on Friday. She'll review the echo and probably adjust your medication.
 Patient: I like her. She doesn't talk to me like I'm a child.
 Agent: Good. Then the cataract surgery. The date is still the 24th of next month, left eye first. Before that, you need a pre-operative check-up with the eye clinic, and they'll want a note from your cardiologist that your heart is stable enough for the procedure.
-Patient: And if the heart isn't "stable"?
+Patient: And if the heart isn't \"stable\"?
 Agent: Then they might postpone it a bit, until your fluid is under control. That's another reason to take the water pill properly. It's not just about the swelling. It's also about getting your eye done on time.
-Patient: Hm. That's a better argument than "because I said so."
+Patient: Hm. That's a better argument than \"because I said so.\"
 Agent: (laughs) I'll use it more often. One more thing: since it's a day procedure, you'll need someone with you. Julia, can she take that day off?
 Caregiver: I already asked my boss, it's fine. But I could use help with transport for the echo. I work that morning and can't leave.
 Agent: That we can organize. We have a transport service for medical visits. Mr. Nowak, would you be comfortable going with a driver, and would you need someone to walk you in?
 Patient: A driver is fine. But please not the one who talks about politics the whole way. Last time I wanted to jump out at the traffic lights.
-Agent: (laughs) I'll request a quiet one. I'll write "prefers quiet driver, needs arm to the entrance."
+Agent: (laughs) I'll request a quiet one. I'll write \"prefers quiet driver, needs arm to the entrance.\"
 Patient: Excellent. You should be a minister.
 Agent: Last topic before I let you go. Mr. Nowak, how have you been in yourself, your mood? You've had a lot of changes lately, the fall, being home more, less independence.
 Patient: (pause) It's... hard sometimes. I used to fix everything. Now I sit and watch my daughter fix everything. I don't like being a burden.
@@ -121,12 +121,14 @@ Caregiver: Sure. And thanks, Marta. Really.
 Agent: Of course. Take care, Julia. Talk next Friday, or sooner if anything changes.
 Caregiver: Will do. Bye!
 """
+text_words = 2065
+text_tokens = 3009
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -186,7 +188,7 @@ Agent: They might postpone it until your fluid is under control. Since it's a da
 Caregiver: I asked my boss, it's fine. But I need help with transport for the echo on Wednesday morning.
 Agent: We have a transport service for medical visits. Mr. Nowak, would you be comfortable going with a driver?
 Patient: A driver is fine, but please not the one who talks about politics.
-Agent: I'll write "prefers quiet driver, needs arm to the entrance." How have you been in yourself, your mood?
+Agent: I'll write \"prefers quiet driver, needs arm to the entrance.\" How have you been in yourself, your mood?
 Patient: It's hard sometimes. I don't like being a burden.
 Agent: Is there anything that makes the days feel better?
 Patient: My grandson comes on Sundays and teaches me chess on the tablet.
@@ -202,12 +204,14 @@ Caregiver: Sure. Thanks, Marta.
 Agent: Take care, Julia. Talk next Friday.
 Caregiver: Bye!
 """
+text_words = 1038
+text_tokens = 1532
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -215,7 +219,7 @@ Caregiver: Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I pi
 Agent: Hi Julia, good to hear from you. I'm calling for our Friday check-in. How's he been doing this week?
 Caregiver: Honestly? Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it.
 Agent: Please, go ahead. That's really helpful.
-Caregiver: So, the swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. He's been getting out of breath on the stairs to the bathroom. He says it's "just age."
+Caregiver: So, the swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. He's been getting out of breath on the stairs to the bathroom. He says it's \"just age.\"
 Agent: Okay. Has he been weighing himself every morning like we discussed?
 Caregiver: Most days. Monday he was 83.4 kilos, and this morning he was 85.1. I wrote it down on the sheet on the fridge.
 Agent: That's a gain of 1.7 kilos in four days. I'm going to flag that for the nurse today. Anything else?
@@ -269,7 +273,7 @@ Agent: They might postpone it a bit until fluid is under control. Since it's a d
 Caregiver: I already asked my boss, it's fine. But I need help with transport for the echo on Wednesday.
 Agent: We can organize our medical transport service. Mr. Nowak, would you be comfortable going with a driver?
 Patient: A driver is fine, but please not the one who talks about politics the whole way.
-Agent: I'll write "prefers quiet driver, needs arm to the entrance." Mr. Nowak, how have you been in yourself, your mood?
+Agent: I'll write \"prefers quiet driver, needs arm to the entrance.\" Mr. Nowak, how have you been in yourself, your mood?
 Patient: It's hard sometimes. I don't like being a burden.
 Agent: You're not a burden. Is there anything that makes the days feel better?
 Patient: My grandson comes on Sundays. He's teaching me chess on the tablet.
@@ -281,12 +285,14 @@ Caregiver: I'm here.
 Agent: Could you send me the weight sheet photo later today, and I'll have the nurse call within the hour?
 Caregiver: Sure. Thanks, Marta. Bye!
 """
+text_words = 1298
+text_tokens = 1911
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -295,7 +301,7 @@ Caregiver: Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I pi
 
 Agent: Hi Julia, good to hear from you. I'm calling for our Friday check-in. How's he been doing this week?
 
-Caregiver: Honestly? Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it. So, the swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. He's been getting out of breath on the stairs to the bathroom. He says it's "just age."
+Caregiver: Honestly? Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it. So, the swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. He's been getting out of breath on the stairs to the bathroom. He says it's \"just age.\"
 
 Agent: Has he been weighing himself every morning?
 
@@ -401,12 +407,14 @@ Caregiver: Sure. Thanks, Marta.
 
 Agent: Take care, Julia. Talk next Friday.
 """
+text_words = 942
+text_tokens = 1380
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 400
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -440,12 +448,14 @@ Caregiver: I'm back.
 Agent: Please send a photo of the weight sheet. The nurse will call within the hour.
 Caregiver: Will do. Thanks, Marta. Bye!
 """
+text_words = 547
+text_tokens = 810
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 200
 text = """
 Agent: Hello, this is Marta from Home Care Support calling for Mr. Edward Nowak.
@@ -469,262 +479,64 @@ Caregiver: Transport needed for echo.
 Agent: Booked quiet transport with walking assistance. I'll also request a weekly card-playing volunteer. Nurse calls today; send weight photo.
 Caregiver: Will do. Thanks!
 """
+text_words = 289
+text_tokens = 468
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 1200
 text = """
-Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?\
-Caregiver: No, I'm Julia, his daughter. Dad's nearby. I answered because he never hears the phone.\
-Agent: Hi Julia. I'm calling for our Friday check-in. How has he been this week?\
-Caregiver: Mixed. His ankle swelling returned. On Tuesday, his socks left deep marks, and his shoes were difficult to put on. He's breathless climbing the stairs to the bathroom but says it's age. His weight increased from 83.4 kg Monday to 85.1 kg this morning, a 1.7 kg gain in four days. I recorded everything on the fridge sheet.\
-Agent: I'll flag the weight gain for the nurse today. Anything else?\
-Caregiver: He slept poorly Wednesday and Thursday, now uses two pillows, and yesterday I found him in his armchair at 3 a.m. He skipped Wednesday's evening pills, claiming he forgot. No falls since the incident two weeks ago, but he gets dizzy standing quickly. No chest pain. Appetite is fine, though he secretly eats salty foods. I found pickles behind the bread box.\
-Agent: Thank you. I'll speak with him, then ask you about logistics.\
-Caregiver: Dad, Marta's calling! Take the phone properly.\
-Patient: Hello, Marta! I'm fine, can't complain, though nobody listens.\
-Agent: Julia mentioned swollen ankles and breathlessness. How do you feel?\
-Patient: She exaggerates. My shoes are tight because I bought them hurriedly.\
-Agent: Does pressing your shin leave a dent?\
-Patient: Yes, a small one. On the stairs, I stop halfway to admire the wallpaper.\
-Agent: Are you comfortable lying flat?\
-Patient: Not really. I added another pillow. I fall asleep, then wake with chest tightness, as if someone is sitting on me. Moving to the armchair makes it pass.\
-Agent: This is important. Nighttime breathlessness, swelling, and weight gain could indicate fluid buildup, not simply aging. I'll ask the nurse to call today about your symptoms and medication. Is that okay?\
-Patient: Do I have to return to hospital? The food was terrible.\
-Agent: I can't promise what the nurse and doctor will recommend. Sometimes adjusting medication is enough, and you can stay home. It's better to address this now.\
-Patient: Fine. She can call.\
-Agent: You missed Wednesday's evening pills. Why?\
-Patient: I fell asleep watching a whale documentary. I forgot the little white pills and the yellow water pill.\
-Agent: The diuretic is especially important for swelling. Is taking medication daily difficult, or are there side effects?\
-Patient: The water pill makes me use the bathroom constantly. Taking it in the evening means three nighttime trips. It's humiliating to shuffle around in the dark.\
-Agent: That's a genuine problem. Diuretics are usually taken in the morning. Did the hospital tell you to take it at night?\
-Patient: Perhaps, or I just got used to it.\
-Agent: The nurse will confirm with your doctor whether it can be moved to the morning. That could improve sleep and reduce falls.\
-Patient: Please do. Julia, write it down!\
-Caregiver: I'm writing, Dad.\
-Agent: How was physiotherapy last week?\
-Patient: One and a half sessions. Monday, Kuba had me walking with a cane. I dislike it because it makes me look like a professor. Thursday I was too tired and stopped after twenty minutes. Kuba agreed we'd do more next week.\
-Agent: Has your balance improved?\
-Patient: A little. I'm steadier in the kitchen, but the bathroom floor is slippery. On Sunday, I nearly fell and grabbed the towel rail.\
-Agent: Have the grab bars and non-slip mat been installed?\
-Patient: Julia's husband promised to install them with his drill three weeks ago.\
-Agent: Julia should tell him this is urgent. If they're not installed by Monday, our program can arrange its home-safety service.\
-Patient: Don't tell him yourself; he'll be offended. Let Julia explain.\
-Agent: Agreed. Now, your morning blood sugar readings?\
-Patient: Julia helps me measure daily. Monday was 7.9, Wednesday 8.6, and today's reading?\
-Caregiver: 9.1 today. Thursday was 10.2 after Uncle Staszek visited with cake.\
-Patient: It was a small cake.\
-Caregiver: You ate a third of it.\
-Agent: I'll record those readings. Any unusual thirst or blurred vision?\
-Patient: My left eye is foggy, like looking through a dirty window. They said it's the cataract.\
-Agent: Let's review your appointments. The echocardiogram, checking how well your heart pumps, is next Wednesday at 10:30. It takes about forty minutes and involves lying down while a probe moves over your chest.\
-Patient: I remember the cold gel. They didn't warm it last time.\
-Agent: I'll mention that. Your cardiology consultation with Dr. Wiśniewska is Friday, two days later. She'll review the echo and may adjust your medication.\
-Patient: I like her. She doesn't treat me like a child.\
-Agent: Your left-eye cataract surgery remains scheduled for the 24th of next month. Beforehand, you need an eye-clinic preoperative check and confirmation from your cardiologist that your heart is stable enough.\
-Patient: What if it isn't?\
-Agent: They may postpone surgery until the fluid is controlled. Taking your diuretic properly matters for both the swelling and getting your eye treated on time.\
-Patient: That's a better argument than "because I said so."\
-Agent: Because surgery is a day procedure, you'll need someone with you. Julia, can you take that day off?\
-Caregiver: Yes, my boss approved it. But I need transport help for Wednesday's echo because I'm working that morning.\
-Agent: We can arrange the program's medical transport. Mr. Nowak, are you comfortable travelling with a driver? Do you need assistance entering?\
-Patient: A driver is fine, but not someone who talks politics all the way. Last time I nearly jumped out at traffic lights.\
-Agent: I'll request a quiet driver and assistance walking to the entrance.\
-Patient: Excellent. You should be a minister.\
-Agent: How have you been emotionally? The fall, reduced independence, and spending more time at home are major changes.\
-Patient: It's hard. I used to fix everything; now I watch my daughter do everything. I hate being a burden.\
-Agent: You're not a burden, though I understand the feeling. What makes your days better?\
-Patient: My grandson visits Sundays and teaches me chess on his tablet. He beats me and laughs. It's the best part of my week.\
-Agent: Would you like a program volunteer to visit weekly for conversation or cards?\
-Patient: Cards, yes. Not chess. My grandson humiliates me enough.\
-Agent: I'll look into a card-playing volunteer. To summarize: the nurse will call today about your weight gain, swelling, nighttime breathlessness, and whether your doctor approves moving the diuretic to mornings. The bathroom safety equipment should be installed by Monday; otherwise, our program can help. Wednesday is the echo at 10:30 with a quiet driver and assistance to the entrance; Friday is your cardiology consultation. Physiotherapy continues, and you'll try completing the full session. I'll investigate weekly card-playing visits. Anything missing?\
-Patient: The pickles. I want to negotiate two per week.\
-Agent: Ask the nurse about occasional small portions, but avoid excessive salt and hiding pickles. If your weight increases by more than one kilogram overnight or breathlessness worsens, call the number on your card immediately. If you cannot breathe, contact emergency services.\
-Patient: Okay. You're like my late wife.\
-Agent: I'll take that as a compliment. Could you put Julia back on?\
-Patient: Julia, take the phone. I'm finding my glasses.\
-Caregiver: I'm here. That went better than usual; he admitted the nighttime symptoms.\
-Agent: He also explained that the water pill disrupts his sleep. Could you send me a photo of the weight sheet later today? I'll arrange for the nurse to call within the hour.\
-Caregiver: Certainly. Thank you, Marta.\
-Agent: You're welcome. Take care, Julia. We'll speak next Friday, or sooner if anything changes.\
-Caregiver: Will do. Goodbye!
+Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?Caregiver: No, I'm Julia, his daughter. Dad's nearby. I answered because he never hears the phone.Agent: Hi Julia. I'm calling for our Friday check-in. How has he been this week?Caregiver: Mixed. His ankle swelling returned. On Tuesday, his socks left deep marks, and his shoes were difficult to put on. He's breathless climbing the stairs to the bathroom but says it's age. His weight increased from 83.4 kg Monday to 85.1 kg this morning, a 1.7 kg gain in four days. I recorded everything on the fridge sheet.Agent: I'll flag the weight gain for the nurse today. Anything else?Caregiver: He slept poorly Wednesday and Thursday, now uses two pillows, and yesterday I found him in his armchair at 3 a.m. He skipped Wednesday's evening pills, claiming he forgot. No falls since the incident two weeks ago, but he gets dizzy standing quickly. No chest pain. Appetite is fine, though he secretly eats salty foods. I found pickles behind the bread box.Agent: Thank you. I'll speak with him, then ask you about logistics.Caregiver: Dad, Marta's calling! Take the phone properly.Patient: Hello, Marta! I'm fine, can't complain, though nobody listens.Agent: Julia mentioned swollen ankles and breathlessness. How do you feel?Patient: She exaggerates. My shoes are tight because I bought them hurriedly.Agent: Does pressing your shin leave a dent?Patient: Yes, a small one. On the stairs, I stop halfway to admire the wallpaper.Agent: Are you comfortable lying flat?Patient: Not really. I added another pillow. I fall asleep, then wake with chest tightness, as if someone is sitting on me. Moving to the armchair makes it pass.Agent: This is important. Nighttime breathlessness, swelling, and weight gain could indicate fluid buildup, not simply aging. I'll ask the nurse to call today about your symptoms and medication. Is that okay?Patient: Do I have to return to hospital? The food was terrible.Agent: I can't promise what the nurse and doctor will recommend. Sometimes adjusting medication is enough, and you can stay home. It's better to address this now.Patient: Fine. She can call.Agent: You missed Wednesday's evening pills. Why?Patient: I fell asleep watching a whale documentary. I forgot the little white pills and the yellow water pill.Agent: The diuretic is especially important for swelling. Is taking medication daily difficult, or are there side effects?Patient: The water pill makes me use the bathroom constantly. Taking it in the evening means three nighttime trips. It's humiliating to shuffle around in the dark.Agent: That's a genuine problem. Diuretics are usually taken in the morning. Did the hospital tell you to take it at night?Patient: Perhaps, or I just got used to it.Agent: The nurse will confirm with your doctor whether it can be moved to the morning. That could improve sleep and reduce falls.Patient: Please do. Julia, write it down!Caregiver: I'm writing, Dad.Agent: How was physiotherapy last week?Patient: One and a half sessions. Monday, Kuba had me walking with a cane. I dislike it because it makes me look like a professor. Thursday I was too tired and stopped after twenty minutes. Kuba agreed we'd do more next week.Agent: Has your balance improved?Patient: A little. I'm steadier in the kitchen, but the bathroom floor is slippery. On Sunday, I nearly fell and grabbed the towel rail.Agent: Have the grab bars and non-slip mat been installed?Patient: Julia's husband promised to install them with his drill three weeks ago.Agent: Julia should tell him this is urgent. If they're not installed by Monday, our program can arrange its home-safety service.Patient: Don't tell him yourself; he'll be offended. Let Julia explain.Agent: Agreed. Now, your morning blood sugar readings?Patient: Julia helps me measure daily. Monday was 7.9, Wednesday 8.6, and today's reading?Caregiver: 9.1 today. Thursday was 10.2 after Uncle Staszek visited with cake.Patient: It was a small cake.Caregiver: You ate a third of it.Agent: I'll record those readings. Any unusual thirst or blurred vision?Patient: My left eye is foggy, like looking through a dirty window. They said it's the cataract.Agent: Let's review your appointments. The echocardiogram, checking how well your heart pumps, is next Wednesday at 10:30. It takes about forty minutes and involves lying down while a probe moves over your chest.Patient: I remember the cold gel. They didn't warm it last time.Agent: I'll mention that. Your cardiology consultation with Dr. Wiśniewska is Friday, two days later. She'll review the echo and may adjust your medication.Patient: I like her. She doesn't treat me like a child.Agent: Your left-eye cataract surgery remains scheduled for the 24th of next month. Beforehand, you need an eye-clinic preoperative check and confirmation from your cardiologist that your heart is stable enough.Patient: What if it isn't?Agent: They may postpone surgery until the fluid is controlled. Taking your diuretic properly matters for both the swelling and getting your eye treated on time.Patient: That's a better argument than \"because I said so.\"Agent: Because surgery is a day procedure, you'll need someone with you. Julia, can you take that day off?Caregiver: Yes, my boss approved it. But I need transport help for Wednesday's echo because I'm working that morning.Agent: We can arrange the program's medical transport. Mr. Nowak, are you comfortable travelling with a driver? Do you need assistance entering?Patient: A driver is fine, but not someone who talks politics all the way. Last time I nearly jumped out at traffic lights.Agent: I'll request a quiet driver and assistance walking to the entrance.Patient: Excellent. You should be a minister.Agent: How have you been emotionally? The fall, reduced independence, and spending more time at home are major changes.Patient: It's hard. I used to fix everything; now I watch my daughter do everything. I hate being a burden.Agent: You're not a burden, though I understand the feeling. What makes your days better?Patient: My grandson visits Sundays and teaches me chess on his tablet. He beats me and laughs. It's the best part of my week.Agent: Would you like a program volunteer to visit weekly for conversation or cards?Patient: Cards, yes. Not chess. My grandson humiliates me enough.Agent: I'll look into a card-playing volunteer. To summarize: the nurse will call today about your weight gain, swelling, nighttime breathlessness, and whether your doctor approves moving the diuretic to mornings. The bathroom safety equipment should be installed by Monday; otherwise, our program can help. Wednesday is the echo at 10:30 with a quiet driver and assistance to the entrance; Friday is your cardiology consultation. Physiotherapy continues, and you'll try completing the full session. I'll investigate weekly card-playing visits. Anything missing?Patient: The pickles. I want to negotiate two per week.Agent: Ask the nurse about occasional small portions, but avoid excessive salt and hiding pickles. If your weight increases by more than one kilogram overnight or breathlessness worsens, call the number on your card immediately. If you cannot breathe, contact emergency services.Patient: Okay. You're like my late wife.Agent: I'll take that as a compliment. Could you put Julia back on?Patient: Julia, take the phone. I'm finding my glasses.Caregiver: I'm here. That went better than usual; he admitted the nighttime symptoms.Agent: He also explained that the water pill disrupts his sleep. Could you send me a photo of the weight sheet later today? I'll arrange for the nurse to call within the hour.Caregiver: Certainly. Thank you, Marta.Agent: You're welcome. Take care, Julia. We'll speak next Friday, or sooner if anything changes.Caregiver: Will do. Goodbye!
 """
+text_words = 1240
+text_tokens = 1824
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 1000
 text = """
-Agent: Hello, this is Marta from the Home Care Support Program, calling for Edward Nowak for the Friday check-in. Is this Edward?\
-Caregiver: This is Julia, his daughter. Dad is in the other room and often cannot hear the phone. Before handing him over, I want to report several things he may downplay.\
-Agent: Please go ahead.\
-Caregiver: His ankle swelling has returned. On Tuesday, his socks left deep marks, and his shoes were difficult to put on. He gets breathless climbing the stairs to the bathroom. His weight rose from 83.4 kg Monday to 85.1 kg this morning, a 1.7 kg gain in four days. I recorded it on the fridge sheet.\
-Agent: I'll flag that weight gain for the nurse today.\
-Caregiver: He slept poorly Wednesday and Thursday, now uses two pillows, and yesterday I found him sleeping in his armchair at 3 a.m. He skipped his evening pills Wednesday, claiming he forgot. No falls since the one two weeks ago, but he gets dizzy when standing quickly. No chest pain. His appetite is good, although he eats salty foods. I found hidden pickles.\
-Agent: Thank you. I'll speak with him, then ask about arrangements.\
-Caregiver: Dad, Marta from the program is calling. Take the phone.\
-Patient: Hello? Oh, Marta! I'm fine, like an old car that starts slowly and rattles.\
-Agent: Julia reports recurrent ankle swelling and breathlessness on stairs. Is that accurate?\
-Patient: She exaggerates. My shoes are tight because I bought them in a hurry.\
-Agent: Do you have pitting when pressing your shin?\
-Patient: Let me check. Yes, a small dent.\
-Agent: Do you need to stop on the stairs?\
-Patient: Once, halfway, to admire the wallpaper.\
-Agent: And can you lie flat comfortably at night?\
-Patient: No. I added another pillow. I fall asleep, then wake with tightness in my chest, as if someone is sitting on it. I move to the armchair, and it passes.\
-Agent: This is important. It isn't simply aging; fluid may be building up again. The nurse should assess you today and may arrange medication adjustments. May I ask her to call?\
-Patient: Does this mean hospital? I refuse to return; the food was terrible.\
-Agent: I can't promise what the nurse and doctor will decide, but sometimes adjusting the dose lets you stay home. It's better to catch this now.\
-Patient: Fine. She can call.\
-Agent: Julia also reported a missed dose Wednesday. Which medication did you miss?\
-Patient: I fell asleep watching a whale documentary. The little white pills and yellow one, the water pill.\
-Agent: Your diuretic is particularly important for controlling swelling. Is taking medication daily difficult, or are there side effects?\
-Patient: The water pill makes me use the bathroom constantly. Taking it in the evening means getting up three times nightly. It's humiliating, shuffling around in the dark.\
-Agent: That's a genuine problem we may solve. Diuretics are usually best taken in the morning. Did the hospital instruct you to take it at night?\
-Patient: Perhaps the hospital, or perhaps I just got used to it.\
-Agent: We'll ask the nurse to confirm the timing with your doctor. Moving it to morning may improve sleep and reduce fall risk.\
-Patient: I'd like that. Julia, write it down!\
-Caregiver: I'm writing.\
-Agent: How was physiotherapy last week?\
-Patient: One and a half sessions. Monday, Kuba had me walking with a cane. I dislike looking like a professor. Thursday I was too tired and stopped after twenty minutes; Kuba agreed we'd do more next week.\
-Agent: Did your balance improve?\
-Patient: A little. I wobble less in the kitchen. But the bathroom floor is slippery. On Sunday I nearly fell and grabbed the towel rail.\
-Agent: Have the grab bars and non-slip mat been installed?\
-Patient: Julia's husband promised to install them with his drill three weeks ago.\
-Agent: I'll tell Julia this is urgent. If they're not installed by Monday, our program can send someone through its home-safety service.\
-Patient: Don't tell him directly; he'll be offended. Tell Julia to explain that I said it's urgent.\
-Agent: I'll do that. Are you still checking morning blood sugar?\
-Patient: Every morning, with Julia's help. It was 7.9 Monday and 8.6 Wednesday.\
-Caregiver: Today's reading is 9.1. Thursday was 10.2 after Uncle Staszek visited with cake.\
-Patient: It was a small cake.\
-Caregiver: A third of a cake.\
-Agent: I'll record the readings. Any increased thirst or unusual vision changes?\
-Patient: My left eye is foggy, like looking through a dirty window. They said it's the cataract.\
-Agent: Let's review upcoming appointments. Your echocardiogram is next Wednesday at 10:30. It checks heart pumping, takes about forty minutes, and involves lying down while a probe moves across your chest.\
-Patient: I remember the cold gel.\
-Agent: I'll ask them to warm it. Your cardiology consultation with Dr. Wiśniewska is Friday, two days later. She'll review the echo and may adjust medication.\
-Patient: I like her because she doesn't talk to me like a child.\
-Agent: Cataract surgery remains scheduled for the 24th of next month, left eye first. Before surgery, you need an eye-clinic preoperative assessment and confirmation from your cardiologist that your heart is stable.\
-Patient: What if it isn't?\
-Agent: They may postpone surgery until the fluid is controlled. Taking the diuretic correctly helps control swelling and may keep your eye surgery on schedule.\
-Patient: That's a better argument than simply ordering me.\
-Agent: Because surgery is a day procedure, someone must accompany you. Julia, can you take the day off?\
-Caregiver: Yes, my boss approved it. But I work during Wednesday's echo and need transport.\
-Agent: Our medical transport service can help. Mr. Nowak, are you comfortable travelling with a driver, and do you need assistance walking inside?\
-Patient: A driver is fine, but please avoid the one who talks politics constantly. I nearly jumped out at traffic lights.\
-Agent: I'll request a quiet driver and assistance walking to the entrance.\
-Patient: Excellent. You should be a minister.\
-Agent: Finally, how is your mood? You've experienced a fall, reduced independence, and more time at home.\
-Patient: It's hard. I used to fix everything; now I watch Julia fix everything. I hate being a burden.\
-Agent: You're not a burden, though I understand the feeling. What improves your days?\
-Patient: My grandson visits Sundays and teaches me chess on his tablet. He beats me and laughs. It's the week's best part.\
-Agent: Would you welcome a program volunteer visiting weekly to chat or play cards?\
-Patient: Cards, yes. Not chess; my grandson humiliates me enough.\
-Agent: I'll investigate a card-playing volunteer. To summarize: the nurse will call today about weight gain, swelling, and nighttime breathlessness and consult the doctor about moving the diuretic to morning. Grab bars and a non-slip mat should be installed by Monday, with program assistance if needed. The echo is Wednesday at 10:30, with quiet transport and help to the entrance; cardiology is Friday. Physiotherapy continues, and you'll aim to complete full sessions. I'll also investigate the volunteer.\
-Patient: And the pickles?\
-Agent: We'll ask the nurse about occasional small portions, not hidden behind the bread box.\
-Patient: I propose two a week.\
-Agent: We'll discuss that. If your weight rises more than one kilogram overnight or breathlessness worsens, call the number on your card immediately. If you cannot breathe, contact emergency services.\
-Patient: Okay. You're like my late wife.\
-Agent: I'll take that as a compliment. Please put Julia back on.\
-Patient: Julia, take the phone. I'm finding my glasses.\
-Caregiver: I'm here. That went better than usual. He admitted the nighttime breathing problem.\
-Agent: He also explained that the diuretic disrupts his sleep. Please send me a photo of the weight sheet later today. I'll arrange for the nurse to call within the hour.\
-Caregiver: Certainly. Thank you, Marta.\
-Agent: You're welcome. Take care, Julia. We'll speak next Friday, or sooner if anything changes.\
-Caregiver: Will do. Goodbye.
+Agent: Hello, this is Marta from the Home Care Support Program, calling for Edward Nowak for the Friday check-in. Is this Edward?Caregiver: This is Julia, his daughter. Dad is in the other room and often cannot hear the phone. Before handing him over, I want to report several things he may downplay.Agent: Please go ahead.Caregiver: His ankle swelling has returned. On Tuesday, his socks left deep marks, and his shoes were difficult to put on. He gets breathless climbing the stairs to the bathroom. His weight rose from 83.4 kg Monday to 85.1 kg this morning, a 1.7 kg gain in four days. I recorded it on the fridge sheet.Agent: I'll flag that weight gain for the nurse today.Caregiver: He slept poorly Wednesday and Thursday, now uses two pillows, and yesterday I found him sleeping in his armchair at 3 a.m. He skipped his evening pills Wednesday, claiming he forgot. No falls since the one two weeks ago, but he gets dizzy when standing quickly. No chest pain. His appetite is good, although he eats salty foods. I found hidden pickles.Agent: Thank you. I'll speak with him, then ask about arrangements.Caregiver: Dad, Marta from the program is calling. Take the phone.Patient: Hello? Oh, Marta! I'm fine, like an old car that starts slowly and rattles.Agent: Julia reports recurrent ankle swelling and breathlessness on stairs. Is that accurate?Patient: She exaggerates. My shoes are tight because I bought them in a hurry.Agent: Do you have pitting when pressing your shin?Patient: Let me check. Yes, a small dent.Agent: Do you need to stop on the stairs?Patient: Once, halfway, to admire the wallpaper.Agent: And can you lie flat comfortably at night?Patient: No. I added another pillow. I fall asleep, then wake with tightness in my chest, as if someone is sitting on it. I move to the armchair, and it passes.Agent: This is important. It isn't simply aging; fluid may be building up again. The nurse should assess you today and may arrange medication adjustments. May I ask her to call?Patient: Does this mean hospital? I refuse to return; the food was terrible.Agent: I can't promise what the nurse and doctor will decide, but sometimes adjusting the dose lets you stay home. It's better to catch this now.Patient: Fine. She can call.Agent: Julia also reported a missed dose Wednesday. Which medication did you miss?Patient: I fell asleep watching a whale documentary. The little white pills and yellow one, the water pill.Agent: Your diuretic is particularly important for controlling swelling. Is taking medication daily difficult, or are there side effects?Patient: The water pill makes me use the bathroom constantly. Taking it in the evening means getting up three times nightly. It's humiliating, shuffling around in the dark.Agent: That's a genuine problem we may solve. Diuretics are usually best taken in the morning. Did the hospital instruct you to take it at night?Patient: Perhaps the hospital, or perhaps I just got used to it.Agent: We'll ask the nurse to confirm the timing with your doctor. Moving it to morning may improve sleep and reduce fall risk.Patient: I'd like that. Julia, write it down!Caregiver: I'm writing.Agent: How was physiotherapy last week?Patient: One and a half sessions. Monday, Kuba had me walking with a cane. I dislike looking like a professor. Thursday I was too tired and stopped after twenty minutes; Kuba agreed we'd do more next week.Agent: Did your balance improve?Patient: A little. I wobble less in the kitchen. But the bathroom floor is slippery. On Sunday I nearly fell and grabbed the towel rail.Agent: Have the grab bars and non-slip mat been installed?Patient: Julia's husband promised to install them with his drill three weeks ago.Agent: I'll tell Julia this is urgent. If they're not installed by Monday, our program can send someone through its home-safety service.Patient: Don't tell him directly; he'll be offended. Tell Julia to explain that I said it's urgent.Agent: I'll do that. Are you still checking morning blood sugar?Patient: Every morning, with Julia's help. It was 7.9 Monday and 8.6 Wednesday.Caregiver: Today's reading is 9.1. Thursday was 10.2 after Uncle Staszek visited with cake.Patient: It was a small cake.Caregiver: A third of a cake.Agent: I'll record the readings. Any increased thirst or unusual vision changes?Patient: My left eye is foggy, like looking through a dirty window. They said it's the cataract.Agent: Let's review upcoming appointments. Your echocardiogram is next Wednesday at 10:30. It checks heart pumping, takes about forty minutes, and involves lying down while a probe moves across your chest.Patient: I remember the cold gel.Agent: I'll ask them to warm it. Your cardiology consultation with Dr. Wiśniewska is Friday, two days later. She'll review the echo and may adjust medication.Patient: I like her because she doesn't talk to me like a child.Agent: Cataract surgery remains scheduled for the 24th of next month, left eye first. Before surgery, you need an eye-clinic preoperative assessment and confirmation from your cardiologist that your heart is stable.Patient: What if it isn't?Agent: They may postpone surgery until the fluid is controlled. Taking the diuretic correctly helps control swelling and may keep your eye surgery on schedule.Patient: That's a better argument than simply ordering me.Agent: Because surgery is a day procedure, someone must accompany you. Julia, can you take the day off?Caregiver: Yes, my boss approved it. But I work during Wednesday's echo and need transport.Agent: Our medical transport service can help. Mr. Nowak, are you comfortable travelling with a driver, and do you need assistance walking inside?Patient: A driver is fine, but please avoid the one who talks politics constantly. I nearly jumped out at traffic lights.Agent: I'll request a quiet driver and assistance walking to the entrance.Patient: Excellent. You should be a minister.Agent: Finally, how is your mood? You've experienced a fall, reduced independence, and more time at home.Patient: It's hard. I used to fix everything; now I watch Julia fix everything. I hate being a burden.Agent: You're not a burden, though I understand the feeling. What improves your days?Patient: My grandson visits Sundays and teaches me chess on his tablet. He beats me and laughs. It's the week's best part.Agent: Would you welcome a program volunteer visiting weekly to chat or play cards?Patient: Cards, yes. Not chess; my grandson humiliates me enough.Agent: I'll investigate a card-playing volunteer. To summarize: the nurse will call today about weight gain, swelling, and nighttime breathlessness and consult the doctor about moving the diuretic to morning. Grab bars and a non-slip mat should be installed by Monday, with program assistance if needed. The echo is Wednesday at 10:30, with quiet transport and help to the entrance; cardiology is Friday. Physiotherapy continues, and you'll aim to complete full sessions. I'll also investigate the volunteer.Patient: And the pickles?Agent: We'll ask the nurse about occasional small portions, not hidden behind the bread box.Patient: I propose two a week.Agent: We'll discuss that. If your weight rises more than one kilogram overnight or breathlessness worsens, call the number on your card immediately. If you cannot breathe, contact emergency services.Patient: Okay. You're like my late wife.Agent: I'll take that as a compliment. Please put Julia back on.Patient: Julia, take the phone. I'm finding my glasses.Caregiver: I'm here. That went better than usual. He admitted the nighttime breathing problem.Agent: He also explained that the diuretic disrupts his sleep. Please send me a photo of the weight sheet later today. I'll arrange for the nurse to call within the hour.Caregiver: Certainly. Thank you, Marta.Agent: You're welcome. Take care, Julia. We'll speak next Friday, or sooner if anything changes.Caregiver: Will do. Goodbye.
 """
+text_words = 1261
+text_tokens = 1835
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 800
 text = """
-Agent: Hello, this is Marta from the Home Care Support Program, calling for Edward Nowak.\
-Caregiver: I'm Julia, his daughter. Dad is in the other room and often doesn't hear the phone. Before handing him over, I want to report several things because he tends to downplay symptoms.\
-Agent: Please go ahead. How has he been this week?\
-Caregiver: His ankle swelling returned. On Tuesday, his socks left deep marks, and his shoes were difficult to put on. He's breathless climbing the stairs to the bathroom. His weight increased from 83.4 kg Monday to 85.1 kg this morning, a 1.7 kg gain in four days. I've recorded it on the fridge sheet.\
-Agent: I'll flag that weight gain for the nurse today. Anything else?\
-Caregiver: He slept poorly Wednesday and Thursday, now uses two pillows, and yesterday I found him in his armchair at 3 a.m. He skipped Wednesday evening's pills, saying he forgot, though I suspect fatigue or frustration. No falls since the fall two weeks ago, but he sometimes feels dizzy standing quickly. No chest pain. Appetite is good, although he eats salty foods and hides pickles behind the bread box.\
-Agent: Thank you. I'll speak with Edward, then ask you about logistics.
+Agent: Hello, this is Marta from the Home Care Support Program, calling for Edward Nowak.Caregiver: I'm Julia, his daughter. Dad is in the other room and often doesn't hear the phone. Before handing him over, I want to report several things because he tends to downplay symptoms.Agent: Please go ahead. How has he been this week?Caregiver: His ankle swelling returned. On Tuesday, his socks left deep marks, and his shoes were difficult to put on. He's breathless climbing the stairs to the bathroom. His weight increased from 83.4 kg Monday to 85.1 kg this morning, a 1.7 kg gain in four days. I've recorded it on the fridge sheet.Agent: I'll flag that weight gain for the nurse today. Anything else?Caregiver: He slept poorly Wednesday and Thursday, now uses two pillows, and yesterday I found him in his armchair at 3 a.m. He skipped Wednesday evening's pills, saying he forgot, though I suspect fatigue or frustration. No falls since the fall two weeks ago, but he sometimes feels dizzy standing quickly. No chest pain. Appetite is good, although he eats salty foods and hides pickles behind the bread box.Agent: Thank you. I'll speak with Edward, then ask you about logistics.
 
-Patient: Hello? Who is it?\
-Agent: It's Marta from the Home Care Support Program. How are you feeling?\
-Patient: Like an old car, slow to start and rattling. Julia exaggerates my swelling.\
-Agent: Does pressing your shin leave a dent?\
-Patient: Yes, a small one. I stop halfway up the stairs to catch my breath. At night, lying flat is uncomfortable. I fall asleep, then wake with chest tightness, as if someone is sitting on my chest. Moving to the armchair makes it pass.\
-Agent: These symptoms could indicate fluid buildup, not simply aging. The nurse needs to hear about them. May I ask her to call today?\
-Patient: Will I have to go to hospital? The food was terrible.\
-Agent: I can't promise; the nurse and doctor will decide. Often medication adjustments are sufficient at home. Addressing this now is better than waiting another week.\
-Patient: Fine, she can call.
+Patient: Hello? Who is it?Agent: It's Marta from the Home Care Support Program. How are you feeling?Patient: Like an old car, slow to start and rattling. Julia exaggerates my swelling.Agent: Does pressing your shin leave a dent?Patient: Yes, a small one. I stop halfway up the stairs to catch my breath. At night, lying flat is uncomfortable. I fall asleep, then wake with chest tightness, as if someone is sitting on my chest. Moving to the armchair makes it pass.Agent: These symptoms could indicate fluid buildup, not simply aging. The nurse needs to hear about them. May I ask her to call today?Patient: Will I have to go to hospital? The food was terrible.Agent: I can't promise; the nurse and doctor will decide. Often medication adjustments are sufficient at home. Addressing this now is better than waiting another week.Patient: Fine, she can call.
 
-Agent: You also missed Wednesday's evening medication. Why?\
-Patient: I fell asleep watching a whale documentary. I forgot the little white pills and yellow water pill.\
-Agent: The diuretic is particularly important for swelling. Is taking medication daily difficult, or are side effects the problem?\
-Patient: The water pill makes me use the bathroom constantly. Taken in the evening, it wakes me three times nightly. Walking around in the dark is humiliating.\
-Agent: That's a genuine problem. Diuretics are usually best taken in the morning. We'll ask the nurse to confirm the timing with your doctor, possibly moving it to mornings, improving sleep and reducing fall risk.\
-Patient: I'd like that. Julia, write it down!\
-Caregiver: I'm writing.
+Agent: You also missed Wednesday's evening medication. Why?Patient: I fell asleep watching a whale documentary. I forgot the little white pills and yellow water pill.Agent: The diuretic is particularly important for swelling. Is taking medication daily difficult, or are side effects the problem?Patient: The water pill makes me use the bathroom constantly. Taken in the evening, it wakes me three times nightly. Walking around in the dark is humiliating.Agent: That's a genuine problem. Diuretics are usually best taken in the morning. We'll ask the nurse to confirm the timing with your doctor, possibly moving it to mornings, improving sleep and reducing fall risk.Patient: I'd like that. Julia, write it down!Caregiver: I'm writing.
 
-Agent: How was physiotherapy? You had two sessions planned.\
-Patient: Monday went well. Kuba, the physiotherapist, had me walk with a cane. Thursday I was too tired and stopped after twenty minutes. He'll do more next week. My balance improved somewhat, but Sunday I nearly slipped on the bathroom floor and grabbed the towel rail.\
-Agent: Have the grab bars and nonslip mat been installed?\
-Patient: Julia's husband promised to install them three weeks ago.\
-Agent: Julia, please tell him it's urgent. If they're not installed by Monday, our program can send someone through its home-safety service.\
-Patient: Don't offend him; tell Julia to emphasize the urgency.
+Agent: How was physiotherapy? You had two sessions planned.Patient: Monday went well. Kuba, the physiotherapist, had me walk with a cane. Thursday I was too tired and stopped after twenty minutes. He'll do more next week. My balance improved somewhat, but Sunday I nearly slipped on the bathroom floor and grabbed the towel rail.Agent: Have the grab bars and nonslip mat been installed?Patient: Julia's husband promised to install them three weeks ago.Agent: Julia, please tell him it's urgent. If they're not installed by Monday, our program can send someone through its home-safety service.Patient: Don't offend him; tell Julia to emphasize the urgency.
 
-Agent: Are you checking morning blood sugar?\
-Patient: Every morning, with Julia's help. It was 7.9 Monday and 8.6 Wednesday.\
-Caregiver: Today it was 9.1; Thursday it reached 10.2 after Uncle Staszek visited with cake.\
-Patient: It was a small cake.\
-Caregiver: A third of a cake.\
-Agent: I'll record those readings. Any unusual thirst or vision changes?\
-Patient: My left eye is foggy, like looking through a dirty window. They said it's the cataract.\
-Agent: Let's review appointments. Your echocardiogram is next Wednesday at 10:30. This painless heart ultrasound takes about forty minutes and checks pumping function.\
-Patient: The gel was cold last time.\
-Agent: I'll mention warming it. Your cardiology consultation with Dr. Wiśniewska is Friday, two days later. She'll review the echo and may adjust medication.\
-Patient: I like her because she doesn't treat me like a child.\
-Agent: Cataract surgery remains scheduled for the 24th of next month, left eye first. Before surgery, the eye clinic needs a preoperative check-up and confirmation from your cardiologist that your heart is stable. If fluid isn't controlled, surgery may be postponed. Taking the diuretic correctly helps protect your heart and keep surgery on schedule.\
-Patient: That's a better argument than simply telling me what to do.\
-Agent: Because surgery is a day procedure, someone must accompany you.\
-Caregiver: I've arranged time off work for surgery, but I need transport help for next Wednesday's echo because I'm working.\
-Agent: Our medical transport service can help. Would you accept a driver and assistance walking inside?\
-Patient: Yes, but please request a quiet driver. Last time one discussed politics throughout the journey.\
-Agent: I'll request a quiet driver and assistance to the entrance.
+Agent: Are you checking morning blood sugar?Patient: Every morning, with Julia's help. It was 7.9 Monday and 8.6 Wednesday.Caregiver: Today it was 9.1; Thursday it reached 10.2 after Uncle Staszek visited with cake.Patient: It was a small cake.Caregiver: A third of a cake.Agent: I'll record those readings. Any unusual thirst or vision changes?Patient: My left eye is foggy, like looking through a dirty window. They said it's the cataract.Agent: Let's review appointments. Your echocardiogram is next Wednesday at 10:30. This painless heart ultrasound takes about forty minutes and checks pumping function.Patient: The gel was cold last time.Agent: I'll mention warming it. Your cardiology consultation with Dr. Wiśniewska is Friday, two days later. She'll review the echo and may adjust medication.Patient: I like her because she doesn't treat me like a child.Agent: Cataract surgery remains scheduled for the 24th of next month, left eye first. Before surgery, the eye clinic needs a preoperative check-up and confirmation from your cardiologist that your heart is stable. If fluid isn't controlled, surgery may be postponed. Taking the diuretic correctly helps protect your heart and keep surgery on schedule.Patient: That's a better argument than simply telling me what to do.Agent: Because surgery is a day procedure, someone must accompany you.Caregiver: I've arranged time off work for surgery, but I need transport help for next Wednesday's echo because I'm working.Agent: Our medical transport service can help. Would you accept a driver and assistance walking inside?Patient: Yes, but please request a quiet driver. Last time one discussed politics throughout the journey.Agent: I'll request a quiet driver and assistance to the entrance.
 
-Agent: How is your mood with all these changes and reduced independence?\
-Patient: Sometimes it's hard. I used to fix everything; now I watch Julia do everything. I hate feeling like a burden.\
-Agent: You're not a burden. What improves your days?\
-Patient: My grandson visits Sundays and teaches me chess on his tablet. He beats me, but it's the best part of my week.\
-Agent: Would you like a program volunteer to visit weekly for conversation or cards?\
-Patient: Cards, yes. Not chess.\
-Agent: I'll investigate a card-playing volunteer.
+Agent: How is your mood with all these changes and reduced independence?Patient: Sometimes it's hard. I used to fix everything; now I watch Julia do everything. I hate feeling like a burden.Agent: You're not a burden. What improves your days?Patient: My grandson visits Sundays and teaches me chess on his tablet. He beats me, but it's the best part of my week.Agent: Would you like a program volunteer to visit weekly for conversation or cards?Patient: Cards, yes. Not chess.Agent: I'll investigate a card-playing volunteer.
 
-Agent: Let's confirm the plan. The nurse will call today about weight gain, swelling, and nighttime breathlessness and ask the doctor about moving the diuretic to mornings. Grab bars and a nonslip mat should be installed by Monday, or our program can arrange assistance. Next Wednesday's 10:30 echocardiogram requires quiet-driver transport and help entering. Cardiology with Dr. Wiśniewska follows Friday. Physiotherapy continues, aiming for a full session. I'll also investigate weekly card visits.\
-Patient: And the pickles?\
-Agent: We'll discuss an occasional small portion with the nurse, rather than hiding them. If your weight rises more than one kilogram overnight or breathlessness worsens, call the number on your card immediately. If you cannot breathe, contact emergency services.\
-Patient: Okay. You're like my late wife.\
-Agent: I'll take that as a compliment. Please put Julia back on.
+Agent: Let's confirm the plan. The nurse will call today about weight gain, swelling, and nighttime breathlessness and ask the doctor about moving the diuretic to mornings. Grab bars and a nonslip mat should be installed by Monday, or our program can arrange assistance. Next Wednesday's 10:30 echocardiogram requires quiet-driver transport and help entering. Cardiology with Dr. Wiśniewska follows Friday. Physiotherapy continues, aiming for a full session. I'll also investigate weekly card visits.Patient: And the pickles?Agent: We'll discuss an occasional small portion with the nurse, rather than hiding them. If your weight rises more than one kilogram overnight or breathlessness worsens, call the number on your card immediately. If you cannot breathe, contact emergency services.Patient: Okay. You're like my late wife.Agent: I'll take that as a compliment. Please put Julia back on.
 
-Caregiver: I'm here. He admitted the nighttime symptoms, which is unusual.\
-Agent: He also explained that the diuretic disrupts his sleep. Please send me a photo of the weight sheet later today. I'll arrange for the nurse to call within the hour.\
-Caregiver: Certainly. Thank you, Marta.\
-Agent: You're welcome. Take care, Julia. We'll speak next Friday, or sooner if anything changes.\
-Caregiver: I will. Goodbye.
+Caregiver: I'm here. He admitted the nighttime symptoms, which is unusual.Agent: He also explained that the diuretic disrupts his sleep. Please send me a photo of the weight sheet later today. I'll arrange for the nurse to call within the hour.Caregiver: Certainly. Thank you, Marta.Agent: You're welcome. Take care, Julia. We'll speak next Friday, or sooner if anything changes.Caregiver: I will. Goodbye.
 """
+text_words = 1104
+text_tokens = 1610
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Edward Nowak’s Friday check-in.
@@ -789,82 +601,44 @@ Agent: You’re welcome. We’ll speak next Friday, or sooner if anything change
 
 Caregiver: Goodbye.
 """
+text_words = 696
+text_tokens = 1010
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 400
 text = """
-Agent: Hello, this is Marta from the Home Care Support Program, calling for Edward Nowak’s Friday check-in.\
-Caregiver: Hi, I’m Julia, his daughter. Dad’s nearby. I’ll explain first because he downplays problems.\
-Agent: Please.\
-Caregiver: His ankle swelling returned; socks left deep marks Tuesday, and shoes were tight. He’s breathless on stairs. Weight rose from 83.4 kg Monday to 85.1 today, a 1.7 kg gain in four days. He slept poorly Wednesday and Thursday, needs two pillows, and I found him in his armchair at 3 a.m. He skipped Wednesday’s evening pills. No recent falls or chest pain, but he gets dizzy standing quickly. Appetite is good, though he secretly eats salty pickles.\
-Agent: I’ll alert the nurse today. Please pass him the phone.\
-Patient: Hello, Marta. I’m fine, just an old car starting slowly.\
-Agent: Julia reports swelling and breathlessness. Does pressing your shin leave a dent?\
-Patient: A small one. I stop midway upstairs to admire wallpaper.\
-Agent: Can you lie flat comfortably?\
-Patient: No. I wake with chest tightness, as if someone sits on me, then move to the armchair until it passes.\
-Agent: This may indicate fluid buildup, not aging. The nurse should call today. Medication adjustment may avoid hospitalization.\
-Patient: Fine, she can call. Hospital food was terrible.\
-Agent: Why did you miss Wednesday’s pills?\
-Patient: I fell asleep watching whales. The evening diuretic makes me urinate three times nightly, which is humiliating.\
-Agent: We’ll ask the nurse to confirm with your doctor whether it can move to mornings, improving sleep and reducing fall risk.\
-Patient: Please do. Julia is writing it down.\
-Agent: How was physiotherapy with Kuba?\
-Patient: Monday went well; Thursday lasted only twenty minutes because I was tired. My balance improved slightly, but I nearly slipped in the bathroom Sunday, catching the towel rail.\
-Agent: Julia’s husband must install grab bars and a nonslip mat by Monday; otherwise, our home-safety service can help.\
-Patient: Tell Julia to emphasize urgency.\
-Agent: Your glucose readings were 7.9 Monday, 8.6 Wednesday, 10.2 Thursday after cake, and 9.1 today. Any unusual symptoms?\
-Patient: My left eye is foggy; they said cataract.\
-Agent: Echocardiogram is next Wednesday at 10:30, taking forty minutes. Cardiology with Dr. Wiśniewska follows Friday. Cataract surgery remains scheduled for the 24th next month, left eye first, pending preoperative assessment and cardiologist clearance. Julia can accompany you to surgery.\
-Caregiver: I need transport for the echocardiogram.\
-Agent: We’ll arrange a quiet driver and assistance walking to the entrance.\
-Patient: I feel burdensome since losing independence. My grandson’s Sunday tablet chess visits cheer me up.\
-Agent: I’ll ask about a weekly card-playing volunteer.\
-Patient: Cards, yes.\
-Agent: Summary: nurse calls today about weight, swelling, breathlessness, and morning diuretic timing; grab bars by Monday; echo Wednesday, cardiology Friday, continued physiotherapy, and volunteer inquiry. If weight rises over one kilogram overnight or breathing worsens, call the program immediately; use emergency services for severe breathing difficulty.\
-Patient: And my pickles? Two weekly?\
-Agent: Discuss portions with the nurse; avoid salty excess.\
-Agent: Julia, please send today’s weight-sheet photo. The nurse will call within the hour.\
-Caregiver: Certainly. Thank you, Marta.\
-Agent: Take care. Speak next Friday, or sooner if anything changes.
+Agent: Hello, this is Marta from the Home Care Support Program, calling for Edward Nowak’s Friday check-in.Caregiver: Hi, I’m Julia, his daughter. Dad’s nearby. I’ll explain first because he downplays problems.Agent: Please.Caregiver: His ankle swelling returned; socks left deep marks Tuesday, and shoes were tight. He’s breathless on stairs. Weight rose from 83.4 kg Monday to 85.1 today, a 1.7 kg gain in four days. He slept poorly Wednesday and Thursday, needs two pillows, and I found him in his armchair at 3 a.m. He skipped Wednesday’s evening pills. No recent falls or chest pain, but he gets dizzy standing quickly. Appetite is good, though he secretly eats salty pickles.Agent: I’ll alert the nurse today. Please pass him the phone.Patient: Hello, Marta. I’m fine, just an old car starting slowly.Agent: Julia reports swelling and breathlessness. Does pressing your shin leave a dent?Patient: A small one. I stop midway upstairs to admire wallpaper.Agent: Can you lie flat comfortably?Patient: No. I wake with chest tightness, as if someone sits on me, then move to the armchair until it passes.Agent: This may indicate fluid buildup, not aging. The nurse should call today. Medication adjustment may avoid hospitalization.Patient: Fine, she can call. Hospital food was terrible.Agent: Why did you miss Wednesday’s pills?Patient: I fell asleep watching whales. The evening diuretic makes me urinate three times nightly, which is humiliating.Agent: We’ll ask the nurse to confirm with your doctor whether it can move to mornings, improving sleep and reducing fall risk.Patient: Please do. Julia is writing it down.Agent: How was physiotherapy with Kuba?Patient: Monday went well; Thursday lasted only twenty minutes because I was tired. My balance improved slightly, but I nearly slipped in the bathroom Sunday, catching the towel rail.Agent: Julia’s husband must install grab bars and a nonslip mat by Monday; otherwise, our home-safety service can help.Patient: Tell Julia to emphasize urgency.Agent: Your glucose readings were 7.9 Monday, 8.6 Wednesday, 10.2 Thursday after cake, and 9.1 today. Any unusual symptoms?Patient: My left eye is foggy; they said cataract.Agent: Echocardiogram is next Wednesday at 10:30, taking forty minutes. Cardiology with Dr. Wiśniewska follows Friday. Cataract surgery remains scheduled for the 24th next month, left eye first, pending preoperative assessment and cardiologist clearance. Julia can accompany you to surgery.Caregiver: I need transport for the echocardiogram.Agent: We’ll arrange a quiet driver and assistance walking to the entrance.Patient: I feel burdensome since losing independence. My grandson’s Sunday tablet chess visits cheer me up.Agent: I’ll ask about a weekly card-playing volunteer.Patient: Cards, yes.Agent: Summary: nurse calls today about weight, swelling, breathlessness, and morning diuretic timing; grab bars by Monday; echo Wednesday, cardiology Friday, continued physiotherapy, and volunteer inquiry. If weight rises over one kilogram overnight or breathing worsens, call the program immediately; use emergency services for severe breathing difficulty.Patient: And my pickles? Two weekly?Agent: Discuss portions with the nurse; avoid salty excess.Agent: Julia, please send today’s weight-sheet photo. The nurse will call within the hour.Caregiver: Certainly. Thank you, Marta.Agent: Take care. Speak next Friday, or sooner if anything changes.
 """
+text_words = 506
+text_tokens = 787
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 200
 text = """
-Agent: Marta from the Home Care Support Program calls for Friday’s check-in.\
-Caregiver: Julia, Mr. Nowak’s daughter, reports recurring ankle swelling, deep sock marks, breathlessness on stairs, poor sleep, two pillows, and sleeping in an armchair. Weight rose from 83.4 kg Monday to 85.1 kg Friday. He missed Wednesday’s evening medication. No chest pain or recent falls; occasional postural dizziness. Appetite is good, but he eats salty pickles.\
-Patient: Initially minimizes symptoms but admits pitting shin edema, stopping halfway upstairs, and waking with chest tightness relieved by sitting in an armchair.\
-Agent: Explains possible fluid buildup; nurse will call today to discuss symptoms and medication adjustments. Patient agrees.\
-Patient: Admits evening diuretic causes frequent nighttime urination and embarrassment.\
-Agent: Will ask the nurse to confirm moving it to mornings with the doctor.\
-Patient: Agrees.\
-Agent: Physiotherapy continues; Monday’s session helped balance, Thursday’s ended after 20 minutes due to fatigue. Bathroom is slippery; patient nearly fell. Grab bars and a nonslip mat are overdue; Julia will urge installation by Monday or request program assistance.\
-Patient: Reports glucose readings of 7.9, 8.6, 10.2 after cake, and 9.1. Left-eye vision is foggy.\
-Agent: Echo next Wednesday at 10:30; cardiology with Dr. Wiśniewska Friday; left cataract surgery next month on the 24th, pending clearance. Transport with quiet driver and walking assistance will be arranged. Card-playing volunteer requested.\
-Caregiver: Will send weight-sheet photo today.\
-Agent: Nurse will call within an hour. Seek urgent help for worsening breathlessness or weight gain exceeding 1 kg overnight.
+Agent: Marta from the Home Care Support Program calls for Friday’s check-in.Caregiver: Julia, Mr. Nowak’s daughter, reports recurring ankle swelling, deep sock marks, breathlessness on stairs, poor sleep, two pillows, and sleeping in an armchair. Weight rose from 83.4 kg Monday to 85.1 kg Friday. He missed Wednesday’s evening medication. No chest pain or recent falls; occasional postural dizziness. Appetite is good, but he eats salty pickles.Patient: Initially minimizes symptoms but admits pitting shin edema, stopping halfway upstairs, and waking with chest tightness relieved by sitting in an armchair.Agent: Explains possible fluid buildup; nurse will call today to discuss symptoms and medication adjustments. Patient agrees.Patient: Admits evening diuretic causes frequent nighttime urination and embarrassment.Agent: Will ask the nurse to confirm moving it to mornings with the doctor.Patient: Agrees.Agent: Physiotherapy continues; Monday’s session helped balance, Thursday’s ended after 20 minutes due to fatigue. Bathroom is slippery; patient nearly fell. Grab bars and a nonslip mat are overdue; Julia will urge installation by Monday or request program assistance.Patient: Reports glucose readings of 7.9, 8.6, 10.2 after cake, and 9.1. Left-eye vision is foggy.Agent: Echo next Wednesday at 10:30; cardiology with Dr. Wiśniewska Friday; left cataract surgery next month on the 24th, pending clearance. Transport with quiet driver and walking assistance will be arranged. Card-playing volunteer requested.Caregiver: Will send weight-sheet photo today.Agent: Nurse will call within an hour. Seek urgent help for worsening breathlessness or weight gain exceeding 1 kg overnight.
 """
+text_words = 243
+text_tokens = 389
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 Caregiver: No, it's Julia, his daughter. Dad's in the other room; he never hears the phone.
 Agent: Hi Julia. I'm calling for our Friday check-in. How's he been this week?
-Caregiver: Mixed. Before I hand him over, he'll downplay everything, so: ankle swelling is back. Tuesday his socks left deep marks and he struggled with his shoes. He's out of breath on the stairs to the bathroom. He says it's "just age."
+Caregiver: Mixed. Before I hand him over, he'll downplay everything, so: ankle swelling is back. Tuesday his socks left deep marks and he struggled with his shoes. He's out of breath on the stairs to the bathroom. He says it's \"just age.\"
 Agent: Has he been weighing himself every morning?
 Caregiver: Most days. Monday 83.4 kg, this morning 85.1. It's on the sheet on the fridge.
 Agent: That's 1.7 kg in four days. I'll flag it for the nurse today. Anything else?
@@ -886,7 +660,7 @@ Agent: Thanks. On the stairs, do you have to stop?
 Patient: Once, in the middle. To admire the wallpaper.
 Agent: At night, are you comfortable lying flat?
 Patient: Not really. I use another pillow. I fall asleep, then wake with my chest tight like somebody is sitting on it. I go to the armchair and it passes.
-Agent: The nurse needs to hear that. It isn't "just age"; fluid may be building up, and we can adjust medication. May I ask her to call you today?
+Agent: The nurse needs to hear that. It isn't \"just age\"; fluid may be building up, and we can adjust medication. May I ask her to call you today?
 Patient: Do I have to go to hospital? I'm not going back. The food was a crime.
 Agent: I can't promise; it depends on the nurse and doctor. Often it's just a dose change and you stay home. Good we caught it now.
 Patient: Fine. She can call.
@@ -921,12 +695,12 @@ Patient: I like her. She doesn't treat me like a child.
 Agent: Cataract surgery remains the 24th of next month, left eye first. Before it you need a pre-operative eye clinic check-up and a cardiologist's note that your heart is stable.
 Patient: And if it isn't?
 Agent: It might be postponed until fluid is controlled. Another reason to take the water pill properly.
-Patient: Better argument than "because I said so."
+Patient: Better argument than \"because I said so.\"
 Agent: It's a day procedure, so someone must accompany you. Julia, can she take that day off?
 Caregiver: Already cleared with my boss. But I need transport help for the echo; I work that morning.
 Agent: We have a medical transport service. Mr. Nowak, a driver okay? Need someone to walk you in?
 Patient: Driver is fine, but not the one who talks politics the whole way.
-Agent: I'll request a quiet driver: "prefers quiet driver, needs arm to the entrance."
+Agent: I'll request a quiet driver: \"prefers quiet driver, needs arm to the entrance.\"
 Patient: You should be a minister.
 Agent: How is your mood, with the fall, being home more, less independence?
 Patient: Hard sometimes. I used to fix everything. Now I watch my daughter fix everything. I don't like being a burden.
@@ -944,18 +718,20 @@ Caregiver: Sure. Thanks, Marta.
 Agent: Take care, Julia. Talk next Friday, or sooner if anything changes.
 Caregiver: Bye!
 """
+text_words = 1266
+text_tokens = 1898
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 Caregiver: Hi Marta, it's Julia, his daughter. Dad's in the other room; he never hears the phone.
 Agent: Hi Julia. Calling for our Friday check-in. How's he been this week?
-Caregiver: Mixed. Before I hand him over, he'll downplay everything. Ankle swelling is back: Tuesday his socks left deep marks and he struggled with shoes. He's out of breath on the bathroom stairs; says it's "just age."
+Caregiver: Mixed. Before I hand him over, he'll downplay everything. Ankle swelling is back: Tuesday his socks left deep marks and he struggled with shoes. He's out of breath on the bathroom stairs; says it's \"just age.\"
 Agent: Has he weighed himself every morning?
 Caregiver: Most days. Monday 83.4 kg, this morning 85.1. It's on the sheet on the fridge.
 Agent: That's 1.7 kg in four days. I'll flag it for the nurse today. Anything else?
@@ -975,7 +751,7 @@ Agent: Do you stop on the stairs?
 Patient: Once, in the middle, to admire the wallpaper.
 Agent: Comfortable lying flat at night?
 Patient: Not really. Extra pillow helps. I fall asleep, then wake with chest tightness like someone sitting on it. I go to the armchair and it passes.
-Agent: The nurse should hear this. It isn't "just age"; fluid may be building up, and medication can be adjusted. May she call you today?
+Agent: The nurse should hear this. It isn't \"just age\"; fluid may be building up, and medication can be adjusted. May she call you today?
 Patient: Do I have to go to hospital? I'm not going back; the food was a crime.
 Agent: Can't promise, depends on nurse and doctor, but often it's just a dose change at home. Good we caught it now.
 Patient: Fine. She can call.
@@ -1012,12 +788,12 @@ Patient: I like her; she doesn't treat me like a child.
 Agent: Cataract surgery still the 24th of next month, left eye first. Needs pre-op eye clinic check-up and cardiologist note that your heart is stable.
 Patient: And if not stable?
 Agent: Possibly postponed until fluid is controlled; another reason to take the water pill properly.
-Patient: Better argument than "because I said so."
+Patient: Better argument than \"because I said so.\"
 Agent: It's a day procedure; you need someone with you. Julia?
 Caregiver: My boss approved the day off. I need transport help for the echo; I work that morning.
 Agent: We have a medical transport service. Comfortable with a driver, and need someone to walk you in?
 Patient: Driver fine, but not the one who talks politics.
-Agent: Noted: "prefers quiet driver, needs arm to entrance."
+Agent: Noted: \"prefers quiet driver, needs arm to entrance.\"
 Agent: How's your mood, with the fall and less independence?
 Patient: Hard sometimes. I used to fix everything; now I watch my daughter. I don't like being a burden.
 Agent: You're not a burden. What makes days better?
@@ -1034,18 +810,20 @@ Caregiver: Sure, thanks, Marta.
 Agent: Talk next Friday, or sooner if anything changes.
 Caregiver: Bye!
 """
+text_words = 1103
+text_tokens = 1697
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 Caregiver: No, it's Julia, his daughter. Dad's in the other room.
 Agent: Hi Julia. Friday check-in. How's he been this week?
-Caregiver: Mixed. He'll downplay everything, so: ankle swelling is back. Tuesday his socks left deep marks and he struggled with shoes. He's out of breath on the bathroom stairs, says it's "just age."
+Caregiver: Mixed. He'll downplay everything, so: ankle swelling is back. Tuesday his socks left deep marks and he struggled with shoes. He's out of breath on the bathroom stairs, says it's \"just age.\"
 Agent: Has he weighed himself every morning?
 Caregiver: Most days. Monday 83.4 kg, this morning 85.1. It's on the fridge sheet.
 Agent: Gain of 1.7 kg in four days. I'll flag it for the nurse today. Anything else?
@@ -1065,7 +843,7 @@ Agent: And the stairs?
 Patient: I stop once, in the middle, to admire the wallpaper.
 Agent: Comfortable lying flat at night?
 Patient: No. I use another pillow. I wake with chest tightness like someone sitting on it, then go to the armchair and it passes.
-Agent: The nurse needs to hear this. It isn't "just age"; fluid may be building up, and medication can be adjusted. May she call you today?
+Agent: The nurse needs to hear this. It isn't \"just age\"; fluid may be building up, and medication can be adjusted. May she call you today?
 Patient: Do I have to go to hospital? I'm not going back. The food was a crime.
 Agent: Can't promise; depends on nurse and doctor. Often it's just a dose change at home. Good we caught it now.
 Patient: Fine. She can call.
@@ -1094,12 +872,12 @@ Patient: Left eye is foggy, like a dirty window. It's the cataract.
 Agent: Upcoming appointments: echocardiogram next Wednesday 10:30, painless, about forty minutes. Cardiology with Dr. Wiśniewska two days later, Friday, to review echo and adjust medication. Cataract surgery on the 24th of next month, left eye first, preceded by a pre-op eye clinic check-up and a cardiologist note that your heart is stable.
 Patient: And if it isn't stable?
 Agent: Surgery may be postponed until fluid is controlled. Another reason to take the water pill properly.
-Patient: Better argument than "because I said so."
+Patient: Better argument than \"because I said so.\"
 Agent: It's a day procedure, so someone must accompany you. Julia, can you take that day off?
 Caregiver: Boss already approved. But I can't take him to the echo that morning; I work.
 Agent: Our medical transport service can help. Comfortable with a driver and someone walking you in?
 Patient: Driver's fine, but not the one who talks politics the whole way.
-Agent: Noted: "prefers quiet driver, needs arm to the entrance." How's your mood, with the fall and less independence?
+Agent: Noted: \"prefers quiet driver, needs arm to the entrance.\" How's your mood, with the fall and less independence?
 Patient: Hard sometimes. I used to fix everything; now I watch my daughter. I don't like being a burden.
 Agent: You're not a burden. What helps?
 Patient: My grandson comes Sundays, teaches me chess on the tablet. He beats me and laughs. Best part of the week.
@@ -1115,16 +893,18 @@ Caregiver: Sure, thanks, Marta.
 Agent: Talk next Friday, or sooner if anything changes.
 Caregiver: Bye!
 """
+text_words = 1043
+text_tokens = 1585
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
-Caregiver: No, it's Julia, his daughter. Before I hand him over, he'll downplay everything, so: ankle swelling is back, socks left deep marks Tuesday, trouble with shoes. He's out of breath on the stairs. He says it's "just age."
+Caregiver: No, it's Julia, his daughter. Before I hand him over, he'll downplay everything, so: ankle swelling is back, socks left deep marks Tuesday, trouble with shoes. He's out of breath on the stairs. He says it's \"just age.\"
 Agent: Is he weighing himself daily?
 Caregiver: Most days. Monday 83.4 kg, this morning 85.1.
 Agent: That's 1.7 kg in four days. I'll flag it for the nurse today. Anything else?
@@ -1133,7 +913,7 @@ Agent: I'll talk to him now.
 Patient: Hello? Marta, the nice one. I'm fine. Like an old car, slow in the morning.
 Agent: Are your ankles swollen and are you short of breath on stairs?
 Patient: Julia exaggerates. Shoes are tight because I bought them in a hurry. (checks shin) A small dent. I stop once on the stairs, to admire the wallpaper. At night I use another pillow, wake with chest tightness, go to the armchair and it passes.
-Agent: That's not "just age," possibly fluid building up; medication can be adjusted. May the nurse call today?
+Agent: That's not \"just age,\" possibly fluid building up; medication can be adjusted. May the nurse call today?
 Patient: Do I have to go to hospital? The food was a crime.
 Agent: Depends on nurse and doctor, but often it's just a dose change. Why the missed pills?
 Patient: I fell asleep to a whale documentary. The yellow water pill bothers me; taken in the evening I'm up three times at night. Humiliating. The hospital told me evenings, or I got used to it.
@@ -1149,12 +929,12 @@ Caregiver: Thursday was 10.2 after Uncle Staszek's visit, a third of a cake.
 Agent: Any thirst or vision changes?
 Patient: Left eye foggy, like a dirty window. The cataract, they said.
 Agent: Upcoming: echocardiogram next Wednesday 10:30, about forty minutes, painless. Cardiology with Dr. Wiśniewska that Friday. Cataract surgery the 24th of next month, left eye first; you need a pre-op eye clinic check-up and a cardiologist's note that your heart is stable. If not, surgery may be postponed, another reason to take the water pill.
-Patient: Better argument than "because I said so."
+Patient: Better argument than \"because I said so.\"
 Agent: You'll need someone with you on surgery day, Julia?
 Caregiver: Boss approved. But I can't take him to the echo; I work that morning.
 Agent: We have a medical transport service.
 Patient: A driver is fine, but not the one who talks politics.
-Agent: Noted: "prefers quiet driver, needs arm to the entrance." How's your mood?
+Agent: Noted: \"prefers quiet driver, needs arm to the entrance.\" How's your mood?
 Patient: Hard sometimes. I used to fix everything. I don't like being a burden. My grandson visits Sundays and teaches me chess on the tablet; best part of the week.
 Agent: Would you like a weekly volunteer visitor?
 Patient: Cards, yes. Not chess.
@@ -1167,16 +947,18 @@ Agent: Yes, and the water pill wakes him. Please send the weight sheet photo tod
 Caregiver: Sure, thanks, Marta.
 Agent: Talk next Friday, or sooner if anything changes.
 """
+text_words = 756
+text_tokens = 1141
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 400
 text = """
 Agent: Hello, Marta from Home Care Support Program, calling for Mr. Nowak, Friday check-in.
-Caregiver: It's Julia, his daughter. Dad downplays everything, so first: ankle swelling is back; Tuesday socks left deep marks, trouble with shoes. Out of breath on bathroom stairs; he says "just age."
+Caregiver: It's Julia, his daughter. Dad downplays everything, so first: ankle swelling is back; Tuesday socks left deep marks, trouble with shoes. Out of breath on bathroom stairs; he says \"just age.\"
 Agent: Daily weighing?
 Caregiver: Mostly. Monday 83.4 kg, today 85.1.
 Agent: 1.7 kg gain in four days. I'll flag it for the nurse today.
@@ -1185,7 +967,7 @@ Agent: Let me talk to him.
 Patient: Hello? I'm fine, like an old car.
 Agent: Are ankles swollen, breathless?
 Patient: Julia exaggerates. (checks shin) A small dent. I stop once on stairs. Lying flat is uncomfortable; I wake with chest tightness and go to the armchair.
-Agent: Not "just age"; fluid may be building, medication can be adjusted. May the nurse call today?
+Agent: Not \"just age\"; fluid may be building, medication can be adjusted. May the nurse call today?
 Patient: Not going back to hospital. Fine, she can call.
 Agent: Often just a dose change. Why were pills missed Wednesday?
 Patient: Fell asleep watching whales. The yellow water pill bothers me; taken in the evening, I'm up three times at night. Humiliating.
@@ -1218,19 +1000,21 @@ Caregiver: He admitted the night symptoms.
 Agent: Send the weight sheet photo today; the nurse will call within the hour. Talk next Friday.
 Caregiver: Thanks, bye!
 """
+text_words = 555
+text_tokens = 884
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p03"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p03"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 200
 text = """
 Agent: Marta, Home Care Support Program, Friday check-in for Edward Nowak. Julia, his daughter, answers.
 Caregiver: Ankle swelling is back (Tuesday socks left marks, trouble with shoes), breathless on bathroom stairs. Weight 83.4 kg Monday, 85.1 kg today. Slept badly Wednesday and Thursday, uses two pillows, found in armchair 3 a.m. Skipped Wednesday evening pills. No falls since two weeks ago, mild dizziness standing, no chest pain. Eats well, hides pickles.
 Agent: 1.7 kg gain in four days; flagging to nurse today.
 Patient: Downplays symptoms. Shin dent small. Stops once on stairs. Wakes with chest tightness, sits in armchair. Refuses hospital.
-Agent: Not "just age"; nurse will call today, likely dose change, stay home.
+Agent: Not \"just age\"; nurse will call today, likely dose change, stay home.
 Patient: Skipped diuretic because evening dose means bathroom three times nightly; hospital said evening.
 Agent: Nurse to ask doctor about morning dosing.
 Patient: Physio one and a half sessions with Kuba, cane; almost slipped Sunday, grabbed towel rail. Grab bars and mat not installed; Julia's husband delayed.
@@ -1242,3 +1026,5 @@ Caregiver: Can attend surgery, needs transport for echo.
 Agent: Quiet driver, arm to entrance. Patient feels like a burden; grandson teaches chess Sundays; wants card-playing volunteer. Alert: weight rising over 1 kg overnight or worse breathlessness, call.
 Caregiver: Will send weight sheet photo.
 """
+text_words = 253
+text_tokens = 421

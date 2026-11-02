@@ -11,11 +11,11 @@ Dialogue to Shorten:
 """
 
 [[results]]
-type         = "Compressed Dialogue"
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+type = "Compressed Dialogue"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -23,7 +23,7 @@ Caregiver: Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I pi
 Agent: Hi Julia, good to hear from you. I'm calling for our Friday check-in. How's he been doing this week?
 Caregiver: Honestly? Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it.
 Agent: Please, go ahead. That's really helpful.
-Caregiver: So, the swelling in his ankles is back. Not terrible, but on Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's been getting out of breath on the stairs to the bathroom. He says it's "just age."
+Caregiver: So, the swelling in his ankles is back. Not terrible, but on Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's been getting out of breath on the stairs to the bathroom. He says it's \"just age.\"
 Agent: Okay. Has he been weighing himself every morning like we discussed?
 Caregiver: Most days. Monday he was 83.4 kilos, and this morning he was 85.1. I wrote it down on the sheet on the fridge.
 Agent: That's a gain of 1.7 kilos in four days. I'm going to flag that for the nurse today. Anything else?
@@ -45,7 +45,7 @@ Agent: Okay, thank you for checking, that helps me. And the breathing? When you 
 Patient: I stop once, in the middle. To admire the wallpaper.
 Agent: (laughs) A very patient wallpaper admirer. How about at night, are you comfortable lying flat?
 Patient: Not really. I put another pillow under my head. It's better. I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it. Then I go to the armchair and it passes.
-Agent: That's something I'd like the nurse to hear about, Mr. Nowak. It isn't "just age." It could mean fluid is building up again, and we can adjust your medication to help. Would it be okay if I asked her to call you today?
+Agent: That's something I'd like the nurse to hear about, Mr. Nowak. It isn't \"just age.\" It could mean fluid is building up again, and we can adjust your medication to help. Would it be okay if I asked her to call you today?
 Patient: Do I have to go to hospital? Because I'm not going back there. The food was a crime.
 Agent: I can't promise anything yet, it depends on what the nurse and the doctor decide. But often it's just a dose change, and you stay home. That's exactly why it's good we caught it now and not next week.
 Patient: Fine. Fine. She can call.
@@ -86,14 +86,14 @@ Patient: Cold gel. I remember. Last time they didn't warm it up.
 Agent: I'll mention that to them. Next, the cardiology consultation with Dr. Wiśniewska, two days after that, on Friday. She'll review the echo and probably adjust your medication.
 Patient: I like her. She doesn't talk to me like I'm a child.
 Agent: Good. Then the cataract surgery. The date is still the 24th of next month, left eye first. Before that, you need a pre-operative check-up with the eye clinic, and they'll want a note from your cardiologist that your heart is stable enough for the procedure.
-Patient: And if the heart isn't "stable"?
+Patient: And if the heart isn't \"stable\"?
 Agent: Then they might postpone it a bit, until your fluid is under control. That's another reason to take the water pill properly. It's not just about the swelling. It's also about getting your eye done on time.
-Patient: Hm. That's a better argument than "because I said so."
+Patient: Hm. That's a better argument than \"because I said so.\"
 Agent: (laughs) I'll use it more often. One more thing: since it's a day procedure, you'll need someone with you. Julia, can she take that day off?
 Caregiver: I already asked my boss, it's fine. But I could use help with transport for the echo. I work that morning and can't leave.
 Agent: That we can organize. We have a transport service for medical visits. Mr. Nowak, would you be comfortable going with a driver, and would you need someone to walk you in?
 Patient: A driver is fine. But please not the one who talks about politics the whole way. Last time I wanted to jump out at the traffic lights.
-Agent: (laughs) I'll request a quiet one. I'll write "prefers quiet driver, needs arm to the entrance."
+Agent: (laughs) I'll request a quiet one. I'll write \"prefers quiet driver, needs arm to the entrance.\"
 Patient: Excellent. You should be a minister.
 Agent: Last topic before I let you go. Mr. Nowak, how have you been in yourself, your mood? You've had a lot of changes lately, the fall, being home more, less independence.
 Patient: (pause) It's... hard sometimes. I used to fix everything. Now I sit and watch my daughter fix everything. I don't like being a burden.
@@ -115,12 +115,14 @@ Caregiver: Sure. And thanks, Marta. Really.
 Agent: Of course. Take care, Julia. Talk next Friday, or sooner if anything changes.
 Caregiver: Will do. Bye!
 """
+text_words = 2065
+text_tokens = 3007
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -267,12 +269,14 @@ Agent: Of course. Take care, Julia. Talk next Friday!
 
 Caregiver: Bye!
 """
+text_words = 1391
+text_tokens = 1891
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -399,12 +403,14 @@ Agent: Take care, Julia. Talk next Friday.
 
 Caregiver: Bye!
 """
+text_words = 1134
+text_tokens = 1537
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program for Mr. Nowak. Am I speaking with Edward?
@@ -443,12 +449,14 @@ Agent: He did, and we can fix the water pill timing. Could you send me the weigh
 Caregiver: Sure. Thanks, Marta.
 Agent: Of course. Take care, Julia. Talk next Friday.
 """
+text_words = 714
+text_tokens = 973
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 400
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -507,12 +515,14 @@ Caregiver: Thanks Marta. I will send the weight sheet photo shortly.
 
 Agent: Talk next Friday!
 """
+text_words = 471
+text_tokens = 669
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 200
 text = """
 Marta from the Home Care Support Program calls Edward Nowak for a weekly check-in. His daughter, Julia, answers first and raises several health concerns. Edward has gained 1.7 kg in four days, weighing 85.1 kg. He experiences swollen ankles, difficulty wearing shoes, and shortness of breath when climbing stairs. Additionally, he wakes up at night feeling chest tightness, sleeps with two pillows, and sometimes sits in an armchair to breathe easier. Julia also notes he skipped his evening medication on Wednesday and has eaten high-sodium food, like hidden pickles.
@@ -521,12 +531,14 @@ When Edward joins the call, he acknowledges the swelling and night tightness. He
 
 They review his schedule, including an upcoming echocardiogram, a cardiology consultation, and cataract surgery. Marta offers to arrange quiet transport for his medical visit and to organize safety bar installation in his bathroom. Edward agrees to the nurse calling him today regarding his fluid retention and weight gain.
 """
+text_words = 195
+text_tokens = 253
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -701,12 +713,14 @@ Agent: You're welcome, Julia. We'll follow up next Friday, or sooner if anything
 
 Caregiver: I will. Goodbye.
 """
+text_words = 1751
+text_tokens = 2471
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -793,7 +807,7 @@ Patient: I like her. She doesn't talk to me like I'm a child.
 
 Agent: Your cataract surgery is scheduled for the 24th of next month, starting with your left eye. Before surgery, you'll need a pre-operative eye-clinic assessment and confirmation from your cardiologist that your heart is stable enough. If the fluid problem isn't controlled, the procedure might be postponed. Taking your medication correctly will help with that, too.
 
-Patient: That's a better argument than "because I said so."
+Patient: That's a better argument than \"because I said so.\"
 
 Agent: Since it's a day procedure, you'll need someone with you. Julia, can you take that day off?
 
@@ -839,12 +853,14 @@ Agent: Of course. Take care, Julia. We'll talk next Friday, or sooner if anythin
 
 Caregiver: Will do. Bye!
 """
+text_words = 1382
+text_tokens = 1953
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -955,12 +971,14 @@ Agent: You're welcome, Julia. Take care, and we'll speak next Friday, or sooner 
 
 Caregiver: Will do. Goodbye.
 """
+text_words = 1218
+text_tokens = 1738
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1053,12 +1071,14 @@ Agent: Thank you, Julia. Take care, and we'll speak next Friday or sooner if any
 
 Caregiver: Goodbye.
 """
+text_words = 861
+text_tokens = 1247
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 400
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Is this Edward?
@@ -1103,12 +1123,14 @@ Caregiver: I'll send the weight sheet today. Thank you, Marta.
 
 Agent: You're welcome. The nurse will call within the hour. Contact us sooner if anything changes. Goodbye.
 """
+text_words = 530
+text_tokens = 766
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 200
 text = """
 Agent: Marta calls for Friday check-in. Julia reports recurrent ankle swelling, breathlessness on stairs, weight gain from 83.4 to 85.1 kg in four days, poor sleep, two pillows, and a missed evening medication dose. No chest pain or recent falls, but occasional dizziness on standing.
@@ -1123,12 +1145,14 @@ Appointments: echocardiogram next Wednesday at 10:30, requiring transport with a
 
 Edward feels burdensome but enjoys Sunday chess with his grandson and welcomes a volunteer for cards. Marta will arrange a nurse call within an hour and review his weight sheet. If weight rises over 1 kg overnight or breathing worsens, Edward should call the program urgently or emergency services for severe breathing difficulty.
 """
+text_words = 254
+text_tokens = 353
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1136,7 +1160,7 @@ Caregiver: Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I pi
 Agent: Hi Julia. I'm calling for our Friday check-in. How's he been this week?
 Caregiver: Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it.
 Agent: Please, go ahead.
-Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's out of breath on the stairs to the bathroom. He says it's "just age."
+Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's out of breath on the stairs to the bathroom. He says it's \"just age.\"
 Agent: Has he been weighing himself every morning?
 Caregiver: Most days. Monday he was 83.4 kilos, and this morning he was 85.1. I wrote it on the sheet on the fridge.
 Agent: That's a gain of 1.7 kilos in four days. I'm going to flag that for the nurse today. Anything else?
@@ -1158,7 +1182,7 @@ Agent: Thank you for checking. And the breathing? On the stairs, do you have to 
 Patient: I stop once, in the middle. To admire the wallpaper.
 Agent: (laughs) How about at night, are you comfortable lying flat?
 Patient: Not really. I put another pillow under my head. I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it. Then I go to the armchair and it passes.
-Agent: I'd like the nurse to hear about that. It isn't "just age." It could mean fluid is building up again, and we can adjust your medication. Would it be okay if I asked her to call you today?
+Agent: I'd like the nurse to hear about that. It isn't \"just age.\" It could mean fluid is building up again, and we can adjust your medication. Would it be okay if I asked her to call you today?
 Patient: Do I have to go to hospital? I'm not going back there. The food was a crime.
 Agent: I can't promise anything yet, it depends on the nurse and the doctor. But often it's just a dose change, and you stay home. That's why it's good we caught it now.
 Patient: Fine. She can call.
@@ -1199,14 +1223,14 @@ Patient: Cold gel. I remember. Last time they didn't warm it up.
 Agent: I'll mention that. Next, the cardiology consultation with Dr. Wiśniewska on Friday. She'll review the echo and probably adjust your medication.
 Patient: I like her. She doesn't talk to me like I'm a child.
 Agent: Good. Then the cataract surgery, still on the 24th of next month, left eye first. Before that you need a pre-operative check-up at the eye clinic, and they'll want a note from your cardiologist that your heart is stable enough.
-Patient: And if the heart isn't "stable"?
+Patient: And if the heart isn't \"stable\"?
 Agent: They might postpone it until your fluid is under control. That's another reason to take the water pill properly. It's also about getting your eye done on time.
-Patient: Hm. That's a better argument than "because I said so."
+Patient: Hm. That's a better argument than \"because I said so.\"
 Agent: (laughs) I'll use it more often. Since it's a day procedure, you'll need someone with you. Julia, can she take that day off?
 Caregiver: I already asked my boss, it's fine. But I could use help with transport for the echo. I work that morning and can't leave.
 Agent: We have a transport service for medical visits. Mr. Nowak, would you be comfortable going with a driver, and would you need someone to walk you in?
 Patient: A driver is fine. But please not the one who talks about politics the whole way. Last time I wanted to jump out at the traffic lights.
-Agent: (laughs) I'll request a quiet one. I'll write "prefers quiet driver, needs arm to the entrance."
+Agent: (laughs) I'll request a quiet one. I'll write \"prefers quiet driver, needs arm to the entrance.\"
 Patient: Excellent. You should be a minister.
 Agent: Last topic. How have you been in yourself, your mood? You've had a lot of changes lately, the fall, being home more, less independence.
 Patient: (pause) It's hard sometimes. I used to fix everything. Now I sit and watch my daughter fix everything. I don't like being a burden.
@@ -1228,18 +1252,20 @@ Caregiver: Sure. And thanks, Marta. Really.
 Agent: Of course. Take care, Julia. Talk next Friday, or sooner if anything changes.
 Caregiver: Will do. Bye!
 """
+text_words = 1833
+text_tokens = 2684
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 Caregiver: Hi Marta, it's Julia, his daughter. Dad's in the other room. I picked up because he never hears the phone.
 Agent: Hi Julia. I'm calling for our Friday check-in. How's he been this week?
-Caregiver: Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it. The swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. He's also getting out of breath on the stairs to the bathroom. He says it's "just age."
+Caregiver: Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it. The swelling in his ankles is back. On Tuesday his socks left deep marks and he had trouble getting his shoes on. He's also getting out of breath on the stairs to the bathroom. He says it's \"just age.\"
 Agent: Has he been weighing himself every morning?
 Caregiver: Most days. Monday he was 83.4 kilos, and this morning 85.1. It's on the sheet on the fridge.
 Agent: That's 1.7 kilos in four days. I'm going to flag that for the nurse today. Anything else?
@@ -1261,7 +1287,7 @@ Agent: Thank you, that helps. And on the stairs, do you have to stop?
 Patient: Once, in the middle. To admire the wallpaper.
 Agent: (laughs) And at night, are you comfortable lying flat?
 Patient: Not really. I use another pillow. I fall asleep, then wake up with my chest tight, like somebody is sitting on it. Then I go to the armchair and it passes.
-Agent: I'd like the nurse to hear that. It isn't "just age." Fluid may be building up again, and we can adjust your medication. May I ask her to call you today?
+Agent: I'd like the nurse to hear that. It isn't \"just age.\" Fluid may be building up again, and we can adjust your medication. May I ask her to call you today?
 Patient: Do I have to go to hospital? I'm not going back. The food was a crime.
 Agent: I can't promise, it depends on the nurse and doctor. But often it's just a dose change and you stay home. That's why it's good we caught it now.
 Patient: Fine. She can call.
@@ -1300,12 +1326,12 @@ Patient: I like her. She doesn't talk to me like I'm a child.
 Agent: Good. The cataract surgery is still the 24th of next month, left eye first. Before that you need a pre-operative check-up, and they'll want a note from your cardiologist that your heart is stable enough.
 Patient: And if it isn't?
 Agent: They might postpone until your fluid is under control. That's another reason to take the water pill properly.
-Patient: That's a better argument than "because I said so."
+Patient: That's a better argument than \"because I said so.\"
 Agent: (laughs) Since it's a day procedure, you'll need someone with you. Julia, can you take that day off?
 Caregiver: I already asked my boss, it's fine. But I need help with transport for the echo. I work that morning.
 Agent: We have a transport service for medical visits. Mr. Nowak, would a driver be fine, and would you need someone to walk you in?
 Patient: A driver is fine. But not the one who talks politics the whole way. I wanted to jump out at the traffic lights.
-Agent: (laughs) I'll write "prefers quiet driver, needs arm to the entrance."
+Agent: (laughs) I'll write \"prefers quiet driver, needs arm to the entrance.\"
 Patient: Excellent. You should be a minister.
 Agent: Last topic. How have you been in yourself, your mood? You've had a lot of changes lately.
 Patient: (pause) It's hard sometimes. I used to fix everything. Now I watch my daughter fix everything. I don't like being a burden.
@@ -1327,18 +1353,20 @@ Caregiver: Sure. Thanks, Marta. Really.
 Agent: Of course. Take care, Julia. Talk next Friday, or sooner if anything changes.
 Caregiver: Will do. Bye!
 """
+text_words = 1595
+text_tokens = 2363
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 Caregiver: Hi Marta, it's Julia, his daughter. Dad's in the other room. Before I hand him over, I want to tell you a few things, because he'll downplay all of it.
 Agent: Please, go ahead.
-Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks and he struggled to get his shoes on. He's getting out of breath on the stairs. He says it's "just age."
+Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks and he struggled to get his shoes on. He's getting out of breath on the stairs. He says it's \"just age.\"
 Agent: Has he been weighing himself every morning?
 Caregiver: Most days. Monday he was 83.4 kilos, and this morning 85.1. It's on the sheet on the fridge.
 Agent: That's 1.7 kilos in four days. I'll flag that for the nurse today. Anything else?
@@ -1358,7 +1386,7 @@ Agent: Thank you, that helps. When you climb the stairs, do you have to stop?
 Patient: Once, in the middle. To admire the wallpaper.
 Agent: And at night, are you comfortable lying flat?
 Patient: Not really. I use another pillow. I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it. Then I go to the armchair and it passes.
-Agent: I'd like the nurse to hear that. It isn't "just age." Fluid could be building up again, and we can adjust your medication. May I ask her to call you today?
+Agent: I'd like the nurse to hear that. It isn't \"just age.\" Fluid could be building up again, and we can adjust your medication. May I ask her to call you today?
 Patient: Do I have to go to hospital? I'm not going back. The food was a crime.
 Agent: I can't promise anything, but often it's just a dose change and you stay home. That's why it's good we caught it now.
 Patient: Fine. She can call.
@@ -1392,12 +1420,12 @@ Patient: I like her. She doesn't talk to me like I'm a child.
 Agent: The cataract surgery is still the 24th of next month, left eye first. Before that you need a pre-operative check-up and a note from your cardiologist that your heart is stable.
 Patient: And if it isn't?
 Agent: They might postpone until your fluid is under control. That's another reason to take the water pill properly.
-Patient: That's a better argument than "because I said so."
+Patient: That's a better argument than \"because I said so.\"
 Agent: Julia, can you take that surgery day off?
 Caregiver: I already asked my boss. But I need help with transport for the echo, since I work that morning.
 Agent: We have a transport service for medical visits. Mr. Nowak, is a driver fine?
 Patient: Yes, but not the one who talks politics the whole way. I wanted to jump out at the traffic lights.
-Agent: I'll write "prefers quiet driver, needs arm to the entrance."
+Agent: I'll write \"prefers quiet driver, needs arm to the entrance.\"
 Patient: You should be a minister.
 Agent: Last topic. How is your mood, with all the changes lately?
 Patient: It's hard sometimes. I used to fix everything. Now I watch my daughter fix everything. I don't like being a burden.
@@ -1417,18 +1445,20 @@ Caregiver: Sure. Thanks, Marta. Really.
 Agent: Of course. Talk next Friday, or sooner if anything changes.
 Caregiver: Will do. Bye!
 """
+text_words = 1346
+text_tokens = 1979
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 Caregiver: Hi Marta, it's Julia, his daughter. Dad's in the other room. Before I hand him over, I should tell you a few things, because he'll downplay all of it.
 Agent: Please, go ahead.
-Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks. He's getting out of breath on the stairs, and says it's "just age."
+Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks. He's getting out of breath on the stairs, and says it's \"just age.\"
 Agent: Has he been weighing himself every morning?
 Caregiver: Most days. Monday he was 83.4 kilos, and this morning 85.1.
 Agent: That's a gain of 1.7 kilos in four days. I'll flag it for the nurse today.
@@ -1472,7 +1502,7 @@ Patient: Left eye, a bit foggy. But that's the cataract.
 Agent: Let's go over your appointments. The echocardiogram is next Wednesday at 10:30. It's painless and takes about forty minutes.
 Patient: Cold gel. Last time they didn't warm it up.
 Agent: I'll mention it. Then the cardiology consultation with Dr. Wiśniewska on Friday, and the cataract surgery on the 24th of next month. Before that, the eye clinic needs a note from your cardiologist that your heart is stable. If your fluid isn't controlled, the surgery might be postponed.
-Patient: That's a better argument than "because I said so."
+Patient: That's a better argument than \"because I said so.\"
 Agent: Julia, can you take the surgery day off?
 Caregiver: Already arranged. But I need help with transport for the echo.
 Agent: We have a transport service. Mr. Nowak, is a driver fine?
@@ -1492,18 +1522,20 @@ Agent: He did. Could you send me the weight sheet photo today? I'll have the nur
 Caregiver: Sure. Thanks, Marta.
 Agent: Take care, Julia. Talk next Friday, or sooner if anything changes.
 """
+text_words = 1089
+text_tokens = 1611
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 400
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 Caregiver: Hi Marta, it's Julia, his daughter. Before I hand him over, I should tell you a few things, because he'll downplay all of it.
 Agent: Please, go ahead.
-Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks. He's out of breath on the stairs and says it's "just age." His weight was 83.4 kilos Monday and 85.1 this morning.
+Caregiver: The swelling in his ankles is back. On Tuesday his socks left deep marks. He's out of breath on the stairs and says it's \"just age.\" His weight was 83.4 kilos Monday and 85.1 this morning.
 Agent: That's 1.7 kilos in four days. I'll flag it for the nurse today. Anything else?
 Caregiver: He sleeps badly, uses two pillows, and I found him in the armchair at 3 a.m. He skipped his evening pills Wednesday. No falls since two weeks ago, no chest pain, but he's eating salty things. I found pickles behind the bread box.
 Agent: The classic. Let me talk to him.
@@ -1533,7 +1565,7 @@ Patient: Every morning. Julia says today was 9.1, and Thursday 10.2 after a thir
 Agent: Let's go over your appointments. Echocardiogram next Wednesday at 10:30, about forty minutes. Cardiology with Dr. Wiśniewska on Friday. Cataract surgery on the 24th of next month, after a pre-operative check and a note that your heart is stable.
 Patient: And if it isn't stable?
 Agent: They might postpone it. That's another reason to take the water pill properly.
-Patient: That's a better argument than "because I said so."
+Patient: That's a better argument than \"because I said so.\"
 Agent: Julia, can you take the surgery day off?
 Caregiver: Yes, but I need transport for the echo.
 Agent: We'll arrange a driver. Mr. Nowak?
@@ -1549,12 +1581,14 @@ Patient: Okay. You're like my late wife.
 Agent: Julia, could you send me the weight sheet photo? The nurse will call within the hour.
 Caregiver: Sure. Thanks, Marta.
 """
+text_words = 777
+text_tokens = 1171
 
 [[results]]
-date         = 2026-11-02
-prompt_id    = "p01"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-11-02
+prompt_id = "p01"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1574,7 +1608,7 @@ Patient: Write it down, Julia!
 Agent: The bathroom needs grab bars and a non-slip mat. If they're not installed by Monday, we can send someone.
 Patient: Tell Julia to tell her husband it's urgent, gently.
 Agent: Next Wednesday is your echocardiogram, then cardiology on Friday. Your cataract surgery is on the 24th, but your heart must be stable first.
-Patient: That's a better argument than "because I said so."
+Patient: That's a better argument than \"because I said so.\"
 Agent: Julia, can you handle transport?
 Caregiver: I can't leave work that morning.
 Agent: We'll send a quiet driver. How is your mood, Mr. Nowak?
@@ -1583,3 +1617,5 @@ Agent: Would a card-playing volunteer help?
 Patient: Cards, yes. And the pickles? Two a week?
 Agent: We'll ask the nurse. Call right away if your weight jumps or breathing worsens.
 """
+text_words = 349
+text_tokens = 538

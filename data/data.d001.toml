@@ -1,170 +1,420 @@
 [[data]]
-type       = "Dialogue"
-data_id    = "d001"
-date       = 2026-10-31
-source     = "LLM"
+type = "Dialogue"
+data_id = "d001"
+date = 2026-10-31
+source = "LLM"
 source_llm = "Sonnet 5.5 High"
-source_system_prompt = """
-"""
+source_system_prompt = ""
 source_user_prompt = """
-	Generate synthetic dialogue between Agent, Patient and Caregiver.
-	Agent calls, Caregiver takes a phone, Agent wants to know how Patient is feeling. Caregiver describes some issues. Then pass the phone to Patient.
-	From now, Agent & Patient talk about how he feels, what needs to be done/organized, how last week went, and about future medical procedures.
-	You can invent facts, make sure conversation is natural, long and has a lot of variability.
+Generate synthetic dialogue between Agent, Patient and Caregiver.
+Agent calls, Caregiver takes a phone, Agent wants to know how Patient is feeling. Caregiver describes some issues. Then pass the phone to Patient.
+From now, Agent & Patient talk about how he feels, what needs to be done/organized, how last week went, and about future medical procedures.
+You can invent facts, make sure conversation is natural, long and has a lot of variability.
 """
 speakers = [
-	"Agent | Marta",
-	"Caregiver | Julia | Edward's daughter",
-	"Patient | Edward Nowak | Mr. Nowak | Edward | Julia's dad"
+    "Agent | Marta",
+    "Caregiver | Julia | Edward's daughter",
+    "Patient | Edward Nowak | Mr. Nowak | Edward | Julia's dad",
 ]
 text = """
-	Agent:  Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
-	Caregiver:  Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I picked up because he never hears the phone.
-	Agent:  Hi Julia, good to hear from you. I'm calling for our Friday check-in. How's he been doing this week?
-	Caregiver:  Honestly? Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it.
-	Agent:  Please, go ahead. That's really helpful.
-	Caregiver:  So, the swelling in his ankles is back. Not terrible, but on Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's been getting out of breath on the stairs to the bathroom. He says it's "just age."
-	Agent:  Okay. Has he been weighing himself every morning like we discussed?
-	Caregiver:  Most days. Monday he was 83.4 kilos, and this morning he was 85.1. I wrote it down on the sheet on the fridge.
-	Agent:  That's a gain of 1.7 kilos in four days. I'm going to flag that for the nurse today. Anything else?
-	Caregiver:  He didn't sleep well Wednesday and Thursday. He's using two pillows now, and I found him in the armchair at 3 a.m. yesterday. And he skipped his evening pills on Wednesday. He said he forgot, but I think he was just tired of them.
-	Agent:  That's important, thank you for telling me. Did he have any dizziness, chest pain, or another fall?
-	Caregiver:  No falls since the one two weeks ago. A bit dizzy when he stands up fast, but no chest pain. His appetite is okay. He's actually eating well, a bit too much salty stuff when I'm not looking. I found pickles hidden behind the bread box.
-	Agent:  (laughs) The classic. Okay, Julia, I'll talk to him now, and then maybe I can ask you a couple of logistics questions at the end.
-	Caregiver:  Sure. Hang on. Dad! It's the lady from the program! Come, sit down, take the phone. No, the other way up. There.
-	Patient:  Hello? Hello, who is it?
-	Agent:  Hello, Mr. Nowak, it's Marta from the Home Care Support Program. How are you today?
-	Patient:  Ah, Marta! The nice one. I'm fine, fine. Can't complain. Well, I can, but nobody listens.
-	Agent:  (laughs) I'm listening. Tell me how you're really feeling.
-	Patient:  Really? Like an old car. Starts slow in the morning, rattles a bit, but it gets me there.
-	Agent:  Julia mentioned your ankles are swollen again and you've been short of breath on the stairs. Is that how it feels to you?
-	Patient:  Julia exaggerates. A little swelling, so what. The shoes are tight because I bought them in a hurry, not because of the swelling.
-	Agent:  Hmm. Julia said the socks left marks on Tuesday. When you press your finger on your shin, does it leave a dent?
-	Patient:  ...Let me check. (pause) Well. A small one. Not big.
-	Agent:  Okay, thank you for checking, that helps me. And the breathing? When you climb the stairs, do you have to stop?
-	Patient:  I stop once, in the middle. To admire the wallpaper.
-	Agent:  (laughs) A very patient wallpaper admirer. How about at night, are you comfortable lying flat?
-	Patient:  Not really. I put another pillow under my head. It's better. I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it. Then I go to the armchair and it passes.
-	Agent:  That's something I'd like the nurse to hear about, Mr. Nowak. It isn't "just age." It could mean fluid is building up again, and we can adjust your medication to help. Would it be okay if I asked her to call you today?
-	Patient:  Do I have to go to hospital? Because I'm not going back there. The food was a crime.
-	Agent:  I can't promise anything yet, it depends on what the nurse and the doctor decide. But often it's just a dose change, and you stay home. That's exactly why it's good we caught it now and not next week.
-	Patient:  Fine. Fine. She can call.
-	Agent:  Thank you. Now, Julia said you missed your evening pills on Wednesday. What happened there?
-	Patient:  I forgot. I fell asleep in front of the television. There was a documentary about whales.
-	Agent:  Whales are a strong competitor. Do you remember which pills those were?
-	Patient:  The little white ones and the... the yellow one. The water one.
-	Agent:  The diuretic, yes, the water pill. That one especially matters with the swelling. Is it the taking-them-every-day part that bothers you, or something else, like side effects?
-	Patient:  (pause) The water one. I'm in the bathroom all the time. If I take it in the evening, I'm up three times at night. It's humiliating, at my age, shuffling around in the dark.
-	Agent:  Thank you for telling me, that's a real issue, and it's fixable. Usually that pill is best taken in the morning. Who told you to take it in the evening?
-	Patient:  The hospital. Or maybe I just got used to it.
-	Agent:  Let's ask the nurse to confirm with your doctor, and I'm fairly sure we can move it to the morning. That might help your nights, and your fall risk too. Would you like that?
-	Patient:  I'd like that very much. Write it down. Julia, write it down!
-	Caregiver:  (from further away) I'm writing, Dad!
-	Agent:  Good. Let's talk about last week more broadly. How did the physiotherapy go? You had two sessions, I think.
-	Patient:  One and a half. Monday was good. The young man, Kuba, he made me walk up and down with a cane. I'm not fond of the cane. It makes me look like a professor.
-	Agent:  You'd make a distinguished professor. And the half?
-	Patient:  Thursday I was too tired. I stopped after twenty minutes and he let me go. He said we'll do more next week.
-	Agent:  That's reasonable. Did your balance feel better after Monday?
-	Patient:  A little. I don't wobble so much in the kitchen. But the bathroom floor is slippery. I almost slid on Sunday.
-	Agent:  Almost? You didn't fall?
-	Patient:  I grabbed the towel rail.
-	Agent:  Okay. That tells me the bathroom needs attention. Have the grab bars and the non-slip mat been installed yet?
-	Patient:  Julia's husband said he'd do it. He has a drill. He's been saying it for three weeks.
-	Agent:  (laughs) I'll let Julia know it's urgent, and if it doesn't happen by Monday, our program can send someone. We have a small home-safety service.
-	Patient:  Don't tell him that. He'll be offended. Tell Julia to tell him I said it's urgent.
-	Agent:  Diplomatic. I'll do that. Now, blood sugar. Are you still measuring in the mornings?
-	Patient:  Every morning. Julia sees to it. It was 7.9 on Monday, 8.6 on Wednesday... what was today? Julia?
-	Caregiver:  (from further away) 9.1, Dad. And Thursday was 10.2 after the visit with Uncle Staszek, the one with the cake.
-	Patient:  It was a small cake.
-	Caregiver:  It was a third of a cake, Dad.
-	Agent:  (laughs) Okay, that explains Thursday. I'll note those readings. Mr. Nowak, are you feeling any extra thirst, blurry vision, anything unusual?
-	Patient:  The vision, actually. Left eye. Everything is a bit foggy, like looking through a dirty window. But that's the cataract, they told me.
-	Agent:  Right, and that connects to the future appointments. Let's go through what's coming up. Do you have your calendar?
-	Patient:  Julia has the calendar. I have the memory of an elephant, but only for things from 1985.
-	Agent:  Then let me read it to you and Julia can correct me. First, the echocardiogram, the heart ultrasound, is scheduled for next Wednesday at 10:30. It's the one that checks how well your heart is pumping. It's painless, you just lie there while they move a probe over your chest. It takes about forty minutes.
-	Patient:  Cold gel. I remember. Last time they didn't warm it up.
-	Agent:  I'll mention that to them. Next, the cardiology consultation with Dr. Wiśniewska, two days after that, on Friday. She'll review the echo and probably adjust your medication.
-	Patient:  I like her. She doesn't talk to me like I'm a child.
-	Agent:  Good. Then the cataract surgery. The date is still the 24th of next month, left eye first. Before that, you need a pre-operative check-up with the eye clinic, and they'll want a note from your cardiologist that your heart is stable enough for the procedure.
-	Patient:  And if the heart isn't "stable"?
-	Agent:  Then they might postpone it a bit, until your fluid is under control. That's another reason to take the water pill properly. It's not just about the swelling. It's also about getting your eye done on time.
-	Patient:  Hm. That's a better argument than "because I said so."
-	Agent:  (laughs) I'll use it more often. One more thing: since it's a day procedure, you'll need someone with you. Julia, can she take that day off?
-	Caregiver:  I already asked my boss, it's fine. But I could use help with transport for the echo. I work that morning and can't leave.
-	Agent:  That we can organize. We have a transport service for medical visits. Mr. Nowak, would you be comfortable going with a driver, and would you need someone to walk you in?
-	Patient:  A driver is fine. But please not the one who talks about politics the whole way. Last time I wanted to jump out at the traffic lights.
-	Agent:  (laughs) I'll request a quiet one. I'll write "prefers quiet driver, needs arm to the entrance."
-	Patient:  Excellent. You should be a minister.
-	Agent:  Last topic before I let you go. Mr. Nowak, how have you been in yourself, your mood? You've had a lot of changes lately, the fall, being home more, less independence.
-	Patient:  (pause) It's... hard sometimes. I used to fix everything. Now I sit and watch my daughter fix everything. I don't like being a burden.
-	Agent:  You're not a burden, though I understand why it feels that way. Thank you for saying it. Is there anything that makes the days feel better?
-	Patient:  My grandson comes on Sundays. He's teaching me chess on the tablet. He beats me and laughs. It's the best part of the week.
-	Agent:  That sounds wonderful. And would you like me to ask whether the program's volunteer could visit once a week, just to chat or play cards? Some people find it nice, others don't. No pressure.
-	Patient:  Cards, yes. Not chess. I have enough humiliation from the child.
-	Agent:  Cards it is. Okay, let me summarize so we're all on the same page. Today, the nurse calls you about the weight gain, the swelling, and the night breathlessness, and asks the doctor about moving the water pill to the morning. This week, the bathroom grab bars get installed. Next Wednesday, the echo with a quiet driver. Friday, the cardiology visit. Physiotherapy continues, and you'll try to do the full session. And I'll look into a card-playing volunteer. Did I miss anything?
-	Patient:  The pickles.
-	Agent:  (laughs) Ah. The pickles. What about them?
-	Patient:  Julia found them. I'd like to negotiate. Two a week.
-	Agent:  Let's discuss that with the nurse, maybe a small portion once in a while, but not behind the bread box. And if your weight goes up more than a kilo overnight, or the breathlessness gets worse, call the number on the card right away, or emergency services if you can't breathe. Okay?
-	Patient:  Okay, okay. You're like my late wife.
-	Agent:  I'll take that as a compliment. Could you put Julia back on for a minute?
-	Patient:  Julia! She wants you. Take the phone. I'm going to find my glasses.
-	Caregiver:  I'm here. That went better than usual. He actually admitted the night thing.
-	Agent:  He did, and he told me the water pill wakes him up, which explains a lot. Could you send me the weight sheet photo later today, and I'll have the nurse call within the hour?
-	Caregiver:  Sure. And thanks, Marta. Really.
-	Agent:  Of course. Take care, Julia. Talk next Friday, or sooner if anything changes.
-	Caregiver:  Will do. Bye!
+Agent:  Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
+Caregiver:  Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I picked up because he never hears the phone.
+Agent:  Hi Julia, good to hear from you. I'm calling for our Friday check-in. How's he been doing this week?
+Caregiver:  Honestly? Mixed. Before I hand him over, I want to tell you a few things, because he'll downplay all of it.
+Agent:  Please, go ahead. That's really helpful.
+Caregiver:  So, the swelling in his ankles is back. Not terrible, but on Tuesday his socks left deep marks and he had trouble getting his shoes on. And he's been getting out of breath on the stairs to the bathroom. He says it's \"just age.\"
+Agent:  Okay. Has he been weighing himself every morning like we discussed?
+Caregiver:  Most days. Monday he was 83.4 kilos, and this morning he was 85.1. I wrote it down on the sheet on the fridge.
+Agent:  That's a gain of 1.7 kilos in four days. I'm going to flag that for the nurse today. Anything else?
+Caregiver:  He didn't sleep well Wednesday and Thursday. He's using two pillows now, and I found him in the armchair at 3 a.m. yesterday. And he skipped his evening pills on Wednesday. He said he forgot, but I think he was just tired of them.
+Agent:  That's important, thank you for telling me. Did he have any dizziness, chest pain, or another fall?
+Caregiver:  No falls since the one two weeks ago. A bit dizzy when he stands up fast, but no chest pain. His appetite is okay. He's actually eating well, a bit too much salty stuff when I'm not looking. I found pickles hidden behind the bread box.
+Agent:  (laughs) The classic. Okay, Julia, I'll talk to him now, and then maybe I can ask you a couple of logistics questions at the end.
+Caregiver:  Sure. Hang on. Dad! It's the lady from the program! Come, sit down, take the phone. No, the other way up. There.
+Patient:  Hello? Hello, who is it?
+Agent:  Hello, Mr. Nowak, it's Marta from the Home Care Support Program. How are you today?
+Patient:  Ah, Marta! The nice one. I'm fine, fine. Can't complain. Well, I can, but nobody listens.
+Agent:  (laughs) I'm listening. Tell me how you're really feeling.
+Patient:  Really? Like an old car. Starts slow in the morning, rattles a bit, but it gets me there.
+Agent:  Julia mentioned your ankles are swollen again and you've been short of breath on the stairs. Is that how it feels to you?
+Patient:  Julia exaggerates. A little swelling, so what. The shoes are tight because I bought them in a hurry, not because of the swelling.
+Agent:  Hmm. Julia said the socks left marks on Tuesday. When you press your finger on your shin, does it leave a dent?
+Patient:  ...Let me check. (pause) Well. A small one. Not big.
+Agent:  Okay, thank you for checking, that helps me. And the breathing? When you climb the stairs, do you have to stop?
+Patient:  I stop once, in the middle. To admire the wallpaper.
+Agent:  (laughs) A very patient wallpaper admirer. How about at night, are you comfortable lying flat?
+Patient:  Not really. I put another pillow under my head. It's better. I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it. Then I go to the armchair and it passes.
+Agent:  That's something I'd like the nurse to hear about, Mr. Nowak. It isn't \"just age.\" It could mean fluid is building up again, and we can adjust your medication to help. Would it be okay if I asked her to call you today?
+Patient:  Do I have to go to hospital? Because I'm not going back there. The food was a crime.
+Agent:  I can't promise anything yet, it depends on what the nurse and the doctor decide. But often it's just a dose change, and you stay home. That's exactly why it's good we caught it now and not next week.
+Patient:  Fine. Fine. She can call.
+Agent:  Thank you. Now, Julia said you missed your evening pills on Wednesday. What happened there?
+Patient:  I forgot. I fell asleep in front of the television. There was a documentary about whales.
+Agent:  Whales are a strong competitor. Do you remember which pills those were?
+Patient:  The little white ones and the... the yellow one. The water one.
+Agent:  The diuretic, yes, the water pill. That one especially matters with the swelling. Is it the taking-them-every-day part that bothers you, or something else, like side effects?
+Patient:  (pause) The water one. I'm in the bathroom all the time. If I take it in the evening, I'm up three times at night. It's humiliating, at my age, shuffling around in the dark.
+Agent:  Thank you for telling me, that's a real issue, and it's fixable. Usually that pill is best taken in the morning. Who told you to take it in the evening?
+Patient:  The hospital. Or maybe I just got used to it.
+Agent:  Let's ask the nurse to confirm with your doctor, and I'm fairly sure we can move it to the morning. That might help your nights, and your fall risk too. Would you like that?
+Patient:  I'd like that very much. Write it down. Julia, write it down!
+Caregiver:  (from further away) I'm writing, Dad!
+Agent:  Good. Let's talk about last week more broadly. How did the physiotherapy go? You had two sessions, I think.
+Patient:  One and a half. Monday was good. The young man, Kuba, he made me walk up and down with a cane. I'm not fond of the cane. It makes me look like a professor.
+Agent:  You'd make a distinguished professor. And the half?
+Patient:  Thursday I was too tired. I stopped after twenty minutes and he let me go. He said we'll do more next week.
+Agent:  That's reasonable. Did your balance feel better after Monday?
+Patient:  A little. I don't wobble so much in the kitchen. But the bathroom floor is slippery. I almost slid on Sunday.
+Agent:  Almost? You didn't fall?
+Patient:  I grabbed the towel rail.
+Agent:  Okay. That tells me the bathroom needs attention. Have the grab bars and the non-slip mat been installed yet?
+Patient:  Julia's husband said he'd do it. He has a drill. He's been saying it for three weeks.
+Agent:  (laughs) I'll let Julia know it's urgent, and if it doesn't happen by Monday, our program can send someone. We have a small home-safety service.
+Patient:  Don't tell him that. He'll be offended. Tell Julia to tell him I said it's urgent.
+Agent:  Diplomatic. I'll do that. Now, blood sugar. Are you still measuring in the mornings?
+Patient:  Every morning. Julia sees to it. It was 7.9 on Monday, 8.6 on Wednesday... what was today? Julia?
+Caregiver:  (from further away) 9.1, Dad. And Thursday was 10.2 after the visit with Uncle Staszek, the one with the cake.
+Patient:  It was a small cake.
+Caregiver:  It was a third of a cake, Dad.
+Agent:  (laughs) Okay, that explains Thursday. I'll note those readings. Mr. Nowak, are you feeling any extra thirst, blurry vision, anything unusual?
+Patient:  The vision, actually. Left eye. Everything is a bit foggy, like looking through a dirty window. But that's the cataract, they told me.
+Agent:  Right, and that connects to the future appointments. Let's go through what's coming up. Do you have your calendar?
+Patient:  Julia has the calendar. I have the memory of an elephant, but only for things from 1985.
+Agent:  Then let me read it to you and Julia can correct me. First, the echocardiogram, the heart ultrasound, is scheduled for next Wednesday at 10:30. It's the one that checks how well your heart is pumping. It's painless, you just lie there while they move a probe over your chest. It takes about forty minutes.
+Patient:  Cold gel. I remember. Last time they didn't warm it up.
+Agent:  I'll mention that to them. Next, the cardiology consultation with Dr. Wiśniewska, two days after that, on Friday. She'll review the echo and probably adjust your medication.
+Patient:  I like her. She doesn't talk to me like I'm a child.
+Agent:  Good. Then the cataract surgery. The date is still the 24th of next month, left eye first. Before that, you need a pre-operative check-up with the eye clinic, and they'll want a note from your cardiologist that your heart is stable enough for the procedure.
+Patient:  And if the heart isn't \"stable\"?
+Agent:  Then they might postpone it a bit, until your fluid is under control. That's another reason to take the water pill properly. It's not just about the swelling. It's also about getting your eye done on time.
+Patient:  Hm. That's a better argument than \"because I said so.\"
+Agent:  (laughs) I'll use it more often. One more thing: since it's a day procedure, you'll need someone with you. Julia, can she take that day off?
+Caregiver:  I already asked my boss, it's fine. But I could use help with transport for the echo. I work that morning and can't leave.
+Agent:  That we can organize. We have a transport service for medical visits. Mr. Nowak, would you be comfortable going with a driver, and would you need someone to walk you in?
+Patient:  A driver is fine. But please not the one who talks about politics the whole way. Last time I wanted to jump out at the traffic lights.
+Agent:  (laughs) I'll request a quiet one. I'll write \"prefers quiet driver, needs arm to the entrance.\"
+Patient:  Excellent. You should be a minister.
+Agent:  Last topic before I let you go. Mr. Nowak, how have you been in yourself, your mood? You've had a lot of changes lately, the fall, being home more, less independence.
+Patient:  (pause) It's... hard sometimes. I used to fix everything. Now I sit and watch my daughter fix everything. I don't like being a burden.
+Agent:  You're not a burden, though I understand why it feels that way. Thank you for saying it. Is there anything that makes the days feel better?
+Patient:  My grandson comes on Sundays. He's teaching me chess on the tablet. He beats me and laughs. It's the best part of the week.
+Agent:  That sounds wonderful. And would you like me to ask whether the program's volunteer could visit once a week, just to chat or play cards? Some people find it nice, others don't. No pressure.
+Patient:  Cards, yes. Not chess. I have enough humiliation from the child.
+Agent:  Cards it is. Okay, let me summarize so we're all on the same page. Today, the nurse calls you about the weight gain, the swelling, and the night breathlessness, and asks the doctor about moving the water pill to the morning. This week, the bathroom grab bars get installed. Next Wednesday, the echo with a quiet driver. Friday, the cardiology visit. Physiotherapy continues, and you'll try to do the full session. And I'll look into a card-playing volunteer. Did I miss anything?
+Patient:  The pickles.
+Agent:  (laughs) Ah. The pickles. What about them?
+Patient:  Julia found them. I'd like to negotiate. Two a week.
+Agent:  Let's discuss that with the nurse, maybe a small portion once in a while, but not behind the bread box. And if your weight goes up more than a kilo overnight, or the breathlessness gets worse, call the number on the card right away, or emergency services if you can't breathe. Okay?
+Patient:  Okay, okay. You're like my late wife.
+Agent:  I'll take that as a compliment. Could you put Julia back on for a minute?
+Patient:  Julia! She wants you. Take the phone. I'm going to find my glasses.
+Caregiver:  I'm here. That went better than usual. He actually admitted the night thing.
+Agent:  He did, and he told me the water pill wakes him up, which explains a lot. Could you send me the weight sheet photo later today, and I'll have the nurse call within the hour?
+Caregiver:  Sure. And thanks, Marta. Really.
+Agent:  Of course. Take care, Julia. Talk next Friday, or sooner if anything changes.
+Caregiver:  Will do. Bye!
 """
 single_choice_survey = [
-	# Question, CorrectAnswer, WrongAnswers, Evidence
-	["Who answered the phone initially, and what is her relationship to Mr. Nowak?", "Julia answered; she is Mr. Nowak's daughter.", "His wife answered; she is Mr. Nowak's spouse. | His son answered; he is Mr. Nowak's son. | A neighbor answered; she lives next door. | A nurse answered; she works for the care program.", "Evidence: \"No, it's Julia, his daughter.\""],
-	["Why did Julia answer the phone instead of Mr. Nowak?", "She answered because he never hears the phone.", "She answered because he was asleep in the other room. | She answered because his phone was switched off. | She answered because he had asked her to screen calls. | She answered because he was out of the house.", "Evidence: \"I picked up because he never hears the phone.\""],
-	["Who is calling, and which organization does she represent?", "Marta is calling from the Home Care Support Program.", "Julia is calling from the local hospital. | Dr. Wiśniewska is calling from the cardiology clinic. | Kuba is calling from the physiotherapy service. | Marta is calling from the eye clinic.", "Evidence: \"Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak.\""],
-	["Which day of the week is the check-in call scheduled for?", "Friday.", "Monday. | Wednesday. | Thursday. | Saturday.", "Evidence: \"I'm calling for our Friday check-in.\""],
-	["What weights did Julia record for Mr. Nowak on Monday and on the morning of the call?", "83.4 kg on Monday and 85.1 kg on the morning of the call.", "82.4 kg on Monday and 84.1 kg on the morning of the call. | 83.4 kg on Monday and 84.1 kg on the morning of the call. | 84.3 kg on Monday and 85.1 kg on the morning of the call. | 83.4 kg on Monday and 86.1 kg on the morning of the call.", "Evidence: \"Monday he was 83.4 kilos, and this morning he was 85.1.\""],
-	["How much weight had Mr. Nowak gained over the four-day period Marta mentioned?", "1.7 kg.", "0.7 kg. | 1.2 kg. | 2.1 kg. | 3.7 kg.", "Evidence: \"That's a gain of 1.7 kilos in four days.\""],
-	["What signs of ankle swelling did Julia notice on Tuesday?", "His socks left deep marks, and he had difficulty getting his shoes on.", "His ankles were red, and he complained of sharp ankle pain. | His shoes had become loose, and his socks kept slipping down. | His feet were cold, and his toenails had changed color. | His calves were bruised, and he had trouble walking on level ground.", "Evidence: \"On Tuesday his socks left deep marks and he had trouble getting his shoes on.\""],
-	["What explanation did Mr. Nowak give for his tight shoes?", "He said he had bought them in a hurry, rather than the tightness being caused by swelling.", "He said his socks had shrunk in the wash. | He said he had injured his feet while walking. | He said he had bought thick socks that morning. | He said his shoes were tight because he had walked too far.", "Evidence: \"The shoes are tight because I bought them in a hurry, not because of the swelling.\""],
-	["What happened when Mr. Nowak pressed his finger on his shin?", "It left a small dent.", "There was no mark at all. | It left a large dent that did not disappear. | The skin became red but did not dent. | He felt pain but saw no change in the skin.", "Evidence: \"Well. A small one. Not big.\""],
-	["What food did Julia find hidden in the kitchen, and where was it hidden?", "Pickles, hidden behind the bread box.", "Cheese, hidden inside the refrigerator. | Biscuits, hidden in a kitchen drawer. | Chocolate, hidden behind the television. | Potato chips, hidden under the kitchen sink.", "Evidence: \"I found pickles hidden behind the bread box.\""],
-	["How many pickles per week did Mr. Nowak propose as a compromise?", "Two per week.", "One pickle per week. | Three pickles per week. | Five pickles per week. | One pickle every day.", "Evidence: \"I'd like to negotiate. Two a week.\""],
-	["What did Mr. Nowak say happened when he missed his evening pills on Wednesday?", "He said he forgot and fell asleep in front of the television while a documentary about whales was on.", "He took the pills and then went for a walk. | He forgot while watching a football match. | He left the pills beside the television and went to bed. | He skipped them because he had run out of medication.", "Evidence: \"I forgot. I fell asleep in front of the television. There was a documentary about whales.\""],
-	["What reason did Julia suspect for Mr. Nowak missing his evening pills, beyond his saying that he forgot?", "She thought he was tired of taking them.", "She thought he was experiencing a serious allergic reaction. | She thought he had deliberately stopped because the doctor told him to. | She thought he had misplaced the pill packet. | She thought he had forgotten where the medication was kept.", "Evidence: \"He said he forgot, but I think he was just tired of them.\""],
-	["Which medication did Mr. Nowak particularly dislike taking in the evening, and why?", "The water pill (diuretic), because it made him get up repeatedly to use the bathroom at night.", "The yellow blood-pressure pill, because it made him cough. | The little white sleeping pill, because it made him drowsy. | The painkiller, because it upset his stomach. | The diabetes medication, because it made him thirsty.", "Evidence: \"The water one. I'm in the bathroom all the time.\""],
-	["How many times a night did Mr. Nowak say he was usually up to use the bathroom when he took the water pill in the evening?", "Three times.", "Once. | Twice. | Four times. | Five times.", "Evidence: \"If I take it in the evening, I'm up three times at night.\""],
-	["What change in the water pill's schedule did Marta suggest, and whose confirmation did she say they should seek?", "She suggested moving it to the morning, with the nurse confirming the change with his doctor.", "She suggested skipping the water pill on days when he felt tired, without consulting anyone. | She suggested moving it to lunchtime, with Julia deciding whether the change was suitable. | She suggested doubling the morning dose after the nurse reviewed his weight. | She suggested stopping it until after the cataract surgery, with the pharmacist confirming.", "Evidence: \"Let's ask the nurse to confirm with your doctor, and I'm fairly sure we can move it to the morning.\""],
-	["What did Mr. Nowak say about who had told him to take the water pill in the evening?", "He said it may have been the hospital, but added that he might simply have got used to taking it then.", "He said Julia had instructed him to take it in the evening. | He said Dr. Wiśniewska had explicitly ordered evening doses. | He said his pharmacist had changed the schedule last week. | He said the physiotherapist had recommended evening doses.", "Evidence: \"The hospital. Or maybe I just got used to it.\""],
-	["How many pillows was Julia reporting that Mr. Nowak was using?", "Two pillows.", "One pillow. | Three pillows. | Four pillows. | No pillows.", "Evidence: \"He's using two pillows now.\""],
-	["What chest symptom did Mr. Nowak describe at night after falling asleep?", "He woke with tightness in his chest, as if somebody were sitting on it.", "He woke with a severe headache and blurred vision. | He woke with a sharp pain in his left leg. | He woke feeling dizzy, but reported no chest discomfort. | He woke coughing repeatedly but did not describe chest tightness.", "Evidence: \"I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it.\""],
-	["What did Mr. Nowak do when he woke with chest tightness, and what happened afterward?", "He went to the armchair, and the tightness passed.", "He stayed in bed until the tightness disappeared. | He went to the bathroom and drank some water. | He woke Julia and asked her to call the hospital. | He opened a window and stood outside.", "Evidence: \"Then I go to the armchair and it passes.\""],
-	["When had Mr. Nowak last fallen before this call?", "Two weeks earlier.", "Four days earlier. | One week earlier. | Three weeks earlier. | One month earlier.", "Evidence: \"No falls since the one two weeks ago.\""],
-	["How many physiotherapy sessions did Mr. Nowak say he had effectively completed the previous week?", "One and a half sessions.", "One full session. | Two full sessions. | Two and a half sessions. | Three sessions.", "Evidence: \"One and a half.\""],
-	["What was the physiotherapist's name, and what exercise did he have Mr. Nowak do?", "Kuba; he had Mr. Nowak walk up and down with a cane.", "Marek; he had Mr. Nowak ride a stationary exercise bike. | Adam; he had Mr. Nowak practice getting in and out of a chair. | Tomasz; he had Mr. Nowak climb stairs without a walking aid. | Kuba; he had Mr. Nowak lift weights while seated.", "Evidence: \"The young man, Kuba, he made me walk up and down with a cane.\""],
-	["Why did Mr. Nowak say he disliked using a cane?", "He felt it made him look like a professor.", "He felt it made him look like a soldier. | He felt it made him look like a police officer. | He felt it made him look like a tourist. | He felt it made him look like a schoolboy.", "Evidence: \"I'm not fond of the cane. It makes me look like a professor.\""],
-	["Why did Mr. Nowak stop the Thursday physiotherapy session early?", "He was too tired.", "He felt dizzy and had to sit down. | His knee started hurting badly. | He had another appointment to attend. | Kuba ended the session because the equipment broke.", "Evidence: \"Thursday I was too tired.\""],
-	["How long did Mr. Nowak continue the Thursday physiotherapy session before stopping?", "Twenty minutes.", "Ten minutes. | Fifteen minutes. | Thirty minutes. | Forty-five minutes.", "Evidence: \"I stopped after twenty minutes and he let me go.\""],
-	["What near-accident did Mr. Nowak report in the bathroom on Sunday?", "He almost slipped on the bathroom floor.", "He nearly fell while climbing the stairs to the bathroom. | He slipped in the kitchen while carrying a plate. | He nearly fell getting out of the car. | He tripped over a rug in the living room.", "Evidence: \"The bathroom floor is slippery. I almost slid on Sunday.\""],
-	["How did Mr. Nowak prevent himself from falling during the bathroom incident?", "He grabbed the towel rail.", "He grabbed the sink. | He caught the shower curtain. | He held on to the door frame. | He sat down on a nearby chair.", "Evidence: \"I grabbed the towel rail.\""],
-	["Which bathroom safety items had not yet been installed, and who had promised to install them?", "Grab bars and a non-slip mat; Julia's husband had promised to install them.", "A shower chair and a raised toilet seat; Julia had promised to install them. | A stair rail and a bedside alarm; Mr. Nowak's son had promised to install them. | A wheelchair ramp and a shower seat; the program had promised to install them. | Non-slip socks and a walking frame; Kuba had promised to bring them.", "Evidence: \"Have the grab bars and the non-slip mat been installed yet?\" / \"Julia's husband said he'd do it.\""],
-	["How long had Julia's husband been saying he would install the bathroom safety equipment?", "Three weeks.", "One week. | Two weeks. | One month. | Two months.", "Evidence: \"He's been saying it for three weeks.\""],
-	["What did Marta say the program could do if the bathroom safety work had not been done by Monday?", "The program could send someone through its home-safety service.", "Marta said the nurse would visit and install the equipment herself that day. | The program would cancel the home-safety request and wait until the next appointment. | Julia would have to buy all the equipment from the hospital. | The cardiologist would assess the bathroom during the Friday consultation.", "Evidence: \"If it doesn't happen by Monday, our program can send someone. We have a small home-safety service.\""],
-	["What blood sugar reading did Mr. Nowak report for Monday?", "7.9.", "6.9. | 7.2. | 8.6. | 9.1.", "Evidence: \"It was 7.9 on Monday.\""],
-	["What blood sugar reading did Mr. Nowak report for Wednesday?", "8.6.", "7.9. | 8.3. | 9.1. | 10.2.", "Evidence: \"8.6 on Wednesday.\""],
-	["What was Mr. Nowak's blood sugar reading on Thursday, and what event did Julia mention in connection with it?", "10.2, after a visit with Uncle Staszek that involved cake.", "8.6, after a visit from Julia's husband. | 9.1, after a visit with Uncle Staszek and a slice of cake. | 10.2, after physiotherapy with Kuba. | 7.9, after dinner at the hospital.", "Evidence: \"Thursday was 10.2 after the visit with Uncle Staszek, the one with the cake.\""],
-	["What blood sugar reading did Julia give for the morning of the call?", "9.1.", "7.9. | 8.6. | 9.8. | 10.2.", "Evidence: \"9.1, Dad.\""],
-	["According to Julia, how much cake had Mr. Nowak eaten during Uncle Staszek's visit?", "A third of a cake.", "A quarter of a cake. | Half a cake. | A whole cake. | Two slices of cake.", "Evidence: \"It was a third of a cake, Dad.\""],
-	["What vision problem did Mr. Nowak report, and which eye was affected?", "Foggy vision in his left eye.", "Blurred vision in his right eye. | Foggy vision in both eyes. | Double vision in his left eye. | Flashing spots in his right eye.", "Evidence: \"Left eye. Everything is a bit foggy, like looking through a dirty window.\""],
-	["When was Mr. Nowak's echocardiogram scheduled?", "Next Wednesday at 10:30.", "Next Thursday at 10:30. | Next Wednesday at 9:30. | Next Friday at 10:30. | Next Monday at 11:00.", "Evidence: \"The echocardiogram, the heart ultrasound, is scheduled for next Wednesday at 10:30.\""],
-	["What does Marta say the echocardiogram is intended to check?", "How well Mr. Nowak's heart is pumping.", "It measures his blood sugar levels. | It records the electrical signals controlling his heartbeat. | It checks how well his kidneys filter fluid. | It measures his blood pressure while he walks.", "Evidence: \"It's the one that checks how well your heart is pumping.\""],
-	["How long was the echocardiogram expected to take, and what did Mr. Nowak remember disliking about his previous one?", "About forty minutes; he remembered that the gel was cold because it had not been warmed up.", "About twenty minutes; he remembered that the gel had been warm and comfortable. | About an hour; he remembered that the probe had been painful. | About forty minutes; he remembered that the gel had been warmed up too much. | About thirty minutes; he remembered that the room had been cold.", "Evidence: \"It takes about forty minutes.\" / \"Cold gel. I remember. Last time they didn't warm it up.\""],
-	["Who was Mr. Nowak's cardiologist, and when was the cardiology consultation scheduled?", "Dr. Wiśniewska; Friday, two days after the echocardiogram.", "Dr. Kowalska; Thursday, two days before the echocardiogram. | Dr. Wiśniewska; Wednesday, immediately before the echocardiogram. | Dr. Nowicka; Friday, one week after the echocardiogram. | Dr. Wiśniewska; Monday, the following week.", "Evidence: \"The cardiology consultation with Dr. Wiśniewska, two days after that, on Friday.\""],
-	["Why did Mr. Nowak say he liked Dr. Wiśniewska?", "She did not talk to him as though he were a child.", "She always agrees with him and never discusses his medication. | She explains medical issues using complicated technical terms. | She tells him what to do without listening to his concerns. | She treats him as though he cannot make his own decisions.", "Evidence: \"I like her. She doesn't talk to me like I'm a child.\""],
-	["When was Mr. Nowak's cataract surgery scheduled, and which eye was to be treated first?", "The 24th of the following month, with the left eye first.", "The 24th of this month, with the right eye first. | The 14th of next month, with the left eye first. | The 24th of next month, with the right eye first. | The 4th of the following month, with both eyes operated on together.", "Evidence: \"The date is still the 24th of next month, left eye first.\""],
-	["What note was required from the cardiologist before Mr. Nowak could have cataract surgery?", "A note confirming that his heart was stable enough for the procedure.", "A note from his general practitioner confirming his blood sugar is controlled. | A note from the eye surgeon confirming the cataract is severe. | A hospital discharge letter from his previous admission. | A clearance note from his endocrinologist confirming his diabetes is stable.", "Evidence: \"They'll want a note from your cardiologist that your heart is stable enough for the procedure.\""],
-	["Why might Mr. Nowak's cataract surgery be postponed?", "If his heart was not stable, the procedure might be delayed until his fluid was under control.", "If he developed an eye infection before the procedure. | If Julia could not arrange transport for the appointment. | If the cataract stopped affecting his vision. | If he could not remember the date of the operation.", "Evidence: \"They might postpone it a bit, until your fluid is under control.\""],
-	["Why did Julia ask for transport help for the echocardiogram?", "She was working that morning and could not leave to take him.", "She had an important meeting later that afternoon. | Her car had broken down and could not be used. | She was unable to drive him because she had a medical appointment herself. | She needed help because she would be away all day on Friday.", "Evidence: \"I could use help with transport for the echo. I work that morning and can't leave.\""],
-	["What did Mr. Nowak request about the driver for his medical transport?", "He wanted a quiet driver who would not talk about politics during the journey.", "He wanted a driver who would discuss politics throughout the journey. | He wanted a driver who would keep the radio playing loudly. | He wanted a driver who would take the fastest route regardless of traffic. | He wanted a driver who would not help him walk to the entrance.", "Evidence: \"Please not the one who talks about politics the whole way.\" / \"I'll request a quiet one.\""],
-	["What did Marta record about the assistance Mr. Nowak needed when arriving at the appointment?", "He needed an arm to help him get to the entrance.", "He needed a wheelchair from the car to the examination room. | He needed someone to carry his bags and medical records. | He needed help getting into the vehicle but not at the entrance. | He needed help climbing the stairs to the clinic's second floor.", "Evidence: \"I'll write 'prefers quiet driver, needs arm to the entrance.'\""],
-	["What did Mr. Nowak say about his feelings regarding reduced independence, and what did he identify as the best part of his week?", "He said he did not like feeling like a burden; he identified his grandson's Sunday visits, when they play chess on a tablet, as the best part of the week.", "He said he felt proud of relying on Julia, and his favorite part of the week was watching television alone. | He said he missed repairing things but did not feel like a burden; his favorite activity was physiotherapy with Kuba. | He said he worried about being a burden, and his favorite part of the week was visiting Uncle Staszek to eat cake. | He said he felt lonely because his grandson no longer visited, and he preferred playing cards alone.", "Evidence: \"I don't like being a burden.\" / \"My grandson comes on Sundays. He's teaching me chess on the tablet. He beats me and laughs. It's the best part of the week.\""],
-	["What volunteer activity did Mr. Nowak agree to, and which game did he say he did not want to play with the volunteer?", "He agreed to playing cards and said he did not want to play chess.", "He agreed to play chess with the volunteer but refused to play cards. | He agreed to have a volunteer teach him tablet games, but declined conversation. | He agreed to play cards and chess with the volunteer. | He declined a volunteer visit and asked only for more physiotherapy.", "Evidence: \"Cards, yes. Not chess. I have enough humiliation from the child.\""],
+    [
+        "Who answered the phone initially, and what is her relationship to Mr. Nowak?",
+        "Julia answered; she is Mr. Nowak's daughter.",
+        "His wife answered; she is Mr. Nowak's spouse. | His son answered; he is Mr. Nowak's son. | A neighbor answered; she lives next door. | A nurse answered; she works for the care program.",
+        "Evidence: \"No, it's Julia, his daughter.\"",
+    ],
+    [
+        "Why did Julia answer the phone instead of Mr. Nowak?",
+        "She answered because he never hears the phone.",
+        "She answered because he was asleep in the other room. | She answered because his phone was switched off. | She answered because he had asked her to screen calls. | She answered because he was out of the house.",
+        "Evidence: \"I picked up because he never hears the phone.\"",
+    ],
+    [
+        "Who is calling, and which organization does she represent?",
+        "Marta is calling from the Home Care Support Program.",
+        "Julia is calling from the local hospital. | Dr. Wiśniewska is calling from the cardiology clinic. | Kuba is calling from the physiotherapy service. | Marta is calling from the eye clinic.",
+        "Evidence: \"Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak.\"",
+    ],
+    [
+        "Which day of the week is the check-in call scheduled for?",
+        "Friday.",
+        "Monday. | Wednesday. | Thursday. | Saturday.",
+        "Evidence: \"I'm calling for our Friday check-in.\"",
+    ],
+    [
+        "What weights did Julia record for Mr. Nowak on Monday and on the morning of the call?",
+        "83.4 kg on Monday and 85.1 kg on the morning of the call.",
+        "82.4 kg on Monday and 84.1 kg on the morning of the call. | 83.4 kg on Monday and 84.1 kg on the morning of the call. | 84.3 kg on Monday and 85.1 kg on the morning of the call. | 83.4 kg on Monday and 86.1 kg on the morning of the call.",
+        "Evidence: \"Monday he was 83.4 kilos, and this morning he was 85.1.\"",
+    ],
+    [
+        "How much weight had Mr. Nowak gained over the four-day period Marta mentioned?",
+        "1.7 kg.",
+        "0.7 kg. | 1.2 kg. | 2.1 kg. | 3.7 kg.",
+        "Evidence: \"That's a gain of 1.7 kilos in four days.\"",
+    ],
+    [
+        "What signs of ankle swelling did Julia notice on Tuesday?",
+        "His socks left deep marks, and he had difficulty getting his shoes on.",
+        "His ankles were red, and he complained of sharp ankle pain. | His shoes had become loose, and his socks kept slipping down. | His feet were cold, and his toenails had changed color. | His calves were bruised, and he had trouble walking on level ground.",
+        "Evidence: \"On Tuesday his socks left deep marks and he had trouble getting his shoes on.\"",
+    ],
+    [
+        "What explanation did Mr. Nowak give for his tight shoes?",
+        "He said he had bought them in a hurry, rather than the tightness being caused by swelling.",
+        "He said his socks had shrunk in the wash. | He said he had injured his feet while walking. | He said he had bought thick socks that morning. | He said his shoes were tight because he had walked too far.",
+        "Evidence: \"The shoes are tight because I bought them in a hurry, not because of the swelling.\"",
+    ],
+    [
+        "What happened when Mr. Nowak pressed his finger on his shin?",
+        "It left a small dent.",
+        "There was no mark at all. | It left a large dent that did not disappear. | The skin became red but did not dent. | He felt pain but saw no change in the skin.",
+        "Evidence: \"Well. A small one. Not big.\"",
+    ],
+    [
+        "What food did Julia find hidden in the kitchen, and where was it hidden?",
+        "Pickles, hidden behind the bread box.",
+        "Cheese, hidden inside the refrigerator. | Biscuits, hidden in a kitchen drawer. | Chocolate, hidden behind the television. | Potato chips, hidden under the kitchen sink.",
+        "Evidence: \"I found pickles hidden behind the bread box.\"",
+    ],
+    [
+        "How many pickles per week did Mr. Nowak propose as a compromise?",
+        "Two per week.",
+        "One pickle per week. | Three pickles per week. | Five pickles per week. | One pickle every day.",
+        "Evidence: \"I'd like to negotiate. Two a week.\"",
+    ],
+    [
+        "What did Mr. Nowak say happened when he missed his evening pills on Wednesday?",
+        "He said he forgot and fell asleep in front of the television while a documentary about whales was on.",
+        "He took the pills and then went for a walk. | He forgot while watching a football match. | He left the pills beside the television and went to bed. | He skipped them because he had run out of medication.",
+        "Evidence: \"I forgot. I fell asleep in front of the television. There was a documentary about whales.\"",
+    ],
+    [
+        "What reason did Julia suspect for Mr. Nowak missing his evening pills, beyond his saying that he forgot?",
+        "She thought he was tired of taking them.",
+        "She thought he was experiencing a serious allergic reaction. | She thought he had deliberately stopped because the doctor told him to. | She thought he had misplaced the pill packet. | She thought he had forgotten where the medication was kept.",
+        "Evidence: \"He said he forgot, but I think he was just tired of them.\"",
+    ],
+    [
+        "Which medication did Mr. Nowak particularly dislike taking in the evening, and why?",
+        "The water pill (diuretic), because it made him get up repeatedly to use the bathroom at night.",
+        "The yellow blood-pressure pill, because it made him cough. | The little white sleeping pill, because it made him drowsy. | The painkiller, because it upset his stomach. | The diabetes medication, because it made him thirsty.",
+        "Evidence: \"The water one. I'm in the bathroom all the time.\"",
+    ],
+    [
+        "How many times a night did Mr. Nowak say he was usually up to use the bathroom when he took the water pill in the evening?",
+        "Three times.",
+        "Once. | Twice. | Four times. | Five times.",
+        "Evidence: \"If I take it in the evening, I'm up three times at night.\"",
+    ],
+    [
+        "What change in the water pill's schedule did Marta suggest, and whose confirmation did she say they should seek?",
+        "She suggested moving it to the morning, with the nurse confirming the change with his doctor.",
+        "She suggested skipping the water pill on days when he felt tired, without consulting anyone. | She suggested moving it to lunchtime, with Julia deciding whether the change was suitable. | She suggested doubling the morning dose after the nurse reviewed his weight. | She suggested stopping it until after the cataract surgery, with the pharmacist confirming.",
+        "Evidence: \"Let's ask the nurse to confirm with your doctor, and I'm fairly sure we can move it to the morning.\"",
+    ],
+    [
+        "What did Mr. Nowak say about who had told him to take the water pill in the evening?",
+        "He said it may have been the hospital, but added that he might simply have got used to taking it then.",
+        "He said Julia had instructed him to take it in the evening. | He said Dr. Wiśniewska had explicitly ordered evening doses. | He said his pharmacist had changed the schedule last week. | He said the physiotherapist had recommended evening doses.",
+        "Evidence: \"The hospital. Or maybe I just got used to it.\"",
+    ],
+    [
+        "How many pillows was Julia reporting that Mr. Nowak was using?",
+        "Two pillows.",
+        "One pillow. | Three pillows. | Four pillows. | No pillows.",
+        "Evidence: \"He's using two pillows now.\"",
+    ],
+    [
+        "What chest symptom did Mr. Nowak describe at night after falling asleep?",
+        "He woke with tightness in his chest, as if somebody were sitting on it.",
+        "He woke with a severe headache and blurred vision. | He woke with a sharp pain in his left leg. | He woke feeling dizzy, but reported no chest discomfort. | He woke coughing repeatedly but did not describe chest tightness.",
+        "Evidence: \"I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it.\"",
+    ],
+    [
+        "What did Mr. Nowak do when he woke with chest tightness, and what happened afterward?",
+        "He went to the armchair, and the tightness passed.",
+        "He stayed in bed until the tightness disappeared. | He went to the bathroom and drank some water. | He woke Julia and asked her to call the hospital. | He opened a window and stood outside.",
+        "Evidence: \"Then I go to the armchair and it passes.\"",
+    ],
+    [
+        "When had Mr. Nowak last fallen before this call?",
+        "Two weeks earlier.",
+        "Four days earlier. | One week earlier. | Three weeks earlier. | One month earlier.",
+        "Evidence: \"No falls since the one two weeks ago.\"",
+    ],
+    [
+        "How many physiotherapy sessions did Mr. Nowak say he had effectively completed the previous week?",
+        "One and a half sessions.",
+        "One full session. | Two full sessions. | Two and a half sessions. | Three sessions.",
+        "Evidence: \"One and a half.\"",
+    ],
+    [
+        "What was the physiotherapist's name, and what exercise did he have Mr. Nowak do?",
+        "Kuba; he had Mr. Nowak walk up and down with a cane.",
+        "Marek; he had Mr. Nowak ride a stationary exercise bike. | Adam; he had Mr. Nowak practice getting in and out of a chair. | Tomasz; he had Mr. Nowak climb stairs without a walking aid. | Kuba; he had Mr. Nowak lift weights while seated.",
+        "Evidence: \"The young man, Kuba, he made me walk up and down with a cane.\"",
+    ],
+    [
+        "Why did Mr. Nowak say he disliked using a cane?",
+        "He felt it made him look like a professor.",
+        "He felt it made him look like a soldier. | He felt it made him look like a police officer. | He felt it made him look like a tourist. | He felt it made him look like a schoolboy.",
+        "Evidence: \"I'm not fond of the cane. It makes me look like a professor.\"",
+    ],
+    [
+        "Why did Mr. Nowak stop the Thursday physiotherapy session early?",
+        "He was too tired.",
+        "He felt dizzy and had to sit down. | His knee started hurting badly. | He had another appointment to attend. | Kuba ended the session because the equipment broke.",
+        "Evidence: \"Thursday I was too tired.\"",
+    ],
+    [
+        "How long did Mr. Nowak continue the Thursday physiotherapy session before stopping?",
+        "Twenty minutes.",
+        "Ten minutes. | Fifteen minutes. | Thirty minutes. | Forty-five minutes.",
+        "Evidence: \"I stopped after twenty minutes and he let me go.\"",
+    ],
+    [
+        "What near-accident did Mr. Nowak report in the bathroom on Sunday?",
+        "He almost slipped on the bathroom floor.",
+        "He nearly fell while climbing the stairs to the bathroom. | He slipped in the kitchen while carrying a plate. | He nearly fell getting out of the car. | He tripped over a rug in the living room.",
+        "Evidence: \"The bathroom floor is slippery. I almost slid on Sunday.\"",
+    ],
+    [
+        "How did Mr. Nowak prevent himself from falling during the bathroom incident?",
+        "He grabbed the towel rail.",
+        "He grabbed the sink. | He caught the shower curtain. | He held on to the door frame. | He sat down on a nearby chair.",
+        "Evidence: \"I grabbed the towel rail.\"",
+    ],
+    [
+        "Which bathroom safety items had not yet been installed, and who had promised to install them?",
+        "Grab bars and a non-slip mat; Julia's husband had promised to install them.",
+        "A shower chair and a raised toilet seat; Julia had promised to install them. | A stair rail and a bedside alarm; Mr. Nowak's son had promised to install them. | A wheelchair ramp and a shower seat; the program had promised to install them. | Non-slip socks and a walking frame; Kuba had promised to bring them.",
+        "Evidence: \"Have the grab bars and the non-slip mat been installed yet?\" / \"Julia's husband said he'd do it.\"",
+    ],
+    [
+        "How long had Julia's husband been saying he would install the bathroom safety equipment?",
+        "Three weeks.",
+        "One week. | Two weeks. | One month. | Two months.",
+        "Evidence: \"He's been saying it for three weeks.\"",
+    ],
+    [
+        "What did Marta say the program could do if the bathroom safety work had not been done by Monday?",
+        "The program could send someone through its home-safety service.",
+        "Marta said the nurse would visit and install the equipment herself that day. | The program would cancel the home-safety request and wait until the next appointment. | Julia would have to buy all the equipment from the hospital. | The cardiologist would assess the bathroom during the Friday consultation.",
+        "Evidence: \"If it doesn't happen by Monday, our program can send someone. We have a small home-safety service.\"",
+    ],
+    [
+        "What blood sugar reading did Mr. Nowak report for Monday?",
+        "7.9.",
+        "6.9. | 7.2. | 8.6. | 9.1.",
+        "Evidence: \"It was 7.9 on Monday.\"",
+    ],
+    [
+        "What blood sugar reading did Mr. Nowak report for Wednesday?",
+        "8.6.",
+        "7.9. | 8.3. | 9.1. | 10.2.",
+        "Evidence: \"8.6 on Wednesday.\"",
+    ],
+    [
+        "What was Mr. Nowak's blood sugar reading on Thursday, and what event did Julia mention in connection with it?",
+        "10.2, after a visit with Uncle Staszek that involved cake.",
+        "8.6, after a visit from Julia's husband. | 9.1, after a visit with Uncle Staszek and a slice of cake. | 10.2, after physiotherapy with Kuba. | 7.9, after dinner at the hospital.",
+        "Evidence: \"Thursday was 10.2 after the visit with Uncle Staszek, the one with the cake.\"",
+    ],
+    [
+        "What blood sugar reading did Julia give for the morning of the call?",
+        "9.1.",
+        "7.9. | 8.6. | 9.8. | 10.2.",
+        "Evidence: \"9.1, Dad.\"",
+    ],
+    [
+        "According to Julia, how much cake had Mr. Nowak eaten during Uncle Staszek's visit?",
+        "A third of a cake.",
+        "A quarter of a cake. | Half a cake. | A whole cake. | Two slices of cake.",
+        "Evidence: \"It was a third of a cake, Dad.\"",
+    ],
+    [
+        "What vision problem did Mr. Nowak report, and which eye was affected?",
+        "Foggy vision in his left eye.",
+        "Blurred vision in his right eye. | Foggy vision in both eyes. | Double vision in his left eye. | Flashing spots in his right eye.",
+        "Evidence: \"Left eye. Everything is a bit foggy, like looking through a dirty window.\"",
+    ],
+    [
+        "When was Mr. Nowak's echocardiogram scheduled?",
+        "Next Wednesday at 10:30.",
+        "Next Thursday at 10:30. | Next Wednesday at 9:30. | Next Friday at 10:30. | Next Monday at 11:00.",
+        "Evidence: \"The echocardiogram, the heart ultrasound, is scheduled for next Wednesday at 10:30.\"",
+    ],
+    [
+        "What does Marta say the echocardiogram is intended to check?",
+        "How well Mr. Nowak's heart is pumping.",
+        "It measures his blood sugar levels. | It records the electrical signals controlling his heartbeat. | It checks how well his kidneys filter fluid. | It measures his blood pressure while he walks.",
+        "Evidence: \"It's the one that checks how well your heart is pumping.\"",
+    ],
+    [
+        "How long was the echocardiogram expected to take, and what did Mr. Nowak remember disliking about his previous one?",
+        "About forty minutes; he remembered that the gel was cold because it had not been warmed up.",
+        "About twenty minutes; he remembered that the gel had been warm and comfortable. | About an hour; he remembered that the probe had been painful. | About forty minutes; he remembered that the gel had been warmed up too much. | About thirty minutes; he remembered that the room had been cold.",
+        "Evidence: \"It takes about forty minutes.\" / \"Cold gel. I remember. Last time they didn't warm it up.\"",
+    ],
+    [
+        "Who was Mr. Nowak's cardiologist, and when was the cardiology consultation scheduled?",
+        "Dr. Wiśniewska; Friday, two days after the echocardiogram.",
+        "Dr. Kowalska; Thursday, two days before the echocardiogram. | Dr. Wiśniewska; Wednesday, immediately before the echocardiogram. | Dr. Nowicka; Friday, one week after the echocardiogram. | Dr. Wiśniewska; Monday, the following week.",
+        "Evidence: \"The cardiology consultation with Dr. Wiśniewska, two days after that, on Friday.\"",
+    ],
+    [
+        "Why did Mr. Nowak say he liked Dr. Wiśniewska?",
+        "She did not talk to him as though he were a child.",
+        "She always agrees with him and never discusses his medication. | She explains medical issues using complicated technical terms. | She tells him what to do without listening to his concerns. | She treats him as though he cannot make his own decisions.",
+        "Evidence: \"I like her. She doesn't talk to me like I'm a child.\"",
+    ],
+    [
+        "When was Mr. Nowak's cataract surgery scheduled, and which eye was to be treated first?",
+        "The 24th of the following month, with the left eye first.",
+        "The 24th of this month, with the right eye first. | The 14th of next month, with the left eye first. | The 24th of next month, with the right eye first. | The 4th of the following month, with both eyes operated on together.",
+        "Evidence: \"The date is still the 24th of next month, left eye first.\"",
+    ],
+    [
+        "What note was required from the cardiologist before Mr. Nowak could have cataract surgery?",
+        "A note confirming that his heart was stable enough for the procedure.",
+        "A note from his general practitioner confirming his blood sugar is controlled. | A note from the eye surgeon confirming the cataract is severe. | A hospital discharge letter from his previous admission. | A clearance note from his endocrinologist confirming his diabetes is stable.",
+        "Evidence: \"They'll want a note from your cardiologist that your heart is stable enough for the procedure.\"",
+    ],
+    [
+        "Why might Mr. Nowak's cataract surgery be postponed?",
+        "If his heart was not stable, the procedure might be delayed until his fluid was under control.",
+        "If he developed an eye infection before the procedure. | If Julia could not arrange transport for the appointment. | If the cataract stopped affecting his vision. | If he could not remember the date of the operation.",
+        "Evidence: \"They might postpone it a bit, until your fluid is under control.\"",
+    ],
+    [
+        "Why did Julia ask for transport help for the echocardiogram?",
+        "She was working that morning and could not leave to take him.",
+        "She had an important meeting later that afternoon. | Her car had broken down and could not be used. | She was unable to drive him because she had a medical appointment herself. | She needed help because she would be away all day on Friday.",
+        "Evidence: \"I could use help with transport for the echo. I work that morning and can't leave.\"",
+    ],
+    [
+        "What did Mr. Nowak request about the driver for his medical transport?",
+        "He wanted a quiet driver who would not talk about politics during the journey.",
+        "He wanted a driver who would discuss politics throughout the journey. | He wanted a driver who would keep the radio playing loudly. | He wanted a driver who would take the fastest route regardless of traffic. | He wanted a driver who would not help him walk to the entrance.",
+        "Evidence: \"Please not the one who talks about politics the whole way.\" / \"I'll request a quiet one.\"",
+    ],
+    [
+        "What did Marta record about the assistance Mr. Nowak needed when arriving at the appointment?",
+        "He needed an arm to help him get to the entrance.",
+        "He needed a wheelchair from the car to the examination room. | He needed someone to carry his bags and medical records. | He needed help getting into the vehicle but not at the entrance. | He needed help climbing the stairs to the clinic's second floor.",
+        "Evidence: \"I'll write 'prefers quiet driver, needs arm to the entrance.'\"",
+    ],
+    [
+        "What did Mr. Nowak say about his feelings regarding reduced independence, and what did he identify as the best part of his week?",
+        "He said he did not like feeling like a burden; he identified his grandson's Sunday visits, when they play chess on a tablet, as the best part of the week.",
+        "He said he felt proud of relying on Julia, and his favorite part of the week was watching television alone. | He said he missed repairing things but did not feel like a burden; his favorite activity was physiotherapy with Kuba. | He said he worried about being a burden, and his favorite part of the week was visiting Uncle Staszek to eat cake. | He said he felt lonely because his grandson no longer visited, and he preferred playing cards alone.",
+        "Evidence: \"I don't like being a burden.\" / \"My grandson comes on Sundays. He's teaching me chess on the tablet. He beats me and laughs. It's the best part of the week.\"",
+    ],
+    [
+        "What volunteer activity did Mr. Nowak agree to, and which game did he say he did not want to play with the volunteer?",
+        "He agreed to playing cards and said he did not want to play chess.",
+        "He agreed to play chess with the volunteer but refused to play cards. | He agreed to have a volunteer teach him tablet games, but declined conversation. | He agreed to play cards and chess with the volunteer. | He declined a volunteer visit and asked only for more physiotherapy.",
+        "Evidence: \"Cards, yes. Not chess. I have enough humiliation from the child.\"",
+    ],
 ]
+text_words = 2065
+text_tokens = 3105

@@ -1,7 +1,6 @@
 [[prompts]]
 prompt_id = "p02"
-system_prompt_template = """
-"""
+system_prompt_template = ""
 user_prompt_template = """
 Shorten the dialogue below to retain important information.
 This shortened dialogue will be used by LLM to maintain dialogue history; this is to reduce token usage. Therefore, it is important to retain names, intentions, facts, and agreements.
@@ -12,11 +11,11 @@ Don't comment, don't ask questions, don't add headlines. Just give me the shorte
 """
 
 [[results]]
-type         = "Compressed Dialogue"
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+type = "Compressed Dialogue"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 1200
 text = """
 **Participants**
@@ -93,12 +92,14 @@ text = """
 5. **Dietary Management:** Discuss limited pickle consumption allowance with the nurse.
 6. **Red Flags/Emergency Instructions:** Call program hotline if weight increases by >1 kg overnight or dyspnea worsens; call emergency services for acute severe breathlessness.
 """
+text_words = 649
+text_tokens = 975
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program for Mr. Nowak. Am I speaking with Edward?
@@ -132,12 +133,14 @@ Patient: Julia! She wants you.
 Caregiver: I'm here, Marta. I'll send the weight sheet photo, and thanks for having the nurse call within the hour.
 Agent: You're welcome, Julia. Talk next Friday or sooner. Bye!
 """
+text_words = 677
+text_tokens = 971
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 800
 text = """
 **Dialogue Summary**
@@ -186,12 +189,14 @@ text = """
 5. **Volunteer Visit:** Marta to organize a weekly volunteer visit for card games.
 6. **Dietary Agreement:** Pickle intake to be evaluated with the nurse; Edward instructed to call the program or emergency services if weight increases by >1 kg overnight or severe breathlessness occurs.
 """
+text_words = 673
+text_tokens = 947
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program calling for Mr. Nowak. Am I speaking with Edward?
@@ -221,12 +226,14 @@ Caregiver: I'm back, Marta.
 Agent: Please send me the photo of the weight sheet today. I will have the nurse call within an hour to discuss the weight gain, swelling, and night breathing. Talk next Friday, or sooner if anything changes.
 Caregiver: Will do. Thanks, Marta.
 """
+text_words = 541
+text_tokens = 783
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 400
 text = """
 Marta from the Home Care Support Program conducted a Friday check-in call regarding Mr. Edward Nowak. She first spoke with his daughter and caregiver, Julia, and then directly with Mr. Nowak.
@@ -241,7 +248,7 @@ Marta from the Home Care Support Program conducted a Friday check-in call regard
 
 **Medication & Compliance**
 
-* Edward missed his evening pills on Wednesday. He admitted he dislikes taking his diuretic ("water pill") in the evening because it forces him to wake up multiple times at night to use the bathroom.
+* Edward missed his evening pills on Wednesday. He admitted he dislikes taking his diuretic (\"water pill\") in the evening because it forces him to wake up multiple times at night to use the bathroom.
 
 **Physical Therapy & Safety**
 
@@ -261,12 +268,14 @@ Marta from the Home Care Support Program conducted a Friday check-in call regard
 * Julia will send Marta a photo of the daily weight log.
 * Marta will look into assigning a volunteer to visit Edward once a week to play cards.
 """
+text_words = 420
+text_tokens = 598
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Gemini 3 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Gemini 3 Medium"
 target_words = 200
 text = """
 Marta from the Home Care Support Program called for a Friday check-in with patient Edward Nowak, initially speaking with his daughter and caregiver, Julia. Julia reported Edward’s ankles are swollen, he gets breathless climbing stairs, slept poorly, used extra pillows, and skipped evening pills on Wednesday. His weight increased by 1.7 kg in four days (83.4 kg on Monday to 85.1 kg on Friday), and his morning blood sugar reached 10.2 after eating cake on Thursday.
@@ -282,12 +291,14 @@ Agreements and upcoming steps:
 * Volunteer placement for weekly card games.
 * Julia to send a photo of the weight sheet to Marta.
 """
+text_words = 239
+text_tokens = 331
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 1200
 text = """
 Agent Marta from the Home Care Support Program called Edward Nowak for the regular Friday check-in. His daughter, Julia, answered first because Edward often does not hear the phone. She reported several concerns, warning that her father tends to downplay his symptoms.
@@ -332,12 +343,14 @@ Marta instructed Edward to seek help if his weight increased by more than one ki
 
 Marta then asked to speak with Julia again. Julia said the conversation had gone better than usual because Edward had finally admitted his nighttime breathing difficulties. Marta explained that he had also disclosed the diuretic's disruptive effect on his sleep, which helped explain his missed doses. She asked Julia to send a photograph of the weight-recording sheet later that day and confirmed that she would arrange for the nurse to call within the hour. Julia agreed and thanked Marta. They ended the call, with Marta advising Julia to contact the program sooner than the next Friday check-in if anything changed.
 """
+text_words = 1577
+text_tokens = 1880
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Is this Edward?
@@ -468,12 +481,14 @@ Agent: You're welcome. I'll speak with you next Friday, or sooner if anything ch
 
 Caregiver: Goodbye.
 """
+text_words = 1445
+text_tokens = 2014
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 800
 text = """
 Agent Marta from the Home Care Support Program called for the Friday check-in with Edward Nowak. His daughter Julia answered first because he often does not hear the phone. She reported recurrent ankle swelling, with deep sock marks and difficulty putting on shoes on Tuesday, and breathlessness climbing the stairs to the bathroom. Edward weighed 83.4 kg on Monday and 85.1 kg that morning, a 1.7 kg gain in four days. Julia recorded the readings on a sheet on the fridge. He had slept poorly Wednesday and Thursday, was using two pillows, and Julia found him sleeping in an armchair at 3 a.m. He had skipped his evening medication on Wednesday, claiming he forgot. He had not fallen since an incident two weeks earlier, but sometimes felt dizzy when standing quickly. He had no chest pain, and his appetite was normal, although he ate salty foods, including hidden pickles.
@@ -500,12 +515,14 @@ Edward asked to negotiate his pickle consumption, proposing two per week. Marta 
 
 After Edward handed the phone back, Julia confirmed that the conversation had gone better than usual and that he had finally admitted his nighttime symptoms. Marta thanked her for the information and requested the weight-sheet photograph. Julia agreed. They planned to speak again the following Friday, or sooner if anything changed.
 """
+text_words = 1091
+text_tokens = 1339
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 600
 text = """
 Agent Marta from the Home Care Support Program called for Edward Nowak’s Friday check-in. His daughter, Julia, answered first and reported recurring ankle swelling, deep sock marks, difficulty fitting shoes, and shortness of breath climbing the stairs. Edward’s weight increased from 83.4 kg on Monday to 85.1 kg Friday, a 1.7 kg gain in four days. He slept poorly Wednesday and Thursday, started using two pillows, and was found sleeping in his armchair at 3 a.m. He skipped his evening medication Wednesday. Julia reported occasional dizziness when standing quickly, but no chest pain or further falls since one two weeks earlier. His appetite was good, though he ate salty foods, including hidden pickles.
@@ -526,12 +543,14 @@ Marta summarized the agreed actions: the nurse would call Edward that day regard
 
 Edward requested permission to eat two pickles weekly. Marta agreed to discuss a reasonable portion with the nurse and advised against hiding salty foods. She instructed Edward to call the program’s number immediately if his weight increased by more than 1 kg overnight or his breathlessness worsened, and to contact emergency services if he could not breathe. Julia thanked Marta and agreed to follow up, with the next routine check-in planned for the following Friday or earlier if necessary.
 """
+text_words = 750
+text_tokens = 937
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 400
 text = """
 Agent Marta from the Home Care Support Program called Edward Nowak for the Friday check-in. His daughter Julia answered first and reported recurring ankle swelling, deep sock marks, difficulty putting on shoes, and breathlessness climbing stairs. His weight increased from 83.4 kg on Monday to 85.1 kg Friday, a 1.7 kg gain in four days. He slept poorly Wednesday and Thursday, now sleeps on two pillows, and was found sitting in his armchair at 3 a.m. on Thursday because lying down caused chest tightness. He missed his evening medication Wednesday. He has occasional dizziness when standing quickly but no chest pain or further falls since one two weeks ago. His appetite is good, though he eats salty foods, including hidden pickles.
@@ -550,12 +569,14 @@ Edward admitted feeling distressed about losing independence and becoming a burd
 
 Marta summarized the plan: nurse to call within the hour regarding weight gain, swelling, and nighttime breathlessness, consult the doctor about diuretic timing, arrange bathroom safety equipment if needed, organize echo transport, continue physiotherapy, and explore a card-playing volunteer. Julia will send a photo of Edward's weight record that day. If his weight increases by more than 1 kg overnight or breathlessness worsens, he must call the program's emergency contact number immediately, or emergency services if he cannot breathe. Marta and Julia will speak again next Friday or sooner if necessary.
 """
+text_words = 577
+text_tokens = 742
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "ChatGPT default"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "ChatGPT default"
 target_words = 200
 text = """
 Agent Marta from the Home Care Support Program called Edward Nowak for the Friday check-in. His daughter Julia answered first and reported recurrent ankle swelling, breathlessness on stairs, poor sleep, increased pillow use, and a weight increase from 83.4 kg Monday to 85.1 kg Friday. Edward confirmed a dent remained when pressing his shin and admitted waking at night with chest tightness, relieved by sitting in an armchair. No chest pain or recent falls, but occasional dizziness when standing. Marta will arrange a nurse call within an hour to review possible fluid retention and medication adjustment. Julia will send a photo of the weight record.
@@ -570,16 +591,18 @@ The echocardiogram is next Wednesday at 10:30, followed by cardiology with Dr. W
 
 Edward sometimes feels like a burden but enjoys Sunday chess with his grandson. Marta will explore weekly visits from a volunteer to play cards. They will discuss limiting pickles due to salt intake. Edward must call the program if weight rises over 1 kg overnight or breathing worsens, and emergency services if he cannot breathe.
 """
+text_words = 320
+text_tokens = 426
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Edward Nowak for the Friday check-in.
-Caregiver: This is Julia, his daughter; Dad is in the other room (he never hears the phone). Before handing over, she reports that he downplays everything. Ankle swelling is back: on Tuesday his socks left deep marks and he struggled to put on shoes. He gets out of breath on the stairs to the bathroom and says it's "just age."
+Caregiver: This is Julia, his daughter; Dad is in the other room (he never hears the phone). Before handing over, she reports that he downplays everything. Ankle swelling is back: on Tuesday his socks left deep marks and he struggled to put on shoes. He gets out of breath on the stairs to the bathroom and says it's \"just age.\"
 Agent: Asked if he weighs himself daily.
 Caregiver: Most days, recorded on a sheet on the fridge. Monday 83.4 kg, this morning 85.1 kg.
 Agent: That is a 1.7 kg gain in four days; she will flag it for the nurse today.
@@ -587,19 +610,19 @@ Caregiver: He slept badly Wednesday and Thursday, now uses two pillows, and was 
 Agent: Will talk to Edward now, then ask Julia logistics questions.
 
 Agent (to Patient): Greeted Mr. Nowak, asked how he really feels.
-Patient: Feels "like an old car," slow starts but gets there. Initially says Julia exaggerates and shoes are tight because he bought them in a hurry. When Marta asked him to press his shin, he admitted a small dent. He stops once midway on the stairs ("admiring the wallpaper"). Cannot lie flat; uses extra pillow; wakes with chest tightness "like somebody sitting on it," goes to the armchair and it passes.
-Agent: Said this isn't "just age," fluid may be building up, and medication can be adjusted. Asked permission for the nurse to call him today.
-Patient: Asked whether he must go to hospital (refuses; hospital food "a crime").
+Patient: Feels \"like an old car,\" slow starts but gets there. Initially says Julia exaggerates and shoes are tight because he bought them in a hurry. When Marta asked him to press his shin, he admitted a small dent. He stops once midway on the stairs (\"admiring the wallpaper\"). Cannot lie flat; uses extra pillow; wakes with chest tightness \"like somebody sitting on it,\" goes to the armchair and it passes.
+Agent: Said this isn't \"just age,\" fluid may be building up, and medication can be adjusted. Asked permission for the nurse to call him today.
+Patient: Asked whether he must go to hospital (refuses; hospital food \"a crime\").
 Agent: Can't promise; depends on nurse and doctor, but often it's a dose change and he stays home.
 Patient: Agreed the nurse may call.
 
-Missed pills: He fell asleep watching a whale documentary. Pills are the little white ones and the yellow "water one" (diuretic). The diuretic especially matters with swelling. He admitted the real problem: it makes him use the bathroom constantly, and taken in the evening he is up three times at night, which he finds humiliating. The hospital told him to take it in the evening, or he got used to it. Marta said it's usually best taken in the morning; the nurse will confirm with the doctor and likely move it to morning, which may also help nights and fall risk. Patient strongly wants this and asked Julia to write it down; Julia is writing it.
+Missed pills: He fell asleep watching a whale documentary. Pills are the little white ones and the yellow \"water one\" (diuretic). The diuretic especially matters with swelling. He admitted the real problem: it makes him use the bathroom constantly, and taken in the evening he is up three times at night, which he finds humiliating. The hospital told him to take it in the evening, or he got used to it. Marta said it's usually best taken in the morning; the nurse will confirm with the doctor and likely move it to morning, which may also help nights and fall risk. Patient strongly wants this and asked Julia to write it down; Julia is writing it.
 
-Physiotherapy: Had one and a half sessions. Monday went well; therapist Kuba had him walk with a cane (he dislikes it, "looks like a professor"). Thursday he was too tired and stopped after 20 minutes; Kuba said they'd do more next week. Balance slightly better, less wobbly in the kitchen. The bathroom floor is slippery; he almost slid Sunday but grabbed the towel rail. Grab bars and non-slip mat not yet installed; Julia's husband has promised for three weeks. Marta will tell Julia it's urgent; if not done by Monday, the program's home-safety service can send someone. Patient asked that Julia relay the urgency tactfully so her husband isn't offended.
+Physiotherapy: Had one and a half sessions. Monday went well; therapist Kuba had him walk with a cane (he dislikes it, \"looks like a professor\"). Thursday he was too tired and stopped after 20 minutes; Kuba said they'd do more next week. Balance slightly better, less wobbly in the kitchen. The bathroom floor is slippery; he almost slid Sunday but grabbed the towel rail. Grab bars and non-slip mat not yet installed; Julia's husband has promised for three weeks. Marta will tell Julia it's urgent; if not done by Monday, the program's home-safety service can send someone. Patient asked that Julia relay the urgency tactfully so her husband isn't offended.
 
 Blood sugar (measured every morning, Julia supervises): 7.9 Monday, 8.6 Wednesday, 9.1 today, 10.2 Thursday after visiting Uncle Staszek and eating a third of a cake. Marta noted readings. He reports foggy vision in the left eye, attributed to the cataract.
 
-Upcoming appointments (Julia keeps the calendar): echocardiogram next Wednesday at 10:30, about 40 minutes, painless; patient recalls cold gel and Marta will mention warming it. Cardiology consultation with Dr. Wiśniewska (whom he likes) next Friday, two days later; she will review the echo and probably adjust medication. Cataract surgery on the 24th of next month, left eye first; requires a pre-operative eye clinic check-up and a cardiologist's note that his heart is stable. If not stable, surgery may be postponed until fluid is controlled, which Marta used as another reason to take the water pill properly; patient found that persuasive. It's a day procedure so he needs an accompanying person; Julia already got the day off work. Julia cannot take him to the echo (works that morning), so Marta will arrange the program's medical transport. Patient accepts a driver but not one who talks politics; Marta will note "prefers quiet driver, needs arm to the entrance."
+Upcoming appointments (Julia keeps the calendar): echocardiogram next Wednesday at 10:30, about 40 minutes, painless; patient recalls cold gel and Marta will mention warming it. Cardiology consultation with Dr. Wiśniewska (whom he likes) next Friday, two days later; she will review the echo and probably adjust medication. Cataract surgery on the 24th of next month, left eye first; requires a pre-operative eye clinic check-up and a cardiologist's note that his heart is stable. If not stable, surgery may be postponed until fluid is controlled, which Marta used as another reason to take the water pill properly; patient found that persuasive. It's a day procedure so he needs an accompanying person; Julia already got the day off work. Julia cannot take him to the echo (works that morning), so Marta will arrange the program's medical transport. Patient accepts a driver but not one who talks politics; Marta will note \"prefers quiet driver, needs arm to the entrance.\"
 
 Mood: Patient admitted it's sometimes hard; he used to fix everything and dislikes being a burden. Marta reassured him he is not. Best part of his week is his grandson's Sunday visits, teaching him chess on the tablet. Marta offered a weekly program volunteer visitor to chat or play cards, no pressure; he wants cards, not chess.
 
@@ -607,19 +630,21 @@ Marta's summary/agreements: Nurse calls today about weight gain, swelling and ni
 
 Final with Julia: She said it went better than usual; he admitted the night symptoms. Marta noted the water pill wakes him at night. Julia will send a photo of the weight sheet later today; Marta will have the nurse call within the hour. Next check-in next Friday, or sooner if anything changes.
 """
+text_words = 997
+text_tokens = 1340
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 1000
 text = """
-Agent Marta (Home Care Support Program) called for Mr. Edward Nowak for the Friday check-in. His daughter Julia answered first and reported, before handing over the phone, that he downplays symptoms. Her report: ankle swelling is back (on Tuesday his socks left deep marks and he had trouble putting on shoes); he gets out of breath on the stairs to the bathroom and calls it "just age." He weighs himself daily, recorded on a sheet on the fridge: 83.4 kg on Monday, 85.1 kg this morning (+1.7 kg in four days). Marta will flag this to the nurse today. He slept badly Wednesday and Thursday, now uses two pillows, and Julia found him in the armchair at 3 a.m. yesterday. He skipped his evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite, but he eats salty food secretly (pickles hidden behind the bread box).
+Agent Marta (Home Care Support Program) called for Mr. Edward Nowak for the Friday check-in. His daughter Julia answered first and reported, before handing over the phone, that he downplays symptoms. Her report: ankle swelling is back (on Tuesday his socks left deep marks and he had trouble putting on shoes); he gets out of breath on the stairs to the bathroom and calls it \"just age.\" He weighs himself daily, recorded on a sheet on the fridge: 83.4 kg on Monday, 85.1 kg this morning (+1.7 kg in four days). Marta will flag this to the nurse today. He slept badly Wednesday and Thursday, now uses two pillows, and Julia found him in the armchair at 3 a.m. yesterday. He skipped his evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite, but he eats salty food secretly (pickles hidden behind the bread box).
 
-Marta then spoke with Mr. Nowak. He minimized the symptoms, but on checking admitted a small dent when pressing his shin. He stops once on the stairs. At night he cannot lie flat, wakes with chest tightness "like somebody is sitting on it," and goes to the armchair where it passes. Marta said this is not "just age," may be fluid buildup, and medication can be adjusted; she asked to have the nurse call him today. He asked whether he would have to go to hospital (he refuses to go back, hated the food). Marta said she can't promise, it depends on nurse and doctor, but often it is only a dose change. He agreed the nurse may call.
+Marta then spoke with Mr. Nowak. He minimized the symptoms, but on checking admitted a small dent when pressing his shin. He stops once on the stairs. At night he cannot lie flat, wakes with chest tightness \"like somebody is sitting on it,\" and goes to the armchair where it passes. Marta said this is not \"just age,\" may be fluid buildup, and medication can be adjusted; she asked to have the nurse call him today. He asked whether he would have to go to hospital (he refuses to go back, hated the food). Marta said she can't promise, it depends on nurse and doctor, but often it is only a dose change. He agreed the nurse may call.
 
-Missed pills: he fell asleep watching a whale documentary. He takes little white pills and a yellow diuretic ("water pill"). He admitted the real problem: taking the diuretic in the evening makes him get up three times a night, which he finds humiliating. The hospital told him to take it in the evening, or he got used to it. Marta will ask the nurse to confirm with the doctor and likely move it to the morning, which may also reduce fall risk. He strongly welcomed this and had Julia write it down.
+Missed pills: he fell asleep watching a whale documentary. He takes little white pills and a yellow diuretic (\"water pill\"). He admitted the real problem: taking the diuretic in the evening makes him get up three times a night, which he finds humiliating. The hospital told him to take it in the evening, or he got used to it. Marta will ask the nurse to confirm with the doctor and likely move it to the morning, which may also reduce fall risk. He strongly welcomed this and had Julia write it down.
 
 Physiotherapy: he had one and a half sessions last week. Monday was good (walking with a cane with therapist Kuba; he dislikes the cane). Thursday he stopped after twenty minutes, tired; Kuba said more next week. Balance is slightly better in the kitchen. The bathroom floor is slippery; he nearly slid on Sunday and caught the towel rail, no fall. Grab bars and non-slip mat are not yet installed: Julia's husband has promised for three weeks. Marta will tell Julia it's urgent (Mr. Nowak asked that Julia pass it on diplomatically, so the husband isn't offended); if not done by Monday, the program's home-safety service can send someone.
 
@@ -627,7 +652,7 @@ Blood sugar (morning): 7.9 Monday, 8.6 Wednesday, 10.2 Thursday (after eating a 
 
 Upcoming appointments (Julia keeps the calendar): echocardiogram next Wednesday at 10:30, about forty minutes, painless, he dislikes cold gel (Marta will mention warming it). Cardiology consultation with Dr. Wiśniewska (he likes her) on Friday, two days later; she will review the echo and probably adjust medication. Cataract surgery on the 24th of next month, left eye first, a day procedure requiring someone to accompany him; Julia has already arranged time off. Beforehand he needs a pre-operative eye clinic check-up and a note from the cardiologist that his heart is stable enough; if not, surgery might be postponed until fluid is controlled. Marta used this as motivation to take the diuretic properly, and he found it a convincing argument.
 
-Transport: Julia works that morning and cannot take him to the echo. The program's medical transport service will be arranged. He is fine with a driver but wants a quiet one (no political talk), and needs an arm to the entrance. Marta will note "prefers quiet driver, needs arm to the entrance."
+Transport: Julia works that morning and cannot take him to the echo. The program's medical transport service will be arranged. He is fine with a driver but wants a quiet one (no political talk), and needs an arm to the entrance. Marta will note \"prefers quiet driver, needs arm to the entrance.\"
 
 Mood: he admitted it is sometimes hard; he used to fix everything and dislikes being a burden. Marta reassured him he is not a burden. The best part of his week is his grandson visiting Sundays and teaching him chess on the tablet. Marta offered a program volunteer visiting weekly; he accepted for playing cards, not chess.
 
@@ -635,17 +660,19 @@ Marta's summary and agreements: the nurse calls today about weight gain, swellin
 
 Back with Julia: she said he admitted the night symptoms, which is unusual. Marta noted the water pill disturbs his sleep. Julia will send a photo of the weight sheet later today; Marta will have the nurse call within the hour. Next check-in next Friday, or sooner if anything changes.
 """
+text_words = 907
+text_tokens = 1172
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 800
 text = """
 Agent Marta (Home Care Support Program) called for Friday check-in with Mr. Edward Nowak; daughter Julia answered. Julia reported, before handing over the phone, that her father downplays symptoms: ankle swelling returned (socks left deep marks Tuesday, trouble putting on shoes), breathlessness on stairs to bathroom, poor sleep Wednesday and Thursday, now using two pillows, found in armchair at 3 a.m. yesterday. He skipped evening pills Wednesday. Daily weights recorded on fridge sheet: 83.4 kg Monday, 85.1 kg this morning (+1.7 kg in four days); Marta will flag to nurse today. No falls since one two weeks ago; slight dizziness on standing quickly; no chest pain; appetite good but eats hidden salty food (pickles behind bread box).
 
-Mr. Nowak, speaking with Marta, minimized symptoms but on checking confirmed a small dent on shin. He stops once midway on stairs. At night he sleeps with extra pillow, wakes with chest tightness "like somebody sitting on it," relieved in armchair. Marta said this isn't "just age," may be fluid buildup fixable by medication adjustment, and asked to have the nurse call him today; he agreed, afraid of hospital readmission (disliked the food). Marta said outcome depends on nurse and doctor, often just a dose change at home.
+Mr. Nowak, speaking with Marta, minimized symptoms but on checking confirmed a small dent on shin. He stops once midway on stairs. At night he sleeps with extra pillow, wakes with chest tightness \"like somebody sitting on it,\" relieved in armchair. Marta said this isn't \"just age,\" may be fluid buildup fixable by medication adjustment, and asked to have the nurse call him today; he agreed, afraid of hospital readmission (disliked the food). Marta said outcome depends on nurse and doctor, often just a dose change at home.
 
 Missed pills: he fell asleep watching a documentary. He takes little white pills and a yellow diuretic (water pill). He admitted he dislikes the diuretic because evening dosing means bathroom trips three times a night, which he finds humiliating, and raises fall risk. The hospital told him to take it in the evening, or he got used to it. Marta will ask the nurse to confirm with the doctor to move it to morning; he strongly wants this, and Julia wrote it down.
 
@@ -653,7 +680,7 @@ Physiotherapy: one and a half sessions last week. Monday with therapist Kuba (wa
 
 Blood sugar (morning, Julia oversees): 7.9 Monday, 8.6 Wednesday, 10.2 Thursday (after eating a third of a cake at Uncle Staszek's), 9.1 today. Marta noted readings. He reports foggy left-eye vision, attributes to cataract.
 
-Upcoming appointments: echocardiogram next Wednesday 10:30 (about 40 minutes, painless; Marta will ask staff to warm the gel); cardiology consultation with Dr. Wiśniewska (whom he likes) on Friday two days later to review echo and likely adjust medication; cataract surgery on the 24th of next month, left eye first, day procedure requiring an accompanying person. Julia has already arranged time off for it. Before surgery he needs an eye clinic pre-operative check-up and a cardiologist's note confirming heart stability; unstable fluid status could postpone surgery, a motivation to take the diuretic properly, which he accepted. Julia works Wednesday morning and cannot take him to the echo; Marta will arrange the program's medical transport. Request noted: "prefers quiet driver (no politics), needs arm to the entrance."
+Upcoming appointments: echocardiogram next Wednesday 10:30 (about 40 minutes, painless; Marta will ask staff to warm the gel); cardiology consultation with Dr. Wiśniewska (whom he likes) on Friday two days later to review echo and likely adjust medication; cataract surgery on the 24th of next month, left eye first, day procedure requiring an accompanying person. Julia has already arranged time off for it. Before surgery he needs an eye clinic pre-operative check-up and a cardiologist's note confirming heart stability; unstable fluid status could postpone surgery, a motivation to take the diuretic properly, which he accepted. Julia works Wednesday morning and cannot take him to the echo; Marta will arrange the program's medical transport. Request noted: \"prefers quiet driver (no politics), needs arm to the entrance.\"
 
 Mood: he admitted it is hard sometimes; he used to fix everything and dislikes feeling like a burden after the fall and loss of independence. Marta reassured him. Best part of his week is his grandson visiting Sundays and teaching him chess on the tablet. Marta offered a weekly program volunteer for company; he accepted cards, not chess.
 
@@ -661,17 +688,19 @@ Marta's summary and agreements: nurse calls him today about weight gain, swellin
 
 Closing with Julia: she said he admitted the night symptoms more than usual. Marta noted the diuretic explains his nights. Julia will send a photo of the weight sheet later today; Marta will have the nurse call within the hour. Next check-in next Friday, or sooner if anything changes.
 """
+text_words = 759
+text_tokens = 1009
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 600
 text = """
 Marta (Home Care Support Program agent) called Mr. Edward Nowak for the Friday check-in; his daughter Julia answered first. Julia reported: ankle swelling returned (Tuesday socks left deep marks, trouble with shoes), breathlessness on stairs to bathroom, weight 83.4 kg Monday vs 85.1 kg this morning (gain of 1.7 kg in four days, recorded on fridge sheet), poor sleep Wednesday and Thursday, now uses two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite but secretly eats salty food (pickles hidden behind bread box). Marta said she would flag the weight gain for the nurse.
 
-Speaking with Mr. Nowak, he downplayed symptoms ("old car"), but on checking admitted a small dent on his shin, stops once on stairs, and sleeps with an extra pillow, wakes with chest tightness like someone sitting on it, and relieves it in the armchair. Marta said this is not "just age," may be fluid buildup, and medication can be adjusted. He fears hospital ("not going back, food was a crime"); Marta promised nothing but said it is often just a dose change at home. He agreed the nurse may call today.
+Speaking with Mr. Nowak, he downplayed symptoms (\"old car\"), but on checking admitted a small dent on his shin, stops once on stairs, and sleeps with an extra pillow, wakes with chest tightness like someone sitting on it, and relieves it in the armchair. Marta said this is not \"just age,\" may be fluid buildup, and medication can be adjusted. He fears hospital (\"not going back, food was a crime\"); Marta promised nothing but said it is often just a dose change at home. He agreed the nurse may call today.
 
 Missed pills: he fell asleep watching a whale documentary. The skipped one is the yellow diuretic (water pill), which he dislikes because taking it in the evening makes him get up three times at night, which he finds humiliating. Hospital told him evening dosing, or he got used to it. Marta will ask the nurse to confirm with the doctor and likely move it to morning, which may also reduce fall risk. He asked Julia to write it down.
 
@@ -679,7 +708,7 @@ Physiotherapy: one and a half sessions last week. Monday with therapist Kuba (wa
 
 Blood sugar (morning readings): 7.9 Monday, 8.6 Wednesday, 10.2 Thursday (after eating a third of a cake at Uncle Staszek's), 9.1 today. Marta noted the readings. He reported foggy vision in the left eye, attributed to the cataract.
 
-Upcoming appointments (Julia keeps the calendar): echocardiogram next Wednesday at 10:30, about 40 minutes, painless (he dislikes cold gel; Marta will mention it); cardiology consultation with Dr. Wiśniewska on the Friday after (he likes her); cataract surgery, left eye, on the 24th of next month, a day procedure requiring someone to accompany him. Beforehand he needs a pre-operative eye clinic check-up and a cardiologist's note that his heart is stable; surgery might be postponed if fluid is uncontrolled, which motivates him to take the water pill. Julia has arranged time off for the surgery day but cannot take him to the echo because she works that morning. Marta will arrange the program's medical transport; he accepts a driver but wants a quiet one (not one who talks politics) and needs an arm to the entrance. Marta noted "prefers quiet driver, needs arm to the entrance."
+Upcoming appointments (Julia keeps the calendar): echocardiogram next Wednesday at 10:30, about 40 minutes, painless (he dislikes cold gel; Marta will mention it); cardiology consultation with Dr. Wiśniewska on the Friday after (he likes her); cataract surgery, left eye, on the 24th of next month, a day procedure requiring someone to accompany him. Beforehand he needs a pre-operative eye clinic check-up and a cardiologist's note that his heart is stable; surgery might be postponed if fluid is uncontrolled, which motivates him to take the water pill. Julia has arranged time off for the surgery day but cannot take him to the echo because she works that morning. Marta will arrange the program's medical transport; he accepts a driver but wants a quiet one (not one who talks politics) and needs an arm to the entrance. Marta noted \"prefers quiet driver, needs arm to the entrance.\"
 
 Mood: he admitted it is hard sometimes; he used to fix everything and dislikes being a burden. Marta reassured him. His grandson visits Sundays and teaches him chess on the tablet, the best part of his week. Marta offered a weekly program volunteer visit; he wants cards, not chess.
 
@@ -687,34 +716,38 @@ Marta's summary of the plan: nurse calls today about weight gain, swelling, nigh
 
 Back with Julia: she said he admitted the night symptoms, which is unusual. Marta will have the nurse call within the hour; Julia will send a photo of the weight sheet later today. Next check-in next Friday, or sooner if anything changes.
 """
+text_words = 753
+text_tokens = 998
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 400
 text = """
 Agent Marta (Home Care Support Program) held the Friday check-in call with Edward Nowak and his daughter Julia, who answered first. Julia reported: ankle swelling back (socks left deep marks Tuesday, shoes hard to put on), breathlessness on bathroom stairs, weight 83.4 kg Monday to 85.1 kg today (+1.7 kg in 4 days, recorded on fridge sheet), poor sleep Wed/Thu, two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday. No falls since one two weeks ago; slight dizziness on standing quickly; no chest pain; good appetite, hides salty pickles behind the bread box. Marta will flag weight gain to the nurse today.
 
-Edward downplayed symptoms ("just age") but admitted a small dent on his shin, stopping once on stairs, and waking at night with chest tightness as if someone is sitting on it, relieved in the armchair. He fears hospital ("not going back"). Marta explained it may be fluid buildup and a dose change could keep him home; he agreed the nurse may call today. He skipped pills because he fell asleep; the diuretic (water pill) is taken in the evening (told by hospital or habit), making him urinate three times at night, which he finds humiliating. Marta will ask the nurse to confirm with the doctor moving it to the morning; Julia wrote it down.
+Edward downplayed symptoms (\"just age\") but admitted a small dent on his shin, stopping once on stairs, and waking at night with chest tightness as if someone is sitting on it, relieved in the armchair. He fears hospital (\"not going back\"). Marta explained it may be fluid buildup and a dose change could keep him home; he agreed the nurse may call today. He skipped pills because he fell asleep; the diuretic (water pill) is taken in the evening (told by hospital or habit), making him urinate three times at night, which he finds humiliating. Marta will ask the nurse to confirm with the doctor moving it to the morning; Julia wrote it down.
 
 Physiotherapy: one and a half sessions last week with Kuba (Monday good, walked with cane, which he dislikes; Thursday stopped after 20 minutes from tiredness). Balance slightly better. Bathroom floor slippery, nearly slipped Sunday, grabbed the towel rail. Grab bars and non-slip mat not installed; Julia's husband promised three weeks ago. Marta will tell Julia it's urgent (Edward asked it be framed diplomatically); if not done by Monday, the program's home-safety service can do it.
 
 Blood sugar (morning): 7.9 Monday, 8.6 Wednesday, 10.2 Thursday (after cake at Uncle Staszek's), 9.1 today. Left eye foggy vision, attributed to cataract.
 
-Upcoming: echocardiogram next Wednesday 10:30 (~40 min; he asked for warmed gel); cardiology consultation with Dr. Wiśniewska on Friday (he likes her); cataract surgery on the 24th of next month, left eye first, needing a pre-op eye clinic check-up and a cardiologist note that his heart is stable; surgery may be postponed if fluid is uncontrolled, which motivated him to take the water pill. Day-procedure needs an accompanying person; Julia has the day off. Julia can't take him to the echo; the program's medical transport will be arranged, noted as "prefers quiet driver (no politics), needs arm to entrance."
+Upcoming: echocardiogram next Wednesday 10:30 (~40 min; he asked for warmed gel); cardiology consultation with Dr. Wiśniewska on Friday (he likes her); cataract surgery on the 24th of next month, left eye first, needing a pre-op eye clinic check-up and a cardiologist note that his heart is stable; surgery may be postponed if fluid is uncontrolled, which motivated him to take the water pill. Day-procedure needs an accompanying person; Julia has the day off. Julia can't take him to the echo; the program's medical transport will be arranged, noted as \"prefers quiet driver (no politics), needs arm to entrance.\"
 
 Mood: he feels like a burden and misses being independent; best part of the week is his grandson teaching him chess on the tablet on Sundays. Marta will look into a weekly volunteer for cards (not chess).
 
 Marta summarized: nurse calls today about weight, swelling, night breathlessness, and morning pill timing; grab bars this week; echo with quiet driver; cardiology Friday; full physiotherapy session; volunteer search. Edward asked to negotiate pickles (two a week); to be discussed with the nurse. Marta advised calling the card number if weight rises over 1 kg overnight or breathlessness worsens, and emergency services if he can't breathe. Marta asked Julia to send a photo of the weight sheet today; the nurse will call within the hour. Next check-in next Friday, or sooner if anything changes.
 """
+text_words = 556
+text_tokens = 767
 
 [[results]]
-date         = 2026-10-31
-prompt_id    = "p02"
-data_id      = "d001"
-source_llm   = "Sonnet 5.5 Medium"
+date = 2026-10-31
+prompt_id = "p02"
+data_id = "d001"
+source_llm = "Sonnet 5.5 Medium"
 target_words = 200
 text = """
 Marta (Home Care Support Program) called Mr. Edward Nowak for the Friday check-in; daughter Julia answered first. Julia reported recurring ankle swelling (deep sock marks Tuesday), breathlessness on stairs, poor sleep Wed/Thu, two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday, dizziness on standing, no chest pain, no falls since one two weeks ago, hidden pickles. Weight 83.4 kg Monday, 85.1 kg today (+1.7 kg); Marta flagged it for the nurse.
@@ -725,3 +758,5 @@ Physiotherapy with Kuba: one and a half sessions; balance slightly better; nearl
 
 Upcoming: echocardiogram next Wednesday 10:30 (~40 min); cardiology with Dr. Wiśniewska Friday; cataract surgery on the 24th next month, needing pre-op eye check and cardiologist clearance; Julia will take that day off. Transport arranged for echo: quiet driver, arm to entrance. Edward feels like a burden; grandson teaches him chess Sundays. Marta will seek a volunteer for cards. Pickles to be discussed with nurse. Call emergency/program number if weight rises over 1 kg overnight or breathing worsens. Julia will send weight sheet photo; nurse to call within the hour; next call Friday.
 """
+text_words = 295
+text_tokens = 441
