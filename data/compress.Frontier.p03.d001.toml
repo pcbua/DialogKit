@@ -17,6 +17,7 @@ Dialogue to Shorten:
 """
 
 [[results]]
+type         = "Compressed Dialogue"
 date         = 2026-11-02
 prompt_id    = "p03"
 data_id      = "d001"

@@ -1,8 +1,12 @@
-data_id       = "d002"
-date          = 2026-11-02
-type          = "Dialogue"
-source_llm    = "ChatGPT default"
-source_prompt = """
+[[data]]
+type       = "Dialogue"
+data_id    = "d002"
+date       = 2026-11-02
+source     = "LLM"
+source_llm = "ChatGPT default"
+source_system_prompt = """
+"""
+source_user_prompt = """
 	Generate ~200 turns of synthetic dialogue between Agent, Patient, and Caregiver.
 	Agent calls, Caregiver takes a phone, Agent wants to know how Patient is feeling. Caregiver describes some issues. Then pass the phone to Patient.
 	From now, Agent & Patient talk about how he feels, what needs to be done/organized, how last week went, and about future medical procedures.
@@ -13,7 +17,7 @@ speakers = [
 	"Caregiver | Anna",
 	"Patient | Mr. Edward Nowak | Edward | Anna's Dad"
 ]
-text     = """
+text = """
 	Agent: Hello, this is Marta calling from the Home Care Support Program. May I speak with Mr. Edward Nowak?
 	Caregiver: Hello, this is Anna, his daughter. He's here with me, but he's in the kitchen at the moment. Can I help you?
 	Agent: Of course, Anna. I'm calling for our regular weekly check-in. Before I speak with Edward, could you tell me briefly how he's been doing over the past few days?

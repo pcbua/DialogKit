@@ -1,8 +1,12 @@
-data_id       = "d003"
-date          = 2026-11-02
-type          = "Dialogue"
-source_llm    = "Gemini 3 Medium"
-source_prompt = """
+[[data]]
+type       = "Dialogue"
+data_id    = "d003"
+date       = 2026-11-02
+source     = "LLM"
+source_llm = "Gemini 3 Medium"
+source_system_prompt = """
+"""
+source_user_prompt = """
 	Generate single synthetic dialogue between Agent, Patient, and Caregiver.
 	Agent calls, Caregiver takes a phone, Agent wants to know how Patient is feeling. Caregiver describes some issues. Then pass the phone to Patient.
 	From now, Agent & Patient talk about how he feels, what needs to be done/organized, how last week went, and about future medical procedures.
@@ -12,10 +16,10 @@ source_prompt = """
 """
 speakers = [
 	"Agent | the health coordinator | care coordinator",
-	"Caregiver | Harrison's daughter | primary caregiver ",
+	"Caregiver | Harrison's daughter | primary caregiver",
 	"Patient | Mr. Harrison | dad "
 ]
-text     = """
+text = """
 	Agent: Hello, good afternoon. May I speak with Mr. Harrison, please?
 	Caregiver: Hello. This is his daughter and primary caregiver speaking. He is resting right now, but I can take the phone. Who is calling?
 	Agent: Good afternoon. I am calling from the Community Health Monitoring Program to check in on his recovery and daily well-being.

@@ -1,8 +1,12 @@
-data_id       = "d001"
-date          = 2026-10-31
-type          = "Dialogue"
-source_llm    = "Sonnet 5.5 High"
-source_prompt = """
+[[data]]
+type       = "Dialogue"
+data_id    = "d001"
+date       = 2026-10-31
+source     = "LLM"
+source_llm = "Sonnet 5.5 High"
+source_system_prompt = """
+"""
+source_user_prompt = """
 	Generate synthetic dialogue between Agent, Patient and Caregiver.
 	Agent calls, Caregiver takes a phone, Agent wants to know how Patient is feeling. Caregiver describes some issues. Then pass the phone to Patient.
 	From now, Agent & Patient talk about how he feels, what needs to be done/organized, how last week went, and about future medical procedures.
@@ -13,7 +17,7 @@ speakers = [
 	"Caregiver | Julia | Edward's daughter",
 	"Patient | Edward Nowak | Mr. Nowak | Edward | Julia's dad"
 ]
-text     = """
+text = """
 	Agent:  Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
 	Caregiver:  Hi Marta, no, it's Julia, his daughter. Dad's in the other room. I picked up because he never hears the phone.
 	Agent:  Hi Julia, good to hear from you. I'm calling for our Friday check-in. How's he been doing this week?

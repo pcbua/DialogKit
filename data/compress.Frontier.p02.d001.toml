@@ -12,6 +12,7 @@ Don't comment, don't ask questions, don't add headlines. Just give me the shorte
 """
 
 [[results]]
+type         = "Compressed Dialogue"
 date         = 2026-10-31
 prompt_id    = "p02"
 data_id      = "d001"
