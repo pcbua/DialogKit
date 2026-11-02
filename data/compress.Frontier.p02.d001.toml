@@ -1,6 +1,5 @@
-date      = 2026-10-31
+[[prompts]]
 prompt_id = "p02"
-data_id   = "d001"
 system_prompt_template = """
 """
 user_prompt_template = """
@@ -13,7 +12,10 @@ Don't comment, don't ask questions, don't add headlines. Just give me the shorte
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 1200
 text = """
 **Participants**
@@ -92,7 +94,10 @@ text = """
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program for Mr. Nowak. Am I speaking with Edward?
@@ -128,7 +133,10 @@ Agent: You're welcome, Julia. Talk next Friday or sooner. Bye!
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 800
 text = """
 **Dialogue Summary**
@@ -179,7 +187,10 @@ text = """
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program calling for Mr. Nowak. Am I speaking with Edward?
@@ -211,7 +222,10 @@ Caregiver: Will do. Thanks, Marta.
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 400
 text = """
 Marta from the Home Care Support Program conducted a Friday check-in call regarding Mr. Edward Nowak. She first spoke with his daughter and caregiver, Julia, and then directly with Mr. Nowak.
@@ -248,7 +262,10 @@ Marta from the Home Care Support Program conducted a Friday check-in call regard
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 200
 text = """
 Marta from the Home Care Support Program called for a Friday check-in with patient Edward Nowak, initially speaking with his daughter and caregiver, Julia. Julia reported Edward’s ankles are swollen, he gets breathless climbing stairs, slept poorly, used extra pillows, and skipped evening pills on Wednesday. His weight increased by 1.7 kg in four days (83.4 kg on Monday to 85.1 kg on Friday), and his morning blood sugar reached 10.2 after eating cake on Thursday.
@@ -266,7 +283,10 @@ Agreements and upcoming steps:
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 1200
 text = """
 Agent Marta from the Home Care Support Program called Edward Nowak for the regular Friday check-in. His daughter, Julia, answered first because Edward often does not hear the phone. She reported several concerns, warning that her father tends to downplay his symptoms.
@@ -313,7 +333,10 @@ Marta then asked to speak with Julia again. Julia said the conversation had gone
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Is this Edward?
@@ -446,7 +469,10 @@ Caregiver: Goodbye.
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 800
 text = """
 Agent Marta from the Home Care Support Program called for the Friday check-in with Edward Nowak. His daughter Julia answered first because he often does not hear the phone. She reported recurrent ankle swelling, with deep sock marks and difficulty putting on shoes on Tuesday, and breathlessness climbing the stairs to the bathroom. Edward weighed 83.4 kg on Monday and 85.1 kg that morning, a 1.7 kg gain in four days. Julia recorded the readings on a sheet on the fridge. He had slept poorly Wednesday and Thursday, was using two pillows, and Julia found him sleeping in an armchair at 3 a.m. He had skipped his evening medication on Wednesday, claiming he forgot. He had not fallen since an incident two weeks earlier, but sometimes felt dizzy when standing quickly. He had no chest pain, and his appetite was normal, although he ate salty foods, including hidden pickles.
@@ -475,7 +501,10 @@ After Edward handed the phone back, Julia confirmed that the conversation had go
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 600
 text = """
 Agent Marta from the Home Care Support Program called for Edward Nowak’s Friday check-in. His daughter, Julia, answered first and reported recurring ankle swelling, deep sock marks, difficulty fitting shoes, and shortness of breath climbing the stairs. Edward’s weight increased from 83.4 kg on Monday to 85.1 kg Friday, a 1.7 kg gain in four days. He slept poorly Wednesday and Thursday, started using two pillows, and was found sleeping in his armchair at 3 a.m. He skipped his evening medication Wednesday. Julia reported occasional dizziness when standing quickly, but no chest pain or further falls since one two weeks earlier. His appetite was good, though he ate salty foods, including hidden pickles.
@@ -498,7 +527,10 @@ Edward requested permission to eat two pickles weekly. Marta agreed to discuss a
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 400
 text = """
 Agent Marta from the Home Care Support Program called Edward Nowak for the Friday check-in. His daughter Julia answered first and reported recurring ankle swelling, deep sock marks, difficulty putting on shoes, and breathlessness climbing stairs. His weight increased from 83.4 kg on Monday to 85.1 kg Friday, a 1.7 kg gain in four days. He slept poorly Wednesday and Thursday, now sleeps on two pillows, and was found sitting in his armchair at 3 a.m. on Thursday because lying down caused chest tightness. He missed his evening medication Wednesday. He has occasional dizziness when standing quickly but no chest pain or further falls since one two weeks ago. His appetite is good, though he eats salty foods, including hidden pickles.
@@ -519,7 +551,10 @@ Marta summarized the plan: nurse to call within the hour regarding weight gain, 
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 200
 text = """
 Agent Marta from the Home Care Support Program called Edward Nowak for the Friday check-in. His daughter Julia answered first and reported recurrent ankle swelling, breathlessness on stairs, poor sleep, increased pillow use, and a weight increase from 83.4 kg Monday to 85.1 kg Friday. Edward confirmed a dent remained when pressing his shin and admitted waking at night with chest tightness, relieved by sitting in an armchair. No chest pain or recent falls, but occasional dizziness when standing. Marta will arrange a nurse call within an hour to review possible fluid retention and medication adjustment. Julia will send a photo of the weight record.
@@ -536,7 +571,10 @@ Edward sometimes feels like a burden but enjoys Sunday chess with his grandson. 
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Edward Nowak for the Friday check-in.
@@ -570,7 +608,10 @@ Final with Julia: She said it went better than usual; he admitted the night symp
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 1000
 text = """
 Agent Marta (Home Care Support Program) called for Mr. Edward Nowak for the Friday check-in. His daughter Julia answered first and reported, before handing over the phone, that he downplays symptoms. Her report: ankle swelling is back (on Tuesday his socks left deep marks and he had trouble putting on shoes); he gets out of breath on the stairs to the bathroom and calls it "just age." He weighs himself daily, recorded on a sheet on the fridge: 83.4 kg on Monday, 85.1 kg this morning (+1.7 kg in four days). Marta will flag this to the nurse today. He slept badly Wednesday and Thursday, now uses two pillows, and Julia found him in the armchair at 3 a.m. yesterday. He skipped his evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite, but he eats salty food secretly (pickles hidden behind the bread box).
@@ -595,7 +636,10 @@ Back with Julia: she said he admitted the night symptoms, which is unusual. Mart
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 800
 text = """
 Agent Marta (Home Care Support Program) called for Friday check-in with Mr. Edward Nowak; daughter Julia answered. Julia reported, before handing over the phone, that her father downplays symptoms: ankle swelling returned (socks left deep marks Tuesday, trouble putting on shoes), breathlessness on stairs to bathroom, poor sleep Wednesday and Thursday, now using two pillows, found in armchair at 3 a.m. yesterday. He skipped evening pills Wednesday. Daily weights recorded on fridge sheet: 83.4 kg Monday, 85.1 kg this morning (+1.7 kg in four days); Marta will flag to nurse today. No falls since one two weeks ago; slight dizziness on standing quickly; no chest pain; appetite good but eats hidden salty food (pickles behind bread box).
@@ -618,7 +662,10 @@ Closing with Julia: she said he admitted the night symptoms more than usual. Mar
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 600
 text = """
 Marta (Home Care Support Program agent) called Mr. Edward Nowak for the Friday check-in; his daughter Julia answered first. Julia reported: ankle swelling returned (Tuesday socks left deep marks, trouble with shoes), breathlessness on stairs to bathroom, weight 83.4 kg Monday vs 85.1 kg this morning (gain of 1.7 kg in four days, recorded on fridge sheet), poor sleep Wednesday and Thursday, now uses two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite but secretly eats salty food (pickles hidden behind bread box). Marta said she would flag the weight gain for the nurse.
@@ -641,7 +688,10 @@ Back with Julia: she said he admitted the night symptoms, which is unusual. Mart
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 400
 text = """
 Agent Marta (Home Care Support Program) held the Friday check-in call with Edward Nowak and his daughter Julia, who answered first. Julia reported: ankle swelling back (socks left deep marks Tuesday, shoes hard to put on), breathlessness on bathroom stairs, weight 83.4 kg Monday to 85.1 kg today (+1.7 kg in 4 days, recorded on fridge sheet), poor sleep Wed/Thu, two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday. No falls since one two weeks ago; slight dizziness on standing quickly; no chest pain; good appetite, hides salty pickles behind the bread box. Marta will flag weight gain to the nurse today.
@@ -660,7 +710,10 @@ Marta summarized: nurse calls today about weight, swelling, night breathlessness
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-10-31
+prompt_id    = "p02"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 200
 text = """
 Marta (Home Care Support Program) called Mr. Edward Nowak for the Friday check-in; daughter Julia answered first. Julia reported recurring ankle swelling (deep sock marks Tuesday), breathlessness on stairs, poor sleep Wed/Thu, two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday, dizziness on standing, no chest pain, no falls since one two weeks ago, hidden pickles. Weight 83.4 kg Monday, 85.1 kg today (+1.7 kg); Marta flagged it for the nurse.

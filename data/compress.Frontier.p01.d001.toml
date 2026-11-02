@@ -1,6 +1,5 @@
-date      = 2026-10-31
+[[prompts]]
 prompt_id = "p01"
-data_id   = "d001"
 system_prompt_template = """
 Shorten the provided dialogue to approximately {target_words} words.
 Don't comment, don't ask questions, don't add headlines, don't use MarkDown. Use raw text.
@@ -12,7 +11,10 @@ Dialogue to Shorten:
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -114,7 +116,10 @@ Caregiver: Will do. Bye!
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -263,7 +268,10 @@ Caregiver: Bye!
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -392,7 +400,10 @@ Caregiver: Bye!
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program for Mr. Nowak. Am I speaking with Edward?
@@ -433,7 +444,10 @@ Agent: Of course. Take care, Julia. Talk next Friday.
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 400
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -494,7 +508,10 @@ Agent: Talk next Friday!
 """
 
 [[results]]
-source_llm = "Gemini 3 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Gemini 3 Medium"
 target_words = 200
 text = """
 Marta from the Home Care Support Program calls Edward Nowak for a weekly check-in. His daughter, Julia, answers first and raises several health concerns. Edward has gained 1.7 kg in four days, weighing 85.1 kg. He experiences swollen ankles, difficulty wearing shoes, and shortness of breath when climbing stairs. Additionally, he wakes up at night feeling chest tightness, sleeps with two pillows, and sometimes sits in an armchair to breathe easier. Julia also notes he skipped his evening medication on Wednesday and has eaten high-sodium food, like hidden pickles.
@@ -505,7 +522,10 @@ They review his schedule, including an upcoming echocardiogram, a cardiology con
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -682,7 +702,10 @@ Caregiver: I will. Goodbye.
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -817,7 +840,10 @@ Caregiver: Will do. Bye!
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -930,7 +956,10 @@ Caregiver: Will do. Goodbye.
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1025,7 +1054,10 @@ Caregiver: Goodbye.
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 400
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Is this Edward?
@@ -1072,7 +1104,10 @@ Agent: You're welcome. The nurse will call within the hour. Contact us sooner if
 """
 
 [[results]]
-source_llm = "ChatGPT default"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "ChatGPT default"
 target_words = 200
 text = """
 Agent: Marta calls for Friday check-in. Julia reports recurrent ankle swelling, breathlessness on stairs, weight gain from 83.4 to 85.1 kg in four days, poor sleep, two pillows, and a missed evening medication dose. No chest pain or recent falls, but occasional dizziness on standing.
@@ -1089,7 +1124,10 @@ Edward feels burdensome but enjoys Sunday chess with his grandson and welcomes a
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 1200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1191,7 +1229,10 @@ Caregiver: Will do. Bye!
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 1000
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1287,7 +1328,10 @@ Caregiver: Will do. Bye!
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 800
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1374,7 +1418,10 @@ Caregiver: Will do. Bye!
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 600
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1446,7 +1493,10 @@ Agent: Take care, Julia. Talk next Friday, or sooner if anything changes.
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 400
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
@@ -1500,7 +1550,10 @@ Caregiver: Sure. Thanks, Marta.
 """
 
 [[results]]
-source_llm = "Sonnet 5.5 Medium"
+date         = 2026-11-02
+prompt_id    = "p01"
+data_id      = "d001"
+source_llm   = "Sonnet 5.5 Medium"
 target_words = 200
 text = """
 Agent: Hello, this is Marta from the Home Care Support Program, calling for Mr. Nowak. Am I speaking with Edward?
