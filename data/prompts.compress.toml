@@ -1,5 +1,5 @@
 [[prompts]]
-type      = "Compress Dialogue"
+type = "Compress Dialogue"
 prompt_id = "p01"
 system_prompt_template = """
 Shorten the provided dialogue to approximately {target_words} words.
@@ -12,10 +12,9 @@ Dialogue to Shorten:
 """
 
 [[prompts]]
-type      = "Compress Dialogue"
+type = "Compress Dialogue"
 prompt_id = "p02"
-system_prompt_template = """
-"""
+system_prompt_template = ""
 user_prompt_template = """
 Shorten the dialogue below to retain important information.
 This shortened dialogue will be used by LLM to maintain dialogue history; this is to reduce token usage. Therefore, it is important to retain names, intentions, facts, and agreements.
@@ -26,7 +25,7 @@ Don't comment, don't ask questions, don't add headlines. Just give me the shorte
 """
 
 [[prompts]]
-type      = "Compress Dialogue"
+type = "Compress Dialogue"
 prompt_id = "p03"
 system_prompt_template = """
 You are an expert dialogue summarizer. Shorten the provided dialogue while preserving as much factual detail as possible to maintain context for dialogue history and minimize token usage.
