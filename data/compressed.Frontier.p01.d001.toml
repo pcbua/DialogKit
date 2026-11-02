@@ -1,0 +1,120 @@
+date      = 2026-10-31
+prompt_id = "p01"
+data_id   = "d001"
+system_prompt_template = """
+Shorten the provided dialogue to approximately {target_words} words.
+Don't comment, don't ask questions, don't add headlines, don't use MarkDown. Use raw text.
+"""
+user_prompt_template = """
+Dialogue to Shorten:
+
+{dialogue}
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 1200
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 1000
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 800
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 600
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 400
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 200
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 1200
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 1000
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 800
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 600
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 400
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 200
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 1200
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 1000
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 800
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 600
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 400
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 200
+text = """
+"""

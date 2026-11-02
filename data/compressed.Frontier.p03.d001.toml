@@ -1,0 +1,126 @@
+date      = 2026-10-31
+prompt_id = "p03"
+data_id   = "d001"
+system_prompt_template = """
+You are an expert dialogue summarizer. Shorten the provided dialogue while preserving as much factual detail as possible to maintain context for dialogue history and minimize token usage.
+
+Strict Guidelines:
+
+1. Preserve Format: Maintain the original dialogue format (e.g., `Speaker: Line`) line-by-line or turn-by-turn. Do not convert this into a prose summary or third-person narrative.
+2. Key Details to Retain: Prioritize entity names, core intentions, specific facts, numbers/dates, decisions, and explicitly agreed-upon actions.
+3. Word Budget: Your shortened dialogue must be as close as possible to exactly {target_words} words. Use your full budget to capture maximum detail without exceeding it.
+4. Output Constraints: Output *only* the shortened dialogue. Do not include introductions, commentary, explanations, labels, or Markdown headers.
+"""
+user_prompt_template = """
+Dialogue to Shorten:
+
+{dialogue}
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 1200
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 1000
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 800
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 600
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 400
+text = """
+"""
+
+[[results]]
+source_llm = "Gemini 3 Medium"
+target_words = 200
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 1200
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 1000
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 800
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 600
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 400
+text = """
+"""
+
+[[results]]
+source_llm = "ChatGPT default"
+target_words = 200
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 1200
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 1000
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 800
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 600
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 400
+text = """
+"""
+
+[[results]]
+source_llm = "Sonnet 5.5 Medium"
+target_words = 200
+text = """
+"""

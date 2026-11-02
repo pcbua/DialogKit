@@ -1,0 +1,183 @@
+data_id       = "d003"
+date          = 2026-11-02
+type          = "Dialogue"
+source_llm    = "Gemini 3 Medium"
+source_prompt = """
+	Generate single synthetic dialogue between Agent, Patient, and Caregiver.
+	Agent calls, Caregiver takes a phone, Agent wants to know how Patient is feeling. Caregiver describes some issues. Then pass the phone to Patient.
+	From now, Agent & Patient talk about how he feels, what needs to be done/organized, how last week went, and about future medical procedures.
+	You can invent facts, make sure conversation is natural, long and has a lot of variability.
+	The dialogue must contain 200 lines (turns) - mostly short and dynamic.
+	Use raw text. No MarkDown.
+"""
+speakers = [
+	"Agent | the health coordinator | care coordinator",
+	"Caregiver | Harrison's daughter | primary caregiver ",
+	"Patient | Mr. Harrison | dad "
+]
+text     = """
+	Agent: Hello, good afternoon. May I speak with Mr. Harrison, please?
+	Caregiver: Hello. This is his daughter and primary caregiver speaking. He is resting right now, but I can take the phone. Who is calling?
+	Agent: Good afternoon. I am calling from the Community Health Monitoring Program to check in on his recovery and daily well-being.
+	Caregiver: Oh, thank you for checking in. We could definitely use a little guidance today.
+	Agent: I am here to help. How has Mr. Harrison been feeling over the last couple of days?
+	Caregiver: Well, his mobility has improved slightly since last Tuesday, which is good. But he has been complaining about persistent lower back pain.
+	Agent: I see. Is the pain constant, or does it worsen with movement or specific activities?
+	Caregiver: It seems worse in the mornings when he first tries to stand up, and sometimes after he eats lunch.
+	Agent: Have you noticed any other symptoms alongside the back pain, such as dizziness, shortness of breath, or fatigue?
+	Caregiver: He is definitely more fatigued than usual. He takes two long naps during the day now, whereas he used to take only one.
+	Agent: Understood. What about his medication routine? Has he been taking his prescribed pills on schedule?
+	Caregiver: Yes, I manage his pill organizer every Sunday night, so he takes them right on time every morning and evening.
+	Agent: That is very helpful. Have there been any side effects, like nausea or headaches, since he started the new dosage last week?
+	Caregiver: He mentioned a mild headache on Thursday, but it went away after he drank a large glass of water.
+	Agent: Good. Now, regarding his upcoming cardiology appointment next Thursday, is transport fully organized?
+	Caregiver: Yes, I booked the medical transport van yesterday afternoon, so we are all set for that trip.
+	Agent: Excellent planning. Is there anything else regarding his care or supplies that you need assistance with today?
+	Caregiver: We are running a bit low on adult incontinence pads, and I keep forgetting to pick them up from the pharmacy.
+	Agent: I can make a note of that and arrange for a home delivery of those supplies by Wednesday morning.
+	Caregiver: Oh, that would lift a huge weight off my shoulders. Thank you so much for arranging that.
+	Agent: You are very welcome. At this point, would it be possible to hand the phone over to Mr. Harrison so I can speak with him directly?
+	Caregiver: Of course. Hold on just a second while I walk over to his armchair and hand him the receiver.
+	Caregiver: Here you go, Dad. The health coordinator is on the line and wants to chat with you about how you are feeling.
+	Patient: Hello? Yes, hello there. Who did you say this is?
+	Agent: Good afternoon, Mr. Harrison. This is your care coordinator calling to see how you are doing today.
+	Patient: Ah, hello. Well, I am sitting here trying to keep my legs warm, but otherwise I am hanging in there.
+	Agent: It is great to hear your voice, Mr. Harrison. Your daughter mentioned you have had some lower back discomfort recently. How does it feel right now?
+	Patient: It feels like a dull ache right across my lower spine, mostly when I shift my weight in this chair.
+	Agent: I am sorry to hear that. Have you tried using the heating pad your physical therapist recommended?
+	Patient: Not yet today, but maybe I will ask my daughter to plug it in for me after we finish this phone call.
+	Agent: That sounds like a wonderful plan. Let us talk about how last week went overall. Did you manage to do any of your indoor walking exercises?
+	Patient: I walked down the hallway twice on Wednesday, but honestly, my legs felt too heavy on Friday and Saturday.
+	Agent: Walking twice is still a positive step, especially given how tired you have been feeling lately.
+	Patient: I suppose so, but I used to be able to walk around the entire block without stopping to catch my breath.
+	Agent: It is completely normal to experience reduced stamina after a hospital stay, but you are slowly rebuilding your strength.
+	Patient: I hope you are right, because sometimes I feel like I am making zero progress at all.
+	Agent: Progress after a major procedure is rarely a straight line, Mr. Harrison. There are bound to be good days and sluggish days.
+	Patient: My daughter tries to tell me the exact same thing every single morning when I complain about my joints.
+	Agent: She sounds like a wonderful and attentive caregiver. You are lucky to have her support right now.
+	Patient: Oh, absolutely. She cooks all my meals and makes sure I do not miss my favorite television programs.
+	Agent: That is fantastic. Let us look ahead to what needs to be organized for the coming week. Do you have any questions about your medications?
+	Patient: The little yellow pill in the morning leaves a slightly bitter taste in my mouth. Is that supposed to happen?
+	Agent: Yes, that specific medication is notorious for a mild metallic aftertaste. Drinking juice or flavored water right after taking it usually helps.
+	Patient: Good to know. I will tell my daughter to keep some orange juice handy on the breakfast table.
+	Agent: Perfect solution. Now, let us discuss your upcoming medical procedures next month. Are you feeling nervous about the follow-up scan?
+	Patient: A little bit, to be completely honest. I never really liked going into those noisy MRI machines.
+	Agent: That is a very common feeling. The technicians are very kind and will give you earplugs and a panic button just in case.
+	Patient: My daughter said she would stay right outside the door the whole time, which definitely makes me feel a bit braver.
+	Agent: Having her nearby will certainly help. Do you have any questions you want us to ask the specialist during the consultation?
+	Patient: I just want to know when I can finally stop wearing this compression stocking on my left leg. It drives me crazy at night.
+	Agent: I will make a direct note of that specific question and ensure the cardiologist addresses it first thing during your visit.
+	Patient: Thank you. That is actually the main thing on my mind lately.
+	Agent: You are very welcome, Mr. Harrison. Are you sleeping well through the night, or do you wake up frequently?
+	Patient: I usually wake up around three in the morning to use the bathroom, and then it takes me an hour to fall back asleep.
+	Agent: Nighttime awakenings can really drain your energy for the next day. Do you drink fluids close to bedtime?
+	Patient: I usually have a cup of chamomile tea around eight o'clock while watching the evening news.
+	Agent: That is a relaxing habit, but you might want to try having that tea an hour earlier to see if it reduces the midnight trips.
+	Patient: I can try shifting the tea time. It certainly cannot hurt to get a full stretch of sleep.
+	Agent: Exactly. Let us review your fluid schedule together. What time do you usually eat dinner?
+	Patient: We eat around six in the evening. Usually something light like soup or baked fish with vegetables.
+	Agent: That is a very healthy diet. Your daughter is doing an amazing job with your meal preparation.
+	Patient: She really is. Sometimes I tell her she should open a restaurant, but she just laughs at me.
+	Agent: She probably prefers keeping her cooking skills exclusively for her favorite patient.
+	Patient: Ha! I will have to remind her of that compliment when she brings me my afternoon tea.
+	Agent: Speaking of tea, what are your plans for the rest of this afternoon? Any visitors coming over?
+	Patient: No visitors today. Just me, the television, and maybe a crossword puzzle if my hands do not feel too stiff.
+	Agent: Crossword puzzles are great for keeping your mind sharp. Do you finish the easy ones or tackle the difficult Sunday puzzles?
+	Patient: I stick to the medium difficulty in the daily newspaper. The Sunday ones are sometimes just too frustrating.
+	Agent: That sounds like a great balance. Do you need reading glasses, or is the print large enough in that paper?
+	Patient: I have my reading glasses right here on the small wooden table next to my armchair.
+	Agent: Excellent. Let us touch base again on your exercise routine. Would you like to set a small, realistic goal for tomorrow?
+	Patient: What kind of goal are you thinking about? Nothing too exhausting, I hope.
+	Agent: How about simply standing up from your armchair three times during the commercials of your favorite morning show?
+	Patient: Three times? Well, I suppose I can manage that if I use the sturdy armrests to push myself up.
+	Agent: Exactly. Use your arms for support, take your time, and do not rush the movement at all.
+	Patient: I will try that tomorrow morning. My physical therapist would probably approve of that small challenge.
+	Agent: She definitely would. Consistency matters much more than speed when you are recovering.
+	Patient: It is hard to be patient when you are used to doing everything independently your whole life.
+	Agent: That frustration is completely valid, Mr. Harrison. Letting others help you is a skill in itself.
+	Patient: A skill I am failing to master gracefully, if you ask my daughter.
+	Agent: Grace has nothing to do with it. You survived a major health event, and every day you are still fighting to get better.
+	Patient: Thank you for saying that. Sometimes I forget how serious the operation actually was back in winter.
+	Agent: It was indeed serious, which is why we are so proud of the progress you have made so far.
+	Patient: Well, I am trying my best. I want to be able to walk in the garden by the time the roses bloom in spring.
+	Agent: That is a wonderful goal to keep in mind. Picture yourself walking outside among the flowers.
+	Patient: That image alone makes me want to do my leg stretches right now, to be honest.
+	Agent: Maybe save the stretches for after you finish your afternoon rest, so you do not overdo it.
+	Patient: Good advice. I tend to get overenthusiastic and then pay for it with sore muscles later in the evening.
+	Agent: Moderation is the secret ingredient for a smooth recovery process. Have you been eating all of your breakfast portions?
+	Patient: Mostly, yes. Except for the oatmeal on Friday. It was a bit too lumpy for my liking.
+	Agent: Fair enough. Lumpy oatmeal can ruin anyone's morning disposition. Did your daughter offer you toast instead?
+	Patient: She toasted some whole wheat bread with a bit of strawberry jam, which saved the morning completely.
+	Agent: She really thinks of everything, doesn't she? A true lifesaver.
+	Patient: She is my angel in disguise, that is for sure. I tell her that whenever she fixes my tea.
+	Agent: I am sure she appreciates hearing that more than you know. How is your blood pressure tracking this week? Have you measured it at home?
+	Patient: My daughter straps that digital cuff around my arm every single morning right after I wake up.
+	Agent: And what do the numbers usually look like? Have they been staying within a stable range?
+	Patient: Usually around one hundred twenty over eighty-one, give or take a few points depending on how I slept.
+	Agent: Those are textbook healthy numbers. Your medication is clearly doing its job keeping things stable.
+	Patient: That is a relief to hear. I always worry when I see the numbers jump even a little bit higher.
+	Agent: Minor fluctuations are normal, but your daily average is right where your doctor wants to see it.
+	Patient: That takes a load off my mind. I was a bit worried my morning coffee was pushing my pressure up.
+	Agent: Moderate coffee consumption in the morning is completely fine as long as you stay hydrated throughout the day.
+	Patient: Good. I only drink one small mug anyway, so I am not overdoing the caffeine.
+	Agent: One mug is a very reasonable amount. Let us talk about your upcoming visit with the eye doctor next month. Is that still on your calendar?
+	Patient: Yes, my daughter put a huge red circle on the kitchen wall calendar for that Tuesday morning.
+	Agent: Excellent. Have you noticed any changes in your vision lately, like blurriness when reading the newspaper?
+	Patient: Sometimes the lines blur if I read for more than thirty minutes straight without resting my eyes.
+	Agent: That sounds like normal eye fatigue, but definitely mention it to the ophthalmologist during your appointment.
+	Patient: I will make sure to write it down on my little notepad so I do not forget by the time we get there.
+	Agent: Writing things down is the best strategy. Memory can be tricky when you are sitting in a busy doctor's waiting room.
+	Patient: Exactly. There is always so much commotion in those waiting rooms with people coughing and nurses calling out names.
+	Agent: It can certainly be overwhelming. Fortunately, your transport service usually gets you there right on time to minimize waiting.
+	Patient: Yes, the driver is always very polite and helps me step carefully up into the van.
+	Agent: Customer service makes such a big difference when you are dealing with mobility challenges.
+	Patient: It really does. It makes you feel like a human being rather than just another file on a desk.
+	Agent: Absolutely. Every patient deserves dignity and respect every step of the way. Now, Mr. Harrison, do you have any dietary cravings lately?
+	Patient: I have been dreaming about a thick slice of homemade apple pie with a scoop of vanilla ice cream.
+	Agent: That sounds delicious. Did you ask your daughter if that fits into your current nutritional plan?
+	Patient: I mentioned it in passing, and she said we might negotiate a small slice after my cardiology appointment next week.
+	Agent: What a wonderful reward to look forward to! A great incentive for getting through the medical tests.
+	Patient: Exactly my thoughts. I told her the appointment will go much faster if there is pie at the end of the rainbow.
+	Agent: That is a brilliant bargaining strategy. I fully support that plan. Are you taking your vitamins regularly too?
+	Patient: The large orange calcium tablet every afternoon with a glass of milk. My bones need all the help they can get.
+	Agent: Calcium and vitamin D are essential for bone strength, especially as we age. You are doing everything right.
+	Patient: Well, my doctor lectured me about bone density last year, so I am trying to follow instructions to the letter.
+	Agent: The lecture clearly paid off because your lab results from last month looked very stable.
+	Patient: That is good news. I was dreading those blood test results because I hate getting poked with needles.
+	Agent: Nobody truly loves needles, but they tell us a vital story about how your body is functioning on the inside.
+	Patient: A necessary evil, as my late wife used to say whenever she had to drag me to the clinic.
+	Agent: She sounded like a very wise woman with a lot of practical common sense.
+	Patient: The wisest person I ever met in my entire life, without a single doubt.
+	Agent: Cherishing those memories is so important. Now, looking at the rest of our schedule today, I want to confirm our next check-in call.
+	Patient: When is the next time you or someone from your office will ring us up?
+	Agent: We can schedule our next follow-up call for this coming Friday afternoon, if that suits you and your daughter.
+	Patient: Friday afternoon is fine by me. Usually, we are just sitting around listening to the radio around two o'clock.
+	Agent: Perfect. I will set our system to call you this Friday at two o'clock sharp.
+	Patient: Sounds like a plan. My daughter will probably be hovering nearby to make sure I do not fall asleep before you call.
+	Agent: Having a dedicated caregiver is truly a blessing. Be sure to thank her for me when she comes back to take the phone.
+	Patient: I will tell her right away. She always likes hearing that her hard work is appreciated by the health team.
+	Agent: It is well deserved recognition. Before I let you get back to your resting and your crossword puzzle, is there anything else on your mind?
+	Patient: No, I think we covered everything from my back pain to my apple pie reward.
+	Agent: That is a very comprehensive list! You have been a wonderful conversationalist today, Mr. Harrison.
+	Patient: Thank you for calling and taking the time to listen to an old man ramble on about his daily routine.
+	Agent: It is truly my pleasure. I will make sure the supply delivery is arranged for Wednesday morning as discussed.
+	Patient: Wonderful. I appreciate your help with that logistic detail.
+	Agent: You are very welcome. Let me speak with your daughter one last time to finalize everything on our end.
+	Patient: Hang on a second, I will call her back into the living room right now.
+	Caregiver: Hello again. I am back. Did everything go smoothly with Dad?
+	Agent: Yes, everything went wonderfully. We had a lovely chat about his routine, his goals, and his upcoming appointments.
+	Caregiver: I am so glad to hear that. Sometimes he gets reserved when talking to healthcare professionals.
+	Agent: He was very open today. Just to recap, I have arranged for the incontinence supply delivery on Wednesday morning.
+	Caregiver: That is fantastic. Thank you so much for organizing that so quickly for us.
+	Agent: And we have scheduled our next check-in phone call for this coming Friday at two o'clock in the afternoon.
+	Caregiver: Perfect. I have noted that down on my phone calendar with a reminder alert.
+	Agent: Excellent planning. If anything urgent comes up before Friday, remember you have our direct helpline number on the fridge.
+	Caregiver: Yes, it is magneted right at eye level so I cannot possibly miss it in an emergency.
+	Agent: That is the safest place for it. Thank you for your incredible dedication and care for Mr. Harrison.
+	Caregiver: Thank you for your continuous support and kindness. It really makes our journey much easier.
+	Agent: You are both very welcome. Have a wonderful rest of your Monday afternoon, and goodbye for now.
+	Caregiver: Thank you, goodbye!
+"""
+single_choice_survey = [
+	# Question, CorrectAnswer, WrongAnswers, Evidence
+]
