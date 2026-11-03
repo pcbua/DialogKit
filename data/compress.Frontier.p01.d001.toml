@@ -1,4 +1,5 @@
 [[prompts]]
+type = "Compress Dialogue"
 prompt_id = "p01"
 system_prompt_template = """
 Shorten the provided dialogue to approximately {target_words} words.

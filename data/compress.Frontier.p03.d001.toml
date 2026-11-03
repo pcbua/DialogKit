@@ -1,4 +1,5 @@
 [[prompts]]
+type = "Compress Dialogue"
 prompt_id = "p03"
 system_prompt_template = """
 You are an expert dialogue summarizer. Shorten the provided dialogue while preserving as much factual detail as possible to maintain context for dialogue history and minimize token usage.

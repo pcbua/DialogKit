@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# About: A tool to enhance a TOML file by calculating and appending word and LLM token counts for text entries in [[data]] & [[results]].
+# About: A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in [[data]] and [[results]].
 # How to use it:
-#   uv run python estimate_tokens.py <INPUT_TOML> <OUTPUT_TOML>
+#   uv run python estimate_tokens.py <input_path> <output_path>
 import sys
 import argparse
 from pathlib import Path
+import tomllib # for reading TOML
+import tomli_w # for writing TOML
 import requests
 from requests.exceptions import ConnectionError, HTTPError
 import re
-import tomllib # for reading TOML
-import tomli_w # for writing TOML
 
 # use the model of your choice
 BASE_URL   = "http://localhost:8000"
@@ -52,8 +52,8 @@ def get_precise_token_count(system_content: str, user_content: str) -> int:
 def parse_arguments() -> argparse.Namespace:
     """parse command-line arguments"""
     parser = argparse.ArgumentParser(description="Enhances a TOML file by calculating and appending word and LLM token counts for text entries in [[data]] & [[results]].")
-    parser.add_argument("INPUT_TOML", type=Path, help="Path to the input TOML file.")
-    parser.add_argument("OUTPUT_TOML", type=Path, help="Path to the output TOML file.")
+    parser.add_argument("input_path",  type=Path, help="Path to the input TOML file.")
+    parser.add_argument("output_path", type=Path, help="Path to the output TOML file.")
     return parser.parse_args()
 
 def validate_paths(input_path: Path, output_path: Path) -> None:
@@ -70,8 +70,8 @@ def validate_paths(input_path: Path, output_path: Path) -> None:
 
 def main() -> None:
     args = parse_arguments()
-    input_path:  Path = args.INPUT_TOML
-    output_path: Path = args.OUTPUT_TOML
+    input_path  = Path( args.input_path )
+    output_path = Path( args.output_path )
     validate_paths(input_path, output_path)
     try:
         # load input TOML
@@ -86,7 +86,8 @@ def main() -> None:
                     item["text_words"]  = count_words(item["text"])
                     item["text_tokens"] = get_precise_token_count('', item["text"])
 
-        # save to output path
+        # save output TOML file
+        output_path.parent.mkdir(parents=True, exist_ok=True)
         with open(output_path, "wb") as f:
             tomli_w.dump(toml_data, f, multiline_strings=True)
 
