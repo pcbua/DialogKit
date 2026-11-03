@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+# About: A tool to enhance a TOML file by calculating and appending word and LLM token counts for text entries in [[data]] & [[results]].
 # How to use it:
 #   uv run python estimate_tokens.py <INPUT_TOML> <OUTPUT_TOML>
 import sys
@@ -24,8 +25,7 @@ def count_words(text: str) -> int:
     return len(words)
 
 def get_precise_token_count(system_content: str, user_content: str) -> int:
-    # calculates the exact number of tokens as the model sees them, including the system prompt and user prompt
-    # tested with model: Gemma 4 26B
+    """calculates the exact number of tokens as the model sees them, including the system prompt and user prompt"""
     try:
         messages = [
             {"role": "system", "content": system_content},
