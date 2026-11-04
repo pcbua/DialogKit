@@ -39,7 +39,7 @@ This will processes:
 
 Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
 
-## Tool: Count the Number of Tokens and Words (Tool)
+## Tool: Count the Number of Tokens and Words
 `utils/estimate_tokens.py` - A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in data files (e.g. `data/data.d001.toml`) and compressed results (e.g. `data/compress.Gemma26B.toml`).
 
 To use it, first start LLM hosting (as above) or change script settings to use LLM in the cloud.
