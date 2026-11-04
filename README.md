@@ -28,6 +28,7 @@ python -m vllm.entrypoints.openai.api_server \
     --enable-prefix-caching \
     --port 8000
 ```
+
 Example script run:
 `uv run utils/compress_Gemma26B.py data/prompts.compress.toml "data/data.*.toml" data/compress.Gemma26B.toml`
 
@@ -46,6 +47,7 @@ The script results have been added to the repository at: `data/compress.SkLLM.to
 It was inspired by the article [Using LLM Summarization in Your Scikit-Learn Pipelines with Scikit-LLM](https://www.kdnuggets.com/using-llm-summarization-in-your-scikit-learn-pipelines-with-scikit-llm).
 
 To use it, first start LLM hosting (as above) or change script settings to use LLM in the cloud.
+
 Example script run: `TQDM_DISABLE=1 uv run --with 'scikit-llm>=1.4' utils/compress_SkLLM.py "data/data.*.toml" data/compress.SkLLM.toml`
 
 ## Tool: Count the Number of Tokens and Words
