@@ -8,12 +8,11 @@ import argparse
 from pathlib import Path
 import tomllib # for reading TOML
 import tomli_w # for writing TOML
-import requests
-from requests.exceptions import ConnectionError, HTTPError
 import asyncio
-from openai import OpenAI, AsyncOpenAI
 import glob
 from datetime import date
+import useful_utils as uu
+from openai import OpenAI, AsyncOpenAI
 
 DEBUG = False # poor's people debugging
 
@@ -61,36 +60,6 @@ LLM_CONFIGS = {
 # tags
 TAG_TARGET_WORDS = '{target_words}'
 TAG_DIALOGUE     = '{dialogue}'
-
-def get_precise_token_count(llm_config: dict, system_content: str, user_content: str) -> int:
-    """calculates the exact number of tokens as the model sees them, including the system prompt and user prompt"""
-    base_url   = llm_config.get("BASE_URL", None)
-    model_name = llm_config.get("MODEL_NAME", None)
-    if not base_url or not model_name:
-        print(f"Error: Problem with LLM; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
-        sys.exit(1)
-    try:
-        messages = [
-            {"role": "system", "content": system_content},
-            {"role": "user",   "content": user_content}
-        ]
-        response = requests.post(
-            f"{base_url}/tokenize",
-            json={
-                "model": model_name,
-                "messages": messages,
-                "add_generation_prompt": True,
-            },
-            timeout=30,
-        )
-        response.raise_for_status()
-    except ConnectionError:
-        print(f"Error: Could not connect to the LLM service at '{base_url}'. Is the server running?", file=sys.stderr)
-        sys.exit(1)
-    except HTTPError as e:
-        print(f"HTTP Error {e.response.status_code}: {e.response.text}", file=sys.stderr)
-        sys.exit(1)
-    return response.json()["count"]
 
 def parse_arguments() -> argparse.Namespace:
     """parse command-line arguments"""
@@ -147,7 +116,12 @@ async def process_with_llm(semaphore, llm_client, llm_config: dict, prompt: dict
     system_prompt = prepare_prompt(prompt["system_prompt_template"], data_text, n_words)
     user_prompt   = prepare_prompt(prompt["user_prompt_template"],   data_text, n_words)
     # get number of output tokens, query LLM to count input tokens
-    input_tokens  = get_precise_token_count(llm_config, system_prompt, user_prompt)
+    input_tokens  = uu.get_precise_token_count(
+        llm_config.get("BASE_URL", None),
+        llm_config.get("MODEL_NAME", None),
+        system_prompt,
+        user_prompt,
+    )
     output_tokens = llm_config.get("MAX_MODEL_LEN", 0) - input_tokens - 1 # one token safety margin
     # vLLM specific parameters
     extra_body = {
@@ -236,13 +210,14 @@ async def main() -> None:
     for llm_config_name, llm_config in iterate_llms(LLM_CONFIGS):
         base_url    = llm_config.get("BASE_URL", None)
         model_name  = llm_config.get("MODEL_NAME", None)
-        concurrency = llm_config.get("CONCURRENCY", 1)
-        print(f"Querying LLM: {llm_config_name} ({base_url}), Concurrency: {concurrency}")
         if not base_url or not model_name:
             print(f"Error: Problem with LLM; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
             continue
+        concurrency = llm_config.get("CONCURRENCY", 1)
+        print(f"Querying LLM: {llm_config_name} ({base_url}), Concurrency: {concurrency}")
         semaphore = asyncio.Semaphore(concurrency)
         semaphore.limit = concurrency
+
         llm_client = AsyncOpenAI(base_url=f"{base_url}/v1", api_key=llm_config.get("API_KEY", "EMPTY"))
         await process_all(semaphore, llm_client, prompts_toml, input_files, llm_config_name, llm_config, llm_results)
 
@@ -256,4 +231,5 @@ async def main() -> None:
         tomli_w.dump(output_toml, f, multiline_strings=True)
 
 if __name__ == "__main__":
+    uu.print_versions(["openai", "requests"]) # for debug
     asyncio.run( main() )

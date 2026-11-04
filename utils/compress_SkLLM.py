@@ -7,12 +7,12 @@
 import sys
 import argparse
 from pathlib import Path
-import importlib, importlib.metadata
 import tomllib # for reading TOML
 import tomli_w # for writing TOML
 import asyncio
 import glob
 from datetime import date
+import useful_utils as uu
 from skllm.config import SKLLMConfig
 from skllm.models.gpt.text2text.summarization import GPTSummarizer
 
@@ -128,11 +128,11 @@ async def main() -> None:
     for llm_config_name, llm_config in iterate_llms(LLM_CONFIGS):
         base_url    = llm_config.get("BASE_URL", None)
         model_name  = llm_config.get("MODEL_NAME", None)
-        concurrency = llm_config.get("CONCURRENCY", 1)
-        print(f"Querying LLM: {llm_config_name} ({base_url}), Concurrency: {concurrency}")
         if not base_url or not model_name:
             print(f"Error: Problem with LLM; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
             continue
+        concurrency = llm_config.get("CONCURRENCY", 1)
+        print(f"Querying LLM: {llm_config_name} ({base_url}), Concurrency: {concurrency}")
         semaphore = asyncio.Semaphore(concurrency)
         semaphore.limit = concurrency
 
@@ -150,34 +150,6 @@ async def main() -> None:
     with open(output_path, "wb") as f:
         tomli_w.dump(output_toml, f, multiline_strings=True)
 
-def get_version(mod_name):
-    try:
-        # import dynamically using just the name you typed
-        mod = importlib.import_module(mod_name)
-    except ImportError:
-        return "Not installed"
-    # check if the module exposes a version attribute directly
-    if hasattr(mod, "__version__"):
-        return mod.__version__
-    # automatically query Python's built-in registry to find the PyPI package name
-    try:
-        dist_names = importlib.metadata.packages_distributions().get(mod_name, [])
-        for dist in dist_names:
-            try:
-                return importlib.metadata.version(dist)
-            except importlib.metadata.PackageNotFoundError:
-                continue
-    except Exception:
-        pass
-    # fallback to checking metadata under the import name itself
-    try:
-        return importlib.metadata.version(mod_name)
-    except importlib.metadata.PackageNotFoundError:
-        return "unknown"
-
 if __name__ == "__main__":
-    print("Checking Versions:")
-    for name in ["skllm", "openai", "requests"]:
-        print(f"- {name} == {get_version(name)}")
-
+    uu.print_versions(["skllm", "openai", "requests"]) # for debug
     asyncio.run( main() )

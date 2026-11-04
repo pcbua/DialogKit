@@ -8,46 +8,11 @@ import argparse
 from pathlib import Path
 import tomllib # for reading TOML
 import tomli_w # for writing TOML
-import requests
-from requests.exceptions import ConnectionError, HTTPError
-import re
+import useful_utils as uu
 
 # use the model of your choice
 BASE_URL   = "http://localhost:8000"
 MODEL_NAME = "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
-
-def count_words(text: str) -> int:
-    """counts words by splitting on whitespace and common punctuation/symbols that LLM tokenizers typically break apart"""
-    if not text:
-        return 0
-    normalized_text = re.sub(r'[/:\-\s]+', ' ', text) # replace slashes, colons, hyphens, and whitespace with a single space
-    words = normalized_text.split() # split by spaces to get the individual words
-    return len(words)
-
-def get_precise_token_count(system_content: str, user_content: str) -> int:
-    """calculates the exact number of tokens as the model sees them, including the system prompt and user prompt"""
-    try:
-        messages = [
-            {"role": "system", "content": system_content},
-            {"role": "user",   "content": user_content}
-        ]
-        response = requests.post(
-            f"{BASE_URL}/tokenize",
-            json={
-                "model": MODEL_NAME,
-                "messages": messages,
-                "add_generation_prompt": True,
-            },
-            timeout=30,
-        )
-        response.raise_for_status()
-    except ConnectionError:
-        print(f"Error: Could not connect to the LLM service at '{BASE_URL}'. Is the server running?", file=sys.stderr)
-        sys.exit(1)
-    except HTTPError as e:
-        print(f"HTTP Error {e.response.status_code}: {e.response.text}", file=sys.stderr)
-        sys.exit(1)
-    return response.json()["count"]
 
 def parse_arguments() -> argparse.Namespace:
     """parse command-line arguments"""
@@ -83,8 +48,13 @@ def main() -> None:
         for section in ("data", "results"):
             for item in toml_data.get(section, []):
                 if "text" in item:
-                    item["text_words"]  = count_words(item["text"])
-                    item["text_tokens"] = get_precise_token_count('', item["text"])
+                    item["text_words"]  = uu.count_words(item["text"])
+                    item["text_tokens"] = uu.get_precise_token_count(
+                        BASE_URL,
+                        MODEL_NAME,
+                        '',           # system prompt
+                        item["text"], # user prompt
+                    )
 
         # save output TOML file
         output_path.parent.mkdir(parents=True, exist_ok=True)
