@@ -33,9 +33,9 @@ Example script run:
 
 This will processes:
 - two LLM configurations (without thinking and with thinking; setup inside the script),
-- three types of compression prompts (from `prompts.compress.toml`),
+- three types of compression prompts (from `data/prompts.compress.toml`),
 - three sample dialogs (from `"data/data.*.toml"`),
-- 15 different target token counts after compression (setup inside the script).
+- 15 different target token counts after compression (setup inside the script `TARGET_WORDS`).
 
 Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
 
