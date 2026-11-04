@@ -12,10 +12,11 @@ So I decided to create a prototype - **DialogKit** is my attempt to build one.
 # What Works
 It's still early days, and only selected tools are doing anything useful.
 
-**compress_Gemma26B.py** - A utility script that compresses text from data files (e.g. data.d001.toml) using the Gemma LLM and outputs the results to a structured TOML file.
+`utils/compress_Gemma26B.py` - A utility script that compresses text from data files (e.g. data.d001.toml) using the Gemma LLM and outputs the results to a structured TOML file.
 The script results have been added to the repository at: `compress.Gemma26B.toml`.
 To run it, first start hosting LLM; e.g. with:
-```python -m vllm.entrypoints.openai.api_server \
+```
+python -m vllm.entrypoints.openai.api_server \
     --model cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit \
     --quantization compressed-tensors \
     --dtype float16 \
@@ -28,7 +29,7 @@ To run it, first start hosting LLM; e.g. with:
 Then run the script; e.g.:
 `uv run utils/compress_Gemma26B.py data/prompts.compress.toml "data/data.*.toml" data/compress.Gemma26B.toml`
 
-**estimate_tokens.py** - A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in data files (e.g. data.d001.toml) and compressed results (e.g. compress.Gemma26B.toml).
+`utils/estimate_tokens.py` - A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in data files (e.g. data.d001.toml) and compressed results (e.g. compress.Gemma26B.toml).
 You can run it e.g. on a generated TOML file with compressed prompts:
 `uv run python utils/estimate_tokens.py data/compress.Gemma26B.toml data/compress.Gemma26B.new.toml`
 
