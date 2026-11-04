@@ -129,7 +129,7 @@ async def main() -> None:
         base_url    = llm_config.get("BASE_URL", None)
         model_name  = llm_config.get("MODEL_NAME", None)
         if not base_url or not model_name:
-            print(f"Error: Problem with LLM; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
+            print(f"Error: Problem with LLM config; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
             continue
         concurrency = llm_config.get("CONCURRENCY", 1)
         print(f"Querying LLM: {llm_config_name} ({base_url}), Concurrency: {concurrency}")

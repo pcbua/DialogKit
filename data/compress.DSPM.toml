@@ -1,0 +1,2905 @@
+[configs.Gemma26B]
+BASE_URL = "http://localhost:8000"
+MODEL_NAME = "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
+API_KEY = "EMPTY"
+CONCURRENCY = 1
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 1200
+text = """
+[DEC] Julia's boss approved her time off to accompany the patient for the scheduled medical procedures.
+[DEC] Send the weight sheet photo later today to facilitate the nurse's follow-up call.
+[DEC] Nurse must call within the hour following receipt of the weight sheet photo.
+[CON] Contact emergency services immediately if the patient is unable to breathe.
+[DEC] Nurse to confirm with doctor the possibility of moving diuretic administration to the morning
+[DEC] Patient prefers playing cards over chess to avoid humiliation from the grandson during Sunday visits.
+[DEC] Action item to investigate a card-playing volunteer to satisfy the patient's preference over chess.
+[DEC] Communication strategy: Julia must relay the urgency to her husband to avoid causing him offense.
+[DEC] Request a quiet driver and specify the patient needs arm assistance to the entrance.
+[DEC] Negotiate volunteer visits to occur two times per week instead of the proposed once a week.
+[DEC] Inquiry regarding Julia's ability to take the day off to accompany the patient.
+[DEC] Patient accepts a dedicated transport service for medical visits, provided the driver avoids political discussions.
+[CON] The task has been delayed for a duration of three weeks according to Julia's husband
+[CON] Cataract surgery is a day procedure requiring the patient to have someone accompany them.
+[DEC] Schedule echo for next Wednesday with a quiet driver as previously decided for the patient.
+[DEC] Utilize a dedicated transport service for medical visits to address the caregiver's work commitment constraints.
+[CON] Call the number on the card immediately if weight increases more than 1 kilo overnight or breathlessness worsens.
+[DEC] Potential treatment outcome involves a dose change allowing the patient to stay home instead of hospitalization
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[DEC] If installation is not completed by Monday, the home-safety service program will send a professional.
+[CON] Proper usage of water pill is required to manage fluid levels and swelling for surgery timing.
+[CON] Patient experienced a near-slip incident on Sunday due to the slippery bathroom floor
+[CON] Caregiver requires assistance with transport for the Echocardiogram due to work commitments that morning.
+[DEC] Postpone cataract surgery if fluid levels are not under control to ensure timely eye procedure.
+[DEC] Patient disputes the significance of ankle swelling, attributing tight shoes to hurried purchase rather than edema.
+[CON] Echocardiogram procedure duration is approximately forty minutes while the patient lies still for the probe.
+[DEC] Patient recalls cold gel usage during previous procedure where they did not warm it up
+[DEC] Nurse to call Mr. Nowak today to discuss potential fluid buildup and medication adjustments
+[DEC] Moving diuretic to morning aims to improve sleep quality and reduce patient fall risk
+[DEC] Patient stopped physiotherapy exercises after 20 minutes on Thursday due to being too tired
+[DEC] The diuretic pill is best taken in the morning to resolve nighttime bathroom use issues
+[CON] Taking the diuretic in the evening causes the patient to wake up 3 times at night for bathroom use
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[EQ] The amount consumed was exactly a third of a cake
+[ENT] Julia is the specific individual requested for interaction or consultation by the patient.
+[EQ] Total count of physiotherapy sessions completed is exactly 2 sessions
+[ENT] Request to re-engage Julia for a brief period of interaction or consultation.
+[ENT] Physiotherapy sessions conducted during the previous week for the patient
+[ENT] Grandson visits on Sundays to teach chess using a tablet device.
+[ENT] grab bars and non-slip mat are identified as necessary safety equipment for the bathroom
+[STR] Proposal to inquire if the program's volunteer can visit once a week for chatting or playing cards.
+[STR] Weekly schedule: Friday cardiology visit, ongoing physiotherapy sessions, and installation of bathroom grab bars this week.
+[ENT] Caregiver reporting patient sleep disturbances, pillow usage changes, and medication non-compliance issues.
+[STR] Pre-operative workflow requires an eye clinic check-up and a stability note from the cardiologist.
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days
+[STR] Inquiry regarding Mr. Nowak's comfort level with a driver and the need for walking assistance.
+[EQ] Patient readings recorded as 9.1 on Friday and 10.2 on Thursday after the visit with Uncle Staszek
+[ENT] Patient reports chest tightness sensation described as someone sitting on it occurring after falling asleep
+[ENT] Kuba is the young man who assisted the patient with walking exercises using a cane.
+[ENT] Dr. Wiśniewska is the cardiologist responsible for reviewing the Echocardiogram and adjusting patient medication
+[ENT] Mr. Nowak is the patient being monitored for health symptoms and daily readings."""
+text_words = 780
+text_tokens = 1063
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 1100
+text = """
+[DEC] Send the weight sheet photo later today to facilitate nurse communication within the hour.
+[DEC] Potential treatment plan involves medication dose change allowing patient to stay home instead of hospital admission
+[DEC] If installation is not completed by Monday, the home-safety service program will send someone to assist.
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[DEC] Next scheduled communication with Julia is set for next Friday or sooner if conditions change.
+[DEC] Nurse to call within the hour following receipt of the weight sheet photo.
+[CON] Contact emergency services immediately if the patient is unable to breathe.
+[DEC] Action item: Look into a volunteer for card-playing social interaction.
+[DEC] Physiotherapy continues with the goal to attempt the full session.
+[DEC] Negotiate frequency of visits to occur two a week instead of the current schedule.
+[DEC] The patient prefers playing cards for social interaction instead of playing chess during weekly volunteer visits.
+[DEC] Patient refuses hospital admission due to negative experience regarding food quality during previous stay
+[DEC] Request a quiet driver and specify the patient needs an arm to the entrance for assistance.
+[CON] Eye clinic requires a note from the cardiologist confirming heart stability for the procedure.
+[CON] Caregiver works the morning of the echocardiogram and cannot leave to provide transport
+[DEC] Propose a weekly visit from the program's volunteer for social interaction like chatting or playing cards.
+[CON] Cataract surgery is a day procedure requiring the patient to have someone accompany them.
+[DEC] Patient Julia consents to the proposed nurse contact today to discuss fluid buildup and medication adjustment
+[CON] Call the number on the card immediately if weight increases more than 1 kilo overnight or breathlessness worsens.
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[CON] Bathroom floor is slippery, creating a high risk of sliding or falling for the patient
+[CON] Patient must take the water pill properly to manage fluid levels and swelling for surgery timing.
+[DEC] Patient Julia consents to the proposed plan to move diuretic medication administration from evening to morning.
+[DEC] Utilize a transport service for medical visits instead of relying on the caregiver for transport
+[DEC] Postpone cataract surgery if fluid levels are not under control to ensure timely eye procedure.
+[CON] Patient experiences nocturia up to 3 times at night if the water pill is taken in the evening
+[DEC] Patient Julia disputes the significance of ankle swelling, attributing tight shoes to recent hurried purchase instead.
+[DEC] Propose nurse contact today to discuss potential fluid buildup and medication adjustment for Mr. Nowak
+[DEC] Propose moving the diuretic medication administration from evening to morning to mitigate nocturia and fall risk.
+[ENT] Patient identified as Julia, who is requesting immediate phone communication with the caregiver.
+[EQ] The amount of cake consumed is exactly one third of a cake
+[EQ] Total count of physiotherapy sessions completed is exactly 2 sessions
+[ENT] Physiotherapy sessions conducted for the patient during the previous week
+[EQ] echocardiogram duration is approximately forty minutes for the heart ultrasound procedure
+[ENT] Julia is the individual being considered for taking a day off to accompany the patient
+[ENT] Grab bars and non-slip mat are identified as necessary safety equipment for the bathroom environment
+[STR] Schedule: Bathroom grab bars installed this week; echo with quiet driver next Wednesday; cardiology visit Friday.
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days
+[ENT] Small home-safety service is available to provide assistance if the husband's installation is delayed past Monday.
+[ENT] The patient uses a cane for mobility assistance, though expresses dislike for its appearance.
+[ENT] Mr. Nowak is the patient requiring transport and potential assistance walking into the medical facility
+[STR] Sequence of events: poor sleep Wednesday and Thursday, 3 a.m. armchair incident, and skipped Wednesday evening pills.
+[STR] Workflow: Nurse calls regarding weight gain, swelling, night breathlessness; doctor adjusts water pill to morning.
+[ENT] Kuba is the young man providing mobility assistance to the patient during sessions.
+[ENT] Caregiver reports patient appetite is okay but consuming excessive salty food like pickles hidden behind bread box."""
+text_words = 692
+text_tokens = 933
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 1000
+text = """
+[DEC] Potential medical intervention involves dose change or staying home based on nurse and doctor decisions
+[DEC] Julia's boss approved her time off to accompany the patient for the scheduled cataract surgery.
+[DEC] Schedule next communication for Friday, or sooner if any changes occur in the patient status.
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[DEC] Doctor moves water pill to morning because it wakes the patient up at night
+[DEC] Action item to investigate a volunteer specifically for card-playing social engagement.
+[DEC] Physiotherapy continues with the goal to attempt the full session.
+[DEC] Patient requests to negotiate frequency of social engagement visits to exactly two visits per week.
+[DEC] Communication strategy: Julia must relay the urgency to the husband to avoid causing him offense.
+[DEC] Patient grants permission for the nurse to call to discuss fluid buildup and medication adjustment
+[DEC] Inquiry regarding whether Julia can take the day off to accompany the patient.
+[DEC] Patient prefers playing cards for social engagement instead of chess to avoid humiliation from the child.
+[DEC] Patient accepts professional transport service but requests a driver who avoids discussing politics during the trip.
+[DEC] Request a quiet driver and specify the patient needs an arm to the entrance for assistance.
+[CON] Eye clinic requires a note from the cardiologist confirming heart stability for the procedure.
+[CON] Cataract surgery is a day procedure requiring the patient to have someone accompany them.
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[DEC] If safety improvements are not completed by Monday, the program will dispatch a small home-safety service.
+[DEC] Patient agrees to the proposal of moving the water pill administration to the morning time.
+[CON] Julia is working the morning of the echocardiogram and cannot provide transport for the patient.
+[DEC] Patient disputes the significance of ankle swelling, attributing tight shoes to hurried purchase rather than edema.
+[CON] Echocardiogram procedure duration is approximately forty minutes while the patient lies still for the probe.
+[DEC] Utilize a professional transport service for medical visits instead of relying on Julia for transport.
+[CON] If weight increases more than 1 kilo overnight or breathlessness worsens, call the number on the card or emergency services.
+[CON] Taking the water pill in the evening causes the patient to wake up 3 times at night
+[DEC] Patient attributes foggy vision to a previously diagnosed cataract condition.
+[DEC] Propose moving the water pill administration to the morning to mitigate nocturnal urination and fall risk
+[DEC] Cataract surgery might be postponed until fluid levels are under control via proper water pill usage.
+[DEC] Propose nurse contact today to discuss potential fluid buildup and medication adjustment for Mr. Nowak
+[DEC] Patient stopped physiotherapy session after 20 minutes due to being too tired, postponing more sessions to next week.
+[DEC] Patient recalls previous experience where cold gel was used instead of being warmed up for the procedure.
+[EQ] Total count of physiotherapy sessions equals 2
+[STR] Workflow: Send weight sheet photo later today to trigger nurse call within the hour
+[ENT] Physiotherapy sessions conducted during the previous week
+[ENT] Julia is the specific individual requested for re-engagement and brief communication or interaction.
+[ENT] Request to re-engage Julia for a brief period of communication or interaction.
+[ENT] Caregiver reporting patient sleep disturbances, pillow usage changes, and medication non-compliance issues.
+[ENT] The program operates a small home-safety service to assist with urgent residential safety needs.
+[STR] Proposal to inquire about weekly volunteer visits for social engagement such as chatting or playing cards
+[ENT] grab bars and non-slip mat are identified as necessary items for bathroom safety improvements
+[STR] Schedule: Bathroom grab bars installed this week; echo with quiet driver next Wednesday; cardiology visit on Friday.
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days
+[ENT] Socks left marks on Tuesday, indicating potential edema or pressure issues
+[EQ] Patient daily readings: 9.1 on current day and 10.2 on Thursday after visit with Uncle Staszek
+[ENT] A near-slip incident occurred on Sunday involving the patient and the slippery bathroom floor."""
+text_words = 691
+text_tokens = 935
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 900
+text = """
+[DEC] Send the weight sheet photo later today to facilitate the requested follow-up process.
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[DEC] Nurse must call within the hour following the receipt of the weight sheet photo.
+[DEC] Action item: Investigate a volunteer for weekly card-playing visits.
+[CON] The day procedure requires the patient to have someone accompany them for the duration.
+[DEC] Physiotherapy continues with the patient attempting to complete the full session.
+[DEC] Patient prefers playing cards over chess for weekly volunteer visits to avoid humiliation from the child.
+[DEC] Inquiry regarding whether Julia can take the day off to accompany the patient.
+[DEC] Discuss a small portion of food with the nurse, ensuring it is not placed behind the bread box.
+[DEC] Negotiate volunteer visits to occur two times per week instead of once a week.
+[DEC] Patient requests Julia to communicate urgency to the individual to avoid causing offense.
+[DEC] Proposal to inquire if the program's volunteer can visit once a week for chatting or playing cards.
+[DEC] Julia's boss approved her time off to accompany the patient for the scheduled medical procedures.
+[CON] Proper administration of the water pill is required to manage fluid and prevent surgery delays.
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[CON] Surgery requires a note from the cardiologist confirming the heart is stable enough for the procedure.
+[DEC] Patient prefers a quiet driver and requires assistance with an arm to the entrance during transport.
+[CON] Echocardiogram procedure duration is approximately forty minutes involving a probe moved over the chest.
+[DEC] If the urgent matter is not resolved by Monday, the home-safety service program will send someone.
+[CON] Caregiver requires assistance with transport for the echocardiogram due to work commitments that morning.
+[DEC] Schedule: Bathroom grab bars installation this week; echocardiogram with quiet driver next Wednesday; cardiology visit on Friday.
+[DEC] Postponement of cataract surgery may occur until fluid levels are under control to ensure timely procedure.
+[CON] If weight increases more than 1 kilo overnight or breathlessness worsens, call the card number or emergency services.
+[DEC] Patient Julia disputes the significance of ankle swelling, attributing tight shoes to recent hurried purchase instead.
+[DEC] Patient recalls previous experience where cold gel was not warmed up before use during the procedure.
+[DEC] Propose nurse contact today to discuss potential fluid buildup and medication adjustment for Mr. Nowak
+[DEC] Patient reports frequent nocturnal urination, up 3 times at night, if the water pill is taken in the evening.
+[DEC] The diuretic, referred to as the water pill, is best taken in the morning to prevent nocturnal urination.
+[DEC] Propose moving the diuretic (water pill) to the morning to mitigate nocturnal urination and reduce fall risk.
+[EQ] The amount consumed was exactly a third of a cake
+[ENT] Julia is the specific individual requested for interaction or consultation by the patient.
+[EQ] Total count of physiotherapy sessions completed is exactly 2 sessions
+[ENT] Request to re-engage Julia for a brief period of interaction or consultation.
+[ENT] Physiotherapy sessions conducted for the patient during the previous week
+[ENT] Grab bars and non-slip mat are identified as necessary safety equipment for the bathroom environment.
+[ENT] A small home-safety service is available to provide assistance if needed.
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days
+[EQ] Daily readings recorded as 9.1 on Friday and 10.2 on Thursday after the visit with Uncle Staszek
+[STR] Workflow: Nurse calls regarding weight gain, swelling, and night breathlessness; doctor evaluates moving water pill to morning.
+[STR] Sequence of events: poor sleep Wednesday and Thursday, 3 a.m. armchair incident, and skipped Wednesday evening pills.
+[ENT] Caregiver reports patient appetite is okay but involves excessive consumption of salty foods like hidden pickles.
+[ENT] Cardiology consultation with Dr. Wiśniewska to review echocardiogram results and potentially adjust medication."""
+text_words = 655
+text_tokens = 914
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 800
+text = """
+[DEC] Julia's boss approved her time off to accompany the patient for the cataract surgery procedure.
+[DEC] Potential treatment involves a medication dose change allowing the patient to remain at home instead of hospitalizing
+[DEC] Investigate a volunteer for card-playing sessions with the patient.
+[DEC] Re-engage Julia for a brief period of time as requested by the patient
+[DEC] Request to re-engage Julia for a brief period of time.
+[DEC] Patient grants permission for the nurse to call to discuss fluid buildup and medication adjustment
+[CON] Driver must not engage in political discussions during transport to avoid patient distress and safety concerns.
+[DEC] Negotiate volunteer visits to occur two times per week instead of once per week.
+[DEC] Request a quiet driver and specify that the patient needs an arm to the entrance.
+[DEC] Doctor to be consulted about moving the water pill medication to the morning schedule due to sleep disruption.
+[DEC] If task is not completed by Monday, the home-safety service program will send a professional.
+[CON] Pre-operative check-up at the eye clinic requires a stability note from the cardiologist.
+[CON] The task has been delayed for a duration of exactly three weeks
+[DEC] Patient explicitly consents to the proposed plan of moving the water pill administration to the morning.
+[DEC] Patient expresses strong refusal to be hospitalized due to negative experience with hospital food quality
+[DEC] Propose asking the program's volunteer to visit once a week for chatting or playing cards with the patient.
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[CON] Cataract surgery is a day procedure requiring the patient to have someone accompany them for the day.
+[CON] Evening administration of the water pill causes three nocturnal bathroom visits, causing humiliation and safety risks.
+[CON] Proper usage of water pill is required to manage fluid levels and swelling for surgery timing.
+[DEC] Requesting Julia to take the day off to accompany the patient for the cataract surgery procedure.
+[DEC] Postpone cataract surgery if fluid levels are not under control to ensure timely eye procedure.
+[DEC] Patient disputes the significance of ankle swelling, attributing tight shoes to hurried purchase rather than edema.
+[CON] Patient experienced a near-slip incident on Sunday due to the slippery bathroom floor condition
+[CON] Echocardiogram procedure duration is approximately forty minutes while lying down with a probe over the chest.
+[CON] Julia is unavailable to provide transport for the echocardiogram due to working that morning.
+[DEC] Patient recalls cold gel usage during previous procedure where the gel was not warmed up
+[DEC] Patient stopped physiotherapy exercises after exactly 20 minutes due to being too tired on Thursday
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[DEC] Propose nurse contact today to discuss potential fluid buildup and medication adjustment for Mr. Nowak
+[DEC] Utilize a transport service for medical visits instead of relying on Julia for echocardiogram transport.
+[DEC] Propose moving the water pill administration to the morning to mitigate nocturnal bathroom visits and fall risk.
+[STR] Request weight sheet photo later today and schedule nurse call to occur within the hour.
+[EQ] The quantity of cake consumed was exactly a third of a cake
+[ENT] Physiotherapy sessions conducted during the previous week for the patient
+[ENT] grab bars and non-slip mat are identified as necessary safety equipment for the bathroom
+[EQ] Recorded values include 9.1 for Friday and 10.2 for Thursday after the visit with Uncle Staszek
+[ENT] Caregiver reporting patient sleep disturbances, pillow usage changes, and medication non-compliance issues.
+[EQ] Call the number on the card or emergency services if weight increases more than 1 kilo overnight or breathlessness worsens.
+[STR] Assess Mr. Nowak's comfort with a driver and determine if assistance is needed to walk in.
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days
+[ENT] The bathroom floor is identified as a slippery surface posing a risk to the patient
+[ENT] Julia is the individual who possesses the calendar for tracking tasks and observations.
+[STR] Patient performed walking exercises using a cane, which the patient finds aesthetically unpleasing.
+[ENT] Dr. Wiśniewska is the cardiologist conducting the consultation to review the echocardiogram results."""
+text_words = 707
+text_tokens = 958
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 700
+text = """
+[DEC] Schedule next communication with Julia for next Friday or sooner if any changes occur.
+[DEC] Send the weight sheet photo later today and have the nurse call within the hour.
+[DEC] Patient prefers playing cards for social interaction instead of chess to avoid perceived humiliation.
+[DEC] Negotiate volunteer visits to occur exactly two times per week for social interaction and companionship.
+[DEC] Action item: Investigate a volunteer for card-playing to provide social interaction and companionship for the patient.
+[DEC] Potential weekly volunteer visits for social interaction such as chatting or playing cards to provide companionship.
+[DEC] Patient requests a quiet driver and specifically needs assistance to the entrance for medical transport.
+[DEC] If bathroom modifications are not completed by Monday, the home-safety service program will send someone.
+[DEC] Physiotherapy continues with the patient attempting to complete the full session as part of the ongoing care plan.
+[DEC] Discuss a small portion of medication with the nurse, ensuring it is not placed behind the bread box.
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[CON] Pre-operative check-up with the eye clinic requires a note from the cardiologist confirming heart stability.
+[CON] Bathroom floor is slippery, creating a high risk of sliding or falling for the patient
+[DEC] Patient requests that Julia communicates the urgency of bathroom modifications to her husband instead of direct communication.
+[CON] Cataract surgery is a day procedure requiring the patient to have someone accompany them for the duration.
+[CON] Call the number on the card or emergency services if weight increases > 1 kilo overnight or breathlessness worsens.
+[DEC] Caregiver requires assistance with transport for the echocardiogram due to work commitments that morning.
+[DEC] Patient stopped physiotherapy session after exactly 20 minutes due to being too tired
+[DEC] Schedule: Bathroom grab bars installation this week; echocardiogram next Wednesday with quiet driver; cardiology visit on Friday.
+[CON] Patient experiences nocturia occurring 3 times at night when taking the water pill in the evening
+[DEC] Patient Julia disputes the significance of ankle swelling, attributing tight shoes to recent hurried purchase instead.
+[DEC] Propose nurse contact today to discuss potential fluid buildup and medication adjustment for Mr. Nowak
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[DEC] The diuretic (water pill) is best taken in the morning to address nocturia issues.
+[DEC] Propose moving the diuretic (water pill) to the morning to mitigate nocturia and fall risk
+[ENT] Julia is the specific individual the patient wants to communicate with via telephone.
+[EQ] Total count of physiotherapy sessions completed is exactly 2 sessions
+[ENT] Request to reconnect with Julia for a brief period of communication or interaction.
+[ENT] Physiotherapy sessions conducted during the previous week for the patient
+[ENT] Water pill is identified as the cause for waking the patient up at night.
+[EQ] The amount of cake consumed by the patient was exactly a third of a cake.
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days
+[ENT] Uncle Staszek is the individual who visited the patient on Thursday and provided cake.
+[ENT] Small home-safety service available to assist with urgent bathroom modifications and installations.
+[STR] Workflow: Nurse calls regarding weight gain, swelling, and night breathlessness; doctor evaluates moving water pill to morning.
+[STR] A transport service is available to facilitate medical visits for the patient.
+[EQ] Daily monitoring values recorded: 9.1 on Friday and 10.2 on Thursday after the visit."""
+text_words = 581
+text_tokens = 801
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 600
+text = """
+[DEC] Patient selects driver-only service instead of the driver who provides walking assistance for medical transport.
+[DEC] Nurse must call the patient within 1 hour following receipt of the weight sheet photo later today.
+[DEC] Patient requests to negotiate the frequency of social interaction visits to two times per week.
+[DEC] Action item: Look into a volunteer specifically for card-playing social interaction.
+[DEC] Patient selects playing cards as the preferred social interaction activity instead of chess.
+[DEC] Physiotherapy continues with the goal for the patient to attempt the full session.
+[CON] The planned safety modifications have been delayed for a duration of three weeks.
+[DEC] Patient requests a quiet driver and specifies needing an arm to the entrance for medical transport.
+[DEC] Propose a weekly visit from the program's volunteer for social interaction like chatting or playing cards.
+[CON] Diuretic medication timing must avoid evening administration to prevent three nighttime bathroom visits and fall risks
+[DEC] If safety modifications are not completed by Monday, the program will dispatch a small home-safety service.
+[CON] Pre-operative check-up with the eye clinic requires a stability note from the cardiologist.
+[DEC] Potential medical intervention involves a dose change allowing the patient to stay home instead of hospitalizing
+[DEC] Julia's boss approved her day off to accompany the patient for the cataract surgery.
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[CON] Cataract surgery is a day procedure requiring a companion to be present for the patient.
+[DEC] Utilize a professional transport service for medical visits instead of personal transport options.
+[DEC] Requesting Julia to take a day off to accompany the patient for the cataract surgery.
+[CON] Patient missed evening pills on Wednesday, requiring investigation into the cause of non-adherence
+[DEC] The diuretic medication is best taken in the morning to avoid nighttime issues
+[CON] Julia is unavailable for echocardiogram transport due to working that morning.
+[DEC] Patient disputes the significance of ankle swelling, attributing tight shoes to hurried purchase rather than edema.
+[DEC] Cataract surgery timing depends on fluid control and proper adherence to the water pill medication regimen.
+[DEC] Patient recalls previous instance where cold gel was used without being warmed up for the procedure
+[DEC] Patient experienced a near-slip incident on Sunday due to the slippery bathroom floor condition.
+[DEC] Patient stopped physiotherapy exercises on Thursday after only twenty minutes due to excessive fatigue
+[DEC] Patient missed evening pills on Wednesday due to falling asleep while watching a whale documentary
+[DEC] Propose moving diuretic medication to the morning to mitigate nighttime bathroom visits and associated fall risks
+[DEC] Propose nurse contact today to discuss potential fluid buildup and medication adjustment for Mr. Nowak
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[ENT] Weight sheet photo to be sent later today for clinical review and nurse follow-up.
+[EQ] The amount consumed was exactly a third of a cake
+[ENT] Physiotherapy sessions conducted for the patient during the previous week
+[ENT] Caregiver reporting patient sleep disturbances, pillow usage changes, and medication non-compliance issues.
+[EQ] Call the number on the card or emergency services if weight increases more than 1 kilo overnight or breathlessness worsens.
+[STR] Schedule: Bathroom grab bars installed this week; echo with quiet driver next Wednesday; cardiology visit on Friday.
+[EQ] Echocardiogram procedure duration is approximately forty minutes involving a probe moved over the chest.
+[EQ] Recorded metric values are 9.1 for Friday and 10.2 for Thursday after the visit with Uncle Staszek
+[STR] Offer Mr. Nowak a choice between a driver-only service or a driver who provides walking assistance.
+[ENT] Julia is the individual responsible for monitoring or managing the patient's daily morning activities.
+[ENT] Kuba is the young man who conducted the patient's walking exercises with a cane."""
+text_words = 639
+text_tokens = 872
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 500
+text = """
+[DEC] Potential treatment involves a medication dose change allowing the patient to stay home
+[DEC] Julia's boss approved her taking a day off to accompany the patient for
+[DEC] Utilize a professional transport service for medical visits instead of a caregiver for
+[DEC] Next scheduled communication with Julia is set for next Friday or sooner if
+[DEC] Patient to receive a call from the nurse within 1 hour of receiving
+[DEC] Patient approves playing cards for social engagement but explicitly rejects playing chess.
+[DEC] Action item to look into a volunteer specifically for card-playing social engagement.
+[DEC] Physiotherapy continues with the goal for the patient to attempt the full session.
+[CON] Driver must not engage in political discussions to avoid patient distress during transit.
+[DEC] Negotiate volunteer visits to occur two times per week for social engagement.
+[DEC] The user will diplomatically communicate the urgency of safety equipment installation to Julia's
+[DEC] Patient accepts professional transport service for medical visits, specifically approving the use of
+[DEC] Request a quiet driver and specify the patient needs arm assistance to the
+[DEC] Patient requests that Julia communicates the urgency of safety equipment installation to her
+[DEC] Patient refuses hospital admission due to negative experience regarding food quality during previous
+[CON] Pre-operative check-up with the eye clinic requires a stability note from the cardiologist.
+[CON] Caregiver cannot provide transport for the echocardiogram due to working that morning.
+[DEC] Inquiry regarding Julia taking a day off to accompany the patient for the
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[DEC] Patient gives consent for the nurse to call Mr. Nowak today regarding fluid
+[CON] Cataract surgery is a day procedure requiring the patient to have someone accompany
+[DEC] If safety equipment installation is not completed by Monday, the program will dispatch
+[CON] The echocardiogram procedure takes about forty minutes and involves moving a probe over
+[DEC] Patient disputes the significance of ankle swelling, attributing tight shoes to hurried purchase
+[CON] If weight increases more than 1 kilo overnight or breathlessness worsens, call the
+[CON] Diuretic administration in the evening causes nocturia occurring 3 times at night, causing
+[CON] Vision symptoms are attributed to a pre-existing cataract diagnosis by medical professionals.
+[DEC] Propose moving diuretic administration to the morning to mitigate nocturia and reduce patient
+[DEC] Patient recalls cold gel usage where the gel was not warmed up during
+[DEC] The diuretic pill is usually best taken in the morning to avoid nocturia
+[DEC] Request nurse to call Mr. Nowak today to discuss potential fluid buildup and
+[DEC] Cataract surgery might be postponed until fluid levels are under control via proper
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye
+[DEC] Cardiology consultation with Dr. Wiśniewska scheduled for Friday, which is two days after
+[DEC] Echocardiogram heart ultrasound is scheduled for next Wednesday at 10:30 to check heart
+[ENT] Weight sheet photo to be sent later today for medical review.
+[ENT] Request to reconnect with Julia for a brief period of communication.
+[ENT] Julia is the specific person requested for brief communication and reconnection by the patient.
+[ENT] Physiotherapy sessions conducted during the previous week for the patient
+[STR] Proposal to initiate weekly volunteer visits for social engagement such as chatting or playing cards.
+[STR] Clinical assessment workflow includes checking for symptoms like extra thirst and blurry vision.
+[EQ] The patient completed exactly 2 sessions of physiotherapy during the last week
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days"""
+text_words = 593
+text_tokens = 809
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 400
+text = """
+[CON] Contact emergency services immediately if the patient is unable to breathe.
+[DEC] Patient requests to negotiate the frequency of volunteer visits to two times per week.
+[DEC] Patient prefers playing cards over chess for weekly volunteer visits to avoid feelings of
+[DEC] Communication strategy: Julia must relay the urgency to her husband to avoid causing him
+[DEC] Patient requests a quiet driver and requires assistance to the entrance for medical transport
+[DEC] Proposal to ask if the program's volunteer can visit once a week for chatting
+[DEC] Patient refuses hospital admission due to negative experience regarding food quality during previous stay
+[DEC] Patient reports water pill causes waking up, confirming the decision to move water pill
+[CON] Call the number on the card immediately if weight increases more than 1 kilo
+[DEC] Patient Julia consents to receiving a phone call from the nurse to discuss symptoms
+[DEC] Potential treatment involves medication dose change allowing patient to stay home instead of hospital
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[CON] Cataract surgery is a day procedure requiring the patient to have someone accompany them
+[DEC] Schedule bathroom grab bars installation for this week and echocardiogram with a quiet Wednesday.
+[DEC] Caregiver requires assistance with transport for the echocardiogram due to work commitments that morning.
+[DEC] If installation is not completed by Monday, the program will send a small home-safety
+[CON] The patient experienced a near-slip incident on Sunday due to the slippery bathroom floor.
+[CON] The installation task has been delayed for a duration of three weeks
+[DEC] Patient Julia disputes the significance of ankle swelling, attributing tight shoes to recent hurried
+[CON] Cataract surgery postponement may occur until fluid levels are under control via proper water
+[CON] Taking the water pill in the evening causes the patient to wake up 3
+[DEC] Patient Julia missed evening pills on Wednesday due to falling asleep while watching a
+[DEC] Propose nurse contact today to discuss potential fluid buildup and medication adjustment Mr. Nowak
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing the left eye first.
+[DEC] Patient stopped physiotherapy exercises after 20 minutes on Thursday due to fatigue, postponing more
+[DEC] The diuretic (water pill) is best taken in the morning rather than the evening
+[DEC] Propose nurse confirms with doctor to move the diuretic (water pill) to the morning
+[STR] Workflow: Send weight sheet photo later today and ensure nurse calls within the hour.
+[ENT] Patient identifies Julia as the desired contact person for the upcoming phone communication.
+[ENT] Physiotherapy sessions conducted during the previous week for the patient
+[ENT] grab bars and non-slip mat are identified as necessary safety equipment for the bathroom
+[EQ] The values recorded are 9.1 and 10.2 following the visit with Uncle Staszek on Thursday
+[EQ] Weight gain of 1.7 kilos calculated over a duration of four days"""
+text_words = 483
+text_tokens = 656
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 350
+text = """
+[DEC] Action item to look into a volunteer for card-playing social
+[DEC] Send the weight sheet photo later today and arrange 1
+[DEC] Negotiate volunteer visits to occur exactly two times per week
+[DEC] Request to re-engage Julia for a brief period of interaction
+[DEC] Schedule bathroom grab bars installation for this week and Friday.
+[DEC] Patient prefers playing cards for social interaction instead of chess
+[DEC] Propose weekly volunteer visits for social interaction such as chatting
+[DEC] Potential medical intervention involves dose change or staying home based
+[DEC] Patient instructs that Julia must communicate the urgency to her
+[DEC] Request Julia to take the day off to accompany the
+[DEC] Request a quiet driver and specify the need Mr. Nowak
+[DEC] Julia's boss approved her time off to accompany the patient
+[DEC] If installation is not completed by Monday, the home-safety service
+[DEC] Flag the 1.7 kilos weight gain for the nurse today
+[CON] Cataract surgery is a day procedure requiring a companion to
+[CON] Proper administration of water pill is required to manage fluid
+[CON] Caregiver is unavailable for echocardiogram transport due to work commitments
+[DEC] Schedule echocardiogram with a quiet driver for next Wednesday and
+[DEC] Postpone cataract surgery if fluid levels are not under control
+[CON] Patient missed evening pills on Wednesday, requiring investigation into the
+[CON] If weight increases more than 1 kilo overnight or breathlessness
+[DEC] Patient agrees to the proposed decision to move the diuretic
+[CON] Echocardiogram procedure duration is approximately forty minutes while lying down
+[DEC] Patient disputes the significance of ankle swelling, attributing tight shoes
+[DEC] Patient missed evening pills on Wednesday due to falling asleep
+[DEC] Propose nurse contact today to discuss potential fluid Mr. Nowak
+[DEC] Patient recalls previous experience where cold gel was used without
+[CON] Patient experiences nocturia, waking up 3 times at night if
+[DEC] Cataract surgery scheduled for the 24th of next month, prioritizing
+[DEC] The diuretic (water pill) is usually best taken in the
+[DEC] Propose moving the diuretic (water pill) to the morning to
+[EQ] The amount consumed was exactly a third of a cake
+[ENT] Julia is the requested individual for brief period of interaction or consultation as previously decided.
+[EQ] Total count of physiotherapy sessions completed is exactly 2 sessions
+[ENT] Physiotherapy sessions conducted during the previous week for the patient"""
+text_words = 393
+text_tokens = 559
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 300
+text = """
+[DEC] Potential treatment plan involves medication dose change
+[DEC] Schedule next conversation with Julia for Friday
+[DEC] Social interaction plan: Search for a volunteer
+[DEC] Patient prefers playing cards for social interaction
+[DEC] Communication strategy: Julia must relay the urgency
+[DEC] Negotiate social interaction frequency to exactly two
+[DEC] The user adopts a diplomatic communication Julia's
+[DEC] Julia's boss approved her time off to
+[DEC] The patient's water pill causes waking up,
+[DEC] Patient refuses hospital admission due to negative
+[DEC] Requesting Julia to take the day off
+[DEC] Patient prefers a quiet driver and requires
+[DEC] Propose weekly volunteer visits for social interaction
+[DEC] Physiotherapy plan: Patient will attempt to complete
+[CON] Caregiver requires transport assistance for the echocardiogram
+[DEC] Flag the 1.7 kilos weight gain for
+[CON] Bathroom floor is slippery, creating a high
+[CON] Echocardiogram procedure duration is approximately forty minutes
+[CON] Proper administration of water pill is required
+[CON] Call the number on the card 1
+[CON] Cataract surgery is a day procedure requiring
+[CON] Evening administration of the water pill causes
+[DEC] Patient Julia consents to the proposed plan
+[DEC] Postpone cataract surgery if fluid levels are
+[DEC] Patient Julia consents to the Mr. Nowak
+[DEC] If installation is not completed by Monday,
+[DEC] Patient Julia disputes the significance of ankle
+[DEC] Patient recalls previous experience where cold gel
+[DEC] Propose nurse contact today to Mr. Nowak
+[DEC] Cataract surgery scheduled for the 24th of
+[DEC] Patient stopped physiotherapy session after 20 minutes
+[DEC] Propose moving the water pill administration to
+[DEC] Vision fogginess is attributed to a diagnosed
+[STR] Workflow: Send weight sheet photo later today and have the nurse call within the hour.
+[EQ] Cake consumption amount is exactly a third of a cake
+[ENT] Patient named Julia who is requesting to speak with the user via telephone.
+[EQ] Total count of physiotherapy sessions completed is exactly 2 sessions"""
+text_words = 316
+text_tokens = 487
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 250
+text = """
+[DEC] Negotiate frequency of social interaction sessions to
+[DEC] Nurse to call within the hour following
+[DEC] Action item: Investigate a volunteer for card-playing
+[DEC] Patient prefers playing cards for social interaction
+[DEC] Communication strategy: Instruct Julia to convey the
+[DEC] Physiotherapy plan: Continue sessions with the goal
+[CON] Transport service driver must not engage in
+[DEC] Request a quiet driver and specify the
+[DEC] Propose moving the water pill to the
+[CON] Eye clinic requires a note from the
+[CON] If breathlessness gets worse, call the number
+[DEC] Propose a weekly visit from the program's
+[CON] Cataract surgery is a day procedure requiring
+[DEC] Flag the 1.7 kilos weight gain for
+[DEC] Potential treatment outcomes include a dose change
+[CON] Julia is working the morning of the
+[DEC] If bathroom safety installation is not Monday,
+[CON] Echocardiogram procedure duration is approximately forty minutes
+[DEC] Utilize a transport service for medical Julia
+[DEC] Patient disputes the significance of ankle swelling,
+[DEC] Patient stopped physiotherapy session after 20 Thursday.
+[DEC] Patient agrees to the decision to move
+[DEC] Nurse to call Mr. Nowak today to
+[CON] Taking the water pill in the 3
+[DEC] Cataract surgery might be postponed until fluid
+[DEC] Cataract surgery scheduled for the 24th of
+[DEC] The water pill is usually best taken
+[DEC] Note the patient 9.1 Friday 10.2 Thursday
+[DEC] Dr. Wiśniewska will review the echo results
+[ENT] Weight sheet photo to be sent later today for nurse review.
+[EQ] Total count of physiotherapy sessions equals 2"""
+text_words = 253
+text_tokens = 408
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 200
+text = """
+[CON] Contact emergency services immediately if
+[DEC] Patient requests to negotiate the
+[DEC] Patient prefers playing cards over
+[CON] Driver must not engage in
+[DEC] Patient reports water pill causes
+[DEC] Proposal to ask if the
+[DEC] Patient requests a quiet driver
+[DEC] Plan to investigate a volunteer
+[DEC] Patient will attempt to perform
+[DEC] Inquiry regarding whether Julia can
+[DEC] Patient requests Julia to communicate
+[CON] Call the number on 1
+[CON] Caregiver requires transport assistance for
+[CON] Cataract surgery is a day
+[DEC] Julia's boss approved her time
+[DEC] If safety equipment installation Monday,
+[DEC] Flag the 1.7 kilos weight
+[CON] Patient experienced a near-slip Sunday
+[CON] Echocardiogram procedure duration is approximately
+[DEC] Patient Julia disputes the significance
+[DEC] Cataract surgery might be postponed
+[DEC] Propose nurse contact Mr. Nowak
+[DEC] Cataract surgery scheduled for 24th
+[CON] Taking the water pill 3
+[DEC] The diuretic (water pill) is
+[DEC] Propose moving the diuretic (water
+[DEC] Dr. Wiśniewska will review Friday
+[ENT] Cardiology consultation with Dr. Wiśniewska scheduled for Friday, two days after the Wednesday echocardiogram."""
+text_words = 178
+text_tokens = 315
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 150
+text = """
+[DEC] Potential treatment involves a
+[DEC] Next scheduled interaction Friday
+[DEC] Nurse to call 1
+[DEC] Investigate a volunteer for
+[DEC] Patient requests negotiating the
+[DEC] Patient prefers playing cards
+[DEC] Request to re-engage Julia
+[DEC] Proposal to ask if
+[DEC] Patient refuses hospital admission
+[CON] The task has been
+[DEC] Patient requests a quiet
+[DEC] Flag the 1.7 kilos
+[CON] Pre-operative check-up with the
+[DEC] Patient gives Mr. Nowak
+[DEC] If installation is Monday,
+[CON] Call the number 1
+[DEC] Caregiver requires assistance with
+[CON] Cataract surgery on 24th
+[DEC] Patient disputes the significance
+[CON] Diuretic administration in 3
+[DEC] Propose moving diuretic administration
+[DEC] The diuretic pill is
+[DEC] Request nurse Mr. Nowak
+[DEC] Cataract surgery scheduled 24th
+[DEC] Nurse to consult doctor"""
+text_words = 128
+text_tokens = 245
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "DSPM/Gemma26B"
+target_words = 100
+text = """
+[DEC] Caregiver
+[DEC] 1
+[DEC] Patient
+[DEC] Negotiate
+[DEC] Adopt
+[DEC] Social
+[DEC] Discuss
+[CON] Professional
+[CON] Installation
+[DEC] Propose
+[DEC] Communication
+[DEC] Physiotherapy
+[DEC] Request
+[DEC] 1.7
+[CON] Patient
+[DEC] If
+[CON] Cataract
+[CON] 1
+[DEC] Cataract
+[DEC] 20
+[CON] Echocardiogram
+[DEC] Patient
+[DEC] Utilize
+[DEC] Ensure cold
+[DEC] Propose Mr.
+[DEC] Cataract 24th
+[CON] Evening 3
+[DEC] Dr. Wiśniewska
+[DEC] The water
+[DEC] Propose moving"""
+text_words = 67
+text_tokens = 202
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 1200
+text = """
+[CON] Daily record entry duration should not take
+[DEC] Offer to arrange a home safety assessment
+[DEC] Patient will independently manage breakfast, reading mail,
+[DEC] Patient prefers to be accompanied by Anna
+[CON] Do not take an extra dose if
+[DEC] Team will handle relevant follow-up requests and
+[DEC] Patient intends to help Anna with dinner
+[CON] Maintain hydration unless specific fluid restrictions are
+[DEC] Patient will consume breakfast and then Anna's
+[DEC] Daily record format can use short notes
+[DEC] Patient will record main discussion points in
+[CON] Plan enough time for rest and avoid
+[DEC] Patient requests a printed sheet of exercise
+[DEC] Patient agrees to proceed with arranging a
+[CON] Patient must take stairs slowly and hold
+[CON] Use walking stick and ensure someone is
+[DEC] Patient avoids going upstairs unless absolutely necessary
+[CON] Do not apply knee cream more frequently
+[DEC] Consult clinic regarding post-procedure transport arrangements and
+[DEC] Patient decides not to rush into surgery
+[DEC] Prioritize issues affecting immediate health and safety,
+[DEC] Patient decides to discuss surgical possibilities and
+[DEC] Patient may ask permission to take notes
+[CON] Long outings are a limiting factor as
+[DEC] Patient must be actively involved in all
+[CON] Patient cannot kneel down or carry heavy
+[DEC] Arrange an eye examination review if vision
+[DEC] Patient prefers not to write extensive pages
+[CON] Adequate lighting is required for reading medication
+[DEC] Explore accessible transport options for the group
+[CON] Patient cannot stand at the stove for
+[DEC] Patient aims to spend fifteen minutes outside
+[DEC] Note request for follow-up regarding service explanation
+[DEC] Pursue home safety assessment and transport support
+[DEC] Patient decides to commit to one visit
+[DEC] Perform weekly cupboard inventory checks on Sunday
+[DEC] Patient proposes making a specific vegetable Sundays.
+[DEC] Bring the completed daily record to the
+[CON] Cleaning the bathroom is currently out of
+[DEC] Patient may engage in reading, crossword puzzles,
+[DEC] Patient and Anna to use a shared
+[DEC] Patient decides to make the call tomorrow
+[DEC] Patient will suggest the shared calendar Anna
+[CON] Do not force movements that cause significant
+[CON] Seek medical advice promptly if symptoms worsen;
+[DEC] Discuss nighttime urination with doctor to determine
+[CON] Patient is unable to perform heavy jobs
+[DEC] Any external support must be discussed with
+[DEC] Patient goal is to restore walking ability
+[DEC] Patient intends to consult doctor regarding whether
+[DEC] Patient prioritizes maintaining independence and making informed
+[DEC] Patient will place the knee cream tube
+[DEC] Patient decides that taking notes will likely
+[DEC] Patient may sit outside alone for a
+[DEC] Patient prefers brother to visit home instead
+[DEC] Patient held on to the sink and
+[DEC] Note variation in well-being and ensure dizziness
+[DEC] Add specific medicine-dependent questions to the list
+[CON] Patient requires that no external assistance rearranges
+[CON] Confirm fasting requirements and regular medication intake
+[DEC] Patient prefers an early appointment time to
+[DEC] Patient will manage dishwashing and kitchen tidiness
+[DEC] Patient will use an existing gardening notebook
+[DEC] Doctor determines treatment choice based on symptoms
+[CON] Seek emergency help immediately for severe or
+[DEC] Conduct a hearing review to identify if
+[DEC] Patient maintains interest in receiving information about
+[DEC] Patient requires Anna to demonstrate how to
+[DEC] Confirm doctor appointment, arrange blood test, and
+[CON] Contact a clinician promptly if dizziness returns
+[CON] Avoid working in positions that aggravate knees
+[DEC] Patient chooses to sit on the patio
+[CON] Small writing is difficult for the patient
+[CON] Patient concentration decreases when tired; maximum sustained
+[DEC] Physiotherapist may modify exercises based on assessment
+[DEC] Request physiotherapist to demonstrate exercises again and
+[DEC] Incorporate regular meals and suitable snacks to
+[CON] Report persistent or worsening changes in memory,
+[DEC] Patient decides to have a companion accompany
+[DEC] Patient requests collaborative approach to calling the
+[DEC] Patient will wash vegetables and peel Anna
+[CON] Bathroom floor is slippery and shower entrance
+[DEC] Patient will request Anna to bring a
+[DEC] Inquire with doctor whether any medication timing
+[DEC] Communicate specific discomfort experienced with hearing aids
+[DEC] Patient will start the daily record Anna
+[DEC] Note patient interest in receiving information about
+[DEC] Patient will manage calls with Anna's assistance
+[DEC] Patient no longer adheres to the previous
+[DEC] Revisit the previous decision to install a
+[CON] Right knee pain is particularly acute when
+[DEC] Record the duration of knee soreness to
+[CON] Do not stop or change any prescribed
+[CON] If physiotherapy appointment is unavailable soon, request
+[DEC] Discuss fatigue and sleep issues with the
+[DEC] Discuss installing a securely fitted nonslip surface,
+[DEC] Patient prefers all medication-related information to Anna
+[DEC] Patient occasionally leaves mobility aid beside the
+[CON] Avoid relying on a loose mat that
+[CON] Do not change medication based on a
+[CON] Dizziness symptoms typically worsen in the evening
+[DEC] Patient requires a driver for transport Anna
+[CON] Stop and rest immediately if pain, dizziness,
+[CON] Avoid carrying hot pans or handling sharp
+[DEC] The appointment is tentatively scheduled Thursday Anna.
+[DEC] Patient performed morning exercises on Wednesday but
+[DEC] Consider using lightweight tools or raised planters
+[CON] Contact healthcare provider immediately if another Thursday.
+[DEC] Contact the physiotherapy service to inquire about
+[CON] Seek urgent medical advice if severe abdominal
+[DEC] Doctor recommends monitoring response to current treatment
+[DEC] Agree on specific tasks for independent Anna
+[DEC] Arrange a hearing review to check device
+[DEC] Patient uses a cushion under legs when
+[DEC] Patient should record blood pressure readings according
+[DEC] Pain in the right knee usually decreases
+[DEC] Consult a pharmacist or doctor for guidance
+[DEC] Try a shorter afternoon rest if comfortable
+[CON] Inform doctor if unintentional weight loss occurs,
+[DEC] Patient may incorporate yogurt or a banana
+[DEC] Patient and Anna will make the Anna
+[DEC] Suggest Anna helps keep the mobility stick
+[DEC] Inform doctor about recurring dizziness as it
+[DEC] Contact healthcare provider immediately if pain worsens
+[DEC] Patient spent most of Tuesday sitting down
+[DEC] Patient will mention recurring dizziness during the
+[DEC] Patient performed ankle movements while sitting Sunday
+[CON] Seek emergency care if sudden weakness, difficulty
+[DEC] Patient experienced dizziness on Tuesday morning after
+[CON] Check packaging before buying more and consult
+[DEC] Patient considers a steroid injection to reduce
+[DEC] Consult doctor regarding specific injection type, expected
+[DEC] Follow the prescribed exercise routine and adjust
+[CON] Contact healthcare provider if dizziness persists or
+[DEC] If an exercise consistently worsens symptoms, consult
+[DEC] Consult doctor or pharmacist if symptoms persist
+[STR] Begin short daily symptom record and discuss home safety, transport, and community activities with Anna.
+[STR] Plan three short outdoor sessions using simple and familiar routes based on patient feeling
+[STR] Blood test intended to check blood count and other unspecified parameters.
+[ENT] Edward is requested to join the current session/conversation.
+[STR] Proposal for a shared calendar to manage appointments and household tasks for coordination.
+[EQ] Patient reports a current rating of six on the zero to ten scale for well-being.
+[STR] Laundry tasks are managed by having Anna carry the basket downstairs.
+[ENT] Marta from the Home Care Support Program is conducting a check-in call with the patient.
+[ENT] Social interaction involves Anna, the patient's brother, and Peter who lives next door.
+[ENT] Peter is a neighbor who performs occasional wellness checks on the patient.
+[ENT] Caregiver reporting on patient status regarding falls, dizziness, and shortness of breath symptoms.
+[ENT] Small community group previously attended on Wednesday afternoons before knee pain increased.
+[ENT] clinic is described as quite busy, potentially making the physiotherapy appointment tricky for the patient.
+[EQ] Scale from zero to ten where zero is extremely unwell and ten is feeling as well as reasonably expected
+[ENT] Patient reports historical well-being ratings: Monday was seven, Tuesday was four due to dizziness, weekend was six.
+[ENT] Knee cream supply is nearly exhausted and requires replenishment soon.
+[ENT] General practitioner (GP) scheduled for an upcoming medical review appointment with the patient."""
+text_words = 1341
+text_tokens = 1896
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 1100
+text = """
+[DEC] Team will manage relevant follow-up requests and
+[DEC] Request follow-up with the service to explain
+[CON] Maintain hydration unless specific fluid restrictions are
+[CON] Do not apply knee cream more frequently
+[DEC] Patient will record main discussion points in
+[DEC] Daily record tracking uses short notes or
+[DEC] Schedule weekly cupboard checks for Sunday evenings
+[CON] Plan sufficient time for rest and avoid
+[DEC] Arrange a hearing review to check device
+[DEC] Ask the clinic about usual transport arrangements
+[CON] Use walking stick and ensure someone is
+[DEC] Offer to arrange a home safety assessment
+[DEC] Aim to spend fifteen minutes outside three
+[DEC] Patient must be actively involved in care
+[CON] Patient cannot perform bending and scrubbing tasks
+[DEC] Patient decides not to rush into surgery
+[DEC] Explore group accessibility via transport options or
+[DEC] Patient decides to make the call tomorrow
+[DEC] Support must be discussed with the patient
+[DEC] Patient may request permission to take notes
+[DEC] Arrange an eye examination review if vision
+[CON] Patient cannot kneel down or carry heavy
+[DEC] Patient retains responsibility for washing dishes and
+[DEC] Patient prefers not to write pages of
+[DEC] Patient intends to discuss surgical possibilities and
+[DEC] Patient proposes making a specific vegetable Sundays.
+[DEC] Prioritize issues affecting immediate health and safety,
+[DEC] Patient decides to attempt one visit per
+[DEC] Bring the completed daily record to the
+[CON] Adequate lighting is required for reading medication
+[CON] Daily record tracking should take no more
+[DEC] Patient will independently manage breakfast, reading mail,
+[DEC] Patient prioritizes maintaining independence for as long
+[DEC] Patient prefers brother to visit their home
+[DEC] Patient will propose the shared management Anna
+[DEC] Provide a printed sheet of exercises to
+[DEC] Patient decides that taking notes will likely
+[DEC] Patient confirms decision to proceed with implementing
+[DEC] Print the medication list before the appointment
+[DEC] Patient intends to weigh themselves to investigate
+[DEC] Discuss nighttime urination with doctor to determine
+[DEC] Use the walking stick consistently to reduce
+[DEC] Patient prefers an early appointment time to
+[DEC] Patient will record medical appointments, prescription refills,
+[DEC] Note patient interest in transport assistance for
+[DEC] patient intends to speak to the doctor's
+[CON] Do not force movements that cause significant
+[CON] Patient cannot stand at the stove for
+[DEC] Conduct a hearing review to evaluate device
+[DEC] Patient considers writing down questions beforehand GP
+[DEC] Patient requests information on available transport assistance
+[CON] Seek medical advice promptly if symptoms worsen;
+[DEC] Note variation in daily record ratings and
+[DEC] Patient intends to inquire with the doctor
+[DEC] Add specific medicine-dependent questions to the list
+[DEC] Anna is responsible for carrying the laundry
+[CON] Avoid working in positions that aggravate knees
+[DEC] Collaborate with the patient to arrange the
+[DEC] Explore available support services if coordinating Anna.
+[DEC] Patient may invite a companion to the
+[DEC] Patient chooses to sit on the patio
+[DEC] Implement a shared physical calendar Patient Anna
+[DEC] Offer Anna's assistance to arrange the blood
+[DEC] Patient considers consuming yogurt or a banana
+[DEC] Patient should create a short list of
+[CON] Do not stop or change prescribed medication
+[DEC] Physiotherapist may modify exercises based on assessment
+[DEC] Communicate specific discomfort experienced with hearing aids
+[CON] Dizziness severity increases in the evening and
+[DEC] Confirm with the laboratory or ordering clinician
+[DEC] Patient will wash vegetables and peel Anna
+[DEC] Request physiotherapist to demonstrate exercises again and
+[DEC] Inquire with doctor whether any medication timing
+[DEC] Patient will start the daily record Anna
+[DEC] Patient uses a cushion under legs while
+[DEC] Patient will request Anna to bring a
+[CON] Report persistent or worsening changes in memory,
+[DEC] Consume regular meals and suitable snacks to
+[CON] Avoid relying on a loose mat that
+[DEC] Patient will use an existing gardening GP
+[DEC] Patient no longer adheres to the previous
+[DEC] Patient will manage calls with Anna's help
+[CON] Stop and rest immediately if pain, dizziness,
+[DEC] Discuss fatigue and sleep issues with the
+[DEC] Patient intends to help Anna with dinner
+[DEC] Discuss installation of a securely fitted nonslip
+[DEC] Anna would need to take time off
+[CON] Do not change medication based on a
+[CON] If physiotherapy appointment is unavailable soon, request
+[DEC] Patient will inform the doctor about recurring
+[DEC] Patient will rely on Anna to demonstrate
+[DEC] Note the duration of knee soreness to
+[DEC] Consult care coordinator to identify available local
+[CON] Contact healthcare provider immediately if another Thursday.
+[CON] Concentration levels decrease significantly when the patient
+[DEC] Revisit the previously discussed plan to install
+[CON] Avoid carrying hot pans or handling sharp
+[DEC] Agree on specific tasks for independent Anna
+[CON] Seek urgent medical advice if severe abdominal
+[DEC] Doctor recommends monitoring response to current treatment
+[DEC] Patient prefers to go with Anna initially,
+[DEC] Contact the physiotherapy service to inquire about
+[DEC] Collaborate with Anna to make the call
+[DEC] Try a shorter afternoon rest if comfortable
+[DEC] Inquire with the clinician whether regular medicines
+[CON] Inform doctor if unintentional weight loss occurs,
+[CON] Check packaging before purchasing more and consult
+[DEC] Consider using lightweight tools or raised planters
+[DEC] Inform doctor about recurring dizziness as it
+[DEC] Patient should ask the doctor if blood
+[CON] Contact a clinician promptly if dizziness returns
+[DEC] Consult doctor regarding injection type, expected benefits,
+[DEC] Patient considers a steroid injection to address
+[CON] Seek emergency care if sudden weakness, difficulty
+[DEC] Contact healthcare provider immediately if pain worsens
+[CON] Contact healthcare provider if dizziness persists or
+[CON] Do not take an extra dose if
+[DEC] Follow the prescribed exercise plan and adjust
+[DEC] Consult doctor or pharmacist regarding persistent or
+[DEC] Provide clinician with an up-to-date list including
+[DEC] If exercises consistently worsen symptoms, seek advice
+[STR] Plan three short outdoor sessions using simple and familiar routes based on patient feeling
+[EQ] Patient reports a current rating of six on the zero to ten scale for daily record tracking
+[EQ] Maximum duration for sorting old photographs was limited to exactly twenty minutes due to fatigue.
+[STR] Daily record includes date and notes on significant events like longer walks or poor night's sleep.
+[STR] Coordinate appointment through Anna to facilitate the service follow-up and potential home safety assessment.
+[STR] Preference for paper-based tracking systems over digital-only methods for certain tasks.
+[ENT] Marta from the Home Care Support Program is conducting a check-in call with the patient.
+[ENT] Peter is a neighbor who performs occasional wellness checks on the patient.
+[ENT] Edward is requested to join the current session for further interaction or monitoring.
+[ENT] The patient is inquiring about the status of communication with the physiotherapist following the last session.
+[EQ] Appetite frequency is exactly three meals a day despite smaller portion sizes
+[ENT] blood test expected to be easier than the physiotherapy appointment
+[ENT] Small community group previously attended on Wednesday afternoons before knee pain increased.
+[ENT] Social contacts include Anna, brother, and Peter next door for patient interaction and support.
+[ENT] Clinic sent a reminder card during the previous appointment to facilitate follow-up.
+[EQ] Scale from zero to ten, where zero is extremely unwell and ten is feeling as well as reasonably expected
+[ENT] weekly pillbox located on the kitchen table used for medication organization
+[ENT] physiotherapy appointment at a clinic described as being quite busy
+[STR] Anna fills the weekly pillbox every Sunday to manage medication"""
+text_words = 1250
+text_tokens = 1751
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 1000
+text = """
+[DEC] Patient decides to independently organize breakfast,
+[DEC] Patient intends to help Anna with
+[DEC] Team will manage relevant follow-up requests
+[DEC] Patient agrees to proceed with arranging
+[DEC] Patient to ask clinic about usual
+[CON] Do not apply the cream more
+[CON] No falls reported; no complaints of
+[DEC] Aim for three short outdoor sessions
+[CON] Use walking stick and ensure someone
+[DEC] Patient requests a printed sheet of
+[CON] Patient must be involved in all
+[DEC] Offer to arrange a home safety
+[DEC] Explore group accessibility via transport options
+[DEC] Patient will record main discussion points
+[DEC] Use short notes or a zero
+[CON] Long outings are a limiting factor
+[DEC] Patient may ask permission to take
+[DEC] Prioritize issues affecting immediate health and
+[CON] Patient cannot kneel down or carry
+[CON] Patient should plan enough time for
+[DEC] Patient may request physiotherapy demonstration, written
+[CON] Patient requires slow movement and use
+[DEC] Conduct a hearing review to identify
+[DEC] Patient aims to increase daily tracking
+[DEC] Patient aims to spend fifteen minutes
+[DEC] Patient wants to know availability of
+[DEC] Patient decides to discuss surgery possibilities
+[DEC] Patient attempts to compensate for missed
+[DEC] Pursue home safety assessment and transport
+[DEC] Patient decides to commit to one
+[DEC] Patient decides not to rush into
+[DEC] Perform weekly cupboard checks and Sunday
+[DEC] Patient intends to arrange an 1
+[DEC] Patient proposes using a physical calendar
+[DEC] Bring the completed daily tracking record
+[CON] Patient concentration decreases when tired; maximum
+[DEC] Discuss the potential use of a
+[DEC] Patient prefers to maintain current household
+[DEC] Patient proposes making the specific Sundays
+[DEC] Patient intends to inquire with the
+[DEC] Revisit the previously discussed plan to
+[CON] Seek medical advice promptly if symptoms
+[DEC] Note variation in status values and
+[DEC] Any external support must be discussed
+[DEC] Patient prefers brother to visit their
+[CON] Daily tracking task should 1 2
+[DEC] Patient decides that taking notes will
+[CON] Do not force movements that cause
+[DEC] Patient prefers an early appointment time
+[DEC] Patient prioritizes maintaining independence and making
+[DEC] Patient will suggest the proposed Anna
+[CON] Daily tracking task must be simple
+[DEC] Use an existing gardening notebook to
+[DEC] Patient decides to weigh themselves after
+[DEC] Patient intends to discuss surgery possibilities
+[DEC] Add specific medicine-dependent questions to the
+[CON] Stop all activities immediately if patient
+[DEC] Arrange an eye examination review if
+[CON] Hearing aid usage is inconsistent due
+[CON] Avoid working in positions that aggravate
+[CON] Avoid relying on a loose mat
+[DEC] Request Anna to demonstrate how to
+[DEC] Patient chooses to sit on the
+[DEC] Discuss nighttime urination and potential medication
+[DEC] Patient will initiate daily tracking Anna
+[DEC] Patient uses a cushion under legs
+[DEC] Patient will ask Anna to bring
+[DEC] Patient decides to have a companion
+[CON] Communicate physical discomfort directly to the
+[DEC] Patient intends to walk outside a
+[DEC] Patient will include the cream tube
+[DEC] Patient will wash vegetables and Anna
+[DEC] Patient identifies potential cognitive and social
+[DEC] Note the request for follow-up Anna.
+[DEC] Patient will manage calls with Anna's
+[DEC] Patient will manage dishwashing and kitchen
+[DEC] Patient no longer adheres to the
+[DEC] Patient uses humor, specifically joking Anna
+[CON] Do not stop or change any
+[CON] Avoid carrying hot pans or handling
+[CON] If physiotherapy appointment is unavailable soon,
+[DEC] Patient requires transportation assistance as Anna
+[DEC] Discuss fatigue and sleep issues with
+[DEC] Note patient interest in receiving information
+[CON] Dizziness episodes worsen in the evening
+[DEC] Consult care coordinator to identify available
+[CON] Do not assume fasting is required;
+[DEC] Ask the doctor whether blood pressure
+[DEC] Request the doctor to perform a
+[DEC] The appointment is tentatively Thursday Anna.
+[DEC] Patient occasionally leaves mobility aid beside
+[DEC] Treatment choice depends on patient symptoms
+[CON] Contact healthcare provider immediately if Thursday.
+[DEC] Contact the physiotherapy service to inquire
+[CON] Seek urgent medical advice if severe
+[DEC] Patient goal is to improve walking
+[CON] Do not change any medication based
+[DEC] Arrange a hearing review to check
+[DEC] Patient prefers to go with Anna
+[DEC] Inquire with the clinician or laboratory
+[DEC] Patient and assistant will call Anna
+[DEC] Note the duration of knee soreness
+[CON] Contact a clinician promptly if dizziness
+[DEC] Wait for response to treatment and
+[DEC] Discuss dizziness, fatigue, knee pain, GP
+[CON] Check packaging before purchasing more and
+[DEC] Consider using lightweight tools or raised
+[DEC] Suggest an honest conversation to agree
+[CON] Inform doctor if unintentional weight loss
+[DEC] Suggest Anna helps keep the mobility
+[DEC] Try a shorter afternoon rest instead
+[CON] Pain is particularly acute when getting
+[DEC] Consult doctor regarding specific injection type,
+[DEC] Contact healthcare provider immediately if pain
+[CON] Contact healthcare provider if dizziness persists
+[DEC] Mention persistent or worsening symptoms to
+[CON] Do not take an extra dose
+[CON] If persistent or worsening changes in
+[DEC] Follow the prescribed routine and adjust
+[CON] Advise patient to notify doctor if
+[DEC] If exercises consistently worsen symptoms, consult
+[ENT] Edward is requested to join the current session/conversation
+[ENT] Small community group previously attended on Wednesday afternoons by the patient.
+[ENT] Marta from the Home Care Support Program is conducting a check-in call with the patient
+[STR] Proposed visit structure involves brother bringing lunch and sitting in the garden if weather is decent.
+[ENT] Blood test procedure expected to be easier than the physiotherapy appointment.
+[STR] Proposal for a shared calendar to manage appointments and household tasks collaboratively.
+[ENT] Peter is a neighbor who provides occasional check-ins for the patient.
+[STR] Implement bathroom safety using a securely fitted nonslip surface, suitable grab bars, and a shower chair.
+[EQ] Patient reported status values: Monday was 7, Tuesday was 4 due to dizziness, and weekend was 6.
+[EQ] Scale from zero to ten, where zero is extremely unwell and ten is feeling as well as reasonably expected.
+[STR] Notebook layout consisting of five columns to be filled in each evening for daily tracking.
+[ENT] Social contacts include Anna, brother, and Peter next door for patient interaction.
+[ENT] Patient expresses concern regarding potential future knee replacement surgery based on neighbor's difficult recovery experience.
+[ENT] Clinic sent a reminder card at the time of the last appointment for the patient.
+[ENT] Doctor's receptionist is the contact point for communication tomorrow."""
+text_words = 1070
+text_tokens = 1559
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 900
+text = """
+[DEC] Note request for follow-up regarding service
+[DEC] Implement a shared physical Patient Anna
+[DEC] Team will handle relevant follow-up requests
+[CON] Do not apply knee cream more
+[DEC] Patient requests a printed sheet of
+[CON] Use walking stick and ensure someone
+[CON] Patient must take stairs slowly and
+[DEC] Offer to arrange a home safety
+[DEC] Consult clinic regarding transport arrangements and
+[DEC] Collaborate with Anna to make the
+[CON] Patient must be involved in all
+[DEC] Patient aims to spend fifteen minutes
+[DEC] Patient decides not to rush into
+[DEC] Patient will record main discussion points
+[DEC] Patient intends to investigate whether specific
+[DEC] Patient decides to discuss surgical possibilities
+[DEC] Note user preference for information regarding
+[DEC] Patient avoids going upstairs unless absolutely
+[DEC] Daily record tracking can consist of
+[DEC] Explore accessible transport options for the
+[DEC] Patient confirms decision to proceed with
+[CON] Patient cannot kneel down or carry
+[DEC] User wants to know available community
+[DEC] Patient decides to discuss surgical possibilities
+[DEC] Formalize all medical and care Anna
+[DEC] Bring the completed daily record to
+[DEC] Patient proposes making a specific Sundays.
+[DEC] Prioritize issues affecting immediate health and
+[DEC] Patient decides to attempt one visit
+[DEC] Any support must be discussed with
+[DEC] Patient prioritizes maintaining independence for as
+[DEC] Patient prefers not to write extensive
+[CON] Adequate lighting is required for reading
+[DEC] User will place knee cream in
+[CON] Confirm fasting requirements with the laboratory
+[CON] Do not stop or change prescribed
+[DEC] Patient will suggest the shared Anna
+[DEC] Patient prefers an early appointment time
+[DEC] Arrange an eye examination review if
+[DEC] Patient will use an existing gardening
+[CON] Do not force movements that cause
+[DEC] Patient prefers to maintain current household
+[CON] Patient concentration decreases when tired and
+[DEC] Print the medication list before the
+[DEC] Instruct caregiver to encourage patient to
+[CON] Stop activity immediately if patient develops
+[DEC] Patient decides that taking notes will
+[DEC] Patient will independently organize breakfast, read
+[DEC] Patient prefers brother to visit home
+[CON] Seek medical advice promptly if symptoms
+[DEC] Patient to discuss nighttime urination and
+[DEC] Note variation in daily record and
+[CON] Patient cannot stand at the stove
+[DEC] Add specific medicine-dependent questions to the
+[CON] Avoid working in positions that aggravate
+[DEC] Request therapist to demonstrate exercises again
+[DEC] Agree on specific tasks to manage
+[DEC] Conduct a hearing review to identify
+[DEC] Collaborate with the patient to call
+[DEC] Patient decides to have a companion
+[DEC] Confirm doctor appointment, arrange blood test,
+[CON] Avoid relying on a loose mat
+[CON] Right knee pain is specifically exacerbated
+[DEC] Patient will manage dishwashing and kitchen
+[DEC] Patient prefers initial outdoor sessions Anna,
+[DEC] Patient intends to weigh themselves after
+[DEC] Patient expresses uncertainty regarding correct exercise
+[DEC] Physiotherapist to assess exercise technique, amount
+[CON] Report persistent or worsening changes in
+[DEC] Patient will wash vegetables and Anna
+[DEC] Patient will start the daily Anna
+[DEC] Patient will request Anna to bring
+[DEC] Patient will contact the doctor's receptionist
+[DEC] Anna should assist the patient by
+[DEC] Communicate specific discomfort experienced with hearing
+[DEC] Patient will consult Anna to confirm
+[DEC] Patient intends to help Anna with
+[DEC] Perform weekly cupboard checks during Sunday
+[DEC] Consider using lightweight tools or raised
+[DEC] Discuss installation of a securely fitted
+[CON] If physiotherapy appointment is unavailable soon,
+[DEC] Patient will rely on Anna to
+[DEC] Discuss fatigue and sleep issues with
+[DEC] Patient to ask the doctor whether
+[DEC] Patient will manage healthcare calls Anna's
+[DEC] Follow the prescribed routine instead of
+[CON] Contact healthcare provider immediately if Thursday.
+[DEC] Revisit the previously discussed plan to
+[CON] Avoid carrying hot pans or handling
+[DEC] Patient requires a driver for Anna
+[DEC] Arrange a hearing review to check
+[CON] Seek urgent medical advice if severe
+[DEC] Doctor recommends monitoring response to current
+[DEC] Contact the physiotherapy service to inquire
+[DEC] Patient occasionally leaves mobility aid beside
+[DEC] Patient to discuss dizziness, fatigue, appetite,
+[DEC] Try a shorter afternoon rest if
+[DEC] Use a cushion under legs when
+[DEC] Inquire with the clinician whether regular
+[DEC] Do not assume skipping breakfast explains
+[DEC] Patient considers a steroid injection to
+[CON] Do not change medication based on
+[CON] Contact a clinician promptly if dizziness
+[CON] Adjust the exercise plan with a
+[DEC] Patient Monday 7, Tuesday 4 6.
+[CON] Check packaging before buying more and
+[CON] Inform doctor if unintentional weight loss
+[DEC] Contact healthcare provider immediately if pain
+[DEC] Patient no longer adheres 7:00 AM
+[CON] Seek emergency care if sudden weakness,
+[CON] Do not take an extra dose
+[DEC] Consult doctor regarding specific injection type,
+[DEC] Provide clinician with an up-to-date list
+[DEC] Consult doctor or pharmacist regarding persistent
+[CON] Contact healthcare provider if dizziness happens
+[DEC] If an exercise consistently worsens symptoms,
+[STR] Begin a short daily symptom record and discuss home safety, transport, and community activities with Anna.
+[STR] Plan three short outdoor sessions using simple and familiar routes based on patient feeling
+[STR] Proposal for a shared calendar to manage appointments and household tasks for coordination.
+[ENT] Edward is requested to join the current session/interaction.
+[EQ] Sleep disruption duration is approximately 1 hour or longer on bad nights
+[EQ] Current patient status is a six on the scale from zero to ten where zero is extremely unwell
+[ENT] Marta from the Home Care Support Program is conducting a check-in call with the patient
+[ENT] Small community group previously attended on Wednesday afternoons, currently inactive due to knee pain.
+[ENT] Blood test procedure expected to be easier than physiotherapy
+[ENT] Physiotherapist is the professional responsible for sessions, though current booking status is unknown to the patient.
+[EQ] Appetite frequency is exactly three meals a day despite smaller portion sizes
+[ENT] Peter is a neighbor who provides occasional check-ins for the patient's well-being.
+[STR] Coordinate appointment through Anna to facilitate the service assessment and follow-up process."""
+text_words = 1007
+text_tokens = 1470
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 800
+text = """
+[DEC] Offer to arrange a
+[DEC] Request follow-up with the
+[DEC] Use short notes or
+[DEC] Discuss nighttime urination with
+[CON] Data entry duration must
+[DEC] Team will manage relevant
+[DEC] Patient intends to Anna
+[DEC] Patient will consume Anna's
+[CON] Plan enough time for
+[DEC] Patient requests a printed
+[CON] Use walking stick and
+[CON] Check packaging before buying
+[DEC] Consult clinic regarding post-procedure
+[DEC] Patient requests information regarding
+[DEC] Patient decides not to
+[DEC] Explore group accessibility via
+[DEC] Patient will record main
+[DEC] Patient decides to discuss
+[DEC] Patient decides to initiate
+[DEC] Patient must be actively
+[CON] Patient cannot kneel down
+[DEC] Patient proposes making Sundays
+[CON] Patient cannot stand at
+[CON] Adequate lighting is required
+[DEC] Patient decides to discuss
+[DEC] Patient intends to 1
+[DEC] Discuss the potential use
+[DEC] Prioritize issues affecting immediate
+[CON] Cleaning the bathroom is
+[DEC] Schedule weekly cupboard Sunday
+[DEC] Patient prioritizes maintaining independence
+[DEC] All support must be
+[DEC] Patient and Anna to
+[DEC] Patient prefers brother to
+[DEC] Bring the completed daily
+[DEC] Patient aims to spend
+[CON] Do not stop or
+[DEC] Note the patient's request
+[DEC] Patient agrees to proceed
+[DEC] Contact physiotherapy regarding Anna.
+[CON] Avoid relying on a
+[DEC] Patient prefers an early
+[DEC] Arrange a vision review
+[CON] Pain is particularly acute
+[DEC] Implement securely fitted nonslip
+[DEC] Print the medication list
+[CON] Do not force movements
+[DEC] Patient decides that taking
+[DEC] Patient will organize breakfast,
+[DEC] Note variation in health
+[DEC] Patient will manage dishwashing
+[CON] Seek medical advice promptly
+[DEC] Patient prefers to Anna
+[DEC] Patient intends to inquire
+[DEC] Collaborate with the patient
+[CON] Avoid working in positions
+[DEC] Conduct a hearing review
+[DEC] Add specific medicine-dependent questions
+[DEC] Patient may invite a
+[DEC] Patient chooses to sit
+[CON] Patient concentration decreases when
+[CON] Follow instructions on prescriptions
+[DEC] Arrange a hearing review
+[DEC] Patient will suggest Anna
+[DEC] Physiotherapist may modify the
+[DEC] Inquire with doctor whether
+[DEC] Patient will ask Anna
+[DEC] Patient intends to weigh
+[DEC] Patient will place knee
+[DEC] Patient will use a
+[DEC] Patient will start Anna
+[DEC] Patient will wash Anna
+[DEC] Request physiotherapist to demonstrate
+[DEC] Patient tends to compensate
+[DEC] Patient no longer adheres
+[CON] Stop and rest immediately
+[DEC] Discuss fatigue and sleep
+[DEC] Revisit and prioritize the
+[DEC] Do not assume skipping
+[DEC] Anna would need to
+[CON] Do not change medication
+[CON] Bathroom floor is slippery
+[DEC] Pain intensity decreases after
+[DEC] Patient uses a cushion
+[DEC] Patient is nearly out
+[CON] If physiotherapy appointment is
+[DEC] Patient will rely Anna
+[DEC] Patient will contact the
+[DEC] Note the duration of
+[CON] Contact healthcare provider Thursday.
+[DEC] Patient will manage Anna
+[CON] Do not assume fasting
+[CON] Avoid carrying hot pans
+[CON] Seek urgent medical advice
+[DEC] Suggest Anna helps keep
+[DEC] Contact the physiotherapy service
+[DEC] Consult pharmacist to determine
+[DEC] Patient will Anna Thursday
+[DEC] Try a shorter afternoon
+[DEC] Advise patient to report
+[DEC] Engage in an honest
+[DEC] Inquire with the clinician
+[DEC] Consider asking a physiotherapist
+[DEC] Consult pharmacist or doctor
+[DEC] Patient should ask the
+[DEC] Wait for response to
+[CON] Contact a clinician promptly
+[DEC] Patient experienced dizziness Tuesday
+[CON] Inform doctor if unintentional
+[DEC] Consult doctor regarding injection
+[DEC] Contact healthcare provider immediately
+[CON] Seek emergency care if
+[CON] Contact healthcare provider if
+[DEC] Patient considers a steroid
+[DEC] Mention persistent or worsening
+[CON] If persistent or worsening
+[DEC] Follow prescribed exercise routine
+[DEC] Discuss dizziness, fatigue, appetite,
+[DEC] If an exercise consistently
+[STR] Begin a short daily symptom record to track health status and specific symptoms for clinical review.
+[STR] Plan three short outdoor sessions using simple and familiar routes based on patient feeling
+[STR] Collaborative calling strategy: user speaks to receptionist while Anna provides assistance to ensure successful communication.
+[EQ] Patient reports a current status of six on the zero to ten scale for health assessment.
+[ENT] Edward is requested to join the current session/conversation.
+[EQ] Monday status was 7, Tuesday status was 4 due to dizziness, and weekend status was 6 on scale.
+[ENT] Social interaction topics include books, local news, and various other conversational subjects for the patient.
+[ENT] Marta from the Home Care Support Program is the caregiver initiating the check-in call.
+[EQ] Sleep disturbance duration is approximately 1 hour or longer on nights with bad sleep quality
+[ENT] Peter is a neighbor who provides occasional check-ins for the patient.
+[ENT] Friday activities included reading the newspaper, watching a documentary, and calling the patient's brother
+[ENT] blood test expected to be easier than the physiotherapy appointment
+[ENT] Small community group previously attended on Wednesday afternoons before knee pain increased.
+[EQ] Scale from zero to ten where zero is extremely unwell and ten is feeling as well as reasonably expected"""
+text_words = 812
+text_tokens = 1279
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 700
+text = """
+[DEC] Offer to arrange
+[DEC] Note request for
+[DEC] Patient intends to
+[DEC] Implement Patient Anna
+[CON] Maintain hydration unless
+[DEC] Patient requests to
+[DEC] Patient will Anna's
+[DEC] Daily record format
+[DEC] Patient to ask
+[DEC] Patient will record
+[DEC] Patient requests a
+[CON] Plan sufficient time
+[CON] Use walking stick
+[CON] Patient cannot perform
+[DEC] Patient must be
+[CON] Patient requires house
+[DEC] Explore group accessibility
+[DEC] Patient decides not
+[CON] Do not apply
+[CON] Patient maintains a
+[DEC] Support must be
+[DEC] Patient decides to
+[DEC] Patient expresses interest
+[DEC] Include information about
+[DEC] Patient requests information
+[DEC] Patient decides to
+[CON] Patient cannot kneel
+[DEC] Prioritize issues affecting
+[CON] Patient cannot stand
+[CON] Patient does not
+[DEC] Patient can manage
+[DEC] Patient proposes Sundays.
+[CON] Adequate lighting is
+[DEC] Pursue home safety
+[DEC] Add inquiry about
+[CON] Cleaning the bathroom
+[DEC] Perform weekly Sunday
+[DEC] Patient aims to
+[DEC] Patient prioritizes maintaining
+[DEC] Patient prefers not
+[CON] Do not stop
+[CON] Patient concentration decreases
+[DEC] Patient decides that
+[DEC] Patient decides to
+[CON] Confirm fasting requirements
+[DEC] Patient will use
+[DEC] Patient expresses goal
+[DEC] Patient agrees to
+[DEC] Discuss nighttime urination
+[DEC] Patient intends to
+[CON] Stop activity immediately
+[CON] Do not force
+[DEC] Arrange a vision
+[DEC] Patient intends to
+[CON] Avoid relying on
+[DEC] Patient will Anna
+[DEC] Patient prefers Anna
+[DEC] Patient prefers an
+[DEC] Patient decides Anna
+[DEC] Physiotherapist may modify
+[CON] Avoid working in
+[DEC] Patient should maintain
+[DEC] Patient agrees to
+[DEC] Note variation in
+[DEC] Conduct a hearing
+[DEC] Patient requests collaborative
+[CON] Patient must Anna
+[CON] Contact a clinician
+[CON] Small writing is
+[DEC] Patient identifies potential
+[DEC] Patient uses Anna
+[DEC] Patient will Anna's
+[DEC] Patient Anna Thursday
+[CON] Right knee pain
+[CON] Seek medical advice
+[DEC] Request physiotherapist to
+[DEC] Communicate specific discomfort
+[DEC] Patient tends to
+[DEC] Patient will Anna
+[DEC] Inquire with doctor
+[DEC] Patient will Anna
+[DEC] Patient no longer
+[CON] Seek emergency help
+[DEC] Patient will Anna's
+[DEC] Patient decides to
+[DEC] Patient intends Anna
+[DEC] Patient will GP
+[DEC] Discuss fatigue and
+[DEC] Patient will transition
+[DEC] Record the duration
+[DEC] Discuss installation of
+[CON] Avoid carrying hot
+[DEC] Patient prefers Anna
+[DEC] Patient requires Anna
+[DEC] Consider using lightweight
+[DEC] Patient will Anna
+[DEC] Suggesting an honest
+[DEC] Use a cushion
+[DEC] Patient considers adding
+[CON] Contact healthcare Thursday.
+[DEC] Revisit the previously
+[DEC] Patient will mention
+[DEC] Suggest Anna helps
+[CON] Patient experiences 1
+[CON] Seek urgent medical
+[DEC] Doctor recommends monitoring
+[DEC] Contact the physiotherapy
+[DEC] Ask the doctor
+[DEC] Patient goal is
+[CON] Dizziness sensation worsens
+[CON] If pain worsens
+[DEC] Incorporate regular meals
+[DEC] Try a shorter
+[DEC] Do not assume
+[DEC] Patient should consult
+[DEC] Arrange a hearing
+[CON] Do not change
+[CON] Patient experienced Tuesday
+[CON] Check packaging before
+[DEC] Patient experienced Tuesday
+[CON] Contact healthcare provider
+[CON] Seek emergency care
+[CON] Do not take
+[DEC] Follow the prescribed
+[CON] Inform doctor if
+[DEC] If exercises consistently
+[DEC] Consult doctor or
+[STR] Blood test intended to check blood count and other unspecified parameters
+[STR] Plan three short outdoor sessions using a simple and familiar route based on patient feeling
+[ENT] Edward is requested to join the current session/conversation.
+[ENT] Social interaction topics include books, local news, and various other subjects discussed within the community group.
+[STR] Bring the daily record to the medical appointment if possible for clinical review.
+[EQ] Sleep disturbance duration is approximately 1 hour or longer depending on the quality of the night
+[EQ] Patient reports a current rating of six on the zero to ten scale for well-being
+[ENT] Marta from the Home Care Support Program is conducting a check-in call with the patient
+[ENT] Peter is a neighbor who provides occasional check-ins for the patient.
+[ENT] blood test and doctor's receptionist as upcoming medical interaction points
+[ENT] Small community group previously attended on Wednesday afternoons before knee pain increased."""
+text_words = 665
+text_tokens = 1130
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 600
+text = """
+[CON] Maintain existing household
+[CON] Daily record entry
+[CON] Recording instructions is
+[DEC] Team will manage
+[CON] Maintain hydration unless
+[DEC] Patient will Anna
+[CON] Plan enough time
+[DEC] Daily record tracking
+[DEC] Ask the clinic
+[CON] Use walking stick
+[DEC] Patient requests a
+[DEC] Patient must be
+[DEC] Patient limits stair
+[DEC] Offer to arrange
+[DEC] Patient agrees to
+[DEC] Patient will record
+[CON] Do not apply
+[DEC] Patient to confirm
+[CON] Patient requires large
+[CON] Adequate lighting is
+[CON] Patient cannot kneel
+[DEC] Prioritize issues affecting
+[DEC] Arrange a vision
+[DEC] Patient decides to
+[DEC] Patient prefers not
+[DEC] Patient aims to
+[DEC] Patient intends to
+[DEC] Patient decides to
+[DEC] Explore accessible transport
+[DEC] Request physiotherapy demonstration,
+[DEC] Patient and Anna
+[DEC] Note patient interest
+[DEC] Patient intends Anna
+[DEC] Patient plans to
+[DEC] Discuss the potential
+[DEC] Conduct a hearing
+[CON] Patient concentration decreases
+[DEC] Patient prefers brother
+[DEC] All external support
+[DEC] Patient will use
+[DEC] Revisit the previously
+[CON] Seek medical advice
+[CON] Stop activity immediately
+[DEC] Print the medication
+[DEC] Discuss nighttime urination
+[DEC] Offer to note
+[DEC] Patient intends 1
+[DEC] Patient intends Sundays.
+[DEC] Patient prioritizes maintaining
+[DEC] Patient decides that
+[DEC] Perform weekly Sunday
+[DEC] Utilize regular meals
+[DEC] Note the request
+[DEC] Doctor determines treatment
+[DEC] Patient intends to
+[DEC] Add specific medicine-dependent
+[DEC] Patient tendency to
+[CON] Confirm fasting requirements
+[CON] Avoid working in
+[CON] Avoid relying on
+[CON] Seek emergency help
+[DEC] Patient will Anna
+[DEC] Use a cushion
+[CON] Contact a clinician
+[DEC] Patient agrees to
+[DEC] Patient chooses to
+[DEC] Patient decides to
+[CON] Patient ceased Wednesday
+[DEC] Patient will Anna
+[DEC] Dizziness and fatigue
+[DEC] Patient may consume
+[DEC] Patient will Anna
+[DEC] Patient requires Anna,
+[DEC] Patient will Anna
+[DEC] Inquire with doctor
+[DEC] Patient no longer
+[DEC] Patient adopts a
+[DEC] Patient will Anna's
+[DEC] Do not assume
+[CON] Do not stop
+[CON] Symptoms worsen in
+[DEC] Patient uses Anna
+[DEC] Communicate ear discomfort
+[CON] Do not change
+[DEC] Arrange a hearing
+[DEC] Consult care coordinator
+[DEC] Patient will Anna
+[CON] Avoid carrying hot
+[DEC] Prioritize medical contact
+[DEC] Suggest Anna assists
+[CON] Contact healthcare Thursday.
+[DEC] Suggest an honest
+[DEC] Contact the physiotherapy
+[CON] Seek urgent medical
+[DEC] Doctor recommends monitoring
+[DEC] Describe soreness duration
+[DEC] Patient prefers Anna
+[DEC] Consider using lightweight
+[DEC] Patient Anna Thursday
+[DEC] Try a shorter
+[CON] Inform doctor if
+[CON] Do not force
+[DEC] Patient should ask
+[DEC] Patient will discuss
+[CON] Check packaging before
+[CON] Seek emergency care
+[CON] If pain worsens
+[DEC] Consult doctor regarding
+[CON] Do not take
+[DEC] Follow prescribed routine
+[CON] Contact healthcare provider
+[CON] 1 2:00 3:00
+[DEC] Consult doctor or
+[STR] Workflow includes starting a short daily symptom record and discussing home safety, transport, and community activities with Anna.
+[STR] Plan three short outdoor sessions using a simple and familiar route based on patient feeling
+[EQ] Sleep disturbance duration is approximately 1 hour or longer depending on the quality of the night
+[EQ] Patient reports a current rating of six on the zero to ten scale for well-being
+[ENT] Blood test procedure expected to be easier than physiotherapy
+[ENT] Peter is a neighbor who provides occasional check-ins for the patient.
+[ENT] Doctor's receptionist as the contact point for tomorrow's communication
+[ENT] Edward is requested to join the current session for further interaction or monitoring."""
+text_words = 571
+text_tokens = 985
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 500
+text = """
+[DEC] Offer to
+[DEC] Note request
+[DEC] Collaborate with
+[DEC] Note the
+[CON] Daily record
+[CON] Maintain hydration
+[DEC] Team will
+[DEC] Daily record
+[DEC] Patient Anna
+[CON] Do not
+[DEC] Patient will
+[DEC] Establish Sunday
+[CON] Plan enough
+[DEC] Patient requests
+[CON] Use walking
+[CON] Daily record
+[CON] Patient must
+[DEC] Consult clinic
+[DEC] Arrange an
+[CON] Patient requires
+[DEC] Patient decides
+[DEC] Patient must
+[DEC] Include the
+[DEC] Explore accessible
+[DEC] Patient may
+[DEC] Support must
+[CON] Patient cannot
+[DEC] Patient decides
+[CON] Adequate lighting
+[DEC] Patient decides
+[DEC] Prioritize issues
+[DEC] Patient confirms
+[DEC] Patient aims
+[DEC] Offer to
+[DEC] Patient will
+[DEC] Patient prefers
+[DEC] Patient Sundays
+[DEC] Note the
+[DEC] Utilize regular
+[CON] Do not
+[DEC] Patient intends
+[DEC] Patient Anna
+[DEC] Print the
+[DEC] Discuss nighttime
+[CON] Seek emergency
+[DEC] Patient can
+[DEC] Patient prioritizes
+[CON] Patient 20
+[DEC] Patient decides
+[CON] Avoid working
+[CON] Seek medical
+[DEC] Note variation
+[DEC] Patient intends
+[DEC] Patient decides
+[DEC] Patient Anna.
+[DEC] Patient Anna
+[DEC] Implement Anna
+[CON] Avoid relying
+[DEC] Patient reports
+[DEC] Conduct a
+[DEC] Patient 1
+[DEC] Patient prefers
+[DEC] Add specific
+[CON] Contact a
+[DEC] Patient chooses
+[DEC] Physiotherapist may
+[CON] Stop and
+[DEC] Confirm doctor
+[DEC] Arrange a
+[DEC] Communicate device
+[DEC] Patient Anna
+[CON] Do not
+[DEC] Patient decides
+[DEC] Ask care
+[DEC] Using a
+[DEC] Patient decides
+[DEC] Patient Anna
+[DEC] Request physiotherapist
+[DEC] Inquire with
+[DEC] Anna must
+[DEC] Patient no
+[DEC] Patient Anna
+[DEC] Patient Anna
+[DEC] Patient may
+[DEC] Discuss fatigue
+[DEC] Do not
+[DEC] Patient Anna
+[DEC] Revisit the
+[CON] If physiotherapy
+[DEC] Doctor recommends
+[DEC] Discuss installing
+[CON] Contact Thursday.
+[DEC] Patient will
+[CON] Do not
+[CON] Avoid carrying
+[DEC] Suggest Anna
+[DEC] Suggest an
+[CON] Patient 1
+[CON] Seek urgent
+[DEC] Patient Anna's
+[DEC] Contact the
+[DEC] Patient to
+[DEC] Consider using
+[DEC] Try a
+[CON] If persistent
+[DEC] Inquire with
+[CON] Inform doctor
+[CON] Do not
+[DEC] Consult the
+[DEC] Patient Anna
+[CON] Check packaging
+[DEC] Patient Tuesday
+[CON] Pain is
+[DEC] Patient Anna
+[DEC] Patient considers
+[CON] Seek emergency
+[DEC] Contact healthcare
+[CON] Contact healthcare
+[CON] Do not
+[DEC] Consult doctor
+[DEC] Follow the
+[DEC] Consult doctor
+[DEC] If an
+[STR] Begin a short daily symptom record and discuss home safety, transport, and community activities with Anna.
+[STR] Plan three short outdoor sessions using simple and familiar routes based on patient feeling"""
+text_words = 401
+text_tokens = 812
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 400
+text = """
+[DEC] Offer
+[DEC] Note
+[DEC] Patient
+[DEC] Implement
+[DEC] Patient
+[CON] Do
+[CON] Long
+[DEC] Team
+[CON] Maintain
+[DEC] Patient will
+[CON] Plan enough
+[DEC] Patient requests
+[CON] Use walking
+[DEC] Consult clinic
+[DEC] Patient expresses
+[DEC] Patient expresses
+[CON] Laundry Anna
+[DEC] Patient requests
+[DEC] Schedule Sunday
+[CON] Do not
+[DEC] Request professional
+[CON] Attendance at
+[DEC] Daily record
+[DEC] Prioritize issues
+[DEC] All incoming
+[DEC] Patient aims
+[DEC] Patient must
+[CON] Patient experiences
+[CON] Patient cannot
+[DEC] Explore accessible
+[CON] Patient cannot
+[CON] Patient does
+[DEC] Patient prioritizes
+[DEC] Patient decides
+[DEC] Patient confirms
+[DEC] Patient Sundays.
+[CON] Cleaning the
+[DEC] Pursue home
+[DEC] Patient prefers
+[DEC] Patient Anna
+[DEC] Patient will
+[DEC] Bring the
+[DEC] Include information
+[DEC] Patient expresses
+[DEC] Patient may
+[DEC] Patient prefers
+[DEC] Patient decides
+[CON] Knee cream
+[DEC] Advise consistent
+[DEC] Patient adopts
+[DEC] Discuss nighttime
+[CON] Patient requires
+[DEC] Instruct caregiver
+[CON] Seek medical
+[CON] Do not
+[DEC] Patient may
+[DEC] Note variation
+[DEC] Arrange an
+[DEC] Patient will
+[DEC] Patient will
+[CON] Seek emergency
+[DEC] Doctor determines
+[CON] Avoid relying
+[DEC] Add specific
+[DEC] Patient tendency
+[DEC] Patient chooses
+[CON] Avoid working
+[CON] Confirm fasting
+[DEC] Patient prefers
+[DEC] Conduct a
+[DEC] Maintain an
+[CON] Adequate lighting
+[CON] Contact a
+[CON] Stop activity
+[CON] Follow instructions
+[DEC] Patient goal
+[DEC] Note patient
+[DEC] Patient requests
+[DEC] Patient requests
+[DEC] Patient will
+[DEC] Communicate specific
+[DEC] Patient intends
+[DEC] Patient will
+[DEC] Patient Anna
+[CON] Concentration levels
+[CON] Report persistent
+[DEC] Patient Anna
+[DEC] Inquire with
+[DEC] Patient Anna's
+[DEC] Patient Anna
+[DEC] Patient no
+[DEC] Patient Anna
+[DEC] Patient may
+[DEC] Patient Anna
+[DEC] Patient utilizes
+[DEC] Anna would
+[DEC] Revisit the
+[DEC] Discuss fatigue
+[DEC] Physiotherapist may
+[CON] If physiotherapy
+[DEC] Record the
+[DEC] Discuss installing
+[DEC] Patient Monday,
+[CON] Avoid carrying
+[DEC] Anna is
+[CON] Contact Thursday.
+[DEC] Maintain regular
+[CON] Seek urgent
+[DEC] Agree Anna
+[DEC] Doctor recommends
+[DEC] Contact the
+[DEC] Do not
+[DEC] Consider using
+[DEC] Patient Anna
+[DEC] Try a
+[CON] Inform doctor
+[CON] Do not
+[DEC] Arrange a
+[DEC] Consult the
+[DEC] Consult pharmacist
+[CON] Seek emergency
+[DEC] Contact healthcare
+[CON] Check packaging
+[DEC] Consult doctor
+[DEC] Follow prescribed
+[CON] Contact healthcare
+[DEC] If an
+[DEC] Consult doctor"""
+text_words = 375
+text_tokens = 789
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 350
+text = """
+[DEC] Patient
+[DEC] Note
+[DEC] Patient
+[DEC] Patient
+[DEC] Follow
+[DEC] Arrange
+[DEC] Team
+[DEC] Daily
+[DEC] Patient
+[DEC] Patient
+[CON] Plan
+[DEC] Team
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[CON] Use
+[DEC] Offer
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Bring
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[CON] Patient
+[DEC] Patient
+[CON] Laundry
+[CON] Patient
+[DEC] Prioritize
+[DEC] Arrange
+[CON] Adequate
+[DEC] Schedule
+[DEC] Explore
+[CON] Small
+[DEC] Pursue
+[DEC] Add
+[DEC] Patient
+[CON] Do
+[DEC] Patient
+[DEC] 1
+[CON] Confirm
+[CON] Cleaning
+[DEC] Patient
+[CON] Do
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[CON] Seek
+[DEC] Patient
+[DEC] Any
+[CON] Avoid
+[DEC] Explore
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[CON] Knee
+[DEC] Print
+[DEC] Implement
+[DEC] Patient
+[CON] Avoid
+[DEC] Patient
+[CON] Maintain
+[CON] Stop
+[DEC] patient
+[DEC] Patient
+[CON] Contact
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Discuss
+[DEC] Patient
+[DEC] Patient
+[DEC] Request
+[DEC] Conduct
+[DEC] Patient
+[DEC] Patient
+[CON] Pain
+[DEC] Physiotherapist
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[CON] Seek
+[DEC] Revisit
+[CON] Do
+[CON] If
+[DEC] Discuss
+[DEC] Discuss
+[DEC] Patient
+[DEC] Communicate
+[CON] Inform
+[DEC] Note
+[DEC] Ask
+[DEC] Patient
+[DEC] Patient
+[CON] Avoid
+[DEC] Offer
+[CON] Concentration levels
+[CON] Inform doctor
+[CON] Contact Thursday.
+[DEC] Suggest Anna
+[DEC] Contact the
+[DEC] Patient Anna
+[CON] Seek urgent
+[DEC] Doctor recommends
+[DEC] Patient Anna
+[DEC] Do not
+[DEC] Inquire with
+[DEC] Consider using
+[DEC] Patient Anna
+[DEC] Try a
+[CON] Do not
+[DEC] Patient should
+[DEC] Patient considers
+[CON] Patient Tuesday
+[DEC] Suggest an
+[CON] Contact healthcare
+[DEC] Patient Tuesday
+[CON] Patient reports
+[CON] Seek emergency
+[CON] Pain is
+[DEC] Contact healthcare
+[CON] Check packaging
+[DEC] Adjust exercise
+[CON] Do not
+[DEC] Consult physiotherapist
+[DEC] Provide clinician
+[DEC] Consult doctor"""
+text_words = 291
+text_tokens = 707
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 300
+text = """
+[DEC] Patient
+[CON] Seek
+[DEC] Team
+[CON] Maintain
+[DEC] Patient
+[DEC] Use
+[CON] Plan
+[CON] Use
+[CON] Daily
+[DEC] Patient
+[DEC] Consult
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Explore
+[CON] Maintain
+[DEC] Patient
+[CON] Do
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Arrange
+[CON] Patient
+[DEC] Prioritize
+[DEC] Offer
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[CON] Stair
+[CON] Adequate
+[DEC] Add
+[DEC] Patient
+[DEC] Patient
+[CON] Do
+[DEC] Patient
+[DEC] Discuss
+[DEC] Schedule
+[CON] Cleaning
+[CON] Minimize
+[DEC] Patient
+[DEC] Revisit
+[DEC] Discuss
+[CON] Avoid
+[DEC] Patient
+[DEC] Patient
+[DEC] Any
+[DEC] Patient
+[DEC] Physiotherapist
+[CON] Confirm
+[DEC] Patient
+[DEC] Implement
+[CON] Avoid
+[DEC] Doctor
+[DEC] Pain
+[DEC] Patient
+[DEC] Conduct
+[DEC] Note
+[DEC] Patient
+[CON] Do
+[DEC] Patient
+[CON] Stop
+[DEC] Arrange
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[CON] Patient
+[DEC] Dizziness
+[DEC] Communicate
+[DEC] Request
+[DEC] GP
+[DEC] Patient
+[DEC] Inquire
+[CON] Report
+[DEC] Patient
+[DEC] Patient
+[CON] Pain
+[DEC] Patient
+[DEC] Patient
+[DEC] Discuss
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] Patient
+[DEC] The
+[DEC] Patient
+[DEC] Note
+[CON] Contact
+[CON] Avoid
+[DEC] Patient
+[DEC] Agree
+[DEC] Suggest
+[CON] Seek
+[DEC] Doctor
+[DEC] Patient
+[DEC] Do
+[DEC] Patient
+[DEC] Contact
+[DEC] Consider using
+[DEC] Try a
+[DEC] Patient will
+[DEC] Patient will
+[CON] Do not
+[CON] Contact a
+[CON] Inform doctor
+[CON] Check packaging
+[CON] If pain
+[CON] Seek emergency
+[DEC] Patient considers
+[CON] Do not
+[DEC] Consult doctor
+[DEC] Follow the
+[DEC] Consult physiotherapist
+[DEC] Consult doctor
+[CON] Contact healthcare"""
+text_words = 245
+text_tokens = 611
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 250
+text = """
+[CON] Maintain; Patient; Plan; Use; Patient; Do; Adequate; Do; Patient; Patient; Avoid; Seek; Avoid; Do; Stop; Right; Inform; If; Do; Avoid; Contact; Seek; Do; Inform; Contact; Check; Adjust; Seek; Do; Contact
+[DEC] Implement; Team; Patient; Patient; Patient; Offer; Consult; Follow; Explore; Patient; Patient; Support; Patient; Patient; Patient; Prioritize; Patient; Patient; Patient; Patient; Bring; Patient; Patient; Patient; Patient; Patient; Print; Instruct; Arrange; Patient; Patient; Patient; Perform; Note; Note; Add; Physiotherapist; Patient; Note; Patient; Conduct; Patient; Arrange; Patient; Patient; Patient; Patient; Request; Communicate; Patient; Patient; Patient; Engage; Anna; Patient; Patient; Discuss; Patient; Patient; Revisit; Discuss; Patient; Anna; Use; Discuss; Ask; Note; Doctor; Patient; Follow; Patient; Contact; Patient; Consider; Try; Inquire; Do; Contact; Patient; Patient; Consult; Consult; Consult"""
+text_words = 115
+text_tokens = 254
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "DSPM/Gemma26B"
+target_words = 200
+text = """
+[CON] Recording; Maintain; Plan; Use; Patient; Patient; Do; Patient; Adequate; Seek; Daily; Patient; Do; Avoid; Avoid; Confirm; Report; Stop; Do; Pain; Concentration; Contact; Avoid; Seek; Inform; Do; Contact; Check; Seek; If; Do; 1; Contact
+[DEC] Implement; Team; Patient; Ask; Offer; Explore; Patient; Patient; Patient; Patient; Patient; Patient; Maintain; Patient; Patient; Patient; Prioritize; Patient; Patient; Patient; Patient; Patient; All; Patient; Patient; Patient; Patient; Discuss; Patient; Patient; Arrange; Patient; Revisit; Print; Discuss; Instruct; Note; Patient; Offer; Perform; Doctor; Note; Add; Patient; Patient; Conduct; Use; Patient; Avoid; Patient; Consider; Patient; Patient; Inquire; Variation; Suggest; Patient; Physiotherapist; Patient; Patient; Patient; Communicate; Discuss; Patient; Patient; Patient; Record; Patient; Patient; Patient; Ask; Arrange; Doctor; Patient; Contact; Follow; Do; Incorporate; Try; Patient; Engage; Consult; Adjust; If; Consult; Provide"""
+text_words = 121
+text_tokens = 268
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 1200
+text = """
+[CON] Perform standing up exercises from armchair exactly three times during commercials of favorite morning show
+[DEC] Use the sturdy armrests to push oneself up when performing the three standing up exercises
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as discussed.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[CON] Moderate coffee consumption in the morning is permitted provided the patient stays hydrated throughout the day.
+[DEC] Express gratitude to the dedicated caregiver when she returns to take the phone.
+[CON] Reading duration must not exceed 30 minutes straight without eye rest to prevent blurred vision.
+[DEC] Schedule stretches to occur after the completion of the afternoon rest to avoid overexertion.
+[DEC] Arrange for home delivery of adult incontinence pads by Wednesday morning deadline.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Perform standing up exercises from armchair three times during commercials of favorite morning show
+[DEC] System will execute a follow-up call this Friday at 2:00 PM sharp.
+[DEC] Cardiologist will address the specific question first thing during the upcoming medical visit.
+[DEC] Negotiation of a small slice is planned to occur after the cardiology appointment scheduled for next week
+[CON] Do not rush the movement when performing standing up exercises using arms for support.
+[DEC] Daughter to ensure orange juice is available on the breakfast table for the patient.
+[DEC] Patient will take one large orange calcium tablet every afternoon accompanied by one glass of milk
+[DEC] Patient will use a little notepad to record information to prevent forgetting before arrival at the doctor's office.
+[DEC] Schedule the follow-up call for this coming Friday afternoon around 2:00 PM when patient is listening to radio.
+[DEC] Try consuming chamomile tea one hour earlier than the current 8:00 PM time to reduce midnight bathroom trips.
+[DEC] Patient prefers oatmeal texture to be non-lumpy, specifically noting dissatisfaction with Friday's lumpy oatmeal consistency.
+[ENT] Mr. Harrison is the patient receiving care and monitoring.
+[ENT] Direct helpline number is magneted at eye level on the fridge for urgent matters before Friday.
+[ENT] The patient's daughter will be hovering nearby to monitor the patient's alertness before the scheduled call.
+[STR] Medication management workflow involves caregiver managing pill organizer every Sunday night for morning and evening doses.
+[ENT] reading glasses located on the small wooden table next to the patient's armchair
+[ENT] pharmacy is the designated location for purchasing adult incontinence pads
+[ENT] huge red circle on the kitchen wall calendar for Tuesday morning
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality.
+[STR] Evening meal occurs around 6:00 PM, typically consisting of light food like soup or baked fish with vegetables.
+[ENT] Patient consumes one small mug of coffee daily as part of moderate caffeine intake
+[ENT] Community Health Monitoring Program is the organization conducting the recovery and daily well-being check-in calls.
+[ENT] digital cuff used for blood pressure monitoring by the patient's daughter
+[STR] daily routine involves applying the digital cuff every single morning right after waking up
+[ENT] whole wheat bread and strawberry jam used for breakfast meal"""
+text_words = 543
+text_tokens = 741
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 1100
+text = """
+[DEC] Schedule stretches to occur after the afternoon rest to prevent overexertion and ensure safety.
+[DEC] Arrange for home delivery of supplies by Wednesday morning to ensure availability.
+[CON] Reading duration must not exceed thirty minutes straight without resting eyes to prevent blurred vision.
+[DEC] Incontinence supply delivery is arranged to occur on Wednesday morning as previously discussed.
+[DEC] Caregiver has noted the schedule on their phone calendar with a reminder alert enabled.
+[DEC] Supply delivery is arranged to occur on Wednesday morning as previously discussed.
+[CON] Use arms for support and do not rush the movement at all during the process.
+[DEC] System will initiate a call this coming Friday at exactly two o'clock sharp.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Next check-in phone call is scheduled for this coming Friday at exactly two o'clock in the afternoon.
+[DEC] Moderate coffee consumption in the morning is permitted provided that hydration is maintained throughout the entire day.
+[DEC] Patient will call the dedicated caregiver back into the living room immediately to continue the conversation.
+[DEC] Negotiation of a small slice is possible following the cardiology appointment scheduled for next week.
+[DEC] Schedule the follow-up call for this coming Friday afternoon around two o'clock during radio listening time.
+[DEC] Prioritize the specific question for the cardiologist to address first thing during the upcoming medical visit.
+[DEC] Patient takes one large orange calcium tablet every afternoon accompanied by one glass of milk.
+[DEC] Patient will use a little notepad to record information to ensure memory retention before the appointment.
+[DEC] Patient consumes exactly one small mug of coffee in the morning as part of moderate caffeine intake.
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] dedicated caregiver who will return to take the phone
+[ENT] reading glasses located on the small wooden table next to the patient's armchair
+[ENT] pharmacy is the designated location for purchasing adult incontinence pads
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[ENT] huge red circle on the kitchen wall calendar marking a specific Tuesday morning appointment
+[EQ] Blood pressure is usually around 120/81 mmHg, with minor fluctuations based on sleep quality.
+[ENT] upcoming visit with the eye doctor scheduled for next month
+[ENT] Community Health Monitoring Program is the organization conducting the recovery and daily well-being check-in calls.
+[ENT] ophthalmologist is the medical professional to consult regarding eye fatigue symptoms during the upcoming appointment
+[STR] Digital cuff blood pressure measurement occurs every single morning immediately after the patient wakes up."""
+text_words = 443
+text_tokens = 596
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 1000
+text = """
+[CON] Limit continuous reading to a maximum of thirty minutes to prevent eye strain and blurred vision.
+[DEC] Arrange the incontinence supply delivery for Wednesday morning as discussed in the conversation.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[DEC] Arrange for home delivery of supplies by Wednesday morning to ensure availability.
+[CON] Use arms for support and do not rush the movement at all during the process.
+[DEC] Schedule the next follow-up call for this coming Friday afternoon with the patient and their daughter.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Moderate coffee consumption in the morning is permitted provided that hydration is maintained throughout the entire day.
+[DEC] Caregiver has recorded the scheduled tasks on their phone calendar with a reminder alert enabled.
+[DEC] Set system to call the patient this Friday at 2:00 PM sharp.
+[DEC] Patient consumes exactly one small mug of coffee, ensuring caffeine intake remains within moderate limits.
+[DEC] Cardiologist will prioritize addressing the specific question first thing during the upcoming medical visit.
+[DEC] Perform stretches only after completing the afternoon rest to avoid overexertion and overdoing it.
+[DEC] Patient will use a little notepad to record information to ensure memory retention before arrival.
+[DEC] Patient takes one large orange calcium tablet every afternoon accompanied by one glass of milk.
+[DEC] Schedule the follow-up call for Friday afternoon around 2:00 PM when the patient is listening to the radio.
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] dedicated caregiver who will return to take the phone from the patient
+[ENT] reading glasses located on the small wooden table next to the armchair
+[ENT] pharmacy is the designated location for purchasing adult incontinence pads
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[ENT] huge red circle on the kitchen wall calendar for Tuesday morning
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality.
+[ENT] Community Health Monitoring Program is the organization conducting the recovery and daily well-being check-in calls.
+[ENT] Digital cuff used for blood pressure monitoring by the patient's daughter
+[STR] Digital cuff blood pressure measurement occurs every single morning immediately after waking up"""
+text_words = 397
+text_tokens = 541
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 900
+text = """
+[DEC] Patient will express appreciation to the dedicated caregiver for her incredible dedication and care for Mr. Harrison.
+[CON] Patient must use arms for support and must not rush the movement when standing up.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as previously discussed.
+[CON] Reading duration must not exceed thirty minutes straight without resting eyes to prevent blurred vision.
+[CON] inventory level for adult incontinence pads is currently low
+[DEC] Schedule stretches to occur after the afternoon rest period to prevent overexertion and ensure patient safety.
+[CON] Moderate coffee consumption in the morning is permitted provided the patient stays hydrated throughout the entire day.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Cardiologist will address the specific question first thing during the patient's upcoming visit.
+[DEC] Patient intends to attempt the physical challenge tomorrow morning with potential approval from their physical therapist.
+[DEC] Patient to stand up from armchair three times during commercials of favorite morning show
+[CON] Patient must use the sturdy armrests to push themselves up when standing three times during commercials.
+[DEC] Negotiate a small slice of something after the cardiology appointment scheduled for next week
+[DEC] Patient consumes only one small mug of coffee to avoid overdoing caffeine intake.
+[DEC] Arrange for home delivery of adult incontinence pads by Wednesday morning to address low inventory levels.
+[DEC] Patient agrees to try shifting the chamomile tea consumption time earlier to improve sleep duration.
+[DEC] System will initiate a call this Friday at 2:00 PM sharp for the scheduled follow-up.
+[DEC] Patient aims to achieve walking in the garden by the time roses bloom in spring.
+[DEC] Patient will use a little notepad to record information to ensure memory retention before the appointment.
+[DEC] Patient will instruct daughter to keep orange juice available on the breakfast table to mitigate medication aftertaste.
+[DEC] Try consuming chamomile tea one hour earlier than current eight o'clock habit to reduce 3:00 AM bathroom trips.
+[DEC] Mitigate mild metallic aftertaste of specific medication by drinking juice or flavored water immediately after administration.
+[ENT] physical therapist is the professional who recommended using a heating pad for symptom management
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] Patient engages with daily newspaper, specifically selecting medium difficulty levels for daily activities.
+[ENT] Kitchen wall calendar with a huge red circle marking a specific Tuesday morning event.
+[ENT] reading glasses located on the small wooden table next to the patient's armchair
+[ENT] chamomile tea used by patient around eight o'clock during evening news watching
+[ENT] Dedicated caregiver who will return to take the phone and should be thanked for her assistance.
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[EQ] Blood pressure reading is usually around 120/81 mmHg, with minor fluctuations based on sleep quality.
+[ENT] pharmacy is the location for purchasing adult incontinence pads
+[STR] Sleep pattern involves 1 hour of difficulty falling back asleep after 3:00 AM bathroom use.
+[STR] Evening meal consumption occurs around six in the evening, typically consisting of light soup or baked fish with vegetables."""
+text_words = 556
+text_tokens = 748
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 800
+text = """
+[DEC] Patient agrees to stand up from the armchair 3 times during commercials of the favorite morning show
+[DEC] Express gratitude to the dedicated caregiver for her incredible dedication and care for Mr. Harrison.
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as discussed.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[DEC] Caregiver has recorded the scheduled event on her phone calendar with an active reminder alert.
+[CON] Moderate coffee consumption in the morning is permitted provided the patient stays hydrated throughout the entire day.
+[CON] Reading duration must not exceed 30 minutes straight without eye rest to prevent blurred vision.
+[DEC] Schedule stretches to occur after the completion of the afternoon rest to avoid overexertion
+[DEC] Express gratitude to the dedicated caregiver when she returns to take the phone from the patient.
+[DEC] The cardiologist will prioritize addressing the specific question during the patient's upcoming visit.
+[CON] Use the sturdy armrests to push oneself up when standing from the armchair 3 times
+[CON] Use arms for support and do not rush the movement when standing up from the armchair
+[DEC] Medical transport van has been booked yesterday afternoon for the upcoming trip.
+[DEC] Patient agrees to try shifting chamomile tea consumption time to reduce midnight bathroom trips.
+[DEC] Suggest standing up from the armchair three times during commercials of the favorite morning show
+[DEC] Patient goal is to be able to walk in the garden by the time the roses bloom in spring
+[DEC] System will initiate a call this Friday at 2:00 PM sharp for the patient.
+[DEC] Arrange home delivery of adult incontinence pads by Wednesday morning to ensure timely supply availability.
+[DEC] Suggest moving chamomile tea consumption to one hour earlier than eight o'clock to reduce midnight bathroom trips
+[DEC] Patient will use a little notepad to record information to ensure memory retention before the appointment.
+[DEC] Patient consumes exactly one small mug of coffee in the morning to avoid overdoing caffeine intake.
+[DEC] Patient prefers oatmeal texture to be smooth, noting Friday's oatmeal was too lumpy for their liking.
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] transport service driver is polite and assists patient with stepping carefully into the van
+[ENT] Patient's daughter will be hovering nearby to monitor the patient and prevent falling asleep before the call.
+[ENT] huge red circle on the kitchen wall calendar for that Tuesday morning
+[ENT] cardiology appointment scheduled for next week involving a potential negotiation of a small slice
+[ENT] reading glasses located on the small wooden table next to the patient's armchair
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[EQ] Sleep latency of one hour after waking up at three in the morning
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality.
+[ENT] eye doctor visit scheduled for next month
+[STR] Evening meal consumption occurs around six in the evening, consisting of light food like soup or baked fish with vegetables.
+[STR] use of a heating pad as a recommended intervention for managing the patient's current physical discomfort"""
+text_words = 544
+text_tokens = 722
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 700
+text = """
+[DEC] Express gratitude and appreciation for the incredible dedication and care provided to Mr. Harrison.
+[DEC] Confirm the helpline number location on the fridge is the safest place for urgent matters.
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as per the conversation.
+[DEC] Arrange for home delivery of supplies by Wednesday morning to ensure availability.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[CON] Reading duration must not exceed thirty minutes straight without resting eyes to prevent blurred vision.
+[DEC] Caregiver has noted the schedule on her phone calendar with a reminder alert enabled.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Schedule stretches to occur after the afternoon rest period to prevent overexertion of the patient.
+[DEC] Moderate coffee consumption in the morning is permitted provided that hydration is maintained throughout the entire day.
+[CON] Patient requires use of sturdy armrests to push themselves up for three times during the activity.
+[DEC] Customer service quality is a critical factor when managing mobility challenges for users.
+[DEC] System will initiate a call to the user this Friday at 2:00 PM sharp.
+[DEC] The dedicated caregiver should be thanked for her hard work and appreciation from the health team
+[DEC] Negotiate a small slice of something following the cardiology appointment scheduled for next week.
+[DEC] Prioritize the specific question for the cardiologist to address first thing during the upcoming medical visit.
+[DEC] Schedule the follow-up call for this coming Friday afternoon around two o'clock while patient listens to radio.
+[DEC] One mug of coffee in the morning is considered a very reasonable amount for consumption.
+[DEC] Patient will use a little notepad to record information to ensure memory retention before the medical visit.
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] dedicated caregiver who will return to take the phone and should be thanked
+[ENT] transport service driver is described as polite and assists with stepping into the van
+[ENT] huge red circle on the kitchen wall calendar for that Tuesday morning
+[EQ] Blood pressure is usually around 120/81, with minor fluctuations based on sleep quality.
+[ENT] reading glasses located on the small wooden table next to the armchair
+[ENT] pharmacy is the designated location for purchasing adult incontinence pads
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[STR] Digital cuff blood pressure monitoring occurs every single morning immediately after the patient wakes up."""
+text_words = 434
+text_tokens = 581
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 600
+text = """
+[DEC] Acknowledge and express gratitude for the incredible dedication and care provided for Mr. Harrison
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as per the conversation.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[CON] Reading duration must not exceed thirty minutes straight without resting eyes to prevent blurred vision.
+[DEC] Express gratitude to the dedicated caregiver when she returns to take the phone.
+[CON] Moderate coffee consumption in the morning is permitted provided the patient stays hydrated throughout the day.
+[CON] Sunday newspaper editions are identified as too frustrating for the patient's current preference.
+[DEC] Schedule the follow-up call for this coming Friday afternoon around two o'clock for patient and daughter.
+[DEC] Arrange for home delivery of adult incontinence pads by Wednesday morning deadline.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[CON] Use arms for support and do not rush the movement at all during standing transitions.
+[DEC] Customer service is a critical factor when managing mobility challenges for the patient.
+[DEC] Cardiologist will address the specific question first thing during the upcoming patient visit.
+[DEC] Perform stretches only after completing the afternoon rest to avoid overexertion and physical strain.
+[DEC] Patient will use a little notepad to record information to prevent forgetting before arrival.
+[DEC] Patient consumes exactly one small mug of coffee in the morning to limit caffeine intake.
+[DEC] Patient will use the sturdy armrests to assist in standing up three times during morning show commercials
+[DEC] Negotiate a small slice of something following the cardiology appointment scheduled for next week.
+[DEC] The patient intends to use pie as a reward following the cardiology appointment to ensure speed.
+[DEC] Set system to call the patient this Friday at two o'clock sharp for the scheduled follow-up.
+[DEC] Writing things down is the best strategy to manage memory issues in busy doctor's waiting rooms.
+[DEC] Daughter to keep orange juice on the breakfast table to mitigate medication metallic aftertaste.
+[DEC] Try consuming chamomile tea one hour earlier than 8:00 PM to reduce midnight bathroom trips.
+[DEC] Mitigate medication metallic aftertaste by drinking juice or flavored water immediately after administration.
+[DEC] Patient prefers oatmeal texture to be smooth, specifically noting Friday's oatmeal was too lumpy.
+[ENT] direct helpline number located on the fridge at eye level for any urgent matters
+[ENT] transport service driver is polite and assists patient with stepping carefully into the van
+[ENT] reading glasses located on the small wooden table next to the patient's armchair
+[ENT] Patient goal is to walk in the garden by the time the roses bloom in spring.
+[ENT] huge red circle on the kitchen wall calendar marking a specific Tuesday morning
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality.
+[STR] daily routine includes applying the digital cuff every single morning right after waking up"""
+text_words = 512
+text_tokens = 696
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 500
+text = """
+[DEC] Patient will use sturdy armrests to assist in standing up three times during commercials
+[DEC] Patient to stand up from armchair three times during commercials of favorite morning show
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[DEC] Arrange the incontinence supply delivery for Wednesday morning as discussed in the conversation.
+[DEC] Caregiver will use a phone calendar with a reminder alert to track the scheduled tasks.
+[CON] inventory level for adult incontinence pads is currently low
+[CON] Moderate coffee consumption in the morning is permitted provided the patient stays hydrated throughout the entire day.
+[CON] Reading duration must not exceed thirty minutes straight without resting eyes to prevent blurred vision
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Cardiologist will address the specific question first thing during the patient's upcoming visit.
+[CON] Use arms for support and do not rush the movement at all during standing exercises
+[DEC] Patient goal is to be able to walk in the garden by the time roses bloom in spring
+[DEC] System will initiate a call this Friday at 2:00 PM sharp for the patient.
+[DEC] Perform stretches only after completing the afternoon rest to avoid overexertion and overdoing it.
+[DEC] Patient consumes only one small mug of coffee to ensure caffeine intake is not overdone
+[DEC] Arrange for home delivery of adult incontinence pads by Wednesday morning to address low inventory levels.
+[DEC] Patient will use a little notepad to record information to ensure memory retention before appointments
+[DEC] Patient agrees to attempt shifting chamomile tea consumption time earlier to improve sleep duration and quality.
+[DEC] Patient will take one large orange calcium tablet every afternoon accompanied by one glass of milk
+[DEC] Patient will instruct daughter to keep orange juice available on the breakfast table to mitigate medication aftertaste.
+[DEC] Try consuming chamomile tea one hour earlier than current eight o'clock habit to reduce 3:00 AM bathroom trips.
+[DEC] Mitigate mild metallic aftertaste of specific medication by drinking juice or flavored water immediately after administration.
+[ENT] physical therapist is the professional who recommended using a heating pad for symptom management
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] Dedicated caregiver who will return to take the phone from the patient
+[ENT] cardiology appointment scheduled for next week
+[ENT] Kitchen wall calendar with a huge red circle marking a specific Tuesday morning appointment
+[STR] Evening meal schedule occurs around six in the evening, consisting of light food like soup or baked fish with vegetables.
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality."""
+text_words = 456
+text_tokens = 608
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 400
+text = """
+[DEC] Express gratitude to the dedicated caregiver for her incredible dedication and care for Mr. Harrison.
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as per the conversation.
+[DEC] Arrange for home delivery of supplies by Wednesday morning to ensure availability.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[CON] Reading duration must not exceed thirty minutes straight without resting eyes to prevent blurred vision.
+[DEC] Express gratitude to the dedicated caregiver when she returns to take the phone
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Schedule stretches to occur after the afternoon rest period to prevent overexertion of the patient.
+[DEC] Moderate coffee consumption in the morning is permitted provided that hydration is maintained throughout the entire day.
+[CON] Patient requires use of sturdy armrests to push themselves up for three times during the activity.
+[DEC] Set system to initiate follow-up call this Friday at 2:00 PM sharp.
+[DEC] Customer service quality is a critical factor when managing mobility challenges for patients.
+[DEC] Negotiate a small slice of something following the cardiology appointment scheduled for next week
+[DEC] Prioritize the specific question for the cardiologist to address first thing during the upcoming medical visit.
+[DEC] Writing things down is the best strategy to ensure memory retention during busy doctor's waiting room sessions.
+[DEC] One mug of coffee in the morning is considered a very reasonable amount for consumption.
+[DEC] Patient will record information on a little notepad to ensure memory retention before the medical visit.
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] transport service driver is described as polite and assists with stepping into the van
+[ENT] huge red circle on the kitchen wall calendar for that Tuesday morning
+[EQ] Blood pressure is usually around 120/81, with minor fluctuations based on sleep quality.
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses."""
+text_words = 344
+text_tokens = 468
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 350
+text = """
+[CON] Use the sturdy armrests to push up when performing the three times standing activity
+[DEC] Implement standing up from armchair three times during commercials of favorite morning show for activity
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as previously discussed.
+[DEC] Patient will call the daughter back into the living room immediately to facilitate the upcoming interaction
+[CON] Moderate coffee consumption in the morning is permitted provided that hydration is maintained throughout the entire day
+[DEC] Schedule the next follow-up call for this coming Friday afternoon with the patient and their daughter
+[CON] Reading duration must not exceed thirty minutes straight without eye rest to prevent blurred vision
+[CON] Use arms for support and do not rush the movement at all during the standing activity
+[DEC] Schedule stretches to occur specifically after the completion of the afternoon rest period to prevent overexertion
+[DEC] Ensure the cardiologist addresses the specific question first thing during the patient's upcoming visit.
+[DEC] Patient consumes exactly one small mug of coffee in the morning to limit caffeine intake
+[DEC] Patient will use a little notepad to record information to prevent forgetting before arrival
+[DEC] Medical transport van has been booked yesterday afternoon for the upcoming trip.
+[DEC] Schedule follow-up call for Friday afternoon around 2:00 PM while patient listens to the radio
+[DEC] Goal to achieve walking in the garden by the time roses bloom in spring.
+[DEC] Arrange home delivery of adult incontinence pads by Wednesday morning to ensure timely supply availability.
+[DEC] Patient consumes one large orange calcium tablet every afternoon accompanied by a glass of milk
+[DEC] Patient preference for oatmeal texture: avoid lumpy consistency as reported on Friday.
+[DEC] Shift chamomile tea consumption from 8:00 PM to 7:00 PM to potentially reduce midnight bathroom trips.
+[ENT] Direct helpline number is magneted at eye level on the fridge for emergency access.
+[ENT] Patient's daughter will be present and monitoring the patient during the scheduled follow-up call
+[ENT] Dedicated caregiver who will return to take the phone from the patient
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality
+[EQ] Sleep latency of 1 hour following waking up at 3:00 AM to use the bathroom."""
+text_words = 417
+text_tokens = 561
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 300
+text = """
+[DEC] Schedule the next check-in phone call for this coming Friday at two o'clock in
+[DEC] Express gratitude to the dedicated caregiver for her incredible dedication and care Mr. Harrison.
+[DEC] Arrange for the incontinence supply delivery to occur on Wednesday morning as previously discussed.
+[DEC] Arrange for home delivery of supplies by Wednesday morning to ensure availability.
+[CON] Reading duration must not exceed thirty minutes straight without resting eyes to prevent blurred
+[DEC] Express gratitude to the dedicated caregiver when she returns to take the phone.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Perform stretches only after completing the afternoon rest to avoid overexertion.
+[CON] Patient requires use of sturdy armrests to push themselves up for three repetitions of
+[DEC] Moderate coffee consumption in the morning is permitted provided that hydration is maintained throughout
+[DEC] Caregiver has noted the scheduled follow-up on her phone calendar with a reminder alert
+[DEC] Confirm all topics including back pain and the apple pie reward have been covered
+[DEC] High quality customer service is a critical factor when managing individuals with mobility challenges.
+[DEC] One mug of coffee is a reasonable amount for morning consumption.
+[DEC] Negotiate a small slice of something following the cardiology appointment scheduled for next week.
+[DEC] Set system to call the patient this Friday at two o'clock sharp for the
+[DEC] Writing things down is the best strategy to manage memory issues in busy doctor's
+[DEC] Prioritize the specific question for the cardiologist to address first thing during the upcoming
+[DEC] Patient will use a little notepad to record information to ensure memory before the
+[DEC] The patient intends to use pie as a reward/negotiation incentive following the upcoming cardiology
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[ENT] transport service driver is described as polite and assists with stepping into the van
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality.
+[EQ] one large orange calcium tablet every afternoon with one glass of milk for bone health support"""
+text_words = 371
+text_tokens = 499
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 250
+text = """
+[DEC] Arrange the incontinence supply delivery for Wednesday morning as discussed in the conversation.
+[DEC] Schedule stretches to occur after the afternoon rest period to prevent overexertion.
+[DEC] Schedule the next check-in phone call for this coming Friday at 2:00 PM in the afternoon.
+[DEC] Arrange for home delivery of supplies by Wednesday morning to ensure availability.
+[CON] Reading duration must not exceed thirty minutes straight without eye rest to prevent blurred vision.
+[DEC] Medical transport van booking completed yesterday afternoon for the upcoming trip.
+[DEC] Moderate coffee consumption in the morning is permitted provided that hydration is maintained throughout the entire day.
+[CON] Patient requires use of sturdy armrests to push themselves up for three times during the activity.
+[DEC] Schedule the follow-up call for this coming Friday afternoon around 2:00 PM to suit patient and daughter.
+[DEC] Prioritize the specific question for the cardiologist to address first thing during the upcoming medical visit.
+[DEC] One mug of coffee in the morning is considered a reasonable amount for consumption.
+[DEC] System will execute a follow-up call this Friday at 2:00 PM sharp for the patient.
+[DEC] Writing things down is the best strategy to ensure memory retention during busy doctor's waiting room sessions.
+[DEC] Patient will record information on a little notepad to ensure memory retention before the medical appointment.
+[ENT] Mr. Harrison is the patient receiving care and dedicated support from the caregiver.
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
+[STR] Medication administration schedule occurs every Sunday night via pill organizer for morning and evening doses.
+[EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality."""
+text_words = 289
+text_tokens = 404
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 200
+text = """
+[DEC] Stand up from armchair three times
+[DEC] Use the sturdy armrests to push
+[DEC] Schedule the next check-in phone Friday
+[CON] low inventory level of adult incontinence
+[DEC] Arrange the incontinence supply delivery Wednesday
+[DEC] Patient's daughter will stay right outside
+[DEC] Moderate coffee consumption in the morning
+[DEC] Medical transport van booking completed yesterday
+[CON] Use arms for support and do
+[DEC] Cardiologist will address the specific question
+[CON] Reading duration must not exceed 30
+[DEC] Caregiver has noted the scheduled events
+[DEC] Set system to call the Friday
+[DEC] Negotiate a small slice of something
+[DEC] Writing things down is the best
+[DEC] Perform stretches after finishing the afternoon
+[DEC] Patient will use a little notepad
+[DEC] Patient consumes only one small mug
+[CON] Goal is to be able to
+[DEC] Arrange home delivery of adult Wednesday
+[DEC] Patient intends to use the promise
+[DEC] Try consuming chamomile tea one hour
+[DEC] Patient will instruct daughter to keep
+[DEC] Mitigate mild metallic aftertaste of specific
+[ENT] physical therapist is the professional who recommended using a heating pad for symptom management
+[ENT] Dedicated caregiver who will return to take the phone from the patient
+[STR] therapeutic intervention involves using a heating pad as suggested by the physical therapist"""
+text_words = 211
+text_tokens = 321
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 150
+text = """
+[DEC] Express gratitude to the dedicated Mr. Harrison.
+[DEC] Arrange for the incontinence supply delivery Wednesday
+[DEC] Arrange for home delivery of supplies Wednesday
+[DEC] Schedule the next check-in Friday 2:00 PM
+[CON] Reading duration must not exceed thirty minutes
+[DEC] Express gratitude to the dedicated caregiver when
+[DEC] Medical transport van booking completed yesterday afternoon
+[DEC] Perform stretches only after completing the afternoon
+[CON] Patient requires use of sturdy armrests to
+[DEC] Moderate coffee consumption in the morning is
+[DEC] Customer service is a critical factor when
+[DEC] Writing things down is the best strategy
+[DEC] Negotiate a small slice of something after
+[DEC] Prioritize the specific question for the cardiologist
+[DEC] Set system to call Friday 2:00 PM
+[DEC] Mention eye fatigue symptoms to the ophthalmologist
+[DEC] Patient will use a little notepad to
+[ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday"""
+text_words = 155
+text_tokens = 240
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-05
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "DSPM/Gemma26B"
+target_words = 100
+text = """
+[CON] Patient 3
+[DEC] Express Mr.
+[DEC] 2:00 PM
+[CON] Patient must
+[DEC] Arrange Wednesday
+[CON] Reading duration
+[DEC] Express gratitude
+[DEC] Schedule stretches
+[CON] Moderate coffee
+[DEC] Cardiologist will
+[DEC] Proposed 3
+[CON] Oatmeal Friday
+[DEC] 2:00 PM
+[DEC] Patient will
+[DEC] Medical transport
+[DEC] Negotiate a
+[DEC] Writing things
+[DEC] Patient consumes
+[DEC] Patient agrees
+[DEC] Patient goal
+[DEC] 8:00 PM
+[DEC] Patient will
+[DEC] Mitigate mild"""
+text_words = 72
+text_tokens = 174

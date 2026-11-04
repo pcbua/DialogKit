@@ -81,7 +81,7 @@ async def process_with_llm(semaphore, llm_client, model_name: str, data_text: st
             # extract compressed prompt
             result_str = dspm_mem.get_context(query="What are the rules?") # DSPM accepts natural language
         except Exception as e:
-            print(f"Error: An unexpected error occurred during LLM call: {e}", file=sys.stderr)
+            print(f"Error: An unexpected error occurred during DSPM call: {e}", file=sys.stderr)
             result_str = None
     return result_str
 
@@ -139,7 +139,7 @@ async def main() -> None:
         base_url    = llm_config.get("BASE_URL", None)
         model_name  = llm_config.get("MODEL_NAME", None)
         if not base_url or not model_name:
-            print(f"Error: Problem with LLM; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
+            print(f"Error: Problem with LLM config; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
             continue
         concurrency = llm_config.get("CONCURRENCY", 1)
         print(f"Querying LLM: {llm_config_name} ({base_url}), Concurrency: {concurrency}")
