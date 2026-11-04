@@ -32,7 +32,7 @@ Example script run:
 `uv run utils/compress_Gemma26B.py data/prompts.compress.toml "data/data.*.toml" data/compress.Gemma26B.toml`
 
 This will processes:
-- two LLM configurations (without thinking and with thinking; setup inside the script: `LLM_CONFIGS`),
+- two LLM configurations (with and without thinking; setup inside the script: `LLM_CONFIGS`),
 - three types of compression prompts (from `data/prompts.compress.toml`),
 - three sample dialogs (from `"data/data.*.toml"`),
 - 15 different target token counts after compression (setup inside the script: `TARGET_WORDS`).
