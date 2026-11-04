@@ -18,7 +18,7 @@ from skllm.models.gpt.text2text.summarization import GPTSummarizer
 
 DEBUG = False # poor's people debugging
 
-# word count target budget (after compression), final word count may be different
+# word count target budget (after compression), the actual word count in the results may be slightly different
 TARGET_WORDS = [1200, 1100, 1000, 900, 800, 700, 600, 500, 400, 350, 300, 250, 200, 150, 100]
 
 # use the model of your choice
