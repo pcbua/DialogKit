@@ -38,7 +38,9 @@ This will processes:
 - 15 different target token counts after compression (setup inside the script: `TARGET_WORDS`).
 
 Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
+
 ---
+
 `utils/compress_SkLLM.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Scikit and outputs the results to a structured TOML file.
 The script results have been added to the repository at: `data/compress.SkLLM.toml`.
 It was inspired by the article [Using LLM Summarization in Your Scikit-Learn Pipelines with Scikit-LLM](https://www.kdnuggets.com/using-llm-summarization-in-your-scikit-learn-pipelines-with-scikit-llm).
