@@ -12,7 +12,7 @@ So I decided to create a prototype - **DialogKit** is my attempt to build one.
 # What Works
 It's still early days, and only selected tools are doing anything useful.
 
-## Tools: Compress Dialogue
+## Tool: Compress Dialogue with Local LLM
 `utils/compress_Gemma26B.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Gemma LLM and outputs the results to a structured TOML file.
 The script results have been added to the repository at: `data/compress.Gemma26B.toml`.
 
@@ -39,7 +39,7 @@ This will processes:
 
 Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
 
----
+## Tool: Compress Dialogue with Scikit and Local LLM
 
 `utils/compress_SkLLM.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Scikit and outputs the results to a structured TOML file.
 The script results have been added to the repository at: `data/compress.SkLLM.toml`.
