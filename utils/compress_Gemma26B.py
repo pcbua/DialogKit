@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# About: A utility script that compresses text from [[data]] using the Gemma LLM and outputs the results to a structured TOML file.
+# About: A utility script that use local Gemma LLM to compresses text from [[data]] and outputs the results to a structured TOML file.
 # How to use it:
 #   uv run utils/compress_Gemma26B.py data/prompts.compress.toml "data/data.*.toml" data/compress.Gemma26B.toml
 import sys
@@ -179,7 +179,7 @@ async def process_with_llm(semaphore, llm_client, llm_config: dict, prompt: dict
             result_str = None
     return result_str
 
-async def process_one(semaphore, llm_client, prompt, data_id, data_text, n_words, llm_config_name, llm_config, llm_results):
+async def process_one(semaphore, llm_client, prompt, data_id: str, data_text: str, n_words: int, llm_config_name: str, llm_config, llm_results):
     # start compressing with the LLM
     if DEBUG:
         print(f"Query LLM: {llm_config_name}, Prompt: {prompt['prompt_id']}, Data: {data_id}, T.Words: {n_words}")
