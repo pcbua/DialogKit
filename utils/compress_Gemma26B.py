@@ -172,6 +172,7 @@ async def process_with_llm(semaphore, llm_client, llm_config: dict, prompt: dict
                 presence_penalty  = llm_config.get("PRESENCE_PENALTY", 0.0),
                 extra_body        = extra_body, # vLLM specific, min_p, reasoning, ..
             )
+            # TBD: not sure how to skip reasoning/thinking output
             result_str = response.choices[0].message.content.strip() # take results
         except Exception as e:
             print(f"Error: An unexpected error occurred during LLM call: {e}", file=sys.stderr)

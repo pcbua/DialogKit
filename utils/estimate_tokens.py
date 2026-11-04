@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # About: A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in [[data]] and [[results]].
 # How to use it:
-#   uv run python estimate_tokens.py <input_path> <output_path>
+#   uv run python utils/estimate_tokens.py <input_path> <output_path>
 import sys
 import argparse
 from pathlib import Path
