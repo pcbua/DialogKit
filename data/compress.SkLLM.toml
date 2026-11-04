@@ -1,0 +1,1229 @@
+[configs.Gemma26B]
+BASE_URL = "http://localhost:8000"
+MODEL_NAME = "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit"
+API_KEY = "EMPTY"
+CONCURRENCY = 32
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 250
+text = """
+Marta, an agent from the Home Care Support Program, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. The call revealed several concerning health developments: Mr. Nowak has experienced significant weight gain (1.7kg in four days), recurring ankle swelling, and shortness of breath, particularly at night when lying flat. 
+
+The conversation identified a key reason for his medication non-compliance: Mr. Nowak has been skipping his evening diuretic because it causes frequent nighttime urination, which increases his fall risk. Marta plans to have a nurse contact him to discuss adjusting his medication schedule to the morning.
+
+Other issues addressed include:
+* **Safety:** Mr. Nowak nearly slipped in the bathroom; Marta will coordinate the urgent installation of grab bars and non-slip mats.
+* **Diabetes Management:** Blood sugar levels have been elevated, partly due to dietary indiscretions (hidden pickles).
+* **Upcoming Appointments:** The agent reviewed his schedule, including an echocardiogram next Wednesday (for which transport will be arranged), a cardiology consultation on Friday, and upcoming cataract surgery.
+* **Mental Well-being:** Mr. Nowak expressed feelings of being a burden; Marta suggested a weekly volunteer visit for card games to provide social stimulation.
+
+Marta will flag the weight gain and breathing issues for the medical team immediately to prevent a potential hospital visit."""
+text_words = 218
+text_tokens = 294
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 250
+text = """
+In this weekly check-in call, Marta, an agent from the Home Care Support Program, speaks with Mr. Edward Nowak and his daughter, Anna, to monitor his well-being. 
+
+Edward reports increased fatigue, knee stiffness (particularly in the right knee), poor sleep, and a decreased appetite. He also experienced a brief episode of dizziness on Tuesday. While he is generally managing daily tasks with Anna's assistance and using a walking stick, he struggles with stairs and bathroom safety. He also noted recent constipation and difficulty with his hearing aids.
+
+The conversation focuses on establishing a structured plan to manage his health and maintain independence. Key action items include:
+
+*   **Medical Follow-up:** Edward will contact his doctor to discuss the dizziness, fatigue, appetite changes, constipation, and knee pain. He will also confirm his upcoming GP appointment and arrange a blood test.
+*   **Physical Therapy:** He will contact the physiotherapist to schedule a follow-up and discuss his knee symptoms.
+*   **Safety and Support:** Marta will initiate requests for a home safety assessment (to address bathroom risks) and investigate community transport options.
+*   **Self-Management:** Edward plans to start a simple daily symptom diary and will work with Anna to use a shared calendar and a medication organizer.
+
+The call concludes with Edward feeling more empowered, having set small, manageable goals, such as spending brief periods outdoors and contributing to meal preparation."""
+text_words = 235
+text_tokens = 311
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 100
+text = """
+Marta, a Home Care Support agent, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. Key health concerns include a 1.7kg weight gain, ankle swelling, shortness of breath, and nocturnal chest tightness, likely due to fluid retention. Mr. Nowak also admitted to skipping diuretic medication to avoid nighttime bathroom trips. 
+
+**Action Plan:**
+* **Medical:** A nurse will call to discuss medication adjustments (moving the diuretic to mornings) and address fluid issues.
+* **Safety:** Urgent installation of bathroom grab bars is required.
+* **Follow-ups:** Upcoming echocardiogram, cardiology consultation, and cataract surgery are scheduled.
+* **Support:** Transport and a volunteer for card games will be arranged."""
+text_words = 113
+text_tokens = 171
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 350
+text = """
+In this weekly check-in call, Marta, an agent from the Home Care Support Program, speaks with Mr. Edward Nowak and his daughter, Anna, to monitor his well-being.
+
+**Current Health Status:**
+Edward reports increased fatigue, knee stiffness (particularly in the right knee), and poor sleep. He experienced a brief episode of dizziness on Tuesday after standing up quickly. His appetite has decreased slightly, and he has noted recent constipation. While he is mostly independent, he struggles with stairs and requires assistance with certain tasks, such as putting on compression socks. He also expressed some frustration regarding his increasing dependence on Anna.
+
+**Key Concerns and Safety:**
+* **Dizziness:** The agent advised Edward to stand slowly and to seek medical attention if the dizziness recurs or is accompanied by severe symptoms.
+* **Mobility and Falls:** Edward occasionally forgets to use his walking stick. The agent recommended keeping it within reach and suggested a home safety assessment to address slippery bathroom surfaces and the need for grab bars.
+* **Medication Management:** Edward uses a weekly pillbox, but there is some uncertainty regarding the timing of his morning doses.
+
+**Action Plan and Next Steps:**
+The conversation concluded with a structured plan to manage Edward's health:
+1.  **Medical Follow-up:** Edward will contact his GP to discuss the dizziness, fatigue, appetite changes, constipation, and knee pain. He will also confirm his upcoming appointment and arrange a necessary blood test.
+2.  **Physiotherapy:** Edward will contact his physiotherapist to schedule a follow-up and discuss his knee symptoms and exercise technique.
+3.  **Home & Community Support:** The agent will initiate requests for a home safety assessment and investigate community transport options and local social activities.
+4.  **Self-Monitoring:** Edward will begin keeping a simple daily symptom diary (tracking pain, energy, and sleep) to share with his doctor.
+
+Edward expressed a desire to regain small levels of independence, such as gardening and walking in his garden, which the agent encouraged through setting manageable, incremental goals."""
+text_words = 338
+text_tokens = 443
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 900
+text = """
+This summary outlines a weekly check-in call between Marta, an agent from the Home Care Support Program, and Mr. Edward Nowak, a patient, with his daughter Anna providing initial context.
+
+**Current Health Status**
+Edward reports feeling moderately unwell (rating himself a 6/10). His primary concerns are chronic knee pain (worse in the evening and when standing), increased fatigue, and poor sleep quality. He also noted a recent episode of dizziness upon standing on Tuesday, which he attributed to not eating breakfast, though the agent advised medical consultation. Additionally, he reported a decreased appetite, slight unintentional weight loss, and recent constipation.
+
+**Safety and Mobility**
+Edward uses a walking stick but occasionally forgets to use it, increasing his fall risk. He experiences difficulty with stairs and expresses concern regarding bathroom safety, specifically the risk of slipping in the shower. He also noted hearing and vision changes that affect his daily activities.
+
+**Care and Independence**
+Edward experiences some frustration regarding his increasing dependence on his daughter, Anna. While he values her help with medication management, dressing (compression socks), and heavy household tasks, he expresses a strong desire to maintain his independence. He plans to engage in more light activities, such as gardening and preparing simple meals, to regain a sense of agency.
+
+**Action Plan and Next Steps**
+The call concluded with a structured plan to address Edward's health and safety:
+
+*   **Medical Follow-up:** Edward will contact his GP to discuss dizziness, fatigue, appetite changes, constipation, and knee pain. He will also confirm his upcoming appointment and arrange a necessary blood test.
+*   **Physiotherapy:** Edward will contact the physiotherapy service to schedule a follow-up and discuss his knee stiffness and exercise technique.
+*   **Home Safety & Support:** The agent will initiate requests for a home safety assessment (to address bathroom risks) and investigate community transport options and local social activities.
+*   **Monitoring:** Edward will begin keeping a simple daily symptom diary (tracking pain, energy, and sleep) to present to his doctor.
+*   **Medication & Nutrition:** Edward and Anna will clarify medication timings with a pharmacist and aim for more consistent nutritional intake, such as afternoon snacks.
+
+The agent advised Edward to seek emergency medical attention if he experiences severe dizziness, chest pain, or sudden weakness. A follow-up call is scheduled for next week."""
+text_words = 389
+text_tokens = 509
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 500
+text = """
+This text is a transcript of a weekly check-in call between Marta, an agent from the Home Care Support Program, and Mr. Edward Nowak, a patient receiving home care. His daughter, Anna, provides initial context regarding his recent health.
+
+**Current Health Status**
+Edward reports feeling a \"six\" out of ten in terms of well-being. His primary concerns include chronic knee pain (worse in the evening and when standing), increased fatigue, poor sleep quality, and a decreased appetite. He also noted a recent episode of dizziness upon standing and recent constipation. While he is mostly independent, he struggles with stairs, wearing compression socks, and certain household tasks like cleaning the bathroom.
+
+**Key Discussion Points**
+* **Safety and Mobility:** The agent emphasized the importance of using his walking stick consistently to prevent falls. They also discussed the need for a home safety assessment to address risks in the bathroom, such as the need for grab bars or a shower chair.
+* **Medication and Nutrition:** Edward uses a weekly pillbox managed by Anna, though he is sometimes uncertain about the timing of his doses. He also noted a slight weight loss and a tendency to avoid drinking water to prevent nighttime urination.
+* **Mental and Social Well-being:** Edward expressed frustration regarding his increasing dependency on Anna. He also noted a lack of social engagement due to his mobility issues.
+* **Future Medical Concerns:** Edward is anxious about potential knee surgery and is awaiting information regarding a possible steroid injection and upcoming blood tests.
+
+**Action Plan and Next Steps**
+The call concluded with a structured plan to manage Edward's care:
+1.  **Medical Follow-up:** Edward will contact his GP to discuss dizziness, fatigue, appetite, constipation, and knee pain. He will also confirm his upcoming appointment and arrange a blood test.
+2.  **Physiotherapy:** Edward will contact the physiotherapy service to schedule a follow-up and discuss his knee stiffness.
+3.  **Monitoring:** Edward will begin keeping a simple daily symptom diary (rating pain, energy, and sleep) to bring to his medical appointments.
+4.  **Home and Community Support:** The agent will initiate requests for a home safety assessment and investigate community transport options and local social activities.
+5.  **Care Coordination:** Edward and Anna will work together to manage his medication schedule, coordinate appointments, and potentially implement a shared household calendar to foster Edward's sense of autonomy."""
+text_words = 401
+text_tokens = 520
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 1000
+text = """
+This summary outlines a weekly check-in call between Marta (an agent from the Home Care Support Program), Edward Nowak (the patient), and Anna (his daughter/caregiver).
+
+**Current Health Status**
+Edward reports feeling moderately unwell (rating himself a 6/10), primarily due to fatigue, knee stiffness (worse in the evening), and poor sleep. He experienced a brief episode of dizziness on Tuesday morning after standing up quickly, which he attributed to not eating breakfast. His appetite has decreased, and he has noted recent constipation. While he is mostly independent, he struggles with stairs, wearing compression socks, and bathroom safety.
+
+**Key Concerns and Risks**
+* **Mobility & Falls:** Edward occasionally forgets to use his walking stick. He also expressed concerns regarding bathroom safety (slippery floors) and the potential need for a knee injection or future surgery.
+* **Medication Management:** While Anna assists with a weekly pillbox, Edward is sometimes uncertain about the timing of his doses (e.g., before or after breakfast).
+* **Psychological Well-being:** Edward expressed frustration regarding his increasing dependency on Anna, which impacts his mood.
+
+**Action Plan and Next Steps**
+The agent and Edward established a prioritized list of tasks to manage his health:
+
+1.  **Medical Follow-up:**
+    *   Discuss dizziness, fatigue, appetite, constipation, and knee pain with his GP at the upcoming appointment.
+    *   Confirm the appointment time and arrange a necessary blood test.
+    *   Contact the physiotherapy service to schedule a follow-up and discuss knee exercises.
+    *   Inquire about the possibility of a steroid injection and the necessity of fasting for blood tests.
+
+2.  **Safety and Support:**
+    *   Request a home safety assessment (specifically for the bathroom) and explore community transport options.
+    *   Discuss domestic assistance for heavier household tasks.
+    *   Investigate community social groups to combat isolation.
+
+3.  **Self-Management:**
+    *   **Symptom Tracking:** Edward will maintain a simple daily notebook to record energy levels, pain, sleep, and dizziness.
+    *   **Routine:** Edward aims to increase outdoor time (e.g., sitting in the garden) and contribute to meal preparation to maintain a sense of purpose.
+    *   **Communication:** Edward will discuss his need for independence and his worries about surgery with Anna to improve their coordination.
+
+The agent will follow up with the relevant support services and check in with Edward again next week."""
+text_words = 385
+text_tokens = 545
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 600
+text = """
+This summary outlines a weekly check-in call between Marta, an agent from the Home Care Support Program, and Mr. Edward Nowak, a patient, with his daughter Anna providing initial context.
+
+**Current Health Status**
+Edward reports feeling moderately unwell (rating himself a 6/10). His primary concerns are chronic knee pain (worse in the evening and when standing), increased fatigue, and poor sleep quality. He also noted a recent episode of dizziness upon standing on Tuesday, which he attributed to not eating breakfast, though the agent advised medical consultation. Additionally, he reported a decreased appetite, slight unintentional weight loss, and recent constipation.
+
+**Safety and Mobility**
+Edward uses a walking stick but occasionally forgets to use it, increasing his fall risk. He experiences difficulty with stairs and expresses concern regarding bathroom safety, specifically the risk of slipping in the shower. The agent recommended a home safety assessment and suggested discussing grab bars or a shower chair with an occupational therapist.
+
+**Medication and Care Management**
+Edward’s medication is managed via a weekly pillbox filled by Anna. However, there is uncertainty regarding the timing of certain doses (e.g., before or after breakfast). Edward also noted he is running low on a prescribed knee cream. He expressed a desire to maintain more independence, noting occasional frustration with the level of assistance he requires from Anna.
+
+**Action Plan and Next Steps**
+The call concluded with a structured plan to address Edward's health and safety:
+
+*   **Medical Consultations:** Edward will contact his GP to discuss dizziness, fatigue, appetite changes, constipation, and knee pain. He will also confirm his upcoming appointment and arrange a necessary blood test.
+*   **Specialist Follow-ups:** He will contact the physiotherapy service to schedule a follow-up and discuss his knee symptoms. He also intends to seek a hearing review due to recent difficulties.
+*   **Home and Community Support:** The agent will initiate requests for a home safety assessment and investigate community transport options and local social activities to help Edward re-engage with his community.
+*   **Self-Monitoring:** Edward will begin keeping a simple daily symptom diary (rating pain, energy, and sleep) to provide better data for his doctor.
+*   **Daily Living:** Edward aims to increase his activity levels by spending time in his garden and assisting Anna with light meal preparation (e.g., peeling vegetables) to maintain a sense of purpose and contribution.
+
+The agent advised Edward to seek emergency medical attention if he experiences severe dizziness, chest pain, or sudden weakness. A follow-up call is scheduled for next week."""
+text_words = 425
+text_tokens = 553
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 1200
+text = """
+**Summary of Home Care Support Program Check-in**
+
+**Participants:**
+*   **Marta:** Agent from the Home Care Support Program.
+*   **Mr. Nowak:** Patient.
+*   **Julia:** Mr. Nowak’s daughter and primary caregiver.
+
+**Clinical Observations and Health Status:**
+The weekly check-in revealed several concerning physical symptoms for Mr. Nowak. His daughter, Julia, reported a significant weight gain of 1.7 kg over four days (from 83.4 kg to 85.1 kg) and noted swelling in his ankles. Mr. Nowak confirmed the swelling and admitted to experiencing shortness of breath, particularly when climbing stairs and while lying flat at night. He described a sensation of chest tightness during the night, which is relieved by sitting in an armchair.
+
+Regarding medication adherence, Mr. Nowak admitted to skipping his evening doses, specifically his diuretic (\"water pill\"). He explained that taking the diuretic in the evening causes frequent, \"humiliating\" trips to the bathroom at night, which disrupts his sleep and increases his fall risk. His blood sugar levels have also been elevated, recently reaching 10.2 following a high-sugar snack.
+
+**Safety and Mobility:**
+Mr. Nowak has completed one and a half physiotherapy sessions. While his balance has improved slightly, he reported a near-fall in the bathroom due to slippery floors. The installation of safety grab bars and non-slip mats is currently pending. Additionally, Mr. Nowak expressed some frustration regarding his loss of independence and the feeling of being a \"burden\" to his daughter.
+
+**Action Plan and Follow-up:**
+Marta has outlined the following immediate and upcoming steps:
+
+*   **Medical Intervention:** A nurse will call Mr. Nowak today to address the weight gain, swelling, and nocturnal breathlessness. The nurse will also consult with his doctor regarding moving the diuretic dose from the evening to the morning to improve sleep and reduce fall risks.
+*   **Home Safety:** The program will follow up regarding the installation of bathroom safety equipment.
+*   **Scheduled Appointments:**
+    *   **Next Wednesday:** Echocardiogram (the program will arrange a quiet transport service).
+    *   **Next Friday:** Cardiology consultation with Dr. Wiśniewska to review the echocardiogram and adjust medications.
+    *   **Next Month (24th):** Scheduled cataract surgery (contingent on cardiac stability).
+*   **Social Support:** Marta will look into arranging a weekly volunteer visit for card games to support Mr. Nowak’s mental well-being.
+*   **Monitoring:** Julia will provide a photo of the weight log, and the family is instructed to contact emergency services if breathing difficulties worsen."""
+text_words = 413
+text_tokens = 581
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 1000
+text = """
+**Summary of Home Care Support Program Check-in**
+
+**Participants:**
+*   **Marta:** Agent from the Home Care Support Program.
+*   **Mr. Nowak:** Patient.
+*   **Julia:** Mr. Nowak’s daughter and primary caregiver.
+
+**Clinical Observations and Health Status:**
+The weekly check-in revealed several concerning physical symptoms for Mr. Nowak. His daughter, Julia, reported a weight gain of 1.7 kg over four days (from 83.4 kg to 85.1 kg) and noted swelling in his ankles. Mr. Nowak confirmed the swelling and admitted to experiencing shortness of breath, particularly when climbing stairs or lying flat at night, which forces him to sleep in an armchair to relieve chest tightness.
+
+Regarding medication adherence, Mr. Nowak admitted to skipping his evening diuretic (\"the water pill\"). He explained that taking it at night causes frequent, \"humiliating\" trips to the bathroom, which increases his risk of falling in the dark. His blood sugar levels have also been elevated, specifically following a high-sugar snack.
+
+**Safety and Mobility:**
+Mr. Nowak has been participating in physiotherapy, though he struggled with fatigue during the most recent session. A significant safety concern was identified in the bathroom; Mr. Nowak nearly slipped on Sunday, highlighting an urgent need for the installation of grab bars and non-slip mats, which have not yet been completed by the family.
+
+**Care Plan and Next Steps:**
+Marta has outlined the following immediate actions:
+*   **Medical Intervention:** A nurse will call Mr. Nowak today to address the weight gain, swelling, and breathlessness. The nurse will also consult the doctor about moving the diuretic dose to the morning to improve sleep and reduce fall risks.
+*   **Scheduled Appointments:** 
+    *   **Next Wednesday:** Echocardiogram (transportation will be arranged via a quiet driver per the patient's request).
+    *   **Next Friday:** Cardiology consultation with Dr. Wiśniewska to review the echo and adjust medications.
+    *   **Next Month:** Cataract surgery (contingent on heart stability).
+*   **Home Safety:** The program will follow up on the installation of bathroom safety equipment.
+*   **Social Support:** Marta will look into arranging a weekly volunteer visit for card games to support Mr. Nowak’s mental well-being.
+
+**Monitoring:**
+Julia will provide a photo of the weight log to the program. Mr. Nowak has been instructed to contact emergency services or the program immediately if he experiences worsening breathlessness or rapid weight gain."""
+text_words = 396
+text_tokens = 556
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 1100
+text = """
+This summary outlines a weekly check-in call between Marta (an agent from the Home Care Support Program), Julia (the caregiver), and Mr. Nowak (the patient).
+
+**Clinical Observations and Health Status**
+The call reveals several concerning physical symptoms that Mr. Nowak initially attempted to downplay. Julia reported a significant weight gain of 1.7 kg over four days, accompanied by swelling in Mr. Nowak's ankles (pitting edema) and shortness of breath, particularly when climbing stairs. Mr. Nowak confirmed experiencing nocturnal dyspnea, noting that he must sleep propped up on multiple pillows and often wakes up feeling chest tightness, which is relieved by sitting in an armchair.
+
+Regarding diabetes management, blood sugar readings have been elevated, specifically following a high-sugar snack. Mr. Nowak also reported foggy vision in his left eye, which he attributes to his existing cataract.
+
+**Medication and Compliance**
+A key issue identified was Mr. Nowak’s non-compliance with his diuretic (\"water pill\"). He admitted to skipping doses because taking it in the evening causes frequent, \"humiliating\" trips to the bathroom at night. Marta plans to coordinate with a nurse and doctor to move this medication to the morning to improve sleep quality and reduce nighttime fall risks.
+
+**Safety and Mobility**
+Mr. Nowak has been participating in physiotherapy, though he struggled with fatigue during recent sessions. A significant safety concern was raised regarding a near-fall in the bathroom; the necessary grab bars and non-slip mats have not yet been installed. Marta will coordinate with Julia to ensure these safety measures are implemented immediately.
+
+**Upcoming Medical Schedule**
+The following appointments and actions were confirmed:
+*   **Immediate:** A nurse will call to address the weight gain, swelling, and breathing issues, and to discuss medication adjustments.
+*   **Next Wednesday:** An echocardiogram (heart ultrasound). The program will arrange a quiet transport service for him.
+*   **Next Friday:** A cardiology consultation with Dr. Wiśniewska to review the echocardiogram results.
+*   **Next Month:** Scheduled cataract surgery (pending cardiac stability).
+
+**Psychosocial Support**
+Mr. Nowak expressed feelings of being a \"burden\" due to his loss of independence. To support his mental well-being, Marta proposed arranging a weekly volunteer visit for card games, which Mr. Nowak accepted.
+
+**Action Plan**
+1.  **Nurse/Doctor:** Review weight gain and breathing; adjust diuretic timing to the morning.
+2.  **Caregiver (Julia):** Install bathroom safety equipment and send a photo of the weight log to the agent.
+3.  **Program:** Arrange transport for the echocardiogram and coordinate a volunteer for social visits."""
+text_words = 417
+text_tokens = 580
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 700
+text = """
+This summary outlines a weekly check-in call between Marta, an agent from the Home Care Support Program, and Mr. Edward Nowak, a patient, with his daughter Anna providing initial context.
+
+**Current Health Status**
+Edward reports feeling moderately unwell (rating himself a 6/10), primarily due to fatigue, knee stiffness (worse in the evening), and poor sleep. He experienced a brief episode of dizziness on Tuesday after standing up quickly, which he attributed to not eating breakfast. He also noted a decreased appetite, slight weight loss, and recent constipation. While he is mostly independent, he struggles with stairs, uses a walking stick inconsistently, and requires assistance with compression socks and certain household tasks.
+
+**Key Concerns and Risks**
+* **Mobility and Safety:** Edward’s knee pain and occasional dizziness increase his fall risk. He expressed concerns regarding bathroom safety (slippery floors) and the need for grab bars.
+* **Medication Management:** While Anna assists with a weekly pillbox, Edward is sometimes uncertain about the timing of his doses (e.g., before or after breakfast).
+* **Psychological Well-being:** Edward expressed frustration regarding his increasing dependency on Anna and anxiety regarding potential future knee surgery.
+
+**Action Plan and Next Steps**
+The agent and Edward established a prioritized list of tasks to manage his health:
+
+1.  **Medical Consultations:**
+    *   **General Practitioner (GP):** Edward will attend his upcoming appointment to discuss dizziness, fatigue, appetite changes, constipation, and knee pain. He will also inquire about a possible steroid injection and the necessity of blood tests.
+    *   **Physiotherapy:** Edward will contact the service to schedule a follow-up and discuss difficulties with specific exercises.
+2.  **Safety and Support:**
+    *   **Home Safety:** The agent will initiate a request for a home safety assessment to address bathroom hazards.
+    *   **Logistics:** The agent will look into community transport options to assist with medical appointments.
+3.  **Self-Management Tools:**
+    *   **Symptom Tracking:** Edward will begin keeping a simple daily notebook to record energy levels, pain, sleep, and dizziness to present to his doctor.
+    *   **Medication/Appointment Organization:** Edward and Anna will use a shared refrigerator calendar to track appointments and medication needs.
+4.  **Lifestyle and Social Goals:**
+    *   **Activity:** Edward aims to spend short periods outdoors (e.g., in the garden) and contribute to meal preparation (e.g., peeling vegetables) to maintain a sense of purpose.
+    *   **Socialization:** Edward expressed interest in returning to a community book group once transport is addressed.
+
+The agent advised Edward to seek emergency medical attention if he experiences severe dizziness, chest pain, or difficulty breathing, and they will conduct a follow-up check-in next week."""
+text_words = 442
+text_tokens = 619
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 900
+text = """
+**Summary of Home Care Support Program Check-in**
+
+**Participants:**
+*   **Marta:** Agent from the Home Care Support Program
+*   **Mr. Nowak:** Patient
+*   **Julia:** Mr. Nowak’s daughter and primary caregiver
+
+**Clinical Observations and Health Status:**
+The weekly check-in revealed several concerning physical symptoms for Mr. Nowak. His daughter, Julia, reported a significant weight gain of 1.7 kg over four days (from 83.4 kg to 85.1 kg) and recurring ankle swelling. Mr. Nowak confirmed these symptoms, noting that he experiences shortness of breath, particularly when climbing stairs, and orthopnea (difficulty breathing while lying flat), which forces him to sleep in an armchair or use extra pillows.
+
+Regarding diabetes management, blood sugar readings have been elevated, reaching 10.2 following a high-sugar snack. Mr. Nowak also reported foggy vision in his left eye, which he attributes to his existing cataract.
+
+**Medication and Compliance:**
+A critical issue was identified regarding Mr. Nowak’s diuretic (\"water pill\"). He admitted to skipping doses because taking it in the evening causes frequent, \"humiliating\" nighttime trips to the bathroom, increasing his fall risk. Marta plans to coordinate with a nurse and doctor to move this medication to the morning to improve sleep and safety.
+
+**Safety and Mobility:**
+Mr. Nowak has been participating in physiotherapy, though he struggled with fatigue during the most recent session. A significant safety concern was raised regarding the bathroom; Mr. Nowak nearly slipped on Sunday due to a slippery floor. While grab bars and non-slip mats are intended to be installed, they have not yet been fitted. Marta will follow up with Julia to ensure these safety measures are implemented immediately.
+
+**Upcoming Medical Schedule:**
+*   **Next Wednesday (10:30 AM):** Echocardiogram (heart ultrasound). The program will arrange a quiet transport service for him.
+*   **Next Friday:** Cardiology consultation with Dr. Wiśniewska to review the echocardiogram and adjust medications.
+*   **Next Month (24th):** Cataract surgery (left eye). This is contingent on his heart being stable and fluid levels being controlled.
+
+**Psychosocial Support:**
+Mr. Nowak expressed feelings of being a \"burden\" due to his loss of independence. To support his mental well-being, Marta proposed arranging a weekly visit from a volunteer to play cards with him.
+
+**Action Plan:**
+1.  **Nurse Follow-up:** Marta will flag the weight gain and breathing issues for the nurse, who will call Mr. Nowak today to discuss medication adjustments.
+2.  **Home Safety:** Julia is to ensure bathroom safety equipment is installed.
+3.  **Logistics:** The program will organize transport for the upcoming echocardiogram.
+4.  **Monitoring:** Julia will send a photo of the weight log to the agent. Mr. Nowak has been instructed to contact emergency services if breathing difficulties worsen."""
+text_words = 458
+text_tokens = 645
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 1200
+text = """
+This summary outlines a weekly check-in call between Marta (an agent from the Home Care Support Program), Edward Nowak (the patient), and Anna (his daughter/caregiver).
+
+**Current Health Status**
+Edward reports feeling moderately unwell, rating his overall well-being as a 6/10. His primary concerns include:
+*   **Physical Pain:** Significant stiffness and pain in his knees (particularly the right), which worsens in the evening and when standing.
+*   **Dizziness:** A recent episode of dizziness occurred on Tuesday morning after standing up quickly, which Edward attributed to not eating breakfast.
+*   **Fatigue and Sleep:** He is experiencing increased tiredness and poor sleep quality, often waking in the middle of the night due to pain or the need to use the bathroom.
+*   **Other Symptoms:** A decreased appetite, recent constipation, and declining hearing/vision.
+
+**Care and Safety Observations**
+*   **Mobility:** Edward uses a walking stick but occasionally forgets to use it, increasing his fall risk. He struggles with stairs and bathroom safety.
+*   **Medication Management:** Edward takes prescribed medications via a weekly pillbox organized by Anna, though he is sometimes inconsistent with the timing of his morning doses.
+*   **Support System:** Anna provides significant daily assistance, though Edward expressed some frustration regarding his growing dependence on her.
+
+**Action Plan and Next Steps**
+The agent and Edward established a prioritized list of follow-up actions:
+
+1.  **Medical Consultations:**
+    *   **General Practitioner (GP):** Edward will attend an upcoming appointment to discuss dizziness, fatigue, appetite changes, constipation, and knee pain. He will use a notebook to track questions and symptoms.
+    *   **Blood Tests:** Coordinate with the clinic to schedule a blood test to investigate his fatigue.
+    *   **Physiotherapy:** Contact the service to schedule a follow-up and discuss knee stiffness and exercise modifications.
+    *   **Specialists:** Discuss a potential steroid injection for his knee and seek a hearing/vision review.
+
+2.  **Home and Community Support:**
+    *   **Home Safety:** The agent will initiate a request for a home safety assessment to address bathroom hazards (e.g., grab bars, non-slip surfaces).
+    *   **Transport:** The agent will investigate community transport options to reduce Edward's reliance on Anna for medical appointments.
+    *   **Social/Domestic:** Explore community group accessibility and potential domestic assistance for heavy household tasks.
+
+3.  **Patient Self-Management:**
+    *   **Symptom Tracking:** Edward will maintain a simple daily log (rating pain, energy, and sleep) to present to his doctor.
+    *   **Activity Goals:** Edward aims to spend more time outdoors (e.g., in the garden) and contribute to light meal preparation to maintain a sense of purpose and independence.
+    *   **Communication:** Edward will discuss his need for independence and his concerns about future surgery with Anna to improve their collaborative care."""
+text_words = 462
+text_tokens = 650
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 150
+text = """
+Marta, a Home Care Support Program agent, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. The call revealed several health concerns: a 1.7kg weight gain over four days, recurring ankle swelling, shortness of breath, and nocturnal respiratory distress. Mr. Nowak admitted to skipping his diuretic (water pill) because taking it in the evening causes frequent nighttime urination, increasing his fall risk.
+
+**Key Actions & Plan:**
+* **Medical:** A nurse will call to address fluid retention and discuss moving the diuretic to the morning. An echocardiogram is scheduled for next Wednesday, followed by a cardiology consultation on Friday.
+* **Safety:** Urgent installation of bathroom grab bars and non-slip mats is required.
+* **Logistics:** The program will arrange quiet medical transport for the echocardiogram and explore a volunteer for weekly card games.
+* **Monitoring:** Julia will provide weight logs, and the family must monitor for sudden weight increases or worsening breathlessness."""
+text_words = 159
+text_tokens = 221
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 200
+text = """
+In this weekly check-in call, Marta, an agent from the Home Care Support Program, speaks with Edward Nowak and his daughter, Anna, to monitor his well-being. Edward reports increased fatigue, knee stiffness, poor sleep, and a recent episode of dizziness. He also notes a decreased appetite and mild constipation.
+
+The conversation focuses on practical management and safety. Marta advises Edward to use his walking stick consistently to prevent falls and suggests a home safety assessment to address bathroom hazards. They discuss medication management, the importance of following physiotherapy exercises, and the need to discuss his symptoms—specifically the dizziness and fatigue—at his upcoming GP appointment.
+
+To support his independence, Edward plans to start a daily symptom diary and a shared calendar with Anna. He also expresses interest in returning to light gardening and community activities. The call concludes with a prioritized action plan: Edward will contact his doctor regarding his physical symptoms, confirm his medical appointments, and follow up with physiotherapy. Marta will also initiate requests for home safety and transport assistance."""
+text_words = 173
+text_tokens = 224
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 300
+text = """
+Marta, an agent from the Home Care Support Program, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. The call revealed several concerning health developments: Mr. Nowak has experienced significant weight gain (1.7 kg in four days), recurring ankle swelling, and shortness of breath, particularly at night when lying flat.
+
+The discussion identified a key reason for his recent instability: Mr. Nowak has been skipping his evening diuretic (\"water pill\") because it causes frequent nighttime urination, which increases his fall risk. To address this, Marta plans to have a nurse consult with his doctor about moving the dosage to the morning. Additionally, the family noted a need for urgent home safety modifications (grab bars and non-slip mats) in the bathroom following a near-fall.
+
+Regarding upcoming medical care, the following plan was established:
+*   **Medical Appointments:** An echocardiogram is scheduled for next Wednesday (with transport services arranged), followed by a cardiology consultation on Friday. These are critical for stabilizing his heart before his scheduled cataract surgery next month.
+*   **Therapy & Monitoring:** Physiotherapy sessions will continue, and the nurse will monitor his weight and fluid retention.
+*   **Social Support:** To combat feelings of being a burden, Marta will look into arranging a weekly volunteer visit for card games.
+
+Marta concluded by instructing the family to monitor his weight closely and contact emergency services if his breathing worsens. The call ended with a plan for the nurse to contact the family within the hour to address the immediate physiological concerns."""
+text_words = 256
+text_tokens = 333
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 200
+text = """
+Marta, an agent from the Home Care Support Program, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. The call revealed several concerning health developments: Mr. Nowak has experienced significant weight gain (1.7kg in four days), recurring ankle swelling, shortness of breath, and nocturnal respiratory distress. These symptoms, combined with his tendency to skip diuretic medication due to nighttime bathroom trips, suggest fluid retention.
+
+Key action items identified include:
+* **Medical Intervention:** A nurse will call to address the weight gain and breathing issues, and the doctor will be consulted to move his diuretic dose to the morning to improve sleep and reduce fall risks.
+* **Upcoming Appointments:** Mr. Nowak has an echocardiogram next Wednesday (transportation to be arranged) and a cardiology consultation on Friday. His cataract surgery is scheduled for next month.
+* **Safety and Support:** Urgent installation of bathroom grab bars is required. The program will also look into providing a volunteer for weekly card games to support his mental well-being.
+
+The call concluded with a plan to monitor his weight closely and coordinate medical adjustments to stabilize his condition before his upcoming surgery."""
+text_words = 193
+text_tokens = 254
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 300
+text = """
+In this weekly check-in call, Marta, an agent from the Home Care Support Program, speaks with Mr. Edward Nowak and his daughter, Anna, to monitor his well-being.
+
+**Current Health Status:**
+Edward reports increased fatigue, knee stiffness (particularly in the right knee), and poor sleep. He experienced a brief episode of dizziness on Tuesday after standing up quickly. His appetite has decreased slightly, and he has noted recent constipation. While he is mostly independent, he requires assistance with tasks like putting on compression socks and navigating stairs.
+
+**Key Concerns and Risks:**
+* **Mobility & Safety:** Edward's knee pain limits his activity, and he occasionally forgets to use his walking stick, increasing fall risks. He also expressed concerns regarding bathroom safety.
+* **Medication Management:** While Anna assists with his pillbox, Edward is sometimes uncertain about the timing of his doses.
+* **Psychological Well-being:** Edward expressed frustration regarding his increasing dependency on Anna and anxiety about potential future knee surgery.
+
+**Action Plan:**
+The call concluded with a structured plan to address Edward's needs:
+1.  **Medical Follow-up:** Edward will contact his GP to discuss dizziness, fatigue, appetite, constipation, and knee pain. He will also confirm his upcoming appointment and arrange a blood test.
+2.  **Therapy & Safety:** Edward will contact his physiotherapist to schedule a follow-up. Marta will initiate requests for a home safety assessment (to address bathroom risks) and information on community transport and social activities.
+3.  **Self-Management:** Edward will begin keeping a simple daily symptom diary (rating pain, fatigue, and dizziness) to bring to his medical appointments. He also aims to increase gentle activity, such as spending time in his garden."""
+text_words = 284
+text_tokens = 386
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 100
+text = """
+Marta, a Home Care Support agent, conducted a weekly check-in with Edward Nowak and his daughter, Anna. Edward reported increased fatigue, knee stiffness, poor sleep, and a recent episode of dizziness. He also noted a decreased appetite and constipation. 
+
+The conversation focused on practical management: using his walking stick, organizing medications, and improving home safety (requesting an occupational therapy assessment). Agreed next steps include Edward discussing his symptoms and potential knee treatment with his doctor, arranging a blood test, following up with physiotherapy, and maintaining a daily symptom log to monitor his health."""
+text_words = 94
+text_tokens = 136
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 350
+text = """
+Marta, an agent from the Home Care Support Program, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. The call revealed several concerning health developments and logistical needs.
+
+**Health Concerns:**
+Mr. Nowak has experienced a significant weight gain (1.7 kg in four days), recurring ankle swelling, and shortness of breath, particularly when climbing stairs or lying flat at night. He also reported dizziness when standing quickly and a recent near-fall in the bathroom. His blood sugar levels have been elevated, partly due to dietary indiscretions (hidden pickles). Notably, Mr. Nowak admitted to skipping his diuretic (\"water pill\") because taking it in the evening causes frequent, humiliating nighttime bathroom trips.
+
+**Action Plan:**
+*   **Medical Intervention:** Marta will flag the weight gain and breathing issues for a nurse, who will call Mr. Nowak today. The nurse will also consult the doctor about moving the diuretic dose to the morning to improve sleep and reduce fall risks.
+*   **Upcoming Appointments:** Mr. Nowak has an echocardiogram next Wednesday (for which the program will arrange a quiet driver) and a cardiology consultation the following Friday. His cataract surgery is scheduled for next month, pending cardiac stability.
+*   **Safety and Support:** The program will address the urgent need for bathroom grab bars and non-slip mats. Additionally, Marta will look into arranging a volunteer to visit weekly for card games to support Mr. Nowak’s mental well-being.
+*   **Monitoring:** Julia will continue monitoring weight and blood sugar, sending a photo of the weight log to Marta.
+
+The call concluded with a plan to manage Mr. Nowak's diet and a reminder to contact emergency services if his breathing worsens."""
+text_words = 282
+text_tokens = 373
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 150
+text = """
+Marta, a Home Care Support agent, conducted a weekly check-in with Edward Nowak and his daughter, Anna. Edward reported increased fatigue, knee stiffness, poor sleep, and a recent episode of dizziness. He also noted a decreased appetite and constipation.
+
+The conversation focused on practical management and safety. Marta advised Edward to use his walking stick consistently, requested a home safety assessment to address bathroom risks, and suggested a daily symptom log to track his condition. They also discussed medication management and the importance of discussing his symptoms—specifically the dizziness and fatigue—at his upcoming GP appointment.
+
+**Key Action Plan:**
+* **Medical:** Discuss dizziness, fatigue, and knee pain with the GP; arrange a blood test; and follow up with physiotherapy.
+* **Safety/Support:** Request a home safety assessment and investigate community transport and social activities.
+* **Daily Living:** Maintain a symptom diary and coordinate care tasks with Anna."""
+text_words = 151
+text_tokens = 207
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 800
+text = """
+This summary outlines a weekly check-in call between Marta (an agent from the Home Care Support Program), Julia (the caregiver), and Mr. Nowak (the patient).
+
+**Clinical Observations and Health Status**
+The call reveals several concerning physical symptoms. Julia and Mr. Nowak both report significant ankle swelling (pitting edema) and shortness of breath, particularly when climbing stairs. Mr. Nowak also experiences nocturnal dyspnea, waking up at night feeling as though his chest is being compressed, which necessitates sleeping propped up with extra pillows. 
+
+A significant weight gain of 1.7 kg was noted over four days, which the agent will flag for a nurse. Additionally, Mr. Nowak’s blood sugar levels have been elevated, partly due to dietary indiscretions (excessive salt and sugar intake). While he has not had a fall since two weeks ago, he reported a near-slip in the bathroom due to slippery floors.
+
+**Medication and Treatment Management**
+A key issue identified is Mr. Nowak’s non-compliance with his diuretic (\"water pill\"). He admitted to skipping doses because taking it in the evening causes frequent, \"humiliating\" trips to the bathroom at night. The agent plans to consult with a nurse and doctor to move this medication to the morning to improve sleep and reduce fall risks.
+
+**Care Plan and Next Steps**
+The following actions were established to manage Mr. Nowak's care:
+*   **Medical Follow-up:** A nurse will call today to address the weight gain and breathing issues. An echocardiogram is scheduled for next Wednesday, followed by a cardiology consultation on Friday.
+*   **Surgery Coordination:** Mr. Nowak’s cataract surgery is set for the 24th of next month, pending medical clearance from his cardiologist regarding his heart stability.
+*   **Home Safety:** The agent will urge Julia to ensure bathroom grab bars and non-slip mats are installed immediately to prevent further falls.
+*   **Logistics:** The program will arrange a quiet transport service for the upcoming echocardiogram.
+*   **Social/Physical Support:** Physiotherapy sessions will continue, and the agent will look into arranging a volunteer to visit weekly for card games to support Mr. Nowak’s mental well-being.
+
+**Psychosocial Note**
+Mr. Nowak expressed feelings of being a \"burden\" due to his loss of independence. The agent provided emotional support, and the plan includes social engagement to help mitigate these feelings."""
+text_words = 383
+text_tokens = 527
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 800
+text = """
+This summary outlines a weekly check-in call between Marta, an agent from the Home Care Support Program, and Mr. Edward Nowak, a patient, with his daughter Anna providing initial context.
+
+**Current Health Status**
+Edward reports feeling moderately unwell (rating himself a 6/10). His primary concerns are chronic knee pain (worse in the evening and when standing), increased fatigue, poor sleep quality, and a decreased appetite. He also noted a recent episode of dizziness upon standing and mild constipation. While he is mostly independent, he struggles with stairs, wearing compression socks, and maintaining consistent use of his walking stick.
+
+**Key Medical Concerns & Safety**
+* **Dizziness:** Edward experienced a dizzy spell on Tuesday. The agent advised him to stand slowly and to seek emergency care if dizziness is accompanied by chest pain, fainting, or difficulty breathing.
+* **Knee Pain & Mobility:** Edward’s arthritis causes significant stiffness. He expressed anxiety regarding potential future surgery. The agent encouraged consistent, gentle physiotherapy and discussed the possibility of a steroid injection.
+* **Medication Management:** Edward occasionally struggles with the timing of his doses. He and Anna use a weekly pillbox, but the agent recommended clarifying specific timing instructions (e.g., before or after meals) with his doctor or pharmacist.
+* **Home Safety:** Edward identified risks in the bathroom (slippery floors/awkward shower). The agent will initiate a request for a home safety assessment and potential occupational therapy to discuss grab bars or a shower chair.
+
+**Action Plan & Next Steps**
+To manage his health and maintain independence, the following plan was established:
+
+1.  **Medical Follow-up:** Edward will contact his GP to discuss dizziness, fatigue, appetite, constipation, and knee pain. He will also confirm his upcoming appointment and arrange a necessary blood test.
+2.  **Physiotherapy:** Edward will contact the physiotherapy service to schedule a follow-up and discuss his knee symptoms and exercise technique.
+3.  **Monitoring:** Edward will begin keeping a simple daily symptom diary (rating pain, energy, and sleep) to bring to his medical appointments.
+4.  **Home & Social Support:** The agent will follow up on requests for a home safety assessment, information on community transport, and details regarding local community activities.
+5.  **Daily Living:** Edward aims to increase his activity by spending time in the garden and assisting Anna with light meal preparation (e.g., peeling vegetables while seated).
+
+The call concluded with the agent emphasizing that Edward should contact his healthcare provider immediately if symptoms worsen, rather than waiting for the next scheduled check-in."""
+text_words = 422
+text_tokens = 561
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 700
+text = """
+This summary outlines a weekly check-in call between Marta (an agent from the Home Care Support Program), Julia (the caregiver), and Mr. Nowak (the patient).
+
+**Clinical Observations and Health Status**
+The call reveals several concerning physical symptoms. Julia and Mr. Nowak both report significant ankle swelling (pitting edema) and shortness of breath, particularly when climbing stairs. Mr. Nowak also experiences nocturnal dyspnea, waking up at night feeling as though his chest is being compressed, which necessitates sleeping in an armchair. 
+
+A significant weight gain of 1.7 kg was noted over four days, which the agent will flag for a nurse. Additionally, Mr. Nowak’s blood sugar levels have been elevated, recently reaching 10.2 following a high-sugar snack. While he reports no recent falls, he noted a near-slip in the bathroom due to slippery floors.
+
+**Medication and Treatment Adherence**
+A key issue identified is Mr. Nowak’s non-adherence to his diuretic (\"water pill\"). He admitted to skipping doses because taking it in the evening causes frequent, \"humiliating\" trips to the bathroom at night. The agent plans to consult with a nurse and doctor to move this medication to the morning to improve sleep and reduce fall risks. Regarding physiotherapy, Mr. Nowak has been participating but struggles with fatigue.
+
+**Care Plan and Next Steps**
+The agent outlined several upcoming medical requirements and logistical needs:
+*   **Medical Appointments:** An echocardiogram is scheduled for next Wednesday (transportation will be arranged via a quiet driver), followed by a cardiology consultation on Friday. These are critical for stabilizing his heart health ahead of his scheduled cataract surgery next month.
+*   **Home Safety:** There is an urgent need to install grab bars and non-slip mats in the bathroom to prevent falls.
+*   **Social Support:** To address Mr. Nowak's feelings of being a \"burden\" and his declining independence, the agent will look into arranging a weekly volunteer visit for card games.
+*   **Dietary Management:** The agent will consult the nurse regarding Mr. Nowak's craving for salty foods (pickles) to find a way to manage his diet without causing distress.
+
+**Immediate Actions**
+The agent will have a nurse call the family within the hour to address the weight gain and breathing issues. Julia will provide a photo of the weight tracking sheet, and the program will coordinate medical transport and home safety interventions."""
+text_words = 391
+text_tokens = 526
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 600
+text = """
+This summary outlines a weekly check-in call between Marta (an agent from the Home Care Support Program), Julia (the caregiver), and Mr. Nowak (the patient).
+
+**Clinical Observations and Health Status**
+The call reveals several concerning physical symptoms. Julia and Mr. Nowak report significant ankle swelling (pitting edema) and shortness of breath, particularly when climbing stairs. Mr. Nowak also experiences nocturnal dyspnea, waking up at night with chest tightness, which requires him to sleep propped up with extra pillows or sit in an armchair. 
+
+There is a notable weight gain of 1.7 kg over four days, which the agent will flag for a nurse. Additionally, Mr. Nowak’s blood sugar levels have been elevated, recently reaching 10.2 following a high-sugar snack. While he reports no recent falls, he noted a near-slip in the bathroom due to slippery floors.
+
+**Medication and Treatment Adherence**
+A key issue identified is Mr. Nowak’s non-adherence to his diuretic (\"water pill\"). He admitted to skipping doses because taking it in the evening causes frequent, \"humiliating\" trips to the bathroom at night. The agent plans to consult with a nurse and doctor to move this medication to the morning to improve sleep and reduce fall risks.
+
+**Care Plan and Next Steps**
+The agent outlined several upcoming medical and logistical requirements:
+*   **Medical Appointments:** An echocardiogram is scheduled for next Wednesday (transportation will be arranged via a quiet driver), followed by a cardiology consultation on Friday. These are critical for stabilizing his heart before his scheduled cataract surgery next month.
+*   **Home Safety:** The agent emphasized the urgency of installing bathroom grab bars and non-slip mats to prevent falls.
+*   **Physical Therapy:** Mr. Nowak will continue physiotherapy, aiming for full sessions.
+*   **Social Support:** To address Mr. Nowak's feelings of being a \"burden\" and his declining independence, the agent will look into arranging a weekly volunteer visit for card games.
+
+**Conclusion**
+The agent will coordinate a call from a nurse to address the fluid retention and medication timing. Julia will provide a photo of the weight log, and the team will monitor for any worsening respiratory distress or rapid weight gain."""
+text_words = 360
+text_tokens = 488
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 500
+text = """
+This summary outlines a weekly check-in call between Marta (a Home Care Support Program agent), Julia (the caregiver), and Mr. Nowak (the patient).
+
+**Clinical Observations and Health Concerns**
+The call reveals several concerning physical symptoms. Julia and Mr. Nowak report significant ankle swelling (pitting edema) and shortness of breath, particularly when climbing stairs or lying flat at night. Mr. Nowak also experiences nocturnal chest tightness, which he manages by sleeping in an armchair. These symptoms are accompanied by a weight gain of 1.7 kg over four days. 
+
+Additionally, Mr. Nowak’s blood sugar levels have been elevated (reaching 10.2), partly due to dietary indiscretions (excessive salt and sugar intake). He also reports foggy vision in his left eye, likely related to his upcoming cataract surgery.
+
+**Medication and Treatment Adherence**
+A key issue identified is Mr. Nowak’s non-adherence to his diuretic (\"water pill\"). He admitted to skipping doses because taking it in the evening causes frequent, \"humiliating\" trips to the bathroom at night. Marta plans to consult with a nurse to see if the medication schedule can be moved to the morning to improve sleep and reduce fall risks.
+
+**Safety and Mobility**
+Mr. Nowak has been participating in physiotherapy, though he struggled with fatigue during the last session. A significant safety concern was raised regarding the bathroom; Mr. Nowak nearly fell due to a slippery floor. While grab bars and non-slip mats are intended to be installed, they have not yet been fitted. Marta offered the program's home-safety service if the family cannot complete the installation by Monday.
+
+**Upcoming Schedule and Care Plan**
+The following actions and appointments were established:
+*   **Immediate Medical Follow-up:** A nurse will call today to address the weight gain, swelling, and breathing issues.
+*   **Next Wednesday:** An echocardiogram is scheduled; the program will arrange a quiet transport service for him.
+*   **Next Friday:** A cardiology consultation with Dr. Wiśniewska to review the echo and adjust medications.
+*   **Next Month:** Cataract surgery is tentatively scheduled for the 24th, pending cardiac stability.
+*   **Social/Support:** The agent will look into arranging a weekly volunteer visit for card games to support Mr. Nowak’s mental well-being.
+
+**Conclusion**
+The call successfully identified critical physiological changes and medication barriers. The agent will coordinate with medical professionals to stabilize Mr. Nowak’s fluid levels, which is essential for both his immediate comfort and the successful progression of his upcoming eye surgery."""
+text_words = 407
+text_tokens = 562
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 400
+text = """
+In this weekly check-in call, Marta, an agent from the Home Care Support Program, speaks with Mr. Edward Nowak and his daughter, Anna, to monitor his well-being.
+
+**Current Health Status**
+Edward reports feeling a \"six\" out of ten. His primary concerns are chronic knee pain (worse in the evening), increased fatigue, poor sleep, and a decreased appetite. He also noted a recent episode of dizziness upon standing and mild constipation. While he is mostly independent, he struggles with stairs and requires assistance with certain tasks, such as putting on compression socks.
+
+**Key Discussion Points**
+* **Safety and Mobility:** The agent advised Edward to use his walking stick consistently to prevent falls and suggested a home safety assessment to address risks in the bathroom (e.g., installing grab bars).
+* **Medication and Nutrition:** Edward uses a weekly pillbox managed by Anna, though he is occasionally uncertain about the timing of his doses. He also noted a slight weight loss and a tendency to avoid drinking water to prevent nighttime urination.
+* **Mental and Social Well-being:** Edward expressed frustration regarding his loss of independence. He aims to regain social connections and interest in hobbies, such as gardening and attending a community group.
+
+**Action Plan**
+The call concluded with a structured plan to manage Edward's health:
+1.  **Medical Follow-up:** Edward will contact his GP to discuss dizziness, fatigue, appetite, constipation, and knee pain. He will also confirm his upcoming appointment and arrange a necessary blood test.
+2.  **Physiotherapy:** Edward will contact the physiotherapy service to schedule a follow-up and discuss his knee stiffness.
+3.  **Monitoring:** Edward will begin keeping a simple daily symptom diary (rating pain, energy, and sleep) to bring to his medical appointments.
+4.  **Support Services:** The agent will follow up regarding a home safety assessment, community transport options, and information on local community activities.
+5.  **Home Coordination:** Edward and Anna will use a shared calendar to manage appointments and tasks, and they will discuss his need for more independence in certain daily activities."""
+text_words = 345
+text_tokens = 461
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d001"
+source_llm = "Gemma26B"
+target_words = 400
+text = """
+This summary outlines a weekly check-in call between Marta (Home Care Support Program), Mr. Nowak (the patient), and Julia (his daughter/caregiver).
+
+**Clinical Observations and Concerns**
+The primary concern is a significant weight gain of 1.7 kg over four days, accompanied by recurring ankle swelling and shortness of breath, particularly when climbing stairs or lying flat at night. Mr. Nowak admitted to experiencing chest tightness during the night, which he manages by sitting in an armchair. These symptoms suggest fluid retention, likely related to heart function. Additionally, Mr. Nowak’s blood sugar levels have been elevated, partly due to dietary indiscretions (excessive salt and sugar intake).
+
+**Medication and Compliance**
+Mr. Nowak admitted to missing a dose of his diuretic (\"the water pill\"). He revealed that taking it in the evening causes frequent, distressing nighttime urination, which increases his fall risk. Marta plans to consult a nurse to see if the medication schedule can be moved to the morning to improve compliance and sleep quality.
+
+**Safety and Mobility**
+While no recent falls were reported, Mr. Nowak experienced a near-slip in the bathroom. There is an urgent need for the installation of grab bars and non-slip mats, which the family has yet to complete. Mr. Nowak is also participating in physiotherapy, though his fatigue occasionally limits his sessions.
+
+**Upcoming Care Plan**
+The following actions were established:
+*   **Medical Follow-up:** A nurse will call today to address the weight gain and breathing issues. A cardiology consultation and an echocardiogram are scheduled for next week.
+*   **Surgery:** Cataract surgery is planned for next month, contingent on his heart stability.
+*   **Logistics:** The program will arrange a quiet transport service for his upcoming medical appointments.
+*   **Social/Home Support:** The program will look into providing a volunteer for weekly card games to combat feelings of loss of independence. The home-safety service may be engaged if bathroom modifications are not completed by Monday.
+
+**Conclusion**
+The call successfully identified critical physiological changes and medication barriers. The immediate priority is medical intervention to stabilize Mr. Nowak's fluid levels and adjusting his medication timing to ensure his safety and comfort."""
+text_words = 359
+text_tokens = 478
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 1200
+text = """
+This summary outlines a wellness check-in call between a Community Health Monitoring Program agent, Mr. Harrison (the patient), and his daughter (the primary caregiver).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (described as a dull ache) that worsens in the morning and after eating. He is also experiencing increased fatigue, necessitating more frequent naps. His blood pressure remains stable at approximately 120/80, and his medication adherence is excellent, though he noted a mild metallic aftertaste from a specific morning pill.
+
+**Care and Management**
+*   **Medication & Nutrition:** The caregiver manages his pill organizer weekly. To mitigate the medication's aftertaste, the agent suggested taking it with juice. Mr. Harrison follows a healthy diet and takes daily calcium supplements.
+*   **Physical Activity:** To combat reduced stamina, the agent set a small goal for Mr. Harrison to perform three standing exercises from his armchair tomorrow.
+*   **Sleep:** To address nighttime awakenings, the agent recommended shifting his evening chamomile tea to an hour earlier.
+
+**Logistics and Upcoming Appointments**
+*   **Supplies:** The caregiver reported a shortage of adult incontinence pads; the agent arranged for a home delivery by Wednesday morning.
+*   **Appointments:** Transport is already organized for an upcoming cardiology appointment next Thursday. Mr. Harrison also has an ophthalmology appointment next month; the agent noted his concern regarding a compression stocking to be discussed with the cardiologist.
+*   **Follow-up:** The next wellness check-in call is scheduled for this Friday at 2:00 PM."""
+text_words = 267
+text_tokens = 368
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 1000
+text = """
+This summary outlines a wellness check-in call between a Community Health Monitoring Program agent, Mr. Harrison (the patient), and his daughter (the primary caregiver).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (worse in the mornings and after lunch) and increased fatigue, requiring more daytime naps. He also reported a mild headache following a recent medication dosage change, which resolved with hydration. His blood pressure remains stable and within a healthy range.
+
+**Medication and Care Management**
+The caregiver manages Mr. Harrison’s medication via a weekly pill organizer, ensuring strict adherence. Mr. Harrison noted a bitter aftertaste from a specific morning medication; the agent advised taking it with juice to mitigate this. The caregiver is also managing his nutrition and daily monitoring.
+
+**Logistics and Upcoming Appointments**
+* **Cardiology:** A transport van is already booked for his appointment next Thursday. The agent will ensure the specialist addresses Mr. Harrison's concern regarding his left-leg compression stocking.
+* **Ophthalmology:** An eye appointment is scheduled for next month; the patient will note his recent eye fatigue to discuss with the doctor.
+* **Supplies:** The caregiver reported a shortage of adult incontinence pads. The agent has arranged for a home delivery by Wednesday morning.
+
+**Recovery Goals and Plan**
+To encourage mobility, the agent set a small goal for Mr. Harrison to stand up from his armchair three times during a morning television program. The patient also expressed a long-term goal of walking in his garden by spring.
+
+**Follow-up**
+The next wellness check-in call is scheduled for this coming Friday at 2:00 PM."""
+text_words = 283
+text_tokens = 382
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 1100
+text = """
+This summary outlines a wellness check-in call between a Community Health Monitoring Program agent, Mr. Harrison (the patient), and his daughter (the primary caregiver).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (described as a dull ache) that worsens in the morning and after eating. He is also experiencing increased fatigue, necessitating more frequent naps. His blood pressure remains stable at approximately 120/80, and his medication adherence is excellent, though he noted a mild metallic aftertaste from a specific morning pill.
+
+**Care and Management**
+The caregiver manages Mr. Harrison’s medication via a weekly pill organizer and monitors his daily blood pressure. To address his symptoms, the agent recommended:
+*   Using a heating pad for back pain.
+*   Drinking juice or flavored water to mitigate medication aftertaste.
+*   Shifting his chamomile tea consumption to an hour earlier to reduce nighttime awakenings.
+*   Setting a small physical goal of standing up three times during morning television to rebuild stamina.
+
+**Logistics and Appointments**
+Several upcoming needs and appointments were addressed:
+*   **Supplies:** The caregiver noted a shortage of adult incontinence pads; the agent arranged for home delivery by Wednesday morning.
+*   **Cardiology:** Transport is already booked for his appointment next Thursday. The agent will ensure the specialist addresses Mr. Harrison's question regarding when he can stop wearing his compression stocking.
+*   **Ophthalmology:** An eye appointment is scheduled for next month; the patient will note his recent eye fatigue to discuss with the specialist.
+*   **Follow-up:** The next wellness check-in call is scheduled for this Friday at 2:00 PM."""
+text_words = 282
+text_tokens = 391
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d002"
+source_llm = "Gemma26B"
+target_words = 1100
+text = """
+This summary outlines a weekly check-in call between Marta, an agent from the Home Care Support Program, and Mr. Edward Nowak, a patient, with his daughter Anna providing initial context.
+
+**Current Health Status**
+Edward reports feeling moderately unwell (rating himself a 6/10). His primary concerns are chronic knee pain (worse in the evening and when standing), increased fatigue, poor sleep quality, and a decreased appetite. He also noted a recent episode of dizziness upon standing on Tuesday and has experienced mild constipation. While he is mostly independent, he requires assistance with certain tasks, such as putting on compression socks and managing stairs.
+
+**Key Medical and Safety Concerns**
+* **Dizziness:** Edward experienced a brief episode of dizziness. The agent advised him to monitor this closely and seek emergency care if it is accompanied by chest pain, fainting, or difficulty breathing.
+* **Mobility and Falls Risk:** Edward occasionally forgets to use his walking stick. The agent emphasized consistent use to prevent falls and suggested a home safety assessment to address slippery bathroom surfaces and the need for grab bars.
+* **Medication Management:** Edward uses a weekly pillbox organized by Anna, but he is uncertain about the timing of his morning doses relative to breakfast.
+* **Nutrition and Hydration:** Edward has a reduced appetite and noted he avoids drinking water at night to prevent frequent urination, which may contribute to his fatigue and constipation.
+
+**Action Plan and Next Steps**
+The agent and Edward established a prioritized list of tasks to manage his health:
+
+1.  **Medical Consultations:**
+    *   **General Practitioner (GP):** Edward will attend his upcoming appointment to discuss dizziness, fatigue, appetite, constipation, sleep, and knee pain. He will use a notebook to record questions and symptoms.
+    *   **Physiotherapy:** Edward will contact the service to schedule a follow-up and discuss his knee stiffness and difficulty with specific exercises.
+    *   **Blood Tests:** Edward and Anna will coordinate a blood test to investigate his fatigue.
+2.  **Home and Community Support:**
+    *   **Home Safety:** The agent will initiate a request for a home safety assessment and occupational therapy consultation regarding bathroom modifications.
+    *   **Transport:** The agent will look into community transport options to reduce Edward's dependence on Anna for medical appointments.
+    *   **Social/Domestic:** Edward expressed interest in returning to a community group and potentially receiving light domestic assistance for heavy cleaning.
+3.  **Self-Management:**
+    *   **Symptom Tracking:** Edward will begin a simple daily log (rating pain, energy, and sleep) to identify patterns.
+    *   **Activity:** Edward aims to spend small amounts of time outdoors (e.g., in the garden) to improve his mood and well-being.
+    *   **Communication:** Edward plans to have an honest conversation with Anna regarding his need for independence versus his need for assistance.
+
+The agent will follow up with Edward next week to monitor his progress."""
+text_words = 481
+text_tokens = 644
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 100
+text = "A health coordinator conducted a wellness check-in with Mr. Harrison and his primary caregiver. The caregiver reported Mr. Harrison's improved mobility but noted persistent lower back pain and increased fatigue. The agent addressed medication side effects, confirmed upcoming cardiology transport, and arranged a home delivery of incontinence supplies for Wednesday. During a direct conversation, Mr. Harrison discussed his recovery progress, physical limitations, and upcoming medical appointments. The agent provided encouragement, suggested minor adjustments to his routine, and set a follow-up call for Friday at 2:00 PM to continue monitoring his well-being."
+text_words = 95
+text_tokens = 137
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 900
+text = """
+This summary outlines a wellness check-in call between a Community Health Monitoring Program agent, Mr. Harrison (the patient), and his daughter (the primary caregiver).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (described as a dull ache) that worsens in the morning and after eating. He is also experiencing increased fatigue, necessitating more frequent naps. His blood pressure remains stable at approximately 120/80, and his medication adherence is excellent, though he noted a mild metallic aftertaste from a specific morning pill.
+
+**Care and Logistics**
+*   **Medication & Nutrition:** The caregiver manages his pill organizer weekly. To mitigate medication side effects, the agent suggested taking the pill with juice. Mr. Harrison follows a healthy diet, though he expressed a desire for a reward of apple pie following his upcoming cardiology appointment.
+*   **Supplies:** The caregiver noted a shortage of adult incontinence pads. The agent has arranged for a home delivery of these supplies by Wednesday morning.
+*   **Appointments:** Transport is already organized for an upcoming cardiology appointment next Thursday. Mr. Harrison also has an ophthalmology appointment scheduled for next month; he noted some occasional eye fatigue/blurriness to discuss with the specialist.
+*   **Physical Activity:** To combat fatigue and rebuild strength, the agent set a small goal for Mr. Harrison to perform three standing exercises from his armchair during television commercials tomorrow.
+
+**Caregiver Support**
+The daughter provides comprehensive care, including medication management, meal preparation, and monitoring blood pressure. The agent commended her dedication and confirmed that the next follow-up call is scheduled for this Friday at 2:00 PM."""
+text_words = 283
+text_tokens = 380
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 150
+text = """
+A health coordinator from the Community Health Monitoring Program conducted a wellness check with Mr. Harrison and his primary caregiver (his daughter). The caregiver reported that while Mr. Harrison's mobility is improving, he is experiencing persistent lower back pain and increased fatigue. The agent addressed medication side effects, confirmed transport for an upcoming cardiology appointment, and arranged for a home delivery of incontinence supplies by Wednesday.
+
+During a direct conversation, Mr. Harrison discussed his dull back ache, reduced stamina, and nighttime awakenings. The agent provided practical advice, such as using a heating pad, adjusting fluid intake to improve sleep, and setting small physical goals, like standing up during television commercials. They also discussed upcoming medical appointments and a reward of apple pie to incentivize his recovery. The call concluded with a scheduled follow-up for Friday at 2:00 PM."""
+text_words = 140
+text_tokens = 188
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 300
+text = """
+A health coordinator from the Community Health Monitoring Program conducted a wellness check-in with Mr. Harrison and his primary caregiver (his daughter). 
+
+**Health Status and Symptoms:**
+Mr. Harrison is recovering from a major medical procedure but reports increased fatigue and persistent lower back pain, which is most acute in the mornings and after lunch. His mobility is improving slightly, though he struggles with stamina. His blood pressure remains stable (120/81), and his medication adherence is excellent, despite a minor complaint regarding a metallic aftertaste from one pill.
+
+**Care and Logistics:**
+* **Supplies:** The caregiver noted a shortage of adult incontinence pads; the agent arranged for home delivery by Wednesday morning.
+* **Appointments:** Transport is secured for an upcoming cardiology appointment next Thursday. The agent noted a specific question regarding compression stockings to be addressed by the cardiologist. An eye appointment is also scheduled for next month.
+* **Physical Activity:** The agent encouraged small, realistic goals, such as standing up from his chair three times during television commercials to rebuild strength.
+
+**Caregiver Support:**
+The daughter provides comprehensive care, including medication management, meal preparation, and monitoring vitals. The agent commended her dedication and confirmed that the next follow-up call is scheduled for Friday at 2:00 PM."""
+text_words = 214
+text_tokens = 286
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 800
+text = """
+This summary outlines a wellness check-in call between a Community Health Monitoring Program agent, Mr. Harrison (the patient), and his daughter (the primary caregiver).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (worse in the mornings and after lunch) and increased fatigue, necessitating more frequent naps. He also reported a mild headache following a recent medication dosage change, which resolved with hydration. His blood pressure remains stable and within a healthy range.
+
+**Medication and Care Management**
+The caregiver manages Mr. Harrison’s medication via a weekly pill organizer, ensuring strict adherence. Mr. Harrison noted a bitter aftertaste from a specific morning medication; the agent advised taking it with juice to mitigate this. Regarding physical therapy, the agent encouraged Mr. Harrison to set small goals, such as standing from his armchair three times during television commercials, to rebuild stamina.
+
+**Logistics and Upcoming Appointments**
+* **Supplies:** The caregiver noted a shortage of adult incontinence pads. The agent arranged for a home delivery by Wednesday morning.
+* **Cardiology:** Transport is already organized for an upcoming appointment next Thursday. The agent noted a specific request for the cardiologist to discuss when Mr. Harrison can stop wearing his left-leg compression stocking.
+* **Ophthalmology:** An eye appointment is scheduled for next month; the patient will note his occasional vision blurring to discuss with the specialist.
+* **Follow-up:** The next wellness check-in call is scheduled for this Friday at 2:00 PM.
+
+**Psychosocial Observations**
+The conversation highlights a strong support system, with the daughter providing attentive daily care. Mr. Harrison expressed some anxiety regarding upcoming MRI scans and frustration with his reduced physical independence, though he remains motivated by long-term goals, such as walking in his garden in the spring."""
+text_words = 309
+text_tokens = 412
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 250
+text = """
+A health coordinator from the Community Health Monitoring Program conducted a wellness check-in with Mr. Harrison and his daughter, his primary caregiver. 
+
+The caregiver reported that while Mr. Harrison’s mobility has improved, he is experiencing persistent lower back pain (worse in the mornings and after lunch) and increased fatigue. His medication adherence is consistent, though he experienced a mild headache following a dosage change. The agent addressed a need for incontinence supplies by arranging a home delivery for Wednesday morning.
+
+During a direct conversation with Mr. Harrison, several key points were discussed:
+* **Physical Health:** He reported a dull ache in his lower spine and difficulty with stamina. The agent encouraged using a heating pad and set a small goal for him to perform standing exercises during television commercials.
+* **Medication & Nutrition:** To mitigate a bitter aftertaste from his morning medication, the agent suggested taking it with juice. His blood pressure remains stable at approximately 120/80.
+* **Upcoming Appointments:** Transport is arranged for his cardiology appointment next Thursday. The agent noted that Mr. Harrison's question regarding his compression stocking will be directed to the specialist. He also has an upcoming eye exam.
+* **Sleep & Routine:** To address nighttime awakenings, the agent suggested moving his evening chamomile tea to an earlier time.
+
+The call concluded with the next check-in scheduled for Friday at 2:00 PM."""
+text_words = 234
+text_tokens = 309
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 200
+text = """
+A health coordinator from the Community Health Monitoring Program conducted a wellness check-in with Mr. Harrison and his daughter, his primary caregiver. 
+
+The caregiver reported that while Mr. Harrison's mobility is improving, he is experiencing persistent lower back pain and increased fatigue. His medication adherence is consistent, though he experienced a mild headache recently. To assist with care, the agent arranged for a home delivery of incontinence pads by Wednesday morning.
+
+During a direct conversation, Mr. Harrison discussed his dull spinal ache, his struggle with reduced stamina, and his upcoming cardiology appointment. He expressed anxiety regarding an upcoming MRI and a question about his compression stocking. The agent provided practical advice, such as using a heating pad, adjusting his fluid intake to improve sleep, and using orange juice to mitigate a metallic taste from his medication. They also set a small physical goal: standing up three times during a morning television program.
+
+The call concluded with the agent scheduling a follow-up check-in for Friday at 2:00 PM. The caregiver confirmed they have the emergency helpline number available, and the session ended with a plan to address Mr. Harrison's specific medical concerns during his upcoming specialist visits."""
+text_words = 200
+text_tokens = 259
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 700
+text = """
+This summary outlines a wellness check-in call between a Community Health Monitoring Program agent, Mr. Harrison (the patient), and his daughter (the primary caregiver).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (described as a dull ache) that worsens when shifting weight or standing up in the morning. He is also experiencing increased fatigue, necessitating more daytime naps, and occasional mild headaches. His blood pressure remains stable and within a healthy range (approximately 120/80).
+
+**Medication and Nutrition**
+The patient is adherent to his medication schedule, managed by his daughter. He noted a mild metallic aftertaste from a specific morning pill, which the agent suggested mitigating with juice. His diet is healthy, consisting of light meals like soup or fish, and he takes daily calcium and vitamin D supplements.
+
+**Care Coordination and Logistics**
+*   **Supplies:** The caregiver reported a shortage of adult incontinence pads. The agent arranged for a home delivery by Wednesday morning.
+*   **Appointments:** A cardiology appointment is scheduled for next Thursday, with medical transport already booked. An eye doctor appointment is also scheduled for next month.
+*   **Follow-up:** The agent will address Mr. Harrison's question regarding his compression stocking with the cardiologist. The next wellness check-in call is scheduled for this Friday at 2:00 PM.
+
+**Recovery Goals and Mental Well-being**
+The agent encouraged Mr. Harrison to set small, realistic physical goals, such as standing up from his armchair three times during a television program to rebuild strength. Mr. Harrison expressed a long-term goal of walking in his garden by spring. The conversation highlighted the strong support system provided by his daughter, which contributes significantly to his emotional and physical stability."""
+text_words = 300
+text_tokens = 401
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 350
+text = """
+A health coordinator from the Community Health Monitoring Program conducted a wellness check-in with Mr. Harrison and his daughter, his primary caregiver. 
+
+The caregiver reported that while Mr. Harrison’s mobility has improved, he is experiencing persistent lower back pain (worse in the mornings and after lunch) and increased fatigue. His medication adherence is consistent, though he experienced a mild headache following a dosage change. The caregiver also noted a need for adult incontinence pads, which the agent arranged to have delivered by Wednesday morning.
+
+During a direct conversation with Mr. Harrison, several key points were addressed:
+* **Physical Health:** He described his back pain as a dull ache when shifting weight. The agent suggested using a heating pad and set a small goal for him to perform standing exercises during television commercials to rebuild stamina.
+* **Medication & Nutrition:** Mr. Harrison noted a bitter aftertaste from a morning pill; the agent advised taking it with juice. His blood pressure remains stable (averaging 120/81), and his diet is healthy.
+* **Sleep & Vision:** To address nighttime awakenings, the agent suggested moving his evening chamomile tea to an earlier time. He also noted occasional eye fatigue, which he was advised to discuss at his upcoming ophthalmology appointment.
+* **Upcoming Appointments:** Transport is organized for his cardiology appointment next Thursday. The agent noted that Mr. Harrison's question regarding his compression stocking should be prioritized during that visit.
+
+The call concluded with the agent confirming the next follow-up check-in for Friday at 2:00 PM. The caregiver expressed gratitude for the support and the coordinated supply delivery."""
+text_words = 271
+text_tokens = 355
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 600
+text = """
+This summary outlines a wellness check-in call between a Community Health Monitoring Program agent, Mr. Harrison (the patient), and his daughter (the primary caregiver).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (worse in the mornings and after lunch) and increased fatigue, necessitating more frequent naps. He also reported a mild headache following a recent medication dosage change, which resolved with hydration. His blood pressure remains stable and within a healthy range.
+
+**Medication and Care Management**
+The caregiver manages Mr. Harrison’s medication via a weekly pill organizer, ensuring strict adherence. Mr. Harrison noted a bitter aftertaste from a specific morning medication; the agent advised taking it with juice to mitigate this. Regarding physical therapy, the agent encouraged Mr. Harrison to set small, realistic goals, such as performing three standing exercises from his armchair during television commercials.
+
+**Logistics and Upcoming Appointments**
+Several upcoming medical needs were addressed:
+* **Cardiology:** Transport is already arranged for his appointment next Thursday. The agent noted a specific request for the cardiologist to discuss when Mr. Harrison can stop wearing his left-leg compression stocking.
+* **Ophthalmology:** An eye appointment is scheduled for next month; the patient will track his occasional vision blurring to discuss with the specialist.
+* **Supplies:** The caregiver reported a shortage of adult incontinence pads. The agent arranged for a home delivery to arrive by Wednesday morning.
+
+**Caregiver Support and Follow-up**
+The caregiver is highly attentive, managing meals, medication, and transport. The agent commended her dedication and scheduled the next follow-up call for this coming Friday at 2:00 PM. The caregiver was reminded that the program's emergency helpline number is available on their refrigerator for any urgent issues."""
+text_words = 301
+text_tokens = 403
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 400
+text = """
+This transcript documents a wellness check-in call from a Community Health Monitoring Program agent to Mr. Harrison and his primary caregiver (his daughter).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved, he is experiencing increased fatigue and persistent lower back pain, which is most acute in the mornings and after lunch. He also reported a mild headache following a recent medication dosage change, which resolved with hydration. His blood pressure remains stable and within a healthy range.
+
+**Medication and Care Management**
+The caregiver manages Mr. Harrison’s medication via a weekly pill organizer, ensuring strict adherence. Mr. Harrison noted a bitter aftertaste from one specific morning medication; the agent advised taking it with juice to mitigate this. Regarding physical activity, the agent encouraged Mr. Harrison to set small, realistic goals, such as performing standing exercises during television commercials to rebuild stamina.
+
+**Logistics and Upcoming Appointments**
+Several logistical items were addressed:
+* **Supplies:** The caregiver noted a shortage of adult incontinence pads. The agent arranged for a home delivery by Wednesday morning.
+* **Cardiology Appointment:** Transport is already organized for his upcoming cardiology visit next Thursday. The agent noted that Mr. Harrison’s question regarding his compression stocking should be prioritized during this consultation.
+* **Eye Appointment:** An upcoming ophthalmology visit is scheduled for next month; the agent advised Mr. Harrison to note his recent eye fatigue for the specialist.
+
+**Plan and Follow-up**
+The call concluded with a plan to shift Mr. Harrison's evening tea consumption to an earlier hour to help reduce nighttime awakenings. The agent scheduled the next follow-up call for this coming Friday at 2:00 PM. The caregiver confirmed they have the emergency helpline number readily available."""
+text_words = 294
+text_tokens = 389
+
+[[results]]
+type = "Compressed Dialogue"
+date = 2026-11-04
+prompt_id = "NA"
+data_id = "d003"
+source_llm = "Gemma26B"
+target_words = 500
+text = """
+This transcript documents a wellness check-in call from a Community Health Monitoring Program agent to Mr. Harrison and his primary caregiver (his daughter).
+
+**Health Status and Symptoms**
+Mr. Harrison is recovering from a major medical procedure. While his mobility has improved slightly, he is experiencing persistent lower back pain (worse in the morning and after lunch) and increased fatigue. He also reported a mild headache following a recent medication dosage change, which resolved with hydration. His blood pressure remains stable at approximately 120/80.
+
+**Medication and Care Management**
+The caregiver manages Mr. Harrison’s medication via a weekly pill organizer, ensuring adherence. Mr. Harrison noted a bitter aftertaste from a specific morning medication; the agent advised taking it with juice to mitigate this. Regarding physical therapy, the agent encouraged Mr. Harrison to set small goals, such as standing from his chair three times during television commercials, to rebuild stamina.
+
+**Logistics and Upcoming Appointments**
+* **Supplies:** The caregiver noted a shortage of adult incontinence pads. The agent arranged for a home delivery by Wednesday morning.
+* **Cardiology:** Transport is already organized for an upcoming appointment next Thursday. The agent noted that Mr. Harrison’s question regarding his compression stocking should be prioritized during this visit.
+* **Ophthalmology:** An eye appointment is scheduled for next month; the agent advised Mr. Harrison to note his recent eye fatigue for the specialist.
+* **Follow-up:** The next wellness check-in call is scheduled for this Friday at 2:00 PM.
+
+**Social and Emotional Well-being**
+The conversation highlights a strong support system, with the daughter providing comprehensive care, including meal preparation and medication management. Mr. Harrison expressed some anxiety regarding upcoming medical scans and the loss of independence, but the agent provided emotional support and encouraged him to focus on long-term goals, such as walking in his garden in the spring."""
+text_words = 311
+text_tokens = 417
