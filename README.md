@@ -28,16 +28,16 @@ python -m vllm.entrypoints.openai.api_server \
     --enable-prefix-caching \
     --port 8000
 ```
-Then run the script, which will processes:
-- two LLM configurations (without thinking and with thinking),
-- three types of compression prompts,
-- three sample dialogs,
-- 15 different target token counts after compression.
-
-This gives 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
-
 Example script run:
 `uv run utils/compress_Gemma26B.py data/prompts.compress.toml "data/data.*.toml" data/compress.Gemma26B.toml`
+
+This will processes:
+- two LLM configurations (without thinking and with thinking; setup inside the script),
+- three types of compression prompts (from `prompts.compress.toml`),
+- three sample dialogs (from `"data/data.*.toml"`),
+- 15 different target token counts after compression (setup inside the script).
+
+Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
 
 ## Tool: Count the Number of Tokens and Words (Tool)
 `utils/estimate_tokens.py` - A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in data files (e.g. `data/data.d001.toml`) and compressed results (e.g. `data/compress.Gemma26B.toml`).
