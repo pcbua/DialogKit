@@ -12,7 +12,7 @@ So I decided to create a prototype - **DialogKit** is my attempt to build one.
 # What Works
 It's still early days, and only selected tools are doing anything useful.
 
-## Tool: Compress Dialogue
+## Tools: Compress Dialogue
 `utils/compress_Gemma26B.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Gemma LLM and outputs the results to a structured TOML file.
 The script results have been added to the repository at: `data/compress.Gemma26B.toml`.
 
@@ -38,6 +38,13 @@ This will processes:
 - 15 different target token counts after compression (setup inside the script: `TARGET_WORDS`).
 
 Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
+---
+`utils/compress_SkLLM.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Scikit and outputs the results to a structured TOML file.
+The script results have been added to the repository at: `data/compress.SkLLM.toml`.
+It was inspired by the article [Using LLM Summarization in Your Scikit-Learn Pipelines with Scikit-LLM](https://www.kdnuggets.com/using-llm-summarization-in-your-scikit-learn-pipelines-with-scikit-llm).
+
+To use it, first start LLM hosting (as above) or change script settings to use LLM in the cloud.
+Example script run: `TQDM_DISABLE=1 uv run --with 'scikit-llm>=1.4' utils/compress_SkLLM.py "data/data.*.toml" data/compress.SkLLM.toml`
 
 ## Tool: Count the Number of Tokens and Words
 `utils/estimate_tokens.py` - A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in data files (e.g. `data/data.d001.toml`) and compressed results (e.g. `data/compress.Gemma26B.toml`).
