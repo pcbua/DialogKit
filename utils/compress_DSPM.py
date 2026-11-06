@@ -27,7 +27,9 @@ LLM_CONFIGS = {
         "BASE_URL":    "http://localhost:8000",
         "MODEL_NAME":  "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit",
         "API_KEY":     "EMPTY",
-        "CONCURRENCY": 1, # DSPM is sequential :(
+        "CONCURRENCY": 32, # host with --max-num-seqs 32
+        # DSPM may use more GPU memory, it works per turn so I've free a little serving with smaller --max-model-len 4096
+        # dspm_mem.add_turn is sequential but we will split per dialogue & target words
     },
 }
 
@@ -60,6 +62,18 @@ def iterate_inputs(paths: list):
 def iterate_llms(llm_configs: dict):
     yield from llm_configs.items()
 
+def process_with_dspm(dspm_mem, data_text: str) -> str:
+    # extract dialogue lines (turns) from data_text
+    for line in data_text.split('\n'):
+        if ":" in line:
+            role, text = line.split(":", 1)
+            if role.upper() == "AGENT":
+                dspm_mem.add_turn("assistant", text) # not sure if "Agent:" should be skipped here; text - skipped, line - included
+            else:
+                dspm_mem.add_turn("user", line) # we have to take the whole line because dialogues can have more than two participants
+    # extract compressed prompt
+    return dspm_mem.get_context(query="What are the rules?") # DSPM accepts natural language
+
 async def process_with_llm(semaphore, llm_client, model_name: str, data_text: str, n_words: int):
     result_str = None
     # use DSPM to compress text
@@ -70,16 +84,8 @@ async def process_with_llm(semaphore, llm_client, model_name: str, data_text: st
                 llm_client=llm_client,
                 model=model_name,
             )
-            # extract dialogue lines (turns) from data_text
-            for line in data_text.split('\n'):
-                if ":" in line:
-                    role, text = line.split(":", 1)
-                    if role.upper() == "AGENT":
-                        dspm_mem.add_turn("assistant", text) # not sure if "Agent:" should be skipped here; text - skipped, line - included
-                    else:
-                        dspm_mem.add_turn("user", line) # we have to take the whole line because dialogues can have more than two participants
-            # extract compressed prompt
-            result_str = dspm_mem.get_context(query="What are the rules?") # DSPM accepts natural language
+            # run the blocking dspm_mem.add_turn workflow in a separate thread pool
+            result_str = await asyncio.to_thread( process_with_dspm, dspm_mem, data_text ) # run on a single document
         except Exception as e:
             print(f"Error: An unexpected error occurred during DSPM call: {e}", file=sys.stderr)
             result_str = None
