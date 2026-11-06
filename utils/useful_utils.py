@@ -4,25 +4,49 @@
 #   import useful_utils as uu
 import sys
 import time
+import inspect
 from functools import wraps
 from pathlib import Path
-from typing import Any, Callable, Union
+from typing import Any, Callable, TypeVar, Union
 import importlib, importlib.metadata
 import requests
 from requests.exceptions import ConnectionError, HTTPError
 import re
 
-def time_it(func: Callable) -> Callable:
+F = TypeVar("F", bound=Callable[..., Any])
+
+def time_it(func: F) -> F:
     """decorator to measure and print the execution time of a function"""
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        start_time = time.perf_counter()
-        result = func(*args, **kwargs)
-        end_time = time.perf_counter()
-        elapsed = end_time - start_time
-        print(f"[{func.__name__}] executed in {elapsed:.4f} seconds")
-        return result
-    return wrapper
+    def _print_time(elapsed: float) -> None:
+        if elapsed < 60:
+            print(f"[{func.__name__}] Execution time: {elapsed:.3f} seconds")
+        elif elapsed < 3600:
+            minutes = elapsed / 60
+            print(f"[{func.__name__}] Execution time: {minutes:.2f} minutes")
+        else:
+            hours = elapsed / 3600
+            print(f"[{func.__name__}] Execution time: {hours:.2f} hours")
+
+    if inspect.iscoroutinefunction(func):
+        @wraps(func)
+        async def async_wrapper(*args: Any, **kwargs: Any) -> Any:
+            start_time = time.perf_counter()
+            try:
+                return await func(*args, **kwargs)
+            finally:
+                end_time = time.perf_counter()
+                _print_time(end_time - start_time)
+        return async_wrapper  # type: ignore
+    else:
+        @wraps(func)
+        def sync_wrapper(*args: Any, **kwargs: Any) -> Any:
+            start_time = time.perf_counter()
+            try:
+                return func(*args, **kwargs)
+            finally:
+                end_time = time.perf_counter()
+                _print_time(end_time - start_time)
+        return sync_wrapper  # type: ignore
 
 def count_words(text: str) -> int:
     """counts words by splitting on whitespace and common punctuation/symbols that LLM tokenizers typically break apart"""

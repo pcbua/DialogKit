@@ -191,6 +191,7 @@ async def process_all(semaphore, llm_client, prompts_toml, input_files, llm_conf
     if tasks:
         await asyncio.gather(*tasks)
 
+@uu.time_it
 async def main() -> None:
     args = parse_arguments()
     prompts_path = Path( args.prompts_path )

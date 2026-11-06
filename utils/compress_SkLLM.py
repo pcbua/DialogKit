@@ -112,6 +112,7 @@ async def process_all(semaphore, input_files, llm_config_name, llm_config, llm_r
     if tasks:
         await asyncio.gather(*tasks)
 
+@uu.time_it
 async def main() -> None:
     args = parse_arguments()
     output_path  = Path( args.output_path )

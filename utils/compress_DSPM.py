@@ -3,7 +3,7 @@
 # About: A utility script that use DSPM to compresses text from [[data]] and outputs the results to a structured TOML file.
 # Inspired by: https://github.com/zatchbell1311-wq/Kernl
 # How to use it:
-#   uv run --with 'dspm-memory>=0.2.4' utils/compress_DSPM.py "data/data.*.toml" data/compress.DSPM.toml
+#   uv run --with 'dspm-memory>=0.3' utils/compress_DSPM.py "data/data.*.toml" data/compress.DSPM.toml
 import sys
 import argparse
 from pathlib import Path
@@ -13,8 +13,8 @@ import asyncio
 import glob
 from datetime import date
 import useful_utils as uu
-from dspm import DSPMMemory
-from openai import OpenAI, AsyncOpenAI
+from dspm import AsyncDSPMMemory
+from openai import AsyncOpenAI
 
 DEBUG = True # poor's people debugging
 
@@ -28,8 +28,6 @@ LLM_CONFIGS = {
         "MODEL_NAME":  "cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit",
         "API_KEY":     "EMPTY",
         "CONCURRENCY": 32, # host with --max-num-seqs 32
-        # DSPM may use more GPU memory, it works per turn so I've free a little serving with smaller --max-model-len 4096
-        # dspm_mem.add_turn is sequential, but we will parallelize it according to the dialogue and target words
     },
 }
 
@@ -62,30 +60,27 @@ def iterate_inputs(paths: list):
 def iterate_llms(llm_configs: dict):
     yield from llm_configs.items()
 
-def process_with_dspm(dspm_mem, data_text: str) -> str:
+async def process_with_dspm(dspm_mem, data_text: str) -> str:
     # extract dialogue lines (turns) from data_text
     for line in data_text.split('\n'):
         if ":" in line:
             role, text = line.split(":", 1)
-            if role.upper() == "AGENT":
-                dspm_mem.add_turn("assistant", text) # not sure if "Agent:" should be skipped here; text - skipped, line - included
-            else:
-                dspm_mem.add_turn("user", line) # we have to take the whole line because dialogues can have more than two participants
+            # not sure how to handle dialogues involving more than two participants, here's one option:
+            await dspm_mem.async_add_turn("user" if role.strip().upper() != "AGENT" else "assistant", line.strip())
     # extract compressed prompt
-    return dspm_mem.get_context(query="What are the rules?") # DSPM accepts natural language
+    return await dspm_mem.async_get_context(query="Summarize key decisions and constraints") # DSPM accepts natural language; also works: query="What are the rules?"
 
 async def process_with_llm(semaphore, llm_client, model_name: str, data_text: str, n_words: int):
     result_str = None
     # use DSPM to compress text
     async with semaphore:
         try:
-            dspm_mem = DSPMMemory(
+            dspm_mem = AsyncDSPMMemory(
                 budget=round(n_words * 1.625), # estimated number of tokens, based on Gemma 4 26B stats
                 llm_client=llm_client,
                 model=model_name,
             )
-            # run the blocking dspm_mem.add_turn workflow in a separate thread pool
-            result_str = await asyncio.to_thread( process_with_dspm, dspm_mem, data_text ) # run on a single document
+            result_str = await process_with_dspm(dspm_mem, data_text) # run on a single dialogue; for non async DSPMMemory use: await asyncio.to_thread(..)
         except Exception as e:
             print(f"Error: An unexpected error occurred during DSPM call: {e}", file=sys.stderr)
             result_str = None
@@ -128,6 +123,7 @@ async def process_all(semaphore, llm_client, input_files, llm_config_name, llm_c
     if tasks:
         await asyncio.gather(*tasks)
 
+@uu.time_it
 async def main() -> None:
     args = parse_arguments()
     output_path  = Path( args.output_path )
@@ -152,7 +148,7 @@ async def main() -> None:
         semaphore = asyncio.Semaphore(concurrency)
         semaphore.limit = concurrency
 
-        llm_client = OpenAI(base_url=f"{base_url}/v1", api_key=llm_config.get("API_KEY", "EMPTY")) # TBD: later update to AsyncOpenAI()
+        llm_client = AsyncOpenAI(base_url=f"{base_url}/v1", api_key=llm_config.get("API_KEY", "EMPTY"))
         await process_all(semaphore, llm_client, input_files, llm_config_name, llm_config, llm_results)
 
     # save output TOML file
