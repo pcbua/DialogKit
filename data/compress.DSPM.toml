@@ -46,6 +46,8 @@ text = """
 [ENT] huge red circle on the kitchen wall calendar for the upcoming Tuesday morning appointment
 [ENT] digital cuff used for blood pressure monitoring by the patient's daughter every single morning
 [STR] Patient evening meal routine occurs around 6:00 PM consisting of light food like soup or baked fish with vegetables"""
+text_words = 531
+text_tokens = 714
 
 [[results]]
 type = "Compressed Dialogue"
@@ -89,6 +91,8 @@ text = """
 [ENT] pharmacy is the location where adult incontinence pads need to be purchased
 [STR] The van provides assistance for the patient to step carefully into the vehicle
 [STR] daily routine includes applying the digital cuff every single morning right after waking up"""
+text_words = 520
+text_tokens = 699
 
 [[results]]
 type = "Compressed Dialogue"
@@ -135,6 +139,8 @@ text = """
 [STR] Weekly schedule: Nurse call regarding weight gain, swelling, night breathlessness; water pill move to morning; bathroom grab bars installation.
 [ENT] Patient reports foggy vision in the left eye, described as looking through a dirty window
 [STR] Workflow requires a pre-operative check-up with the eye clinic before the scheduled cataract surgery."""
+text_words = 573
+text_tokens = 796
 
 [[results]]
 type = "Compressed Dialogue"
@@ -179,6 +185,8 @@ text = """
 [ENT] Physiotherapy sessions conducted during the previous week totaling 2 sessions for the patient
 [ENT] Kuba is the young man who conducted physiotherapy sessions with the patient using a cane.
 [STR] Symptom pattern: sleep onset, followed by chest tightness, relieved by moving to the armchair"""
+text_words = 559
+text_tokens = 778
 
 [[results]]
 type = "Compressed Dialogue"
@@ -218,6 +226,8 @@ text = """
 [EQ] Call the number on the card or emergency services if weight increases more than 1 kilo overnight
 [EQ] echocardiogram duration is approximately forty minutes and the scheduled time is 10:30 on next Wednesday
 [ENT] Kuba is the young man who conducted the patient's walking exercises with a cane."""
+text_words = 469
+text_tokens = 624
 
 [[results]]
 type = "Compressed Dialogue"
@@ -263,6 +273,8 @@ text = """
 [ENT] Physiotherapy sessions conducted during the previous week for the patient
 [ENT] Blood sugar monitoring process involving daily morning measurements performed by Julia for the patient
 [ENT] small home-safety service provided by the program to assist with urgent safety needs"""
+text_words = 562
+text_tokens = 765
 
 [[results]]
 type = "Compressed Dialogue"
@@ -304,6 +316,8 @@ text = """
 [ENT] Patient claims to have an elephant-like memory specifically for events occurring from 1985 onwards.
 [EQ] Weight increase threshold: more than 1 kilo overnight triggers immediate contact with the number on the card.
 [EQ] Echocardiogram procedure duration is approximately forty minutes"""
+text_words = 482
+text_tokens = 650
 
 [[results]]
 type = "Compressed Dialogue"
@@ -338,6 +352,8 @@ text = """
 [DEC] Patient disputes
 [DEC] Postponement of
 [DEC] Cataract 24th"""
+text_words = 77
+text_tokens = 192
 
 [[results]]
 type = "Compressed Dialogue"
@@ -381,6 +397,8 @@ text = """
 [ENT] Caregiver reporting patient sleep disturbances, pillow usage changes, and medication non-compliance issues.
 [STR] Workflow: Nurse calls regarding weight gain, swelling, and night breathlessness; doctor consults on moving water pill to morning.
 [EQ] Call the number on the card or emergency services if weight increases more than 1 kilo overnight or breathlessness worsens."""
+text_words = 557
+text_tokens = 767
 
 [[results]]
 type = "Compressed Dialogue"
@@ -419,6 +437,8 @@ text = """
 [DEC] Utilize a professional transport service
 [ENT] Mr. Nowak is the patient being discussed regarding fluid buildup and potential medication changes
 [EQ] Weight measurement on Monday was 83.4 kilos and this morning was 85.1 kilos"""
+text_words = 191
+text_tokens = 326
 
 [[results]]
 type = "Compressed Dialogue"
@@ -462,6 +482,8 @@ text = """
 [EQ] Total count of two physiotherapy sessions completed last week
 [ENT] Bathroom safety equipment including grab bars and non-slip mat for fall prevention
 [ENT] Julia holds the calendar for tracking purposes and managing scheduled tasks or events."""
+text_words = 255
+text_tokens = 405
 
 [[results]]
 type = "Compressed Dialogue"
@@ -509,6 +531,8 @@ text = """
 [EQ] Call emergency services or the number on the card if weight increases more than 1 kilo overnight or breathlessness worsens.
 [EQ] Blood sugar readings recorded as 9.1 on Friday and 10.2 on Thursday after visit with Uncle Staszek
 [EQ] The amount of cake consumed was exactly a third of a cake"""
+text_words = 603
+text_tokens = 819
 
 [[results]]
 type = "Compressed Dialogue"
@@ -546,6 +570,8 @@ text = """
 [STR] Physiotherapy activity involves walking up and down using a cane.
 [EQ] Total count of physiotherapy sessions completed is exactly 2 sessions
 [ENT] Bathroom grab bars installation scheduled for this week to improve home safety and accessibility."""
+text_words = 413
+text_tokens = 565
 
 [[results]]
 type = "Compressed Dialogue"
@@ -588,6 +614,8 @@ text = """
 [ENT] grab bars and non-slip mat are identified as necessary items for bathroom safety
 [STR] Pre-operative workflow requires an eye clinic check-up and a stability note from the cardiologist.
 [EQ] Total count of two physiotherapy sessions held last week"""
+text_words = 345
+text_tokens = 502
 
 [[results]]
 type = "Compressed Dialogue"
@@ -643,6 +671,8 @@ text = """
 [ENT] Cataract identified as the cause for the foggy vision in the left eye
 [ENT] The bathroom floor is identified as a slippery surface where the patient almost slid on Sunday.
 [ENT] Physiotherapy session conducted on Thursday where the patient stopped after 20 minutes due to fatigue"""
+text_words = 737
+text_tokens = 996
 
 [[results]]
 type = "Compressed Dialogue"
@@ -686,6 +716,8 @@ text = """
 [DEC] Fluid control
 [ENT] Julia holds the calendar for managing schedules and tasks
 [EQ] The amount consumed was exactly a third of a cake"""
+text_words = 117
+text_tokens = 258
 
 [[results]]
 type = "Compressed Dialogue"
@@ -745,6 +777,8 @@ text = """
 [ENT] Kuba is the young man conducting physiotherapy sessions with the patient
 [ENT] Patient reports vision issues in the left eye, described as foggy like looking through a dirty window.
 [STR] Symptom pattern: sleep onset, followed by chest tightness, then relief when moving to the armchair"""
+text_words = 764
+text_tokens = 1043
 
 [[results]]
 type = "Compressed Dialogue"
@@ -789,6 +823,8 @@ text = """
 [ENT] huge red circle on the kitchen wall calendar marking the upcoming Tuesday morning appointment
 [ENT] The patient refers to a serious operation that occurred during the winter season.
 [STR] daily routine involves applying the digital cuff every single morning right after waking up"""
+text_words = 540
+text_tokens = 729
 
 [[results]]
 type = "Compressed Dialogue"
@@ -833,6 +869,8 @@ text = """
 [ENT] pharmacy is the location where adult incontinence pads need to be purchased
 [STR] daily routine: digital cuff application occurs every single morning right after waking up
 [STR] Proposed activity: standing up from armchair three times during commercials of a favorite morning show"""
+text_words = 556
+text_tokens = 742
 
 [[results]]
 type = "Compressed Dialogue"
@@ -871,6 +909,8 @@ text = """
 [ENT] upcoming visit with the eye doctor scheduled for next month
 [EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality.
 [STR] daily routine involves applying the digital cuff every single morning immediately after waking up"""
+text_words = 444
+text_tokens = 600
 
 [[results]]
 type = "Compressed Dialogue"
@@ -912,6 +952,8 @@ text = """
 [EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality
 [ENT] huge red circle on the kitchen wall calendar for Tuesday morning
 [STR] daily routine includes applying the digital cuff every single morning right after waking up"""
+text_words = 523
+text_tokens = 695
 
 [[results]]
 type = "Compressed Dialogue"
@@ -946,6 +988,8 @@ text = """
 [ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
 [ENT] Community Health Monitoring Program is the organization conducting the recovery and daily well-being check-in calls.
 [EQ] Blood pressure reading is usually around 120/81 mmHg, with minor fluctuations based on sleep quality."""
+text_words = 363
+text_tokens = 500
 
 [[results]]
 type = "Compressed Dialogue"
@@ -979,6 +1023,8 @@ text = """
 [STR] Medication administration schedule occurs every morning and evening via a pill organizer managed every Sunday night
 [ENT] Caregiver reporting increased fatigue and change in nap frequency for the patient
 [EQ] Blood pressure is usually around 120/81 mmHg, with minor fluctuations based on sleep quality"""
+text_words = 380
+text_tokens = 512
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1011,6 +1057,8 @@ text = """
 [ENT] whole wheat bread and strawberry jam used for morning meal preparation
 [ENT] direct helpline number located on the fridge at eye level for urgent matters before Friday
 [STR] daily routine includes applying the digital cuff every single morning right after waking up"""
+text_words = 291
+text_tokens = 400
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1049,6 +1097,8 @@ text = """
 [ENT] Community Health Monitoring Program is the organization conducting the recovery and daily well-being check-in calls.
 [EQ] Blood pressure is usually around 120/81 mmHg, with minor fluctuations based on sleep quality
 [ENT] ophthalmologist is the specialist to consult regarding the reported eye fatigue symptoms"""
+text_words = 473
+text_tokens = 633
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1089,6 +1139,8 @@ text = """
 [ENT] huge red circle on the kitchen wall calendar for Tuesday morning
 [EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality.
 [STR] daily routine involves applying the digital cuff every single morning immediately after waking up"""
+text_words = 496
+text_tokens = 672
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1121,6 +1173,8 @@ text = """
 [DEC] Mitigate mild
 [DEC] 8:00 PM
 [DEC] Patient Friday's"""
+text_words = 72
+text_tokens = 176
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1157,6 +1211,8 @@ text = """
 [STR] Medication administration schedule occurs every morning and evening via a pill organizer managed every Sunday night.
 [ENT] Caregiver reporting increased fatigue and change in nap frequency for the patient
 [EQ] Blood pressure is usually around 120/81 mmHg, with slight variations based on sleep quality"""
+text_words = 420
+text_tokens = 564
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1188,6 +1244,8 @@ text = """
 [DEC] Negotiation of a small slice is planned to
 [ENT] Direct helpline number is magneted at eye level on the fridge for emergency access
 [EQ] Blood pressure reading is usually around 120/81 mmHg, with slight variations based on sleep quality"""
+text_words = 219
+text_tokens = 329
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1214,6 +1272,8 @@ text = """
 [DEC] Patient will use a little notepad to record
 [DEC] Try consuming chamomile tea one hour 8:00 PM
 [ENT] whole wheat bread and strawberry jam used for breakfast meal"""
+text_words = 160
+text_tokens = 243
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1337,6 +1397,8 @@ text = """
 [DEC] Patient plans
 [DEC] If exercises
 [CON] Contact healthcare"""
+text_words = 325
+text_tokens = 698
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1464,6 +1526,8 @@ text = """
 [DEC] Patient plans
 [DEC] If exercises
 [CON] Contact healthcare"""
+text_words = 355
+text_tokens = 737
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1602,6 +1666,8 @@ text = """
 [ENT] Patient expresses fear of potential future inability to walk at all.
 [EQ] Frequency of wakefulness is almost every day, lasting about 1 hour or sometimes longer if night is bad.
 [ENT] weekly pillbox located on the kitchen table used for medication management"""
+text_words = 1135
+text_tokens = 1623
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1613,6 +1679,8 @@ target_words = 250
 text = """
 [CON] Seek; Maintain; Use; Stop; Knee; Avoid; Plan; Maintain; Patient; Seek; Dizziness; Tracking; Do; Do; Do; No; Concentration; Do; Seek; Contact; Avoid; If; Inform; Do; Avoid; Contact; Contact
 [DEC] Follow-up; Arrange; Patient; Patient; Offer; Patient; Team; Patient; Patient; Support; Patient; Patient; Patient; Ask; Patient; Recommend; Wait; Consult; Dizziness; Patient; Patient; Agent; Request; Aim; Patient; Perform; Patient; Patient; Patient; Mention; Add; Print; Agent; Patient; Discuss; Follow; Confirm; Patient; Prioritize; Use; Conduct; Provide; Prioritize; Discuss; Patient; Patient; Patient; Patient; Record; Patient; Communicate; Consider; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Do; Patient; Patient; Explore; Verify; Try; Patient; Revisit; Add; Patient; Patient; Arrange; Patient; Appointment; Instruct; Suggest; Patient; Patient; If; If; Patient; Patient; Patient; Patient"""
+text_words = 122
+text_tokens = 269
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1624,6 +1692,8 @@ target_words = 200
 text = """
 [CON] Maintain; Stop; Use; Maintain; Seek; Patient; Patient; Avoid; Patient; Seek; Dizziness; Daily; Seek; Do; No; Contact; Do; Avoid; Contact; Do; Seek; Do; Contact; Long; Do; Avoid; Contact
 [DEC] Request; Arrange; Patient; Team; Patient; Patient; Doctor; Offer; Agent; Patient; GP; Patient; Support; Ask; Contact; Book; Patient; Contact; Patient; Consult; Request; Patient; Patient; Patient; Agent; Patient; Discuss; Print; Agent; Patient; Aim; Patient; Confirm; Conduct; Patient; Patient; Follow; Confirm; Prioritize; Provide; Note; Consult; GP; Patient; Patient; Patient; Discuss; Patient; Patient; Patient; Patient; Arrange; Schedule; Request; Patient; Patient; Patient; Communicate; Patient; Agent; Schedule; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Do; Use; Explore; Patient; Patient; Agent; Inquire; Try; Patient; Ask; Patient; Revisit; If; Verify; Patient; Anna; Aim; Add; Instruct; Suggest; Patient; If; 7:00; If"""
+text_words = 123
+text_tokens = 272
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1757,6 +1827,8 @@ text = """
 [ENT] Knee cream supply is nearly exhausted and requires replenishment soon.
 [ENT] Symptoms reported include tiredness and knee pain affecting the patient's current state
 [ENT] Care coordinator is the primary contact for inquiring about available local assistance and eligibility options."""
+text_words = 563
+text_tokens = 975
 
 [[results]]
 type = "Compressed Dialogue"
@@ -1890,6 +1962,8 @@ text = """
 [ENT] doctor's receptionist to be contacted tomorrow for communication
 [EQ] Blood pressure tablets supply duration is 2 weeks remaining; pain medicine supply is currently sufficient.
 [ENT] physiotherapy appointment at a clinic described as being quite busy"""
+text_words = 1335
+text_tokens = 1815
 
 [[results]]
 type = "Compressed Dialogue"
@@ -2029,6 +2103,8 @@ text = """
 [EQ] Scale from zero to ten, where zero is extremely unwell and ten is feeling as well as reasonably expected
 [ENT] Bathroom floor is slippery and the shower entrance is described as awkward for the patient.
 [EQ] Patient reports a rating of six on the scale from zero to ten for current wellbeing"""
+text_words = 628
+text_tokens = 1070
 
 [[results]]
 type = "Compressed Dialogue"
@@ -2175,6 +2251,8 @@ text = """
 [EQ] Current health status is a six on the zero to ten rating scale used for daily monitoring.
 [EQ] Blood pressure tablets supply duration is 2 weeks remaining; pain medicine supply is currently sufficient.
 [ENT] blood test procedure expected to be easier than physiotherapy"""
+text_words = 814
+text_tokens = 1284
 
 [[results]]
 type = "Compressed Dialogue"
@@ -2316,6 +2394,8 @@ text = """
 [ENT] Bathroom floor is slippery and the shower entrance is described as awkward for the patient.
 [STR] Daily record includes date and notes of significant events like longer walks or poor night's sleep
 [EQ] Current health status is a six on the zero to ten scale where zero is extremely unwell"""
+text_words = 909
+text_tokens = 1372
 
 [[results]]
 type = "Compressed Dialogue"
@@ -2327,6 +2407,8 @@ target_words = 300
 text = """
 [CON] Use; Knee; Patient; Stop; Seek; Patient; Patient; Avoid; Cleaning; 20; Laundry; Seek; Dizziness; Maintain; Patient; Patient; Seek; No; Do; Knee; Contact; Seek; Contact; Contact; Do; Avoid; Do; Do; Avoid; Contact
 [DEC] Arrange; Patient; Patient; Book; Doctor; Patient; Offer; Support; Agent; Patient; Agent; Patient; Ask; Dizziness; Contact; Patient; Patient; Follow-up; Bring; Contact; Agent; Aim; Patient; Patient; Consult; Verify; Discuss; Agent; Patient; Patient; Patient; Patient; Patient; Consider; Print; Confirm; Patient; Conduct; Request; Patient; Confirm; Follow; Prioritize; Patient; Patient; Note; Provide; Maintain; Patient; Discuss; Patient; Patient; Patient; Patient; Patient; Patient; Communicate; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Patient; Agent; Patient; Patient; The; Do; Agent; Agent; Patient; Patient; Patient; Provide; Patient; Patient; Try; Patient; Revisit; If; Arrange; Perform; Consult; Add; Instruct; Suggest; Patient; The; Report; Patient; Patient; 7:00; Patient; If"""
+text_words = 131
+text_tokens = 290
 
 [[results]]
 type = "Compressed Dialogue"
@@ -2465,6 +2547,8 @@ text = """
 [DEC] If exercises
 [CON] Contact healthcare
 [ENT] Patient reports symptoms of tiredness and knee pain affecting daily functioning"""
+text_words = 396
+text_tokens = 818
 
 [[results]]
 type = "Compressed Dialogue"
@@ -2615,3 +2699,5 @@ text = """
 [ENT] Bathroom floor is slippery and shower entrance is awkward, posing potential fall risks for the patient.
 [ENT] Care coordinator is the primary contact to inquire about eligibility and available support options in the local area.
 [EQ] Current health status assessment is a six on the zero to ten scale where zero is extremely unwell"""
+text_words = 1243
+text_tokens = 1744
