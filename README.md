@@ -40,6 +40,16 @@ This will processes:
 
 Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
 
+## Tool: Compress Dialogue with DSPM and Local LLM
+
+`utils/compress_DSPM.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the DSPM and outputs the results to a structured TOML file.
+The script results have been added to the repository at: `data/compress.DSPM.toml`.
+It was inspired by the project [DSPM — memory for LLM conversations that keeps your constraints](https://github.com/zatchbell1311-wq/Kernl).
+
+To use it, first start LLM hosting (as above) or change script settings to use LLM in the cloud.
+
+Example script run: `uv run --with 'dspm-memory>=0.3' utils/compress_DSPM.py "data/data.*.toml" data/compress.DSPM.toml`
+
 ## Tool: Compress Dialogue with Scikit and Local LLM
 
 `utils/compress_SkLLM.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Scikit and outputs the results to a structured TOML file.
