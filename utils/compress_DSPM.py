@@ -29,7 +29,7 @@ LLM_CONFIGS = {
         "API_KEY":     "EMPTY",
         "CONCURRENCY": 32, # host with --max-num-seqs 32
         # DSPM may use more GPU memory, it works per turn so I've free a little serving with smaller --max-model-len 4096
-        # dspm_mem.add_turn is sequential but we will split per dialogue & target words
+        # dspm_mem.add_turn is sequential, but we will parallelize it according to the dialogue and target words
     },
 }
 
