@@ -3,6 +3,8 @@ Generate, manage, and analyze dialogues in Python. Create synthetic multi-party 
 
 **This project is work in progress (WIP).**
 
+[View Documentation](docs/index.md)
+
 # The Idea
 My work in ASR and NLP has repeatedly brought me to dialogues. Before the rise of LLMs, I was fortunate to work extensively with real-world dialogue data, and I've found it a fascinating field, though one that still lacks proven, reliable tooling.
 
@@ -12,62 +14,14 @@ So I decided to create a prototype - **DialogKit** is my attempt to build one.
 # What Works
 It's still early days, and only selected tools are doing anything useful.
 
-## Tool: Compress Dialogue with Local LLM
-`utils/compress_Gemma26B.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Gemma LLM and outputs the results to a structured TOML file.
-The script results have been added to the repository at: `data/compress.Gemma26B.toml`.
+You can try today:
 
-To use it, first start LLM hosting (as below) or change script settings to use LLM in the cloud.
-```
-python -m vllm.entrypoints.openai.api_server \
-    --model cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit \
-    --quantization compressed-tensors \
-    --dtype float16 \
-    --gpu-memory-utilization 0.95 \
-    --max-model-len 16384 \
-    --max-num-seqs 32 \
-    --enable-prefix-caching \
-    --port 8000
-```
+* Compress dialogues with: `utils/compress_<METHOD>.py`
 
-Example script run:
-`uv run utils/compress_Gemma26B.py data/prompts.compress.toml "data/data.*.toml" data/compress.Gemma26B.toml`
+# Links
 
-This will processes:
-- two LLM configurations (with and without thinking; setup inside the script: `LLM_CONFIGS`),
-- three types of compression prompts (from `data/prompts.compress.toml`),
-- three sample dialogs (from `"data/data.*.toml"`),
-- 15 different target token counts after compression (setup inside the script: `TARGET_WORDS`).
-
-Above run will execute 270 LLM queries (= 2\*3\*3\*15), and this may take some time.
-
-## Tool: Compress Dialogue with DSPM and Local LLM
-
-`utils/compress_DSPM.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the DSPM and outputs the results to a structured TOML file.
-The script results have been added to the repository at: `data/compress.DSPM.toml`.
-It was inspired by the project [DSPM — memory for LLM conversations that keeps your constraints](https://github.com/zatchbell1311-wq/Kernl).
-
-To use it, first start LLM hosting (as above) or change script settings to use LLM in the cloud.
-
-Example script run: `uv run --with 'dspm-memory>=0.3' utils/compress_DSPM.py "data/data.*.toml" data/compress.DSPM.toml`
-
-## Tool: Compress Dialogue with Scikit and Local LLM
-
-`utils/compress_SkLLM.py` - A utility script that compresses text from data files (e.g. `data/data.d001.toml`) using the Scikit and outputs the results to a structured TOML file.
-The script results have been added to the repository at: `data/compress.SkLLM.toml`.
-It was inspired by the article [Using LLM Summarization in Your Scikit-Learn Pipelines with Scikit-LLM](https://www.kdnuggets.com/using-llm-summarization-in-your-scikit-learn-pipelines-with-scikit-llm).
-
-To use it, first start LLM hosting (as above) or change script settings to use LLM in the cloud.
-
-Example script run: `TQDM_DISABLE=1 uv run --with 'scikit-llm>=1.4' utils/compress_SkLLM.py "data/data.*.toml" data/compress.SkLLM.toml`
-
-## Tool: Count the Number of Tokens and Words
-`utils/estimate_tokens.py` - A utility script that enhances a TOML file by automatically calculating and appending word counts and LLM token counts for text entries in data files (e.g. `data/data.d001.toml`) and compressed results (e.g. `data/compress.Gemma26B.toml`).
-
-To use it, first start LLM hosting (as above) or change script settings to use LLM in the cloud.
-You can run it on a generated TOML file with compressed prompts. This is usually a very quick.
-
-Example script run:
-`uv run python utils/estimate_tokens.py data/compress.Gemma26B.toml data/compress.Gemma26B.new.toml`
+* Repo: [DSPM — memory for LLM conversations that keeps your constraints](https://github.com/zatchbell1311-wq/Kernl)
+* Article: [Using LLM Summarization in Your Scikit-Learn Pipelines with Scikit-LLM](https://www.kdnuggets.com/using-llm-summarization-in-your-scikit-learn-pipelines-with-scikit-llm)
 
 # Brain Storm
 At this stage, it looks like a wish list. However, it's worth writing down long-term goals and any ideas.
