@@ -1,16 +1,15 @@
 # DialogKit (WIP)
 Generate, manage, and analyze dialogues in Python. Create synthetic multi-party conversations, store them in a clean structured format, and run analytics on turns, speakers, and content. Ideal for NLP research, chatbot testing, and training-data pipelines.
 
-**This project is work in progress (WIP).**
-
 # Dependences
 
 1. Check `pyproject.toml`
-2. Many scripts need an LLM.
+2. Any specific additionally required modules are listed at the beginning of each script. For example: `uv run --with 'dspm-memory>=0.3' ...`.
+3. Many scripts require **LLM**. By default, a locally hosted Gemma 4 26B is configured – this can be changed to a cloud-based LLM of your choice.
 
 ## LLM Server
 
-I develop and test *DialogKit* using local AI (Gemma 4 26B). Hosted with vLLM; e.g.:
+I develop and test **DialogKit** using local AI (Gemma 4 26B). Hosted with vLLM; e.g.:
 
 ```
 python -m vllm.entrypoints.openai.api_server \
