@@ -1,4 +1,4 @@
-# DialogKit (WIP)
+# DialogKit
 Generate, manage, and analyze dialogues in Python. Create synthetic multi-party conversations, store them in a clean structured format, and run analytics on turns, speakers, and content. Ideal for NLP research, chatbot testing, and training-data pipelines.
 
 **This project is work in progress (WIP).**
@@ -16,6 +16,7 @@ It's still early days, and only selected tools are doing anything useful.
 
 You can try today:
 
+* [View Documentation](docs/index.md)
 * Compress dialogues with: `utils/compress_<METHOD>.py`
 
 # Links
