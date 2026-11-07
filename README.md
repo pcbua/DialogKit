@@ -1,4 +1,4 @@
-![DialogKit Logo](docs/img/DialogKit.180.webp)
+<img src="docs/img/DialogKit.180.webp" alt="DialogKit Logo" align="left" style="margin-right: 15px;">
 
 # DialogKit
 Generate, manage, and analyze dialogues in Python. Create synthetic multi-party conversations, store them in a clean structured format, and run analytics on turns, speakers, and content. Ideal for NLP research, chatbot testing, and training-data pipelines.
@@ -6,6 +6,8 @@ Generate, manage, and analyze dialogues in Python. Create synthetic multi-party 
 **This project is work in progress (WIP).**
 
 [View Documentation](docs/index.md)
+
+<br clear="left" />
 
 # The Idea
 My work in ASR and NLP has repeatedly brought me to dialogues. Before the rise of LLMs, I was fortunate to work extensively with real-world dialogue data, and I've found it a fascinating field, though one that still lacks proven, reliable tooling.
