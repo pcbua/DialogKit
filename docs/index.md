@@ -1,11 +1,14 @@
 <img src="img/DialogKit.180.webp" alt="DialogKit Logo" align="left" style="margin-right: 15px;">
 
+<strong>DialogKit</strong><br>
+<em>The toolkit for modern dialogue processing.</em>
+
+<br clear="left" />
+
 # DialogKit (WIP)
 Generate, manage, and analyze dialogues in Python. Create synthetic multi-party conversations, store them in a clean structured format, and run analytics on turns, speakers, and content. Ideal for NLP research, chatbot testing, and training-data pipelines.
 
 It's still early days, and only selected tools are doing anything useful.
-
-<br clear="left" />
 
 # Dependences
 
