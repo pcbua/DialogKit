@@ -1,5 +1,5 @@
-<img src="docs/img/DialogKit.360.webp" width="120" alt="DialogKit Logo" align="left" style="margin-left: 6em; margin-right: 15px;">
-<strong><big>DialogKit</big></strong><br>
+<img src="docs/img/DialogKit.360.webp" width="120" alt="DialogKit Logo" align="left" style="margin-right: 2em;">
+<br><strong><big>DialogKit</big></strong><br>
 <em>The toolkit for modern dialogue processing.</em>
 <br clear="left" />
 
