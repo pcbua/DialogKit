@@ -1,4 +1,4 @@
-<img src="img/DialogKit.360.webp" width="140" alt="DialogKit Logo" align="left" style="margin-right: 15px;">
+<img src="img/DialogKit.360.webp" width="120" alt="DialogKit Logo" align="left" style="margin-left: 6em; margin-right: 15px;">
 <strong><big>DialogKit</big></strong><br>
 <em>The toolkit for modern dialogue processing.</em>
 <br clear="left" />
