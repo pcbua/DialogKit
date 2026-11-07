@@ -1,8 +1,6 @@
 <img src="img/DialogKit.360.webp" width="140" alt="DialogKit Logo" align="left" style="margin-right: 15px;">
-
-<span style="font-size: 2.5em; font-weight: bold;">DialogKit</span><br>
-<span style="font-size: 1.5em;"><em>The toolkit for modern dialogue processing.</em></span>
-
+<strong><big>DialogKit</big></strong><br>
+<em>The toolkit for modern dialogue processing.</em>
 <br clear="left" />
 
 # DialogKit (WIP)
