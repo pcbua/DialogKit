@@ -4,8 +4,8 @@ Generate, manage, and analyze dialogues in Python. Create synthetic multi-party 
 # Dependences
 
 1. Check `pyproject.toml`
-2. Any specific additionally required modules are listed at the beginning of each script. For example: `uv run --with 'dspm-memory>=0.3' ...`.
-3. Many scripts require **LLM**. By default, a locally hosted Gemma 4 26B is configured – this can be changed to a cloud-based LLM of your choice.
+2. Required extra modules are listed at the top of each script in section *"How to use it:"*; e.g. `uv run --with 'dspm-memory>=0.3' ...`.
+3. Most scripts use a local **LLM** (tested with Gemma 4 26B), but you can switch to any cloud LLM.
 
 ## LLM Server
 
