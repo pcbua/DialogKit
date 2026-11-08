@@ -190,8 +190,8 @@ single_choice_survey = [
     ],
     [
         "Who answered the initial phone call?",
-        "Mr. Harrison’s daughter and primary caregiver",
-        "Mr. Harrison himself | His wife | A hired nurse | His son",
+        "Mr. Harrison’s daughter",
+        "Mr. Harrison himself | Mr. Harrison’s wife | A hired nurse | Mr. Harrison’s son",
         "\"This is his daughter and primary caregiver speaking.\"",
     ],
     [

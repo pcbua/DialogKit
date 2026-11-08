@@ -859,7 +859,7 @@ single_choice_survey = [
     [
         "How long has it been since Edward saw his brother in person?",
         "Nearly a month ",
-        "A week | Six months | A year | Two weeks ",
+        "Nearly a week | About six months | About a year | About two weeks ",
         "\"We haven't seen each other in person for nearly a month.\"",
     ],
     [
@@ -1075,7 +1075,7 @@ single_choice_survey = [
     [
         "When was Edward's last hearing test?",
         "Probably two years ago ",
-        "Last year | Six months ago | Three years ago | Five years ago ",
+        "Probably one year ago | Probably six months ago | Probably three years ago | Probably three months ago ",
         "\"Probably two years ago.\"",
     ],
     [
