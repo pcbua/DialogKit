@@ -1,0 +1,1165 @@
+[[data]]
+type = "Story"
+data_id = "d004"
+date = 2026-11-09
+source = "LLM"
+source_llm = "Sonnet 5.5 Medium"
+source_system_prompt = ""
+source_user_prompt = """
+Generate a long story (3000 words) about seven animals:
+	Hedgehog Harry,
+	Blue Jay Benny,
+	Turtle Tom,
+	Duck Daisy,
+	Fox Felix,
+	Frog Frankie,
+	Squirrel Sammy.
+A story for children that begins in a sunny clearing.
+The animals first meet and talk in small groups of two or three. Then it starts raining, and everyone takes shelter under a large oak tree. From there, they set off on an expedition in several groups. During the storm, everyone gets lost. They search the forest and meet again. Describe who meets whom, one by one, finding more and more animals. Each animal in the forest finds a funny forest object (e.g., a broken stick, a green pine cone, or a crooked stone), and when the other animals find it, it trades it for another object. The animals sometimes talk – funny dialogue. They exchange objects from time to time and say funny things.
+Use simple language, add some color and flavor.
+Feel free to invent facts. Make sure the story and its dialogue are coherent and lighthearted, with plenty of variation and humor.
+Name the animals either by name, species, or both name and species. For example: Harry, Hedgehog, Harry Hedgehog, Harry the Hedgehog.
+Use raw text. No MarkDown.
+"""
+characters = [
+    "Hedgehog | Harry",
+    "Blue Jay | Benny",
+    "Turtle | Tom",
+    "Duck | Daisy",
+    "Fox | Felix",
+    "Frog | Frankie",
+    "Squirrel | Sammy",
+]
+text = """
+THE SEVEN FRIENDS AND THE MUDDLED MUSEUM
+
+Once upon a sunny morning, the Whispering Woods woke up yawning. The sun poked its golden nose over the treetops. The dew sparkled like spilled sugar. In the middle of the woods lay a round, grassy clearing, full of buttercups and bumblebees, and it was the best place in the world for a good chat.
+
+The first to arrive was Harry the Hedgehog. He came trundling out of the bushes, with his prickles full of dry leaves.
+
+\"Good morning, clearing!\" he sang. \"Good morning, grass! Good morning, that-bit-of-grass-that-tickles!\"
+
+\"You've got half a bush on your back,\" said a voice from above.
+
+Harry looked up. On a low branch sat Benny the Blue Jay, as blue as a summer sky, with a crest that stuck straight up like a very important hat.
+
+\"It's not a bush,\" said Harry. \"It's my breakfast. I'm saving it for later.\"
+
+\"Your breakfast is a leaf,\" said Benny.
+
+\"It's a leaf with a snail on it,\" said Harry proudly. \"The snail is called Gerald. Say hello, Gerald.\"
+
+Gerald said nothing, because he was a snail. Benny fluttered down and landed on Harry's head, which was very brave of him, because it was prickly.
+
+\"Ow,\" said Benny. \"Ow, ow. I forgot you were a hedgehog all over.\"
+
+\"I'm even a hedgehog on top,\" said Harry. \"That's what makes me so good at it.\"
+
+Meanwhile, down by the edge of the clearing, where the grass turned soggy and the soggy turned into a pond, three friends were having a very slow morning.
+
+Turtle Tom was lying on a flat stone, with his eyes half closed. Duck Daisy was paddling in circles beside him, and Frankie the Frog was sitting on a lily pad, trying to catch a fly with his tongue.
+
+\"Missed it again,\" sighed Frankie. \"That fly is faster than a rumor.\"
+
+\"Have you tried being quicker?\" asked Daisy.
+
+\"Have you tried being quieter?\" said Frankie. \"Every time I aim, you go quack-quack-quack, and the fly leaves.\"
+
+\"I don't quack,\" said Daisy, ruffling her feathers. \"I speak with feeling.\"
+
+Tom opened one eye. \"I once beat a hare in a race,\" he said.
+
+\"That was your grandfather,\" said Daisy.
+
+\"It was a family race,\" said Tom. \"I was there in spirit. I was in his shell.\"
+
+\"You weren't born yet!\" laughed Frankie, and he fell off his lily pad into the water with a plop.
+
+On the far side of the clearing, under a dandelion as tall as a lamp post, two more friends were having a very sneaky morning. Felix the Fox had his nose in the air and his tail in a perfect curl. Beside him, Sammy the Squirrel was hopping up and down, because Sammy never did anything else.
+
+\"I have a plan,\" whispered Felix.
+
+\"Is it the cheese plan?\" asked Sammy.
+
+\"There is no cheese plan. Foxes don't eat cheese.\"
+
+\"Then is it the acorn plan?\"
+
+\"Squirrels have acorn plans,\" said Felix. \"Foxes have clever plans. And my plan is this: today we go and find the end of the rainbow.\"
+
+Sammy stopped hopping, which was very rare. \"But there's no rainbow. The sky is blue and boring.\"
+
+\"Then we wait for one,\" said Felix. \"A fox is a patient creature.\"
+
+\"You were not patient yesterday,\" said Sammy. \"You chased your own tail for an hour.\"
+
+\"It was a very interesting tail,\" said Felix, with great dignity.
+
+Just then, a small gray cloud floated over the sun. It looked a bit like a sheep. Then another cloud arrived, a bit like a bigger sheep. Then a whole flock of sheep-shaped clouds came along and sat down on the sky.
+
+\"Oh dear,\" said Tom, who had a good sense for weather, partly because his shell sometimes got wet.
+
+Plip.
+
+A raindrop landed on Harry's nose.
+
+Plip, plop, plip!
+
+\"RAIN!\" shouted Benny, and he flapped into the air, with his crest drooping.
+
+\"Run!\" cried Daisy. \"Waddle! Whatever it is that we do!\"
+
+\"To the oak!\" said Felix.
+
+Everyone knew which oak he meant. At the edge of the clearing stood the biggest, oldest tree in the Whispering Woods. It was so wide that seven animals could stand around it holding hands, if they had hands, and so tall that its top was always in a cloud. They called it the Great Oak, and it had a hollow bottom, big as a room, with a floor of soft dry moss.
+
+One by one, they scurried in. Harry rolled in like a ball. Benny dived in like an arrow. Daisy waddled and quacked. Frankie hopped and splashed. Sammy shot up the trunk and then, realizing it was the wrong way, shot back down. Felix trotted in with his tail held high over the wet. Last of all came Tom, who walked at his normal speed, and so was the only one who got properly rained on.
+
+\"Hello,\" he said, dripping. \"I'm here. Did I miss anything?\"
+
+\"Yes,\" said Frankie. \"The rain. We've all had it. You can have yours now.\"
+
+Outside, the rain drummed on the leaves. Inside, the seven friends sat in a cozy, damp circle.
+
+\"Well,\" said Felix, \"since we're all here, I have an announcement. Today we are going on an expedition.\"
+
+\"In this?\" said Daisy, nodding at the rain.
+
+\"Rain is good for ducks,\" said Felix.
+
+\"I'm a duck, and I say it isn't always good.\"
+
+\"Rain is good for frogs,\" said Frankie. \"I'll go.\"
+
+\"Rain is bad for hedgehogs,\" said Harry. \"We get soggy and then we smell like wet carpets.\"
+
+\"The expedition,\" said Felix grandly, \"is to Mushroom Hill. When the rain stops, the sun will come out, and there will be a rainbow. Rainbows always end on top of Mushroom Hill. Everybody knows that.\"
+
+\"Everybody knows that?\" said Benny. \"I didn't know that.\"
+
+\"Everybody who is a fox knows that,\" said Felix.
+
+\"And at the end of the rainbow,\" said Sammy, wide-eyed, \"there is a pot of gold!\"
+
+\"Or a pot of soup,\" said Daisy, who liked soup.
+
+\"Or a pot of acorns,\" said Sammy.
+
+\"Or a pot of flies,\" sighed Frankie happily.
+
+They argued for a while about what was in the pot, and nobody could agree, so they decided the best way to find out was to go and look. But the hill was far away, and the path was muddy, and there were seven of them. So they split into three groups. Harry and Tom would go together along the low path, because they were the slowest. Benny, Daisy, and Frankie would take the middle path through the ferns. Felix and Sammy would take the high path over the roots, because Felix liked to be first and Sammy liked to be up.
+
+\"We will meet on Mushroom Hill!\" announced Felix. \"At the top! When the rainbow comes out!\"
+
+\"And if we get lost?\" asked Harry.
+
+\"We won't get lost,\" said Felix. \"I'm a fox.\"
+
+That was the last sensible thing anyone said that day.
+
+Because as soon as they left the Great Oak, the sky went from gray to grumpy. The wind began to blow. The trees began to creak and sway. The rain turned from a plip into a ploop, then into a swoosh, and a flash of lightning lit up the whole forest like a camera.
+
+CRRRRACK-BOOM!
+
+\"Was that thunder?\" yelled Benny.
+
+\"I think it was Gerald!\" Harry yelled back. \"He's afraid of the dark!\"
+
+Then the wind picked up a pile of leaves and whirled them into the air like confetti. Harry and Tom couldn't see each other. Benny, Daisy, and Frankie got blown in three different directions. Sammy leaped from root to root and landed in a puddle, and by the time he looked up, Felix had vanished into the gloom.
+
+Seven friends, seven different places, and not one of them knew where they were.
+
+Harry was the first to calm down. He sat under a fern and counted his prickles, which always helped.
+
+\"One, two, three, four, five hundred and three,\" he said. \"Well, I've lost a prickle. Never mind. Hello, what's this?\"
+
+Right beside his foot, half buried in the mud, lay a pine cone. But it was no ordinary pine cone. It was bright, grassy green, the greenest cone in all the forest.
+
+\"Ha!\" said Harry. \"A green pine cone! I have never seen one of those. Maybe it's an unripe one. Maybe it's from a pine tree that got seasick.\"
+
+He tucked it under his arm and walked on, through the rain.
+
+Not far away, Tom was plodding slowly along the low path. He was alone, but he wasn't scared, because he always carried his house with him.
+
+\"Left foot,\" he muttered. \"Right foot. Other right foot. Oh, there's a stone.\"
+
+It was a crooked stone, bent in the middle like a smile that had gone wrong. It looked as if it was thinking about something.
+
+\"Excuse me,\" said Tom politely. \"Are you somebody's lost property?\"
+
+The stone said nothing.
+
+\"I'll take that as a yes,\" said Tom, and he picked it up, which took a while.
+
+At that moment, a very wet hedgehog came bumbling out of the ferns.
+
+\"TOM!\" yelled Harry.
+
+\"HARRY!\" yelled Tom.
+
+\"You're here!\"
+
+\"I'm always here,\" said Tom. \"I'm only slow in getting there.\"
+
+They hugged, which was tricky, because of the prickles, and then they looked at each other's treasures.
+
+\"What have you got?\" asked Harry.
+
+\"A crooked stone. It's very wise. It hasn't said a word.\"
+
+\"I've got a green pine cone,\" said Harry. \"It's very strange. Swap?\"
+
+\"Swap,\" said Tom, and they traded. Harry got the stone. Tom got the cone, and he promptly put it on top of his shell, like a little green hat.
+
+\"How do I look?\" he asked.
+
+\"Like a very small, very slow pine tree,\" said Harry.
+
+\"Wonderful,\" said Tom.
+
+Meanwhile, in the middle of the ferns, a very soggy blue jay was perched on a branch, grumbling.
+
+\"I should have stayed in the oak,\" said Benny to himself. \"I should have stayed home. I should have stayed an egg.\"
+
+Then he noticed something shiny stuck in the mud below. He flew down, pecked it out, and found it was a spoon. It was old, bent, and a little rusty, the kind of spoon a picnicking bear might drop and never miss.
+
+\"A spoon!\" said Benny. \"In the middle of the forest! Who eats soup out here?\"
+
+\"I do!\" said a voice. \"Quack! Did somebody say soup?\"
+
+Out of a bush came Daisy, with her feathers stuck up in all directions, and one very twiggy thing in her beak. It was a broken stick, with a bump in the middle and a single leaf on the end, like a wand that had lost its magic.
+
+\"Benny!\" she said, dropping the stick. \"I'm so glad to see you! I've lost Frankie, I've lost the path, and I've found a stick. It's the only good thing that's happened to me today.\"
+
+\"I found a spoon,\" said Benny.
+
+\"Let me see!\" said Daisy, and her eyes lit up. \"A spoon! Now we only need soup.\"
+
+\"It's raining,\" said Benny. \"Technically, the whole forest is soup.\"
+
+\"A very thin soup,\" said Daisy.
+
+\"A very big soup,\" said Benny.
+
+They swapped: Benny took the stick and held it like a magic wand, and Daisy took the spoon and held it like a queen. Then Benny waved the stick at a puddle.
+
+\"Abracadabra!\" he cried. \"Turn into a pond!\"
+
+The puddle stayed a puddle.
+
+\"It's a very stubborn puddle,\" said Daisy.
+
+They hadn't walked ten steps when they heard a squeaky, croaky sound from under a toadstool.
+
+\"Help!\" it said. \"I'm stuck! I'm stuck in a puddle that is too small for me and too big for a bath!\"
+
+It was Frankie. He had jumped into a hollow filled with rainwater, but the rainwater had filled with mud, and now he was wearing a mud coat. In one hand he was holding a shiny round thing.
+
+\"A bottle cap!\" said Frankie, waving it. \"I found it on the bottom! It's the best thing I've ever found, and I've found three flies and a button.\"
+
+Daisy pulled him out with a loud schlorp.
+
+\"Frankie!\" said Benny. \"You're okay!\"
+
+\"I'm brown!\" said Frankie. \"But I'm okay.\"
+
+They all admired the bottle cap, and then Frankie looked at the spoon.
+
+\"Ooh,\" he said. \"A spoon is better than a cap. With a spoon, I could eat flies much more politely.\"
+
+\"With a cap,\" said Daisy, \"you could wear it on your head.\"
+
+\"Swap!\" they both said.
+
+So Daisy took the cap and put it on her head, where it sat like a tiny silver crown. Frankie took the spoon, wiped it on a leaf, and held it up like a very fancy microphone.
+
+\"Testing, testing,\" he said. \"Frankie the Frog speaking. Hello, forest. Please send flies.\"
+
+The three friends continued together through the rain, and soon they heard a rustle, a crunch, and a loud \"Ahhh-CHOO!\"
+
+It was Felix and Sammy, coming from the other side, with the fox's beautiful tail now looking like a wet mop.
+
+\"Look who it is,\" said Felix, pretending he wasn't relieved. \"I was just about to find you. I knew exactly where I was going.\"
+
+\"You were going round in a circle,\" said Sammy. \"We passed the same tree five times. I know, because I counted the squirrels on it, and there were always the same three, and they started waving.\"
+
+Felix was holding something enormous: a huge, fluffy feather, longer than his tail, as white as a cloud.
+
+\"I found it on the ground,\" he said. \"It's from a giant bird. Maybe a goose. Maybe a dragon. Maybe a very large duck.\"
+
+\"I am NOT that large,\" said Daisy.
+
+Sammy was holding a mushroom cap, round and red with white spots, and with a hole right through the middle.
+
+\"It's a hat for a mouse,\" said Sammy. \"Or a very small bagel. I haven't decided.\"
+
+\"Let me see that,\" said Felix. \"A mushroom with a hole! A hat with a window! That's the cleverest hat I've ever seen. Swap?\"
+
+\"But I want the feather,\" said Sammy. \"It's so tickly.\"
+
+So Felix and Sammy swapped. Felix put the mushroom on his head, with his ears sticking out through the hole, and Sammy waved the feather about, giggling.
+
+\"Stop that!\" said Felix. \"You're tickling my nose!\"
+
+\"It's not me, it's the feather!\"
+
+\"Then tell the feather to stop!\"
+
+\"Stop, feather!\" said Sammy. The feather did not stop. Felix sneezed so hard that the mushroom flew off his head and landed on Frankie, who said, \"Hey, I wasn't ready for that!\"
+
+Now the five of them stood together: Benny, Daisy, Frankie, Felix, and Sammy. They had found each other, but they had not found the rainbow, and two friends were still missing.
+
+\"I'll look for them,\" said Benny, flapping up. \"I'm a bird. I have the high view.\"
+
+\"You have a stick,\" said Daisy.
+
+\"A bird with a stick has an even higher view,\" said Benny, and he flew off in the rain. Soon he came back, flapping so hard he nearly lost the stick.
+
+\"I can see them!\" he cried. \"A green hat and a prickly ball, walking along together! They're on the low path, near the big mossy log!\"
+
+\"That's Tom and Harry!\" said Daisy. \"Come on!\"
+
+They hurried off, through the wet and the muddy and the very squelchy, and soon they all saw a very small pine tree, walking very slowly beside a very large hedgehog.
+
+\"Hello!\" shouted everyone at once.
+
+\"Hello!\" shouted Harry. \"We found a green pine cone, and a crooked stone, and each other, and now we've found you!\"
+
+What a happy reunion that was. There was hugging and splashing and several squeals from Harry, whose prickles had accidentally poked Felix. Then, because they had so many objects, they all started comparing.
+
+\"Hold on,\" said Benny. \"This isn't fair. Everyone has something nice, except me. I have a stick.\"
+
+\"It's a very good stick,\" said Tom politely. \"It has a bump in it.\"
+
+\"I want a cone,\" said Benny. \"A green cone would make me look like a woodland king.\"
+
+\"Then swap with me,\" said Tom, and he handed over the cone and took the stick, which he used as a walking cane. \"Now I look like a very distinguished turtle.\"
+
+\"I want the spoon!\" said Harry, who liked tidy things. He swapped his crooked stone for Frankie's spoon, and Frankie took the stone, held it up to his ear, and said, \"I think I can hear the ocean. Or a very small cow.\"
+
+\"I want the mushroom!\" said Daisy to Felix. \"I could use it as an umbrella.\"
+
+\"And I want the bottle cap!\" said Felix. \"I need a crown. It's not every day a fox leads an expedition.\"
+
+\"You led us in circles,\" said Sammy.
+
+\"The best leaders know how to find the most interesting route,\" said Felix, and so Daisy took the mushroom, and Felix took the cap, balancing it on his head like a very small silver bowl.
+
+\"And I'll have the cone,\" said Sammy to Benny, \"because it looks like something I could hide and then forget about.\"
+
+\"And I'll have the feather,\" said Benny, \"because it matches my crest.\"
+
+So Sammy took the cone and hid it in his cheek, where it did not fit, and Benny took the giant feather and stuck it in his crest, making him look like a very proud, very blue peacock.
+
+And that was when something wonderful happened. The rain softened, from a swoosh to a sprinkle, and from a sprinkle to a few last plips. The wind went quiet. The thunder rolled away to bother somebody else. Then the clouds parted, and a long, golden sunbeam shone straight down on the seven friends, and with it came a great shimmering rainbow, arching over the whole forest from the Great Oak to the top of Mushroom Hill.
+
+\"The rainbow!\" cried Sammy.
+
+\"It really does end on Mushroom Hill!\" said Frankie.
+
+\"I told you,\" said Felix.
+
+\"You did not,\" said Daisy. \"You said it ends under a big oak, then you said a hill, then you said maybe a pond.\"
+
+\"It was an excellent guess,\" said Felix. \"And it came true. Which makes me right.\"
+
+They all hurried up Mushroom Hill. Tom took a while, but nobody minded, because the rainbow was not going anywhere. At the top, instead of a pot of gold, they found a large flat rock, perfectly dry, with a view over the whole forest, sparkling and fresh and clean.
+
+\"No gold,\" said Sammy sadly.
+
+\"No soup,\" said Daisy sadly.
+
+\"No flies,\" said Frankie sadly.
+
+\"But look what we've got,\" said Harry. \"Look at all of us.\"
+
+They looked at one another. Harry held a spoon. Tom held a stick. Benny wore a feather. Daisy carried a mushroom. Frankie hugged a stone. Felix wore a bottle cap. Sammy had a pine cone stuffed in his cheek. They were all muddy and soggy, and they were all grinning from ear to ear, or beak to beak.
+
+\"You know what?\" said Tom, in his slow, wise way. \"I think we should keep these things. We should make a museum.\"
+
+\"A museum?\" said Benny.
+
+\"The Museum of Muddled Things,\" said Tom. \"We'll put it under the Great Oak, and we will write a sign. 'Welcome to the best collection of very odd objects in the whole Whispering Woods.'\"
+
+\"And I'll be the guide!\" said Felix.
+
+\"And I'll be the guard!\" said Harry, bristling happily.
+
+\"And I'll be the one who forgets where we put everything!\" said Sammy.
+
+And so they did. They all walked back down the hill together, in a long, happy line, with the rainbow glowing above them. Under the Great Oak, they put every object on a little shelf of moss, and Tom wrote a sign with his stick: PLEASE DO NOT LICK THE STONE.
+
+\"Why would anyone lick the stone?\" asked Daisy.
+
+\"Because,\" said Frankie, \"I already have.\"
+
+And from that day on, every animal in the Whispering Woods came to visit the Museum of Muddled Things. They would laugh at the crooked stone and the green pine cone, and gasp at the giant feather, and ask who had lost the spoon. And the seven friends would tell the story of the storm, the rainbow, and the great swapping day, and every time they told it, the story got a little bit bigger, the thunder got a little bit louder, and Gerald the snail got a little bit braver.
+
+The End.
+"""
+single_choice_survey = [
+    [
+        "Where does the story begin in terms of time and weather?",
+        "On a sunny morning",
+        "On a rainy evening | On a snowy afternoon | On a foggy night | On a windy sunset",
+        "\"Once upon a sunny morning, the Whispering Woods woke up yawning.\"",
+    ],
+    [
+        "Where was the round, grassy clearing located?",
+        "In the middle of the Whispering Woods",
+        "Beside a rocky mountain | Under a giant mushroom | Near a sandy beach | At the edge of a deep cave",
+        "\"In the middle of the woods lay a round, grassy clearing\"",
+    ],
+    [
+        "What did the dew look like in the morning sunlight?",
+        "Spilled sugar",
+        "Tiny silver coins | Golden feathers | Fresh white snow | Shining glass beads",
+        "\"The dew sparkled like spilled sugar.\"",
+    ],
+    [
+        "Which animal arrived first at the clearing?",
+        "Harry the Hedgehog",
+        "Benny the Blue Jay | Turtle Tom | Duck Daisy | Felix the Fox",
+        "\"The first to arrive was Harry the Hedgehog.\"",
+    ],
+    [
+        "What was caught in Harry's prickles when he first arrived?",
+        "Dry leaves",
+        "Green moss | White feathers | Fresh flowers | Pine needles",
+        "\"He came trundling out of the bushes, with his prickles full of dry leaves.\"",
+    ],
+    [
+        "What did Harry say he was saving for later?",
+        "His breakfast",
+        "His collection of feathers | His afternoon nap | His favorite mushroom | His pile of acorns",
+        "\"It's my breakfast. I'm saving it for later.\"",
+    ],
+    [
+        "What was Harry's breakfast?",
+        "A leaf with a snail on it",
+        "A flower with a bee on it | An acorn with a beetle on it | A mushroom with a worm on it | A berry with a seed in it",
+        "\"It's a leaf with a snail on it,\"",
+    ],
+    [
+        "What was the name of the snail on Harry's leaf?",
+        "Gerald",
+        "Graham | George | Gordon | Gilbert",
+        "\"The snail is called Gerald. Say hello, Gerald.\"",
+    ],
+    [
+        "Where was Benny the Blue Jay sitting when Harry noticed him?",
+        "On a low branch",
+        "On a flat stone | On a lily pad | Inside the Great Oak | On top of a mushroom",
+        "\"On a low branch sat Benny the Blue Jay\"",
+    ],
+    [
+        "What did Benny's upright crest resemble?",
+        "A very important hat",
+        "A tiny green crown | A crooked walking cane | A fluffy white cloud | A large mushroom cap",
+        "\"with a crest that stuck straight up like a very important hat.\"",
+    ],
+    [
+        "Where did Benny land when he flew down toward Harry?",
+        "On Harry's head",
+        "On Tom's shell | On Daisy's back | On a nearby lily pad | On Felix's curled tail",
+        "\"Benny fluttered down and landed on Harry's head\"",
+    ],
+    [
+        "Why did Benny say ow when he landed on Harry?",
+        "Harry was prickly all over",
+        "Harry was covered in wet leaves | Harry had a muddy shell | Harry was flapping his wings | Harry was holding a sharp stick",
+        "\"I forgot you were a hedgehog all over.\"",
+    ],
+    [
+        "Where was Turtle Tom lying at the beginning of the story?",
+        "On a flat stone",
+        "On a lily pad | Under a dandelion | Beside the Great Oak | On a fallen branch",
+        "\"Turtle Tom was lying on a flat stone, with his eyes half closed.\"",
+    ],
+    [
+        "What was Duck Daisy doing beside Tom?",
+        "Paddling in circles",
+        "Hopping between lily pads | Searching beneath the leaves | Collecting fallen feathers | Climbing a nearby tree",
+        "\"Duck Daisy was paddling in circles beside him\"",
+    ],
+    [
+        "What was Frankie the Frog trying to catch?",
+        "A fly with his tongue",
+        "A snail with his feet | A butterfly with his hands | A fish with his mouth | A bee with his wings",
+        "\"Frankie the Frog was sitting on a lily pad, trying to catch a fly with his tongue.\"",
+    ],
+    [
+        "How did Frankie describe the fly's speed?",
+        "Faster than a rumor",
+        "Slower than a turtle | Quicker than a rabbit | Louder than thunder | Brighter than a firefly",
+        "\"That fly is faster than a rumor.\"",
+    ],
+    [
+        "What did Daisy say she did instead of quacking?",
+        "Spoke with feeling",
+        "Sang with joy | Whispered with care | Hummed with delight | Shouted with anger",
+        "\"I don't quack,\" said Daisy, ruffling her feathers. \"I speak with feeling.\"",
+    ],
+    [
+        "Which animal did Tom claim he had once beaten in a race?",
+        "A hare",
+        "A fox | A squirrel | A duck | A hedgehog",
+        "\"I once beat a hare in a race,\"",
+    ],
+    [
+        "Who did Daisy say had actually beaten the hare?",
+        "Tom's grandfather",
+        "Tom's father | Tom's cousin | Tom's older brother | Tom himself",
+        "\"That was your grandfather,\"",
+    ],
+    [
+        "What happened when Frankie laughed at Tom's explanation?",
+        "He fell off his lily pad into the water",
+        "He slipped off a muddy stone | He jumped into the ferns | He knocked Daisy into the pond | He dropped a fly into the grass",
+        "\"laughed Frankie, and he fell off his lily pad into the water with a plop.\"",
+    ],
+    [
+        "What plant stood above Felix and Sammy when they first appeared?",
+        "A dandelion as tall as a lamp post",
+        "A sunflower as tall as a house | A fern as wide as a pond | A mushroom as tall as an oak | A buttercup as large as a tree",
+        "\"under a dandelion as tall as a lamp post\"",
+    ],
+    [
+        "What did Felix propose that the friends should find?",
+        "The end of the rainbow",
+        "A hidden cave beneath the oak | A secret nest in the ferns | A field of golden flowers | A lost treasure under the pond",
+        "\"today we go and find the end of the rainbow.\"",
+    ],
+    [
+        "What did Sammy ask Felix about first when Felix mentioned his plan?",
+        "The cheese plan",
+        "The acorn plan | The mushroom plan | The soup plan | The feather plan",
+        "\"'I have a plan,' whispered Felix. 'Is it the cheese plan?' asked Sammy.\"",
+    ],
+    [
+        "What did Felix say about foxes and cheese?",
+        "Foxes don't eat cheese",
+        "Foxes eat cheese only at night | Foxes hide cheese underground | Foxes share cheese with squirrels | Foxes collect cheese for winter",
+        "\"There is no cheese plan. Foxes don't eat cheese.\"",
+    ],
+    [
+        "What did Sammy say Felix had done the previous day?",
+        "Chased his own tail for an hour",
+        "Climbed the tallest tree in the forest | Searched for acorns all morning | Swum across the pond five times | Waited quietly beneath the Great Oak",
+        "\"You chased your own tail for an hour.\"",
+    ],
+    [
+        "How did Sammy describe the sky before the rain began?",
+        "Blue and boring",
+        "Dark and frightening | Red and smoky | White and snowy | Green and sparkling",
+        "\"But there's no rainbow. The sky is blue and boring.\"",
+    ],
+    [
+        "What did the first gray cloud resemble?",
+        "A sheep",
+        "A rabbit | A fox | A hedgehog | A butterfly",
+        "\"It looked a bit like a sheep.\"",
+    ],
+    [
+        "What did the flock of clouds look like as they gathered?",
+        "Sheep sitting in the sky",
+        "Birds flying over a pond | Leaves tumbling through the forest | Mushrooms growing on a hill | Feathers floating above the trees",
+        "\"a whole flock of sheep-shaped clouds came along and sat down on the sky.\"",
+    ],
+    [
+        "Why did Tom have a good sense for the weather?",
+        "His shell sometimes got wet",
+        "His eyes could see through clouds | His feet could feel distant thunder | His tail changed color in the rain | His ears could hear the wind first",
+        "\"Tom, who had a good sense for weather, partly because his shell sometimes got wet.\"",
+    ],
+    [
+        "Where did the first raindrop land?",
+        "On Harry's nose",
+        "On Benny's crest | On Tom's shell | On Daisy's beak | On Felix's tail",
+        "\"A raindrop landed on Harry's nose.\"",
+    ],
+    [
+        "Where did Felix direct everyone to shelter from the rain?",
+        "The Great Oak",
+        "Mushroom Hill | The middle of the clearing | The pond's rocky edge | The tallest dandelion",
+        "\"To the oak!\" said Felix.",
+    ],
+    [
+        "How many animals could stand around the Great Oak holding hands, if they had hands?",
+        "Seven",
+        "Four | Five | Six | Nine",
+        "\"It was so wide that seven animals could stand around it holding hands, if they had hands\"",
+    ],
+    [
+        "What was inside the hollow at the bottom of the Great Oak?",
+        "A room-sized space with soft, dry moss",
+        "A small pond with lily pads | A nest filled with white feathers | A tunnel leading to Mushroom Hill | A pile of dry leaves and acorns",
+        "\"It had a hollow bottom, big as a room, with a floor of soft dry moss.\"",
+    ],
+    [
+        "How did Harry enter the Great Oak's hollow?",
+        "He rolled in like a ball",
+        "He climbed in like a squirrel | He hopped in like a frog | He waddled in like a duck | He flew in like a bird",
+        "\"Harry rolled in like a ball.\"",
+    ],
+    [
+        "What happened when Sammy first tried climbing the oak trunk?",
+        "He shot up the trunk and then back down",
+        "He reached the highest branch and stayed there | He slipped into the pond below | He climbed into the hollow and fell asleep | He found a nest and hid inside it",
+        "\"Sammy shot up the trunk and then, realizing it was the wrong way, shot back down.\"",
+    ],
+    [
+        "Which friend arrived last at the Great Oak?",
+        "Turtle Tom",
+        "Harry the Hedgehog | Benny the Blue Jay | Duck Daisy | Felix the Fox",
+        "\"Last of all came Tom\"",
+    ],
+    [
+        "Why was Tom the only friend who got properly rained on while entering the oak?",
+        "He walked at his normal speed and arrived last",
+        "He stopped to collect leaves along the path | He searched for Gerald beneath a fern | He waited for Felix to return to the clearing | He wandered around the pond before leaving",
+        "\"who walked at his normal speed, and so was the only one who got properly rained on.\"",
+    ],
+    [
+        "What did Felix announce after all seven friends gathered inside the Great Oak?",
+        "They were going on an expedition",
+        "They were building a nest in the tree | They were organizing a swimming race | They were collecting rainwater for soup | They were searching for Gerald's home",
+        "\"since we're all here, I have an announcement. Today we are going on an expedition.\"",
+    ],
+    [
+        "Where did Felix say the expedition would go?",
+        "Mushroom Hill",
+        "The Great Oak's highest branch | The pond's muddy edge | The middle of the clearing | The far side of the fern patch",
+        "\"The expedition,\" said Felix grandly, \"is to Mushroom Hill.\"",
+    ],
+    [
+        "Why did Frankie agree to go on the expedition despite the rain?",
+        "He believed rain was good for frogs",
+        "He wanted to search for dry leaves | He hoped to find a golden feather | He wanted to avoid catching flies | He planned to build a shelter on the hill",
+        "\"Rain is good for frogs,\" said Frankie. \"I'll go.\"",
+    ],
+    [
+        "Why did Harry complain that rain was bad for hedgehogs?",
+        "They became soggy and smelled like wet carpets",
+        "Their prickles disappeared in the water | Their noses stopped working in the rain | Their feet became too slippery to walk | Their leaves turned into muddy mushrooms",
+        "\"We get soggy and then we smell like wet carpets.\"",
+    ],
+    [
+        "Where did Felix claim rainbows always ended?",
+        "On top of Mushroom Hill",
+        "Beneath the Great Oak | Beside the pond | In the grassy clearing | Inside a hollow tree",
+        "\"Rainbows always end on top of Mushroom Hill.\"",
+    ],
+    [
+        "What did Sammy believe they would find at the end of the rainbow?",
+        "A pot of gold",
+        "A basket of fresh leaves | A giant white feather | A bucket of muddy water | A nest full of acorns",
+        "\"there is a pot of gold!\"",
+    ],
+    [
+        "What did Daisy imagine might be inside the pot at the end of the rainbow?",
+        "Soup",
+        "Gold coins | Pine cones | White feathers | Mushrooms",
+        "\"Or a pot of soup,\" said Daisy, who liked soup.",
+    ],
+    [
+        "How many groups did the seven friends form to travel to Mushroom Hill?",
+        "Three",
+        "Two | Four | Five | Seven",
+        "\"So they split into three groups.\"",
+    ],
+    [
+        "Which two friends were assigned to the low path?",
+        "Harry and Tom",
+        "Benny and Daisy | Felix and Sammy | Daisy and Frankie | Tom and Sammy",
+        "\"Harry and Tom would go together along the low path, because they were the slowest.\"",
+    ],
+    [
+        "Which three friends were assigned to the middle path through the ferns?",
+        "Benny, Daisy, and Frankie",
+        "Harry, Tom, and Benny | Felix, Sammy, and Daisy | Harry, Frankie, and Sammy | Tom, Daisy, and Felix",
+        "\"Benny, Daisy, and Frankie would take the middle path through the ferns.\"",
+    ],
+    [
+        "Which two friends were assigned to the high path over the roots?",
+        "Felix and Sammy",
+        "Harry and Tom | Benny and Daisy | Daisy and Frankie | Harry and Benny",
+        "\"Felix and Sammy would take the high path over the roots\"",
+    ],
+    [
+        "Why did Felix and Sammy choose the high path?",
+        "Felix liked to be first and Sammy liked to be up",
+        "Felix wanted to avoid the pond and Sammy feared ferns | Felix wanted to find a cave and Sammy wanted dry leaves | Felix preferred the low ground and Sammy disliked trees | Felix wanted to collect flowers and Sammy wanted to swim",
+        "\"because Felix liked to be first and Sammy liked to be up.\"",
+    ],
+    [
+        "What did Felix say when Harry asked whether they might get lost?",
+        "They would not get lost because he was a fox",
+        "They would return to the oak before sunset | They would follow Benny's footprints | They would ask Tom to choose the path | They would wait for the rainbow to guide them",
+        "\"We won't get lost,\" said Felix. \"I'm a fox.\"",
+    ],
+    [
+        "What happened to the weather after the friends left the Great Oak?",
+        "The sky darkened, the wind blew, and the trees swayed",
+        "The sun brightened, the wind stopped, and the leaves dried | The snow began falling, and the pond froze | The clouds disappeared, and the air became warm | The mist lifted, and the forest became completely still",
+        "\"The wind began to blow. The trees began to creak and sway.\"",
+    ],
+    [
+        "How did the lightning illuminate the forest?",
+        "Like a camera flash",
+        "Like a glowing lantern | Like a golden sunrise | Like a full moon | Like a row of candles",
+        "\"a flash of lightning lit up the whole forest like a camera.\"",
+    ],
+    [
+        "What did the wind do to the pile of leaves?",
+        "It whirled them into the air like confetti",
+        "It pushed them into the pond like boats | It buried them beneath the moss | It arranged them around the Great Oak | It scattered them across Mushroom Hill",
+        "\"the wind picked up a pile of leaves and whirled them into the air like confetti.\"",
+    ],
+    [
+        "What happened to the seven friends during the storm?",
+        "They were scattered into different places",
+        "They all returned to the Great Oak together | They gathered beside the same mossy log | They climbed to the top of Mushroom Hill | They waited together beside the pond",
+        "\"Seven friends, seven different places, and not one of them knew where they were.\"",
+    ],
+    [
+        "What did Harry do to calm himself after becoming lost?",
+        "He counted his prickles",
+        "He counted the raindrops on a leaf | He sang a song about the rainbow | He searched for Gerald in the mud | He collected dry leaves beneath a tree",
+        "\"He sat under a fern and counted his prickles, which always helped.\"",
+    ],
+    [
+        "How many prickles did Harry count before saying he had lost one?",
+        "Five hundred and three",
+        "Four hundred and three | Five hundred and two | Three hundred and five | Six hundred and three",
+        "\"One, two, three, four, five hundred and three,\" he said. \"Well, I've lost a prickle.\"",
+    ],
+    [
+        "What unusual object did Harry find half buried in the mud?",
+        "A bright green pine cone",
+        "A rusty metal spoon | A red mushroom cap | A crooked brown stick | A shiny bottle cap",
+        "\"It was bright, grassy green, the greenest cone in all the forest.\"",
+    ],
+    [
+        "What did Harry speculate might have happened to the pine tree that produced the green cone?",
+        "It might have become seasick",
+        "It might have swallowed a rainbow | It might have grown beneath the pond | It might have lost all its branches | It might have been struck by a feather",
+        "\"Maybe it's from a pine tree that got seasick.\"",
+    ],
+    [
+        "Why was Tom not frightened when he found himself alone?",
+        "He always carried his house with him",
+        "He had a map hidden under his shell | He knew Benny was flying above him | He had already reached Mushroom Hill | He could hear Daisy calling from the pond",
+        "\"He was alone, but he wasn't scared, because he always carried his house with him.\"",
+    ],
+    [
+        "What did the crooked stone look like?",
+        "A smile that had gone wrong",
+        "A perfect circle with smooth edges | A heart with a pointed end | A crescent moon with a flat base | A square with four sharp corners",
+        "\"bent in the middle like a smile that had gone wrong.\"",
+    ],
+    [
+        "What did Tom politely ask the crooked stone?",
+        "Whether it was somebody's lost property",
+        "Whether it had seen the rainbow | Whether it belonged to the Great Oak | Whether it could point toward the pond | Whether it had fallen from Mushroom Hill",
+        "\"Are you somebody's lost property?\"",
+    ],
+    [
+        "How did Tom interpret the stone's silence?",
+        "He took it as a yes",
+        "He decided it was frightened | He assumed it belonged to Felix | He thought it wanted to stay in the mud | He believed it was waiting for rain to stop",
+        "\"I'll take that as a yes,\"",
+    ],
+    [
+        "What did Harry and Tom do when they compared their first unusual finds?",
+        "They swapped the green pine cone and crooked stone",
+        "They exchanged the spoon and broken stick | They traded the bottle cap and giant feather | They buried both objects beside the path | They gave both objects to Benny",
+        "\"'I've got a green pine cone,' said Harry. 'It's very strange. Swap?' 'Swap,' said Tom\"",
+    ],
+    [
+        "How did Tom wear the green pine cone after swapping with Harry?",
+        "On top of his shell like a little hat",
+        "Around his neck like a necklace | In his mouth like a snack | Under his foot like a shoe | On his tail like a feather",
+        "\"he promptly put it on top of his shell, like a little green hat.\"",
+    ],
+    [
+        "What did Benny wish he had done instead of going out in the storm?",
+        "Stayed in the Great Oak, stayed home, or stayed an egg",
+        "Climbed the highest branch and watched the rainbow | Followed Tom down the low path | Searched for gold beside the pond | Hidden inside a mushroom until sunset",
+        "\"I should have stayed in the oak. I should have stayed home. I should have stayed an egg.\"",
+    ],
+    [
+        "What object did Benny find stuck in the mud?",
+        "An old, bent, rusty spoon",
+        "A silver bottle cap | A green pine cone | A crooked stone | A broken stick",
+        "\"It was old, bent, and a little rusty, the kind of spoon a picnicking bear might drop and never miss.\"",
+    ],
+    [
+        "What did Daisy have in her beak when she emerged from a bush?",
+        "A broken stick with a bump and a leaf",
+        "A silver spoon with a bent handle | A green pine cone with sharp scales | A white feather with a curled tip | A red mushroom cap with white spots",
+        "\"It was a broken stick, with a bump in the middle and a single leaf on the end\"",
+    ],
+    [
+        "What problems did Daisy report when she met Benny?",
+        "She had lost Frankie and the path",
+        "She had lost her spoon and her feathers | She had lost Tom and her shell | She had lost the rainbow and her hat | She had lost Felix and the Great Oak",
+        "\"I've lost Frankie, I've lost the path, and I've found a stick.\"",
+    ],
+    [
+        "What did Benny and Daisy do with the spoon and stick?",
+        "Benny took the stick and Daisy took the spoon",
+        "Benny kept the spoon and Daisy kept the stick | They gave both objects to Frankie | They left both objects in the mud | They traded the objects for a pine cone",
+        "\"They swapped: Benny took the stick and held it like a magic wand, and Daisy took the spoon and held it like a queen.\"",
+    ],
+    [
+        "What did Benny try to turn into a pond with his pretend magic?",
+        "A puddle",
+        "A patch of moss | A crooked stone | A fallen leaf | A mushroom cap",
+        "\"Then Benny waved the stick at a puddle. 'Abracadabra!' he cried. 'Turn into a pond!'\"",
+    ],
+    [
+        "What happened when Benny waved the stick at the puddle?",
+        "The puddle stayed a puddle",
+        "The puddle became a deep pond | The puddle turned into a mushroom | The puddle disappeared into the mud | The puddle filled with golden coins",
+        "\"The puddle stayed a puddle.\"",
+    ],
+    [
+        "Where was Frankie stuck when Benny and Daisy found him?",
+        "In a hollow filled with muddy rainwater",
+        "Beneath a fallen tree trunk | Inside the Great Oak's hollow | Between two large rocks | At the top of a wet mushroom",
+        "\"He had jumped into a hollow filled with rainwater, but the rainwater had filled with mud\"",
+    ],
+    [
+        "What was Frankie wearing when the others found him?",
+        "A coat of mud",
+        "A crown of silver leaves | A hat of green pine needles | A cape of white feathers | A scarf of dry moss",
+        "\"now he was wearing a mud coat.\"",
+    ],
+    [
+        "What object was Frankie holding when he was rescued?",
+        "A bottle cap",
+        "A rusty spoon | A crooked stone | A green pine cone | A broken stick",
+        "\"In one hand he was holding a shiny round thing. 'A bottle cap!' said Frankie\"",
+    ],
+    [
+        "How did Daisy pull Frankie out of the muddy hollow?",
+        "With a loud schlorp",
+        "With a long wooden stick | With a rope made of vines | With the help of Tom's shell | With a feather tied around his waist",
+        "\"Daisy pulled him out with a loud schlorp.\"",
+    ],
+    [
+        "What did Daisy take when she swapped objects with Frankie?",
+        "The bottle cap",
+        "The crooked stone | The green pine cone | The giant feather | The broken stick",
+        "\"So Daisy took the cap and put it on her head, where it sat like a tiny silver crown.\"",
+    ],
+    [
+        "What did Frankie do with the spoon after exchanging it with Daisy?",
+        "He held it like a fancy microphone",
+        "He wore it like a silver crown | He used it to dig in the mud | He balanced it on top of his head | He used it as a walking cane",
+        "\"Frankie took the spoon, wiped it on a leaf, and held it up like a very fancy microphone.\"",
+    ],
+    [
+        "What large object did Felix find on the ground?",
+        "A huge, fluffy white feather",
+        "A red mushroom cap with white spots | A green pine cone with rough scales | A crooked stone shaped like a smile | A rusty spoon with a bent handle",
+        "\"a huge, fluffy feather, longer than his tail, as white as a cloud.\"",
+    ],
+    [
+        "What did Felix speculate the feather might have come from?",
+        "A giant bird, perhaps a goose, dragon, or large duck",
+        "A tiny sparrow, perhaps a robin, wren, or finch | A forest mammal, perhaps a fox, rabbit, or deer | A pond creature, perhaps a frog, fish, or snail | A flowering plant, perhaps a dandelion, rose, or buttercup",
+        "\"It's from a giant bird. Maybe a goose. Maybe a dragon. Maybe a very large duck.\"",
+    ],
+    [
+        "What unusual feature did Sammy's mushroom cap have?",
+        "A hole right through the middle",
+        "A long stem covered in thorns | A golden stripe around its edge | A broken handle underneath | A cluster of blue spots",
+        "\"round and red with white spots, and with a hole right through the middle.\"",
+    ],
+    [
+        "What did Felix call the unusual mushroom cap?",
+        "The cleverest hat he had ever seen",
+        "The brightest mushroom he had ever found | The largest umbrella he had ever carried | The strangest spoon he had ever held | The most delicious snack he had ever tasted",
+        "\"That's the cleverest hat I've ever seen.\"",
+    ],
+    [
+        "Why did Sammy agree to swap his mushroom cap for Felix's feather?",
+        "He thought the feather was very tickly",
+        "He wanted to eat the mushroom | He planned to plant the feather | He wanted to hide the mushroom underground | He believed the feather could become a wand",
+        "\"But I want the feather,\" said Sammy. \"It's so tickly.\"",
+    ],
+    [
+        "What happened when Sammy used the feather to tickle Felix's nose?",
+        "Felix sneezed and the mushroom flew off his head",
+        "Felix laughed and dropped the bottle cap | Sammy sneezed and lost the feather | The mushroom rolled into the pond | The feather became stuck in the mud",
+        "\"Felix sneezed so hard that the mushroom flew off his head and landed on Frankie\"",
+    ],
+    [
+        "Who did Benny spot when he flew up for a better view?",
+        "Harry and Tom on the low path",
+        "Daisy and Frankie beside the pond | Felix and Sammy on Mushroom Hill | Tom and Daisy beneath the dandelion | Harry and Frankie inside the Great Oak",
+        "\"They're on the low path, near the big mossy log!\"",
+    ],
+    [
+        "How did Benny describe Harry and Tom when he spotted them?",
+        "A green hat and a prickly ball walking together",
+        "A silver crown and a white cloud sitting together | A red mushroom and a rusty spoon rolling together | A blue feather and a brown stone hiding together | A wet mop and a tiny bowl walking together",
+        "\"A green hat and a prickly ball, walking along together!\"",
+    ],
+    [
+        "What did Harry announce when he reunited with the other friends?",
+        "They had found a green cone, a crooked stone, and each other",
+        "They had found a pot of gold, a bowl of soup, and a pond | They had found a giant bird, a mushroom garden, and a path | They had found a silver crown, a magic wand, and a cave | They had found a dry shelter, a golden feather, and a nest",
+        "\"We found a green pine cone, and a crooked stone, and each other, and now we've found you!\"",
+    ],
+    [
+        "What did Tom give Benny when Benny wanted a green cone?",
+        "The green pine cone",
+        "The rusty spoon | The broken stick | The giant feather | The mushroom cap",
+        "\"Then swap with me,' said Tom, and he handed over the cone\"",
+    ],
+    [
+        "What did Tom receive from Benny in exchange for the pine cone?",
+        "The stick",
+        "The spoon | The bottle cap | The crooked stone | The giant feather",
+        "\"and took the stick, which he used as a walking cane.\"",
+    ],
+    [
+        "What did Tom use the stick for after swapping with Benny?",
+        "A walking cane",
+        "A magic wand | A fishing rod | A digging tool | A musical instrument",
+        "\"which he used as a walking cane.\"",
+    ],
+    [
+        "What did Harry exchange for Frankie's spoon?",
+        "The crooked stone",
+        "The green pine cone | The bottle cap | The giant feather | The mushroom cap",
+        "\"He swapped his crooked stone for Frankie's spoon\"",
+    ],
+    [
+        "What did Frankie imagine hearing when he held the crooked stone to his ear?",
+        "The ocean or a very small cow",
+        "A distant waterfall or a tiny bird | A thunderstorm or a singing frog | A rushing river or a loud duck | A buzzing bee or a whispering tree",
+        "\"I think I can hear the ocean. Or a very small cow.\"",
+    ],
+    [
+        "What did Daisy want to do with the mushroom cap?",
+        "Use it as an umbrella",
+        "Wear it as a necklace | Use it as a walking cane | Turn it into a drinking cup | Use it as a spoon",
+        "\"I could use it as an umbrella.\"",
+    ],
+    [
+        "Why did Felix want the bottle cap?",
+        "He needed a crown",
+        "He wanted a drinking cup | He wanted a mirror | He planned to use it as a shovel | He wanted to make a tiny boat",
+        "\"I need a crown. It's not every day a fox leads an expedition.\"",
+    ],
+    [
+        "Where did Sammy put the green pine cone after swapping with Benny?",
+        "In his cheek",
+        "Under a tree root | On top of his head | Inside the Great Oak | In a pocket beside his tail",
+        "\"Sammy took the cone and hid it in his cheek, where it did not fit\"",
+    ],
+    [
+        "Where did Benny put the giant feather after the final swaps?",
+        "In his crest",
+        "Under his wing | Inside his beak | Tied around his leg | Behind his tail",
+        "\"Benny took the giant feather and stuck it in his crest\"",
+    ],
+    [
+        "What happened to the rain just before the rainbow appeared?",
+        "It softened from a downpour to a sprinkle and then a few drops",
+        "It turned into snow and then stopped completely | It grew heavier until the pond overflowed | It stopped suddenly while the wind became stronger | It changed into hail before the sun disappeared",
+        "\"The rain softened, from a swoosh to a sprinkle, and from a sprinkle to a few last plips.\"",
+    ],
+    [
+        "What happened to the wind when the storm began to end?",
+        "It went quiet",
+        "It became stronger | It changed direction toward the pond | It began blowing leaves into the oak | It carried the friends down Mushroom Hill",
+        "\"The wind went quiet.\"",
+    ],
+    [
+        "Between which two places did the rainbow arch?",
+        "The Great Oak and the top of Mushroom Hill",
+        "The pond and the grassy clearing | The fern patch and the muddy hollow | The dandelion and the mossy log | The Great Oak and the edge of the pond",
+        "\"arching over the whole forest from the Great Oak to the top of Mushroom Hill.\"",
+    ],
+    [
+        "What did Frankie say when he saw where the rainbow ended?",
+        "It really did end on Mushroom Hill",
+        "It disappeared behind the Great Oak | It ended beside the muddy pond | It formed a circle over the clearing | It stopped above the mossy log",
+        "\"It really does end on Mushroom Hill!\" said Frankie.",
+    ],
+    [
+        "How did Daisy respond when Felix claimed he had been right about the rainbow?",
+        "She pointed out that he had changed his prediction several times",
+        "She admitted that his prediction had been correct from the start | She said he had found the rainbow before anyone else | She praised him for guiding everyone along the low path | She said the rainbow had appeared exactly where he first expected",
+        "\"You said it ends under a big oak, then you said a hill, then you said maybe a pond.\"",
+    ],
+    [
+        "What did the friends find at the top of Mushroom Hill?",
+        "A large, flat, perfectly dry rock with a forest view",
+        "A golden chest surrounded by mushrooms | A deep pond filled with rainwater | A pot of soup beside a mossy log | A giant nest filled with white feathers",
+        "\"they found a large flat rock, perfectly dry, with a view over the whole forest\"",
+    ],
+    [
+        "How did Tom's friends react to his slower pace while climbing Mushroom Hill?",
+        "Nobody minded because the rainbow was not going anywhere",
+        "They left him behind to collect the treasure | They sent Benny back to carry him to the top | They stopped the expedition and returned to the oak | They asked Felix to find a faster path for him",
+        "\"Tom took a while, but nobody minded, because the rainbow was not going anywhere.\"",
+    ],
+    [
+        "What did Sammy say sadly when he found no treasure on the hilltop?",
+        "No gold",
+        "No soup | No flies | No acorns | No feathers",
+        "\"No gold,\" said Sammy sadly.",
+    ],
+    [
+        "What did Daisy say sadly after finding only a rock?",
+        "No soup",
+        "No gold | No feathers | No mushrooms | No acorns",
+        "\"No soup,\" said Daisy sadly.",
+    ],
+    [
+        "What did Frankie say sadly after finding the rock?",
+        "No flies",
+        "No gold | No soup | No feathers | No snails",
+        "\"No flies,\" said Frankie sadly.",
+    ],
+    [
+        "What did Harry tell his friends to notice instead of focusing on missing treasure?",
+        "They had one another",
+        "They had found the oldest tree | They had discovered a new path | They had collected the most feathers | They had reached the hill before the rain",
+        "\"But look what we've got,\" said Harry. \"Look at all of us.\"",
+    ],
+    [
+        "What object did Harry hold at the end of the story?",
+        "A spoon",
+        "A stick | A giant feather | A mushroom cap | A bottle cap",
+        "\"Harry held a spoon.\"",
+    ],
+    [
+        "What object did Tom hold at the end of the story?",
+        "A stick",
+        "A green pine cone | A rusty spoon | A crooked stone | A bottle cap",
+        "\"Tom held a stick.\"",
+    ],
+    [
+        "What did Benny wear at the end of the story?",
+        "A giant feather in his crest",
+        "A bottle cap on his head | A mushroom cap around his neck | A green pine cone on his shell | A crooked stone in his beak",
+        "\"Benny wore a feather.\"",
+    ],
+    [
+        "What did Daisy carry at the end of the story?",
+        "A mushroom",
+        "A spoon | A green pine cone | A crooked stone | A bottle cap",
+        "\"Daisy carried a mushroom.\"",
+    ],
+    [
+        "What object did Frankie hug at the end of the story?",
+        "A crooked stone",
+        "A giant feather | A bottle cap | A green pine cone | A mushroom cap",
+        "\"Frankie hugged a stone.\"",
+    ],
+    [
+        "What did Felix wear at the end of the story?",
+        "A bottle cap",
+        "A giant feather | A green pine cone | A rusty spoon | A crooked stone",
+        "\"Felix wore a bottle cap.\"",
+    ],
+    [
+        "What object did Sammy have stuffed in his cheek at the end of the story?",
+        "A pine cone",
+        "A spoon | A mushroom cap | A crooked stone | A giant feather",
+        "\"Sammy had a pine cone stuffed in his cheek.\"",
+    ],
+    [
+        "Who suggested that the friends should create a museum?",
+        "Turtle Tom",
+        "Harry the Hedgehog | Felix the Fox | Benny the Blue Jay | Duck Daisy",
+        "\"I think we should keep these things. We should make a museum.\"",
+    ],
+    [
+        "What name did Tom give the new museum?",
+        "The Museum of Muddled Things",
+        "The Museum of Forest Treasures | The Great Oak Collection | The Rainbow Discovery Museum | The Seven Friends' Treasure House",
+        "\"The Museum of Muddled Things,\"",
+    ],
+    [
+        "Where did the friends decide to establish the Museum of Muddled Things?",
+        "Under the Great Oak",
+        "On top of Mushroom Hill | Beside the pond | Inside a hollow log | In the middle of the grassy clearing",
+        "\"We'll put it under the Great Oak\"",
+    ],
+    [
+        "Who volunteered to be the museum guide?",
+        "Felix the Fox",
+        "Harry the Hedgehog | Sammy the Squirrel | Turtle Tom | Benny the Blue Jay",
+        "\"And I'll be the guide!\"",
+    ],
+    [
+        "Who volunteered to be the museum guard?",
+        "Harry the Hedgehog",
+        "Felix the Fox | Frankie the Frog | Duck Daisy | Turtle Tom",
+        "\"And I'll be the guard!\"",
+    ],
+    [
+        "What museum responsibility did Sammy volunteer for?",
+        "Forgetting where everything was put",
+        "Cleaning every object each morning | Writing labels for every exhibit | Guarding the entrance all day | Guiding visitors around the collection",
+        "\"And I'll be the one who forgets where we put everything!\"",
+    ],
+    [
+        "What warning did Tom write on the museum sign?",
+        "PLEASE DO NOT LICK THE STONE",
+        "PLEASE DO NOT TOUCH THE FEATHER | PLEASE DO NOT EAT THE MUSHROOM | PLEASE DO NOT STEAL THE SPOON | PLEASE DO NOT FEED THE SNAIL",
+        "\"PLEASE DO NOT LICK THE STONE.\"",
+    ],
+    [
+        "What did Tom use to write the museum sign?",
+        "His stick",
+        "A giant feather | A rusty spoon | A bottle cap | The crooked stone",
+        "\"Tom wrote a sign with his stick\"",
+    ],
+    [
+        "Why did Frankie say the warning about licking the stone was necessary?",
+        "He had already licked the stone",
+        "The stone tasted like honey | The stone was covered in soup | The stone had swallowed a fly | The stone was made from mushroom juice",
+        "\"'Why would anyone lick the stone?' asked Daisy. 'Because,' said Frankie, 'I already have.'\"",
+    ],
+    [
+        "What did the friends use as the shelf for their museum exhibits?",
+        "A little shelf of moss",
+        "A flat piece of dry bark | A hollow stone bowl | A pile of pine needles | A wooden table from a hollow tree",
+        "\"they put every object on a little shelf of moss\"",
+    ],
+    [
+        "What happened when animals from the Whispering Woods began visiting the museum?",
+        "They laughed at the stone and pine cone and admired the feather",
+        "They took all the objects and hid them beneath the pond | They complained that the museum was too far from the oak | They refused to enter because the warning sign frightened them | They searched the forest for a pot of gold instead",
+        "\"They would laugh at the crooked stone and the green pine cone, and gasp at the giant feather\"",
+    ],
+    [
+        "What did visitors ask about the spoon displayed in the museum?",
+        "Who had lost it",
+        "Who had polished it | Who had buried it | Who had used it as a walking cane | Who had found it on Mushroom Hill",
+        "\"and ask who had lost the spoon.\"",
+    ],
+    [
+        "How did the story change each time the friends retold it?",
+        "It grew bigger and the thunder sounded louder",
+        "It became shorter and the thunder sounded softer | The rainbow faded and the rain grew stronger | The museum grew smaller and the objects vanished | The storm disappeared and the hill became lower",
+        "\"every time they told it, the story got a little bit bigger, the thunder got a little bit louder\"",
+    ],
+    [
+        "What happened to Gerald the snail as the story was told repeatedly?",
+        "He became a little braver",
+        "He grew larger than the hedgehog | He learned to fly above the Great Oak | He became afraid of the rain | He found a new home on Mushroom Hill",
+        "\"and Gerald the snail got a little bit braver.\"",
+    ],
+]
+text_words = 3451
+text_tokens = 4876
