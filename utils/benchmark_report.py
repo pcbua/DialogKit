@@ -421,8 +421,9 @@ def replies_section(replies: dict, runs: list) -> str:
         for r in tok:
             spread[r["qidx"]].append(r["prompt_tokens"] - r["text_tokens"])
         worst = max(max(v) - min(v) for v in spread.values())
-        w(f"Check from the LLM server's own count: for the same question, *prompt tokens − tokens of the stored text* varies by at most {worst} tokens "
-          f"over {len(tok)} queries, while the texts are {min(r['text_tokens'] for r in tok)}–{max(r['text_tokens'] for r in tok)} tokens long. "
+        same_q = "is exactly the same for every version" if worst == 0 else f"varies by at most {worst} tokens"
+        w(f"Check from the LLM server's own count: for the same question, *prompt tokens − tokens of the stored text* {same_q} "
+          f"({len(tok)} queries), while the texts are {min(r['text_tokens'] for r in tok)}–{max(r['text_tokens'] for r in tok)} tokens long. "
           "A cut text would make this difference jump by thousands of tokens for the long versions.")
     w("")
     w("One real version per method, in full (the shortest of each):")
@@ -513,15 +514,13 @@ def replies_section(replies: dict, runs: list) -> str:
       "(\"The provided text does not...\"). All distinct ones:")
     w("")
     if longer:
-        w("| reply | times | letter taken | correct letter | counted |")
-        w("|---|---:|---|---|---|")
-        counts = Counter(r["reply"] for r in longer)
-        done = set()
+        w("| reply | times | letter taken | counted as correct |")
+        w("|---|---:|---|---:|")
+        groups = defaultdict(list)
         for r in longer:
-            if r["reply"] in done:
-                continue
-            done.add(r["reply"])
-            w(f"| `{r['reply']}` | {counts[r['reply']]} | {r['parsed']} | {r['expected']} | {'correct' if r['parsed'] == r['expected'] else 'wrong'} |")
+            groups[(r["reply"], r["parsed"])].append(r)
+        for (reply, letter), rs in sorted(groups.items(), key=lambda g: -len(g[1])):
+            w(f"| `{reply}` | {len(rs)} | {letter} | {sum(1 for r in rs if r['parsed'] == r['expected'])} of {len(rs)} |")
         w("")
     return "\n".join(L) + "\n"
 
