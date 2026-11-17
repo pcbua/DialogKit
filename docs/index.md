@@ -102,3 +102,27 @@ You can run it on a generated TOML file with compressed prompts. This is usually
 
 Example script run:
 `uv run python utils/estimate_tokens.py data/compress.Gemma26B.toml data/compress.Gemma26B.new.toml`
+
+# Testing
+
+The repository has a test suite. It checks that things which worked before a change still work after it.
+The tests need no LLM server and no GPU: the LLM is replaced by a stand-in that answers at once and always the same way.
+They take a few seconds.
+
+Run all tests:
+`uv run pytest`
+
+Other useful runs:
+- `uv run pytest tests/test_benchmark_compressed.py` - tests of one script,
+- `uv run pytest -k parse_letter` - tests with a matching name,
+- `uv run pytest -x` - stop at the first failure,
+- `uv run pytest -m live` - smoke tests against a real LLM server (start the server first; these are not run by default).
+
+What is tested:
+- **Every script** in `utils/` has its own file `tests/test_<script>.py`. It has small tests of single functions and "end to end" tests that run the whole script, like from the command line, on small files in a temporary directory.
+- **The data files** in `data/` are checked by `tests/test_data_files.py`: valid TOML, required fields, complete and fair survey rows, compressed texts that point to an existing dialogue, up-to-date word counts.
+- **The connection to a real LLM** is checked by `tests/test_live_llm.py`, only on request (`-m live`).
+
+The same tests run automatically on GitHub for every pull request (see `.github/workflows/tests.yml`).
+
+When you add a script `utils/<name>.py`, add `tests/test_<name>.py` next to the others. Shared helpers are in `tests/conftest.py` and the LLM stand-ins in `tests/fakes.py`.

@@ -14,7 +14,10 @@ This project uses **GitHub Flow**: `main` is always deployable, and all changes 
    git checkout -b feature/<short-description>
    ```
    Use prefixes such as `feature/`, `fix/`, `docs/`, or `chore/`.
-3. Make small, focused commits with clear messages.
+3. Make small, focused commits with clear messages. Run the tests before you push:
+   ```bash
+   uv run pytest
+   ```
 4. Push the branch and open a pull request against `main`:
    ```bash
    git push -u origin feature/<short-description>
@@ -26,4 +29,5 @@ This project uses **GitHub Flow**: `main` is always deployable, and all changes 
 
 - Do not push directly to `main`. Every change goes through a pull request.
 - Keep pull requests small and focused on one change.
+- Tests must pass. They run automatically on every pull request. Add or update tests together with the code they cover (see the Testing section in `docs/index.md`).
 - Describe what changed and why in the pull request.
