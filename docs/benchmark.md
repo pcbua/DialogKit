@@ -6,14 +6,15 @@ Additionally, please note that DSPM is designed for two-participant dialogues, w
 
 Hand-written notes (this file: `docs/benchmark_notes.md`); everything below them is generated from the result files. The statements are about this reader (Gemma 26B, thinking off) and these three dialogues, so treat them as a first picture.
 
-1. **The reader refuses instead of guessing.** About half of all queries (21 451 of 42 304) got no clear answer, because the text did not contain the fact; the replies say so ("The provided text does not contain information regarding..."). So accuracy mostly measures how many facts survived the compression. Among the questions the reader does answer, it is right most of the time (see "accuracy among answered" and the charts).
+1. **The reader refuses instead of guessing.** About half of all queries (24 952 of 47 382 in the 15 runs) got no clear answer, because the text did not contain the fact; the replies say so ("The provided text does not contain information regarding..."). So accuracy mostly measures how many facts survived the compression. Among the questions the reader does answer, it is right most of the time (see "accuracy among answered" and the charts).
 2. **Frontier models keep the most facts per token (d001 only):** mean accuracy 78% at a median of 37% of the original tokens.
 3. **The local Gemma compressors are weaker.** `compress_Gemma26B`, counting only versions that are really shorter than the original: 43–45% mean accuracy at a median of 14–20% of the tokens. DSPM and SkLLM compress hardest (5–21% of the tokens) and keep the fewest facts (16–30% mean accuracy). Note the warning above: DSPM is designed for two participants and these dialogues have three.
-4. **`compress_Gemma26B` with thinking medium often does not compress:** on d001 37 of 90 and on d003 28 of 90 versions of `compress_Gemma26B` are as long as the original or longer. Read the "really shorter" tables for this method.
-5. **Prompts, compared at the same real length:** p01 ("just shorten it") is the weakest in 5 of the 6 cases where the comparison is meaningful (Gemma with thinking off on three dialogues, three Frontier models on d001; the exception is Gemma with thinking off on d002, where p02 is 1 point lower). p02 and p03, which also say what to keep, are close to each other: p03 is a little ahead on Gemma with thinking off, p02 on the Frontier models, by 1–6 points. The plain means over the same targets favour p03 mostly because it writes longer texts. Gemma with thinking medium ignores the requested length (texts 4–9 times longer than asked), so it cannot be compared.
-6. **Noise:** the same queries asked again do not always get the same reply (the reference points of one dialogue differ between runs by one question; a full repeat of the d001 queries gave the same score for 157 of 186 texts and differed by up to 2 questions for the rest). So differences of 1–2 questions between versions mean nothing.
-7. **This report replaces an earlier one** that was made with an outdated copy of the benchmark script (before #8: one order of answers for all texts and an older parser). The rerun with the current script changed the mean accuracies in the summaries by at most about 1 point; the conclusions above did not change.
-8. **A small weakness of `parse_letter`:** the refusal `None of the provided options (A,` is read as the answer A (13 of the 9300 d001 replies, see the parser section at the end). These replies are counted as wrong anyway, so the scores do not change; only the number of "no answer" is a little too low.
+4. **The legend of the DSPM tags barely changes the score.** DSPM was run twice: as before (`DSPM-NoLegend`) and with the legend of its tags and the rule "treat [CON] as hard rules" from the DSPM author (`DSPM+Legend`, option `--tag-legend`). The mean accuracy moved by +0.7 (d001), +2.0 (d002) and −0.4 (d003) points, which is within the noise. So the low score of DSPM does not come from unclear tags but from what is in the memory: with a small budget DSPM cuts every entry to a few words (e.g. `[DEC] Agent 1`, `[DEC] Flag 1.7`).
+5. **`compress_Gemma26B` with thinking medium often does not compress:** on d001 37 of 90 and on d003 28 of 90 versions of `compress_Gemma26B` are as long as the original or longer. Read the "really shorter" tables for this method.
+6. **Prompts, compared at the same real length:** p01 ("just shorten it") is the weakest in 5 of the 6 cases where the comparison is meaningful (Gemma with thinking off on three dialogues, three Frontier models on d001; the exception is Gemma with thinking off on d002, where p02 is 1 point lower). p02 and p03, which also say what to keep, are close to each other: p03 is a little ahead on Gemma with thinking off, p02 on the Frontier models, by 1–6 points. The plain means over the same targets favour p03 mostly because it writes longer texts. Gemma with thinking medium ignores the requested length (texts 4–9 times longer than asked), so it cannot be compared.
+7. **Noise:** the same queries asked again do not always get the same reply (the reference points of one dialogue differ between runs by one question; a full repeat of the d001 queries gave the same score for 157 of 186 texts and differed by up to 2 questions for the rest). So differences of 1–2 questions between versions mean nothing.
+8. **This report replaces an earlier one** that was made with an outdated copy of the benchmark script (before #8: one order of answers for all texts and an older parser). The rerun with the current script changed the mean accuracies in the summaries by at most about 1 point; the conclusions above did not change.
+9. **A small weakness of `parse_letter`:** the refusal `None of the provided options (A,` is read as the answer A (13 of the 9300 d001 replies, see the parser section at the end). These replies are counted as wrong anyway, so the scores do not change; only the number of "no answer" is a little too low.
 
 # Benchmark: compressed dialogues read by an LLM
 
@@ -25,7 +26,7 @@ The reader LLM gets **only the compressed text** (as chat history) and answers a
 
 - **Accuracy** = correct answers / questions. A missing or unclear answer counts as wrong.
 - **No answer** = the reply had no clear letter (see `parse_letter` in the benchmark). The examples at the end of this file show what such replies say.
-- **No Text** (floor): the reader sees only the questions and answers. Here: 6%–12%. A random guess would give 20%; a reader that refuses instead of guessing scores lower.
+- **No Text** (floor): the reader sees only the questions and answers. Here: 5%–12%. A random guess would give 20%; a reader that refuses instead of guessing scores lower.
 - **Original Text** (ceiling): the reader sees the full dialogue. A compressed text is good when it is close to this number.
 - **target words** is only the length the compressor was asked for. The benchmark always uses the whole text that really came out; its real length is in **words** and **tokens**.
 - **% of original**: real tokens of the compressed text / tokens of the original text.
@@ -33,11 +34,14 @@ The reader LLM gets **only the compressed text** (as chat history) and answers a
 ## Setup
 
 - Reader settings: temperature 0.0, top_p 1.0, max answer tokens 8, reasoning off, concurrency 32
-- 12 runs, 42304 LLM queries, 21451 of them without a clear answer (50.7%)
+- 15 runs, 47382 LLM queries, 24952 of them without a clear answer (52.7%)
 
 Each run (raw results in `data/`):
 
 ```
+uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.DSPM.toml --tag-legend --base-url <LLM server> --output data/benchmark.DSPM-Legend.d001.toml
+uv run utils/benchmark_compressed.py data/data.d002.toml data/compress.DSPM.toml --tag-legend --base-url <LLM server> --output data/benchmark.DSPM-Legend.d002.toml
+uv run utils/benchmark_compressed.py data/data.d003.toml data/compress.DSPM.toml --tag-legend --base-url <LLM server> --output data/benchmark.DSPM-Legend.d003.toml
 uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.DSPM.toml --base-url <LLM server> --output data/benchmark.DSPM.d001.toml
 uv run utils/benchmark_compressed.py data/data.d002.toml data/compress.DSPM.toml --base-url <LLM server> --output data/benchmark.DSPM.d002.toml
 uv run utils/benchmark_compressed.py data/data.d003.toml data/compress.DSPM.toml --base-url <LLM server> --output data/benchmark.DSPM.d003.toml
@@ -71,7 +75,8 @@ Floor (no text): **6/50 = 12.0%** (44 no answer). Ceiling (original text): **50/
 | method | versions | % of original (median) | accuracy mean | accuracy best | no answer (mean) | accuracy among answered (mean) |
 |---|---:|---:|---:|---:|---:|---:|
 | Gemma26B direct | 90 | 58% | 57.1% | 100.0% | 39% | 93.3% |
-| DSPM | 15 | 21% | 28.0% | 56.0% | 70% | 82.4% |
+| DSPM-NoLegend | 15 | 21% | 28.0% | 56.0% | 70% | 82.4% |
+| DSPM+Legend | 15 | 21% | 28.7% | 54.0% | 68% | 83.2% |
 | SkLLM | 15 | 16% | 19.1% | 28.0% | 80% | 94.9% |
 | Frontier models | 54 | 37% | 78.0% | 100.0% | 20% | 97.1% |
 
@@ -80,7 +85,8 @@ Floor (no text): **6/50 = 12.0%** (44 no answer). Ceiling (original text): **50/
 | method | versions | % of original (median) | accuracy mean | accuracy best | no answer (mean) | accuracy among answered (mean) |
 |---|---:|---:|---:|---:|---:|---:|
 | Gemma26B direct | 53 / 90 | 20% | 44.6% | 88.0% | 53% | 94.2% |
-| DSPM | 15 / 15 | 21% | 28.0% | 56.0% | 70% | 82.4% |
+| DSPM-NoLegend | 15 / 15 | 21% | 28.0% | 56.0% | 70% | 82.4% |
+| DSPM+Legend | 15 / 15 | 21% | 28.7% | 54.0% | 68% | 83.2% |
 | SkLLM | 15 / 15 | 16% | 19.1% | 28.0% | 80% | 94.9% |
 | Frontier models | 54 / 54 | 37% | 78.0% | 100.0% | 20% | 97.1% |
 
@@ -181,7 +187,7 @@ Floor (no text): **6/50 = 12.0%** (44 no answer). Ceiling (original text): **50/
 
 </details>
 
-<details><summary>d001: every version of DSPM (15)</summary>
+<details><summary>d001: every version of DSPM-NoLegend (15)</summary>
 
 | prompt | source LLM | target words | words | tokens | % of original | correct | accuracy | no answer |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
@@ -200,6 +206,28 @@ Floor (no text): **6/50 = 12.0%** (44 no answer). Ceiling (original text): **50/
 | NA | DSPM/Gemma26B | 200 | 191 | 326 | 10% | 3/50 | 6.0% | 46 |
 | NA | DSPM/Gemma26B | 150 | 117 | 258 | 8% | 1/50 | 2.0% | 48 |
 | NA | DSPM/Gemma26B | 100 | 77 | 192 | 6% | 0/50 | 0.0% | 49 |
+
+</details>
+
+<details><summary>d001: every version of DSPM+Legend (15)</summary>
+
+| prompt | source LLM | target words | words | tokens | % of original | correct | accuracy | no answer |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| NA | DSPM/Gemma26B | 1200 | 764 | 1043 | 34% | 27/50 | 54.0% | 21 |
+| NA | DSPM/Gemma26B | 1100 | 737 | 996 | 32% | 25/50 | 50.0% | 23 |
+| NA | DSPM/Gemma26B | 1000 | 573 | 796 | 26% | 20/50 | 40.0% | 27 |
+| NA | DSPM/Gemma26B | 900 | 559 | 778 | 25% | 18/50 | 36.0% | 30 |
+| NA | DSPM/Gemma26B | 800 | 562 | 765 | 25% | 17/50 | 34.0% | 30 |
+| NA | DSPM/Gemma26B | 700 | 603 | 819 | 26% | 22/50 | 44.0% | 25 |
+| NA | DSPM/Gemma26B | 600 | 469 | 624 | 20% | 18/50 | 36.0% | 32 |
+| NA | DSPM/Gemma26B | 500 | 557 | 767 | 25% | 18/50 | 36.0% | 32 |
+| NA | DSPM/Gemma26B | 400 | 482 | 650 | 21% | 19/50 | 38.0% | 30 |
+| NA | DSPM/Gemma26B | 350 | 413 | 565 | 18% | 14/50 | 28.0% | 35 |
+| NA | DSPM/Gemma26B | 300 | 345 | 502 | 16% | 9/50 | 18.0% | 39 |
+| NA | DSPM/Gemma26B | 250 | 255 | 405 | 13% | 3/50 | 6.0% | 46 |
+| NA | DSPM/Gemma26B | 200 | 191 | 326 | 10% | 3/50 | 6.0% | 47 |
+| NA | DSPM/Gemma26B | 150 | 117 | 258 | 8% | 2/50 | 4.0% | 47 |
+| NA | DSPM/Gemma26B | 100 | 77 | 192 | 6% | 0/50 | 0.0% | 48 |
 
 </details>
 
@@ -295,7 +323,8 @@ Floor (no text): **15/130 = 11.5%** (115 no answer). Ceiling (original text): **
 | method | versions | % of original (median) | accuracy mean | accuracy best | no answer (mean) | accuracy among answered (mean) |
 |---|---:|---:|---:|---:|---:|---:|
 | Gemma26B direct | 90 | 14% | 43.4% | 90.0% | 50% | 85.4% |
-| DSPM | 13 | 10% | 15.9% | 45.4% | 82% | 73.2% |
+| DSPM-NoLegend | 13 | 10% | 15.9% | 45.4% | 82% | 73.2% |
+| DSPM+Legend | 13 | 10% | 17.9% | 44.6% | 79% | 72.7% |
 | SkLLM | 15 | 5% | 18.1% | 25.4% | 79% | 83.2% |
 
 ### Only versions that are really shorter than the original
@@ -303,7 +332,8 @@ Floor (no text): **15/130 = 11.5%** (115 no answer). Ceiling (original text): **
 | method | versions | % of original (median) | accuracy mean | accuracy best | no answer (mean) | accuracy among answered (mean) |
 |---|---:|---:|---:|---:|---:|---:|
 | Gemma26B direct | 90 / 90 | 14% | 43.4% | 90.0% | 50% | 85.4% |
-| DSPM | 13 / 13 | 10% | 15.9% | 45.4% | 82% | 73.2% |
+| DSPM-NoLegend | 13 / 13 | 10% | 15.9% | 45.4% | 82% | 73.2% |
+| DSPM+Legend | 13 / 13 | 10% | 17.9% | 44.6% | 79% | 72.7% |
 | SkLLM | 15 / 15 | 5% | 18.1% | 25.4% | 79% | 83.2% |
 
 <details><summary>d002: every version of Gemma26B direct (90)</summary>
@@ -403,7 +433,7 @@ Floor (no text): **15/130 = 11.5%** (115 no answer). Ceiling (original text): **
 
 </details>
 
-<details><summary>d002: every version of DSPM (13)</summary>
+<details><summary>d002: every version of DSPM-NoLegend (13)</summary>
 
 | prompt | source LLM | target words | words | tokens | % of original | correct | accuracy | no answer |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
@@ -420,6 +450,26 @@ Floor (no text): **15/130 = 11.5%** (115 no answer). Ceiling (original text): **
 | NA | DSPM/Gemma26B | 300 | 131 | 290 | 3% | 2/130 | 1.5% | 126 |
 | NA | DSPM/Gemma26B | 250 | 122 | 269 | 3% | 1/130 | 0.8% | 127 |
 | NA | DSPM/Gemma26B | 200 | 123 | 272 | 3% | 6/130 | 4.6% | 120 |
+
+</details>
+
+<details><summary>d002: every version of DSPM+Legend (13)</summary>
+
+| prompt | source LLM | target words | words | tokens | % of original | correct | accuracy | no answer |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| NA | DSPM/Gemma26B | 1200 | 1335 | 1815 | 19% | 58/130 | 44.6% | 68 |
+| NA | DSPM/Gemma26B | 1100 | 1243 | 1744 | 18% | 46/130 | 35.4% | 78 |
+| NA | DSPM/Gemma26B | 1000 | 1135 | 1623 | 17% | 53/130 | 40.8% | 71 |
+| NA | DSPM/Gemma26B | 900 | 909 | 1372 | 14% | 37/130 | 28.5% | 89 |
+| NA | DSPM/Gemma26B | 800 | 814 | 1284 | 13% | 34/130 | 26.2% | 89 |
+| NA | DSPM/Gemma26B | 700 | 628 | 1070 | 11% | 21/130 | 16.2% | 105 |
+| NA | DSPM/Gemma26B | 600 | 563 | 975 | 10% | 23/130 | 17.7% | 104 |
+| NA | DSPM/Gemma26B | 500 | 396 | 818 | 9% | 11/130 | 8.5% | 116 |
+| NA | DSPM/Gemma26B | 400 | 355 | 737 | 8% | 7/130 | 5.4% | 120 |
+| NA | DSPM/Gemma26B | 350 | 325 | 698 | 7% | 5/130 | 3.9% | 122 |
+| NA | DSPM/Gemma26B | 300 | 131 | 290 | 3% | 4/130 | 3.1% | 124 |
+| NA | DSPM/Gemma26B | 250 | 122 | 269 | 3% | 0/130 | 0.0% | 128 |
+| NA | DSPM/Gemma26B | 200 | 123 | 272 | 3% | 4/130 | 3.1% | 122 |
 
 </details>
 
@@ -447,14 +497,15 @@ Floor (no text): **15/130 = 11.5%** (115 no answer). Ceiling (original text): **
 
 ## d003: 134 questions, original text 3095 words / 3900 tokens
 
-Floor (no text): **8/134 = 6.0%** (126 no answer). Ceiling (original text): **134/134 = 100.0%** (0 no answer).
+Floor (no text): **7/134 = 5.2%** (127 no answer). Ceiling (original text): **134/134 = 100.0%** (0 no answer).
 
 ### Summary by method
 
 | method | versions | % of original (median) | accuracy mean | accuracy best | no answer (mean) | accuracy among answered (mean) |
 |---|---:|---:|---:|---:|---:|---:|
 | Gemma26B direct | 90 | 33% | 51.6% | 85.1% | 45% | 92.4% |
-| DSPM | 15 | 15% | 29.8% | 38.8% | 68% | 91.0% |
+| DSPM-NoLegend | 15 | 15% | 29.8% | 38.8% | 68% | 91.0% |
+| DSPM+Legend | 15 | 15% | 29.4% | 39.6% | 68% | 89.1% |
 | SkLLM | 15 | 10% | 22.2% | 26.1% | 75% | 87.4% |
 
 ### Only versions that are really shorter than the original
@@ -462,7 +513,8 @@ Floor (no text): **8/134 = 6.0%** (126 no answer). Ceiling (original text): **13
 | method | versions | % of original (median) | accuracy mean | accuracy best | no answer (mean) | accuracy among answered (mean) |
 |---|---:|---:|---:|---:|---:|---:|
 | Gemma26B direct | 62 / 90 | 18% | 44.9% | 82.1% | 52% | 92.7% |
-| DSPM | 15 / 15 | 15% | 29.8% | 38.8% | 68% | 91.0% |
+| DSPM-NoLegend | 15 / 15 | 15% | 29.8% | 38.8% | 68% | 91.0% |
+| DSPM+Legend | 15 / 15 | 15% | 29.4% | 39.6% | 68% | 89.1% |
 | SkLLM | 15 / 15 | 10% | 22.2% | 26.1% | 75% | 87.4% |
 
 <details><summary>d003: every version of Gemma26B direct (90)</summary>
@@ -562,7 +614,7 @@ Floor (no text): **8/134 = 6.0%** (126 no answer). Ceiling (original text): **13
 
 </details>
 
-<details><summary>d003: every version of DSPM (15)</summary>
+<details><summary>d003: every version of DSPM-NoLegend (15)</summary>
 
 | prompt | source LLM | target words | words | tokens | % of original | correct | accuracy | no answer |
 |---|---|---:|---:|---:|---:|---:|---:|---:|
@@ -581,6 +633,28 @@ Floor (no text): **8/134 = 6.0%** (126 no answer). Ceiling (original text): **13
 | NA | DSPM/Gemma26B | 200 | 219 | 329 | 8% | 25/134 | 18.7% | 106 |
 | NA | DSPM/Gemma26B | 150 | 160 | 243 | 6% | 23/134 | 17.2% | 107 |
 | NA | DSPM/Gemma26B | 100 | 72 | 176 | 5% | 5/134 | 3.7% | 125 |
+
+</details>
+
+<details><summary>d003: every version of DSPM+Legend (15)</summary>
+
+| prompt | source LLM | target words | words | tokens | % of original | correct | accuracy | no answer |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| NA | DSPM/Gemma26B | 1200 | 520 | 699 | 18% | 46/134 | 34.3% | 85 |
+| NA | DSPM/Gemma26B | 1100 | 531 | 714 | 18% | 50/134 | 37.3% | 80 |
+| NA | DSPM/Gemma26B | 1000 | 540 | 729 | 19% | 48/134 | 35.8% | 83 |
+| NA | DSPM/Gemma26B | 900 | 556 | 742 | 19% | 51/134 | 38.1% | 79 |
+| NA | DSPM/Gemma26B | 800 | 523 | 695 | 18% | 50/134 | 37.3% | 80 |
+| NA | DSPM/Gemma26B | 700 | 444 | 600 | 15% | 42/134 | 31.3% | 90 |
+| NA | DSPM/Gemma26B | 600 | 496 | 672 | 17% | 53/134 | 39.6% | 79 |
+| NA | DSPM/Gemma26B | 500 | 473 | 633 | 16% | 45/134 | 33.6% | 85 |
+| NA | DSPM/Gemma26B | 400 | 380 | 512 | 13% | 38/134 | 28.4% | 93 |
+| NA | DSPM/Gemma26B | 350 | 420 | 564 | 14% | 44/134 | 32.8% | 88 |
+| NA | DSPM/Gemma26B | 300 | 363 | 500 | 13% | 41/134 | 30.6% | 89 |
+| NA | DSPM/Gemma26B | 250 | 291 | 400 | 10% | 30/134 | 22.4% | 100 |
+| NA | DSPM/Gemma26B | 200 | 219 | 329 | 8% | 25/134 | 18.7% | 106 |
+| NA | DSPM/Gemma26B | 150 | 160 | 243 | 6% | 23/134 | 17.2% | 107 |
+| NA | DSPM/Gemma26B | 100 | 72 | 176 | 5% | 5/134 | 3.7% | 123 |
 
 </details>
 
@@ -926,7 +1000,7 @@ Marta from the Home Care Support Program conducted a weekly check-in with Mr. No
 
 </details>
 
-<details><summary>DSPM: DSPM/Gemma26B, prompt NA, target 100 words — real: 77 words, 192 tokens</summary>
+<details><summary>DSPM-NoLegend: DSPM/Gemma26B, prompt NA, target 100 words — real: 77 words, 192 tokens</summary>
 
 ```text
 [DEC] Patient agrees
@@ -986,7 +1060,7 @@ Marta, a Home Care Support agent, conducted a weekly check-in with Mr. Nowak and
 |---|---:|---:|---:|---:|
 | reference points | 600 | 56% | 0% | 44% |
 | Gemma26B direct | 4500 | 61% | 0% | 39% |
-| DSPM | 750 | 30% | 0% | 69% |
+| DSPM-NoLegend | 750 | 30% | 0% | 69% |
 | SkLLM | 750 | 20% | 0% | 80% |
 | Frontier models | 2700 | 80% | 0% | 20% |
 
