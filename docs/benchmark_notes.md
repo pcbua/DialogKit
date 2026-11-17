@@ -1,0 +1,16 @@
+# ⚠️ Note: Preliminary Results
+These are early results from a benchmark developed and run by Claude, and they still require human review. 
+Additionally, please note that DSPM is designed for two-participant dialogues, whereas the test dialogues presented here involve three participants.
+
+## Main observations
+
+Hand-written notes (this file: `docs/benchmark_notes.md`); everything below them is generated from the result files. The statements are about this reader (Gemma 26B, thinking off) and these three dialogues, so treat them as a first picture.
+
+1. **The reader refuses instead of guessing.** About half of all queries (21 451 of 42 304) got no clear answer, because the text did not contain the fact; the replies say so ("The provided text does not contain information regarding..."). So accuracy mostly measures how many facts survived the compression. Among the questions the reader does answer, it is right most of the time (see "accuracy among answered" and the charts).
+2. **Frontier models keep the most facts per token (d001 only):** mean accuracy 78% at a median of 37% of the original tokens.
+3. **The local Gemma compressors are weaker.** `compress_Gemma26B`, counting only versions that are really shorter than the original: 43–45% mean accuracy at a median of 14–20% of the tokens. DSPM and SkLLM compress hardest (5–21% of the tokens) and keep the fewest facts (16–30% mean accuracy). Note the warning above: DSPM is designed for two participants and these dialogues have three.
+4. **`compress_Gemma26B` with thinking medium often does not compress:** on d001 37 of 90 and on d003 28 of 90 versions of `compress_Gemma26B` are as long as the original or longer. Read the "really shorter" tables for this method.
+5. **Prompts, compared at the same real length:** p01 ("just shorten it") is the weakest in 5 of the 6 cases where the comparison is meaningful (Gemma with thinking off on three dialogues, three Frontier models on d001; the exception is Gemma with thinking off on d002, where p02 is 1 point lower). p02 and p03, which also say what to keep, are close to each other: p03 is a little ahead on Gemma with thinking off, p02 on the Frontier models, by 1–6 points. The plain means over the same targets favour p03 mostly because it writes longer texts. Gemma with thinking medium ignores the requested length (texts 4–9 times longer than asked), so it cannot be compared.
+6. **Noise:** the same queries asked again do not always get the same reply (the reference points of one dialogue differ between runs by one question; a full repeat of the d001 queries gave the same score for 157 of 186 texts and differed by up to 2 questions for the rest). So differences of 1–2 questions between versions mean nothing.
+7. **This report replaces an earlier one** that was made with an outdated copy of the benchmark script (before #8: one order of answers for all texts and an older parser). The rerun with the current script changed the mean accuracies in the summaries by at most about 1 point; the conclusions above did not change.
+8. **A small weakness of `parse_letter`:** the refusal `None of the provided options (A,` is read as the answer A (13 of the 9300 d001 replies, see the parser section at the end). These replies are counted as wrong anyway, so the scores do not change; only the number of "no answer" is a little too low.

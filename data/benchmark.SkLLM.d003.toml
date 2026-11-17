@@ -27,9 +27,9 @@ target_words = 0
 text_words = 0
 text_tokens = 0
 questions = 134
-correct = 8
-no_answer = 126
-accuracy = 0.0597
+correct = 7
+no_answer = 127
+accuracy = 0.0522
 wrong_questions = [
     1,
     2,
@@ -61,6 +61,7 @@ wrong_questions = [
     28,
     29,
     30,
+    31,
     32,
     33,
     34,
@@ -183,10 +184,11 @@ text_words = 267
 text_tokens = 368
 questions = 134
 correct = 31
-no_answer = 99
+no_answer = 100
 accuracy = 0.2313
 wrong_questions = [
     3,
+    6,
     8,
     9,
     10,
@@ -227,13 +229,242 @@ wrong_questions = [
     54,
     55,
     56,
-    57,
     58,
     59,
     60,
     61,
     62,
     63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    95,
+    96,
+    97,
+    99,
+    100,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    112,
+    113,
+    114,
+    116,
+    117,
+    118,
+    119,
+    120,
+    122,
+    125,
+    126,
+    127,
+    129,
+    130,
+    131,
+    132,
+    134,
+]
+
+[[results]]
+type = "Compressed Dialogue"
+data_id = "d003"
+prompt_id = "NA"
+source_llm = "Gemma26B"
+target_words = 1000
+text_words = 283
+text_tokens = 382
+questions = 134
+correct = 33
+no_answer = 99
+accuracy = 0.2463
+wrong_questions = [
+    3,
+    7,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    16,
+    18,
+    19,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    31,
+    32,
+    34,
+    35,
+    36,
+    39,
+    40,
+    41,
+    42,
+    43,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    112,
+    113,
+    114,
+    116,
+    117,
+    118,
+    119,
+    120,
+    122,
+    125,
+    126,
+    127,
+    130,
+    131,
+    134,
+]
+
+[[results]]
+type = "Compressed Dialogue"
+data_id = "d003"
+prompt_id = "NA"
+source_llm = "Gemma26B"
+target_words = 1100
+text_words = 282
+text_tokens = 391
+questions = 134
+correct = 35
+no_answer = 94
+accuracy = 0.2612
+wrong_questions = [
+    3,
+    8,
+    9,
+    10,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18,
+    19,
+    22,
+    23,
+    24,
+    26,
+    27,
+    28,
+    29,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    39,
+    40,
+    41,
+    42,
+    43,
+    45,
+    46,
+    47,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    58,
+    59,
+    60,
+    61,
+    62,
     64,
     65,
     66,
@@ -286,236 +517,6 @@ wrong_questions = [
     126,
     127,
     129,
-    130,
-    131,
-    132,
-]
-
-[[results]]
-type = "Compressed Dialogue"
-data_id = "d003"
-prompt_id = "NA"
-source_llm = "Gemma26B"
-target_words = 1000
-text_words = 283
-text_tokens = 382
-questions = 134
-correct = 31
-no_answer = 100
-accuracy = 0.2313
-wrong_questions = [
-    3,
-    7,
-    8,
-    9,
-    10,
-    12,
-    13,
-    14,
-    15,
-    16,
-    19,
-    22,
-    23,
-    24,
-    25,
-    26,
-    27,
-    28,
-    29,
-    31,
-    32,
-    34,
-    35,
-    36,
-    38,
-    39,
-    40,
-    41,
-    42,
-    43,
-    46,
-    47,
-    48,
-    49,
-    50,
-    51,
-    52,
-    53,
-    54,
-    55,
-    56,
-    57,
-    58,
-    59,
-    60,
-    61,
-    62,
-    63,
-    64,
-    65,
-    66,
-    67,
-    68,
-    69,
-    70,
-    71,
-    72,
-    75,
-    76,
-    77,
-    78,
-    79,
-    80,
-    81,
-    82,
-    83,
-    84,
-    85,
-    86,
-    87,
-    88,
-    89,
-    90,
-    91,
-    92,
-    95,
-    96,
-    97,
-    98,
-    99,
-    100,
-    101,
-    103,
-    104,
-    105,
-    106,
-    107,
-    108,
-    109,
-    112,
-    113,
-    114,
-    116,
-    117,
-    118,
-    119,
-    120,
-    122,
-    125,
-    126,
-    127,
-    130,
-    131,
-]
-
-[[results]]
-type = "Compressed Dialogue"
-data_id = "d003"
-prompt_id = "NA"
-source_llm = "Gemma26B"
-target_words = 1100
-text_words = 282
-text_tokens = 391
-questions = 134
-correct = 37
-no_answer = 93
-accuracy = 0.2761
-wrong_questions = [
-    3,
-    8,
-    9,
-    10,
-    12,
-    13,
-    14,
-    15,
-    16,
-    19,
-    22,
-    23,
-    24,
-    26,
-    27,
-    28,
-    29,
-    31,
-    32,
-    33,
-    34,
-    35,
-    36,
-    39,
-    40,
-    41,
-    42,
-    43,
-    45,
-    46,
-    47,
-    50,
-    51,
-    52,
-    53,
-    54,
-    55,
-    56,
-    58,
-    59,
-    60,
-    61,
-    62,
-    64,
-    65,
-    66,
-    67,
-    68,
-    69,
-    70,
-    71,
-    72,
-    75,
-    76,
-    77,
-    78,
-    79,
-    80,
-    81,
-    82,
-    83,
-    84,
-    85,
-    86,
-    87,
-    88,
-    89,
-    90,
-    91,
-    92,
-    95,
-    96,
-    97,
-    99,
-    100,
-    101,
-    104,
-    105,
-    106,
-    107,
-    108,
-    109,
-    112,
-    113,
-    114,
-    116,
-    117,
-    118,
-    119,
-    120,
-    122,
-    125,
-    126,
-    127,
     130,
     131,
     132,
@@ -636,7 +637,6 @@ wrong_questions = [
     106,
     107,
     108,
-    109,
     111,
     112,
     113,
@@ -656,6 +656,7 @@ wrong_questions = [
     130,
     131,
     132,
+    134,
 ]
 
 [[results]]
@@ -667,9 +668,9 @@ target_words = 900
 text_words = 283
 text_tokens = 380
 questions = 134
-correct = 28
-no_answer = 105
-accuracy = 0.209
+correct = 32
+no_answer = 100
+accuracy = 0.2388
 wrong_questions = [
     3,
     8,
@@ -695,7 +696,6 @@ wrong_questions = [
     33,
     34,
     35,
-    38,
     39,
     40,
     41,
@@ -714,7 +714,6 @@ wrong_questions = [
     54,
     55,
     56,
-    57,
     58,
     59,
     60,
@@ -752,14 +751,12 @@ wrong_questions = [
     98,
     99,
     100,
-    101,
     103,
     104,
     105,
     106,
     107,
     108,
-    109,
     111,
     113,
     114,
@@ -788,12 +785,11 @@ target_words = 150
 text_words = 140
 text_tokens = 188
 questions = 134
-correct = 20
-no_answer = 107
-accuracy = 0.1493
+correct = 23
+no_answer = 104
+accuracy = 0.1716
 wrong_questions = [
     3,
-    4,
     6,
     8,
     9,
@@ -871,7 +867,6 @@ wrong_questions = [
     88,
     89,
     90,
-    91,
     92,
     94,
     95,
@@ -887,7 +882,6 @@ wrong_questions = [
     106,
     107,
     108,
-    109,
     111,
     112,
     113,
@@ -918,7 +912,7 @@ text_words = 214
 text_tokens = 286
 questions = 134
 correct = 27
-no_answer = 104
+no_answer = 103
 accuracy = 0.2015
 wrong_questions = [
     3,
@@ -953,6 +947,7 @@ wrong_questions = [
     41,
     42,
     43,
+    44,
     45,
     46,
     47,
@@ -1011,7 +1006,6 @@ wrong_questions = [
     106,
     107,
     108,
-    109,
     111,
     113,
     114,
@@ -1039,9 +1033,9 @@ target_words = 800
 text_words = 309
 text_tokens = 412
 questions = 134
-correct = 33
+correct = 34
 no_answer = 98
-accuracy = 0.2463
+accuracy = 0.2537
 wrong_questions = [
     3,
     7,
@@ -1051,8 +1045,8 @@ wrong_questions = [
     12,
     13,
     14,
-    15,
     16,
+    18,
     19,
     22,
     23,
@@ -1066,7 +1060,6 @@ wrong_questions = [
     32,
     34,
     36,
-    38,
     39,
     41,
     42,
@@ -1128,7 +1121,6 @@ wrong_questions = [
     106,
     107,
     108,
-    109,
     112,
     113,
     114,
@@ -1144,6 +1136,7 @@ wrong_questions = [
     129,
     130,
     131,
+    134,
 ]
 
 [[results]]
@@ -1155,12 +1148,11 @@ target_words = 250
 text_words = 234
 text_tokens = 309
 questions = 134
-correct = 29
-no_answer = 97
-accuracy = 0.2164
+correct = 30
+no_answer = 98
+accuracy = 0.2239
 wrong_questions = [
     3,
-    4,
     8,
     9,
     10,
@@ -1202,7 +1194,6 @@ wrong_questions = [
     54,
     55,
     56,
-    57,
     58,
     59,
     60,
@@ -1264,6 +1255,7 @@ wrong_questions = [
     130,
     131,
     132,
+    134,
 ]
 
 [[results]]
@@ -1371,7 +1363,6 @@ wrong_questions = [
     106,
     107,
     108,
-    111,
     112,
     113,
     114,
@@ -1389,6 +1380,7 @@ wrong_questions = [
     130,
     131,
     132,
+    134,
 ]
 
 [[results]]
@@ -1400,9 +1392,9 @@ target_words = 700
 text_words = 300
 text_tokens = 401
 questions = 134
-correct = 35
-no_answer = 95
-accuracy = 0.2612
+correct = 33
+no_answer = 97
+accuracy = 0.2463
 wrong_questions = [
     3,
     9,
@@ -1483,7 +1475,6 @@ wrong_questions = [
     98,
     99,
     100,
-    101,
     103,
     104,
     105,
@@ -1501,8 +1492,11 @@ wrong_questions = [
     125,
     126,
     127,
+    129,
     130,
     131,
+    132,
+    134,
 ]
 
 [[results]]
@@ -1514,12 +1508,12 @@ target_words = 350
 text_words = 271
 text_tokens = 355
 questions = 134
-correct = 34
-no_answer = 93
-accuracy = 0.2537
+correct = 33
+no_answer = 95
+accuracy = 0.2463
 wrong_questions = [
     3,
-    4,
+    8,
     9,
     10,
     11,
@@ -1537,13 +1531,13 @@ wrong_questions = [
     27,
     28,
     29,
+    30,
     31,
     32,
     33,
     34,
     35,
     36,
-    38,
     39,
     40,
     41,
@@ -1602,11 +1596,11 @@ wrong_questions = [
     106,
     107,
     108,
+    109,
     112,
     113,
     114,
     116,
-    117,
     118,
     119,
     120,
@@ -1618,6 +1612,7 @@ wrong_questions = [
     130,
     131,
     132,
+    134,
 ]
 
 [[results]]
@@ -1630,7 +1625,7 @@ text_words = 301
 text_tokens = 403
 questions = 134
 correct = 35
-no_answer = 97
+no_answer = 98
 accuracy = 0.2612
 wrong_questions = [
     3,
@@ -1641,7 +1636,6 @@ wrong_questions = [
     12,
     13,
     14,
-    15,
     16,
     19,
     22,
@@ -1657,7 +1651,6 @@ wrong_questions = [
     33,
     34,
     35,
-    38,
     39,
     40,
     41,
@@ -1730,8 +1723,10 @@ wrong_questions = [
     125,
     126,
     127,
+    129,
     131,
     132,
+    134,
 ]
 
 [[results]]
@@ -1774,7 +1769,6 @@ wrong_questions = [
     34,
     35,
     36,
-    38,
     39,
     40,
     41,
@@ -1838,6 +1832,7 @@ wrong_questions = [
     113,
     114,
     116,
+    117,
     118,
     119,
     120,
@@ -1860,9 +1855,9 @@ target_words = 500
 text_words = 311
 text_tokens = 417
 questions = 134
-correct = 31
-no_answer = 99
-accuracy = 0.2313
+correct = 33
+no_answer = 97
+accuracy = 0.2463
 wrong_questions = [
     3,
     7,
@@ -1874,7 +1869,6 @@ wrong_questions = [
     14,
     15,
     16,
-    18,
     19,
     22,
     23,
@@ -1887,7 +1881,6 @@ wrong_questions = [
     31,
     32,
     34,
-    35,
     38,
     39,
     40,
@@ -1906,7 +1899,6 @@ wrong_questions = [
     54,
     55,
     56,
-    57,
     58,
     59,
     60,
@@ -1957,6 +1949,7 @@ wrong_questions = [
     113,
     114,
     116,
+    117,
     118,
     119,
     120,
