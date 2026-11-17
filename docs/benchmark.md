@@ -13,7 +13,8 @@ All numbers are in the tables below; the "shorter" tables leave out versions tha
 3. **The local Gemma compressors are much weaker.** `compress_Gemma26B`: 44–45% mean accuracy at 14–20% of the tokens; DSPM and SkLLM compress hardest (5–21% of the tokens) and keep the fewest facts (mean accuracy 16–30%).
 4. **`compress_Gemma26B` often does not compress.** On d001 37 of 90 and on d003 28 of 90 versions are as long as or longer than the original (up to 278%); the best scores of this method come from such versions, so read the "shorter" tables.
 5. **Compression removes facts; it does not make the reader worse.** Among the questions the reader does answer, accuracy stays high at every length (medians of the length bins: 75–100%, see the charts); what grows with shortening is the share of questions with no answer. The reader's replies without a letter are real refusals ("The provided text does not contain..."), see the examples.
-6. **Noise level:** a difference of one question between two versions is within the repeatability of the reader (see the last section).
+6. **Prompt p03 (the most detailed one) gives the best accuracy** on the same compressor; the clean comparison is Gemma with thinking off, where all prompts keep the requested length (see the prompt comparison section).
+7. **Noise level:** a difference of one question between two versions is within the repeatability of the reader (see the last section).
 
 ## Charts: how each method works depending on the length of the compressed text
 
@@ -40,6 +41,7 @@ The first chart is the mirror image of the accuracy chart: the shorter the text,
 - **No Text** (floor): the reader sees only the questions. Because it abstains instead of guessing, the floor is **below** the 20% of random guessing.
 - **Original Text** (ceiling): the reader sees the full dialogue. A compressed text is good when it is close to this number, not to 100%.
 - **% of original**: tokens of the compressed text / tokens of the original text (the lower, the stronger the compression).
+- **target words** is only the length the compressor was asked for. The benchmark always uses the whole text that really came out; its real length is in **words** and **tokens**.
 
 ## Setup
 
@@ -595,6 +597,274 @@ Some versions are as long as, or longer than, the original (the compressor did n
 | NA | Gemma26B | 150 | 140 | 188 | 5% | 20/134 | 14.9% | 107 | 74.1% |
 | NA | Gemma26B | 100 | 95 | 137 | 4% | 12/134 | 9.0% | 117 | 70.6% |
 
+## Prompts p01, p02, p03 compared on the same compressor
+
+`compress_Gemma26B` (with thinking off and with thinking medium) and the three Frontier models were each run with the same three compression prompts and the same list of target lengths (15 targets for Gemma, 6 for Frontier; DSPM and SkLLM use their own prompts and are not part of this comparison). So every prompt can be compared with the others on exactly the same targets.
+
+<details><summary>The three prompts, in full (from <code>data/prompts.compress.toml</code>)</summary>
+
+**p01**
+
+```text
+[system]
+Shorten the provided dialogue to approximately {target_words} words.
+Don't comment, don't ask questions, don't add headlines, don't use MarkDown. Use raw text.
+
+[user]
+Dialogue to Shorten:
+
+{dialogue}
+```
+
+**p02**
+
+```text
+[user]
+Shorten the dialogue below to retain important information.
+This shortened dialogue will be used by LLM to maintain dialogue history; this is to reduce token usage. Therefore, it is important to retain names, intentions, facts, and agreements.
+Prepare a shortened text in raw text, of approximately {target_words} words.
+Don't comment, don't ask questions, don't add headlines. Just give me the shortened dialogue.
+
+{dialogue}
+```
+
+**p03**
+
+```text
+[system]
+You are an expert dialogue summarizer. Shorten the provided dialogue while preserving as much factual detail as possible to maintain context for dialogue history and minimize token usage.
+
+Strict Guidelines:
+
+1. Preserve Format: Maintain the original dialogue format (e.g., `Speaker: Line`) line-by-line or turn-by-turn. Do not convert this into a prose summary or third-person narrative.
+2. Key Details to Retain: Prioritize entity names, core intentions, specific facts, numbers/dates, decisions, and explicitly agreed-upon actions.
+3. Word Budget: Your shortened dialogue must be as close as possible to exactly {target_words} words. Use your full budget to capture maximum detail without exceeding it.
+4. Output Constraints: Output *only* the shortened dialogue. Do not include introductions, commentary, explanations, labels, or Markdown headers.
+
+[user]
+Dialogue to Shorten:
+
+{dialogue}
+```
+
+</details>
+
+In short: **p01** only asks to shorten the dialogue to about N words; **p02** also says why (the text will replace the chat history) and what to keep (names, intentions, facts, agreements); **p03** is the most detailed: an expert role, keep the `Speaker: line` format, a list of details to keep (names, numbers, dates, decisions, agreed actions) and a strict word budget.
+
+### Accuracy
+
+Mean accuracy over the same targets; **bold** = the best prompt in the row. "Best on targets" counts on how many targets the prompt had the highest accuracy (ties count for every prompt that has them).
+
+| compressor | dialogue | targets | p01 | p02 | p03 | best on targets p01 / p02 / p03 |
+|---|---|---:|---:|---:|---:|---:|
+| compress_Gemma26B, thinking off | d001 | 15 | 38.5% | 38.0% | **54.8%** | 3 / 1 / 11 |
+| compress_Gemma26B, thinking off | d002 | 15 | 29.6% | 22.6% | **41.9%** | 0 / 1 / 14 |
+| compress_Gemma26B, thinking off | d003 | 15 | 41.8% | 35.0% | **48.2%** | 2 / 0 / 13 |
+| compress_Gemma26B, thinking medium | d001 | 15 | 62.0% | 76.4% | **79.2%** | 2 / 3 / 10 |
+| compress_Gemma26B, thinking medium | d002 | 15 | 50.9% | 56.3% | **62.2%** | 2 / 2 / 11 |
+| compress_Gemma26B, thinking medium | d003 | 15 | 57.3% | 57.8% | **68.3%** | 4 / 2 / 9 |
+| Frontier: ChatGPT default | d001 | 6 | 75.7% | 77.7% | **81.0%** | 0 / 2 / 5 |
+| Frontier: Gemini 3 Medium | d001 | 6 | 65.0% | 65.7% | **76.7%** | 3 / 0 / 5 |
+| Frontier: Sonnet 5.5 Medium | d001 | 6 | 81.3% | 85.3% | **88.0%** | 4 / 1 / 3 |
+
+### Real length of the texts
+
+A longer text keeps more facts, so the accuracy of a prompt has to be read together with how long its texts really are. "words / target" is the median of (real words / target words): 1.0 means the compressor kept the requested length. "not shorter" counts versions that are as long as the original or longer.
+
+| compressor | dialogue | words / target p01 / p02 / p03 | % of original tokens (median) p01 / p02 / p03 | not shorter p01 / p02 / p03 |
+|---|---|---:|---:|---:|
+| compress_Gemma26B, thinking off | d001 | 1.05 / 0.73 / 1.07 | 21% / 17% / 23% | 0 / 0 / 0 |
+| compress_Gemma26B, thinking off | d002 | 0.95 / 0.81 / 1.07 | 7% / 5% / 8% | 0 / 0 / 0 |
+| compress_Gemma26B, thinking off | d003 | 0.96 / 0.77 / 0.99 | 16% / 11% / 18% | 0 / 0 / 0 |
+| compress_Gemma26B, thinking medium | d001 | 4.44 / 4.29 / 7.80 | 141% / 129% / 177% | 11 / 11 / 15 |
+| compress_Gemma26B, thinking medium | d002 | 4.60 / 4.45 / 7.71 | 34% / 32% / 58% | 0 / 0 / 0 |
+| compress_Gemma26B, thinking medium | d003 | 5.80 / 4.53 / 9.19 | 118% / 73% / 155% | 9 / 7 / 12 |
+| Frontier: ChatGPT default | d001 | 1.41 / 1.40 / 1.24 | 48% / 37% / 42% | 0 / 0 / 0 |
+| Frontier: Gemini 3 Medium | d001 | 1.29 / 0.87 / 1.51 | 40% / 28% / 47% | 0 / 0 / 0 |
+| Frontier: Sonnet 5.5 Medium | d001 | 1.71 / 1.10 / 1.26 | 58% / 32% / 44% | 0 / 0 / 0 |
+
+### What the tables say
+
+- **p03 has the highest mean accuracy in 9 of 9 rows.**
+- The cleanest comparison is **Gemma with thinking off**: all three prompts keep close to the requested length (words / target about 0.7–1.1) and no version is longer than the original, so the difference comes from the prompt and not from the length. There p03 beats the better of p01 and p02 by +16 points on d001, +12 points on d002, +6 points on d003. p02 writes the shortest texts (about 0.7–0.8 of the target) and on d002 and d003 scores below p01.
+- **Gemma with thinking medium ignores the target length**: its texts are 4–9 times longer than requested, p03 the most, and on d001 and d003 many versions are not shorter than the original. In this row a higher accuracy mostly means a longer text, so it does not show which prompt compresses better.
+- **Frontier models (d001 only, 6 targets each)**: p03 is best on average for all three, but the margins are small for 6 versions (a difference of one question is 2%) and partly follow the length: Gemini writes much longer texts with p03 than with p02. ChatGPT writes slightly shorter texts with p03 and still scores best with it. For Sonnet 5.5, p01 is best on more single targets, while p03 has the best mean.
+
+### Per target
+
+Accuracy and real length (words) of every version, side by side for the three prompts.
+
+<details><summary>compress_Gemma26B, thinking off, d001</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 1284 | **74%** | 383 | 44% | 1036 | 72% |
+| 1100 | 1227 | 76% | 361 | 48% | 1381 | **80%** |
+| 1000 | 1259 | **80%** | 393 | 50% | 1144 | 76% |
+| 900 | 2069 | 34% | 360 | 48% | 1258 | **82%** |
+| 800 | 1018 | **74%** | 325 | 42% | 1131 | 70% |
+| 700 | 644 | 34% | 445 | 46% | 844 | **70%** |
+| 600 | 635 | 48% | 394 | 44% | 912 | **68%** |
+| 500 | 473 | 34% | 366 | 38% | 517 | **62%** |
+| 400 | 394 | 32% | 342 | 36% | 443 | **52%** |
+| 350 | 369 | 22% | 326 | 38% | 337 | **46%** |
+| 300 | 278 | 18% | 300 | 38% | 299 | **40%** |
+| 250 | 241 | 16% | 263 | **40%** | 246 | 32% |
+| 200 | 187 | 14% | 232 | 28% | 214 | **32%** |
+| 150 | 150 | 12% | 173 | 20% | 152 | **26%** |
+| 100 | 105 | 10% | 103 | 10% | 106 | **14%** |
+
+</details>
+
+<details><summary>compress_Gemma26B, thinking off, d002</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 1061 | 58% | 458 | 35% | 1597 | **72%** |
+| 1100 | 1002 | 56% | 399 | 27% | 1223 | **72%** |
+| 1000 | 747 | 41% | 409 | 26% | 1167 | **72%** |
+| 900 | 770 | 43% | 422 | 29% | 1023 | **63%** |
+| 800 | 678 | 37% | 370 | 26% | 1014 | **67%** |
+| 700 | 674 | 39% | 386 | 25% | 769 | **52%** |
+| 600 | 573 | 31% | 438 | 28% | 682 | **47%** |
+| 500 | 487 | 27% | 405 | 22% | 534 | **41%** |
+| 400 | 394 | 22% | 361 | 22% | 385 | **25%** |
+| 350 | 342 | 22% | 328 | 23% | 355 | **27%** |
+| 300 | 306 | 21% | 302 | 18% | 310 | **26%** |
+| 250 | 228 | 15% | 247 | 17% | 240 | **19%** |
+| 200 | 185 | 13% | 248 | 15% | 206 | **18%** |
+| 150 | 151 | 12% | 163 | 13% | 153 | **17%** |
+| 100 | 99 | 8% | 145 | **12%** | 96 | 11% |
+
+</details>
+
+<details><summary>compress_Gemma26B, thinking off, d003</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 944 | **66%** | 292 | 37% | 727 | 63% |
+| 1100 | 1020 | 70% | 293 | 41% | 856 | **73%** |
+| 1000 | 843 | **63%** | 303 | 34% | 1523 | 49% |
+| 900 | 876 | 64% | 291 | 34% | 746 | **66%** |
+| 800 | 753 | 54% | 309 | 40% | 824 | **71%** |
+| 700 | 716 | 54% | 480 | 48% | 687 | **59%** |
+| 600 | 555 | 46% | 481 | 51% | 562 | **52%** |
+| 500 | 454 | 38% | 336 | 40% | 497 | **51%** |
+| 400 | 394 | 34% | 306 | 32% | 395 | **44%** |
+| 350 | 336 | 31% | 303 | 37% | 351 | **42%** |
+| 300 | 320 | 35% | 283 | 37% | 328 | **43%** |
+| 250 | 295 | 31% | 253 | 30% | 292 | **38%** |
+| 200 | 178 | 16% | 230 | 28% | 216 | **28%** |
+| 150 | 151 | 16% | 153 | 20% | 145 | **21%** |
+| 100 | 97 | 10% | 101 | 16% | 99 | **21%** |
+
+</details>
+
+<details><summary>compress_Gemma26B, thinking medium, d001</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 6829 | **98%** | 2716 | 90% | 3292 | 90% |
+| 1100 | 4156 | **96%** | 4145 | 88% | 3416 | 94% |
+| 1000 | 3122 | 90% | 2138 | 90% | 2653 | **96%** |
+| 900 | 3999 | 80% | 2732 | 96% | 3215 | **98%** |
+| 800 | 3181 | 80% | 1779 | 82% | 2537 | **92%** |
+| 700 | 2557 | 62% | 2150 | 86% | 4277 | **94%** |
+| 600 | 2736 | 56% | 3888 | 74% | 2570 | **84%** |
+| 500 | 2059 | 56% | 2690 | 76% | 3899 | **86%** |
+| 400 | 3214 | 50% | 1904 | 68% | 6820 | **80%** |
+| 350 | 4030 | 60% | 3073 | **76%** | 3252 | 72% |
+| 300 | 3205 | 48% | 3081 | 70% | 4075 | **78%** |
+| 250 | 833 | 40% | 1012 | **64%** | 3218 | 46% |
+| 200 | 711 | 18% | 859 | 52% | 3578 | **70%** |
+| 150 | 2214 | 56% | 3327 | 68% | 4657 | **72%** |
+| 100 | 682 | 40% | 5269 | **66%** | 4142 | 36% |
+
+</details>
+
+<details><summary>compress_Gemma26B, thinking medium, d002</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 2133 | 70% | 2111 | 71% | 4191 | **92%** |
+| 1100 | 5250 | 84% | 4030 | 80% | 3467 | **86%** |
+| 1000 | 2744 | 75% | 4452 | 80% | 3077 | **84%** |
+| 900 | 2283 | 66% | 4445 | 80% | 4461 | **82%** |
+| 800 | 2786 | 71% | 1989 | 57% | 3823 | **77%** |
+| 700 | 1903 | 49% | 3211 | 71% | 5400 | **77%** |
+| 600 | 2581 | 49% | 1567 | 52% | 3779 | **65%** |
+| 500 | 2302 | 46% | 2212 | 45% | 3787 | **65%** |
+| 400 | 2875 | 45% | 1265 | 55% | 4220 | **67%** |
+| 350 | 3219 | 31% | 3266 | **52%** | 3928 | 45% |
+| 300 | 2583 | 31% | 4793 | 62% | 3832 | **64%** |
+| 250 | 4238 | 45% | 2707 | **56%** | 4067 | 37% |
+| 200 | 746 | 23% | 812 | 24% | 4819 | **51%** |
+| 150 | 2397 | **44%** | 871 | 31% | 2754 | 22% |
+| 100 | 764 | **35%** | 671 | 29% | 3574 | 20% |
+
+</details>
+
+<details><summary>compress_Gemma26B, thinking medium, d003</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 5404 | 73% | 4400 | 77% | 2023 | **81%** |
+| 1100 | 3637 | **82%** | 3540 | 78% | 3364 | 75% |
+| 1000 | 2545 | 75% | 5592 | **86%** | 2545 | 77% |
+| 900 | 1981 | 66% | 4919 | **84%** | 2567 | 73% |
+| 800 | 6552 | **82%** | 5034 | 72% | 2981 | 78% |
+| 700 | 2199 | 63% | 5247 | 83% | 4883 | **84%** |
+| 600 | 2654 | 50% | 2100 | 63% | 3304 | **77%** |
+| 500 | 2093 | 43% | 4490 | 56% | 4594 | **70%** |
+| 400 | 2320 | 51% | 1356 | 40% | 5443 | **68%** |
+| 350 | 5811 | 44% | 1378 | 43% | 5327 | **75%** |
+| 300 | 3041 | 41% | 1298 | 49% | 8139 | **63%** |
+| 250 | 3983 | **54%** | 1865 | 43% | 6256 | 50% |
+| 200 | 9410 | 36% | 888 | 35% | 3031 | **44%** |
+| 150 | 3911 | **55%** | 679 | 25% | 7382 | 41% |
+| 100 | 6653 | 42% | 962 | 34% | 8252 | **68%** |
+
+</details>
+
+<details><summary>Frontier: ChatGPT default, d001</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 1751 | 96% | 1577 | **98%** | 1240 | **98%** |
+| 1000 | 1382 | 96% | 1445 | 90% | 1261 | **98%** |
+| 800 | 1218 | 86% | 1091 | 86% | 1104 | **90%** |
+| 600 | 861 | 76% | 750 | 70% | 696 | **80%** |
+| 400 | 530 | 54% | 577 | **72%** | 506 | 68% |
+| 200 | 254 | 46% | 320 | 50% | 243 | **52%** |
+
+</details>
+
+<details><summary>Frontier: Gemini 3 Medium, d001</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 2065 | **100%** | 649 | 80% | 2065 | **100%** |
+| 1000 | 1391 | **86%** | 677 | 78% | 1038 | **86%** |
+| 800 | 1134 | **86%** | 673 | 74% | 1298 | 82% |
+| 600 | 714 | 50% | 541 | 66% | 942 | **72%** |
+| 400 | 471 | 48% | 420 | 62% | 547 | **66%** |
+| 200 | 195 | 20% | 239 | 34% | 289 | **54%** |
+
+</details>
+
+<details><summary>Frontier: Sonnet 5.5 Medium, d001</summary>
+
+| target words | p01 words | p01 accuracy | p02 words | p02 accuracy | p03 words | p03 accuracy |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1200 | 1833 | **100%** | 997 | 96% | 1266 | **100%** |
+| 1000 | 1595 | **100%** | 907 | 90% | 1103 | 98% |
+| 800 | 1346 | **96%** | 759 | 90% | 1043 | 92% |
+| 600 | 1089 | **90%** | 753 | **90%** | 756 | 88% |
+| 400 | 777 | 68% | 556 | 84% | 555 | **86%** |
+| 200 | 349 | 34% | 295 | 62% | 253 | **64%** |
+
+</details>
+
 ## Examples: real prompts
 
 Every question is a separate chat of four messages (system, the compressed text as earlier chat history, an assistant acknowledgement, the question). Below is the real text sent to the reader for question 1 of d001; the compressed dialogue is replaced by the tag `<COMPRESSED_DIALOGUE>`. The correct answer to this question is **E**; the order of answers is shuffled once (seed 42) and is the same for every version.
@@ -624,7 +894,7 @@ D) A nurse answered; she works for the care program.
 E) Julia answered; she is Mr. Nowak's daughter.
 ```
 
-For the **No Text** reference point the history is left out and the reader sees only this:
+**Why there is a prompt with no dialogue at all (No Text).** It is a reference point, not a compression method: it measures how many questions can be answered from the question and its answers alone, by general knowledge, by an answer that gives itself away, or by guessing. It is the floor of the scale: a compressed text helps only as far as it scores above it. Here the floor is low (6–12%) because Gemma refuses to answer without a text instead of guessing, which also shows that the survey answers do not give themselves away. For this reference point the history is left out and the reader sees only this:
 
 ```text
 [system]
@@ -643,27 +913,57 @@ D) A nurse answered; she works for the care program.
 E) Julia answered; she is Mr. Nowak's daughter.
 ```
 
-What goes into `<COMPRESSED_DIALOGUE>` (the first 600 characters of one real version of each method; the original dialogue d001 has 2065 words):
+### What goes into `<COMPRESSED_DIALOGUE>`
 
-<details><summary>Frontier model: Sonnet 5.5 Medium, prompt p02, target 600 words (998 tokens)</summary>
+**The whole compressed text, exactly as it is stored in the compressed file.** Nothing is cut or shortened by the benchmark, and the target length is not used: `target_words` is only what the compressor was asked for, the benchmark takes the text that really came out, and all lengths in this report (`words`, `tokens`, the x axis of the charts) are the real lengths of that text.
+
+Check: one question was asked about three real versions and the number of prompt tokens counted by the vLLM server was compared with the token count stored in the compressed file. After subtracting the fixed part of the prompt (214 tokens), the remainder equals the stored count minus a constant 19 tokens (the two counts are made in slightly different ways), also for the longest version, so the reader gets the whole text:
+
+| version (d001) | characters | `text_tokens` in the file | prompt tokens minus the fixed part |
+|---|---:|---:|---:|
+| Gemma26B_ThinkOff p01, target 100 | 690 | 145 | 126 |
+| Gemma26B_ThinkOff p01, target 1100 | 7052 | 1813 | 1794 |
+| Gemma26B_ThinkMedium p03, target 400 | 50316 | 11497 | 11478 |
+
+Four real versions of d001, one per method, in full (the original dialogue d001 has 2065 words):
+
+<details><summary>Frontier model: Sonnet 5.5 Medium, prompt p02, target 600 words: 753 words, 998 tokens (click to show the whole text)</summary>
 
 ```text
-Marta (Home Care Support Program agent) called Mr. Edward Nowak for the Friday check-in; his daughter Julia answered first. Julia reported: ankle swelling returned (Tuesday socks left deep marks, trouble with shoes), breathlessness on stairs to bathroom, weight 83.4 kg Monday vs 85.1 kg this morning (gain of 1.7 kg in four days, recorded on fridge sheet), poor sleep Wednesday and Thursday, now uses two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite but secretly eats salty f [...]
+Marta (Home Care Support Program agent) called Mr. Edward Nowak for the Friday check-in; his daughter Julia answered first. Julia reported: ankle swelling returned (Tuesday socks left deep marks, trouble with shoes), breathlessness on stairs to bathroom, weight 83.4 kg Monday vs 85.1 kg this morning (gain of 1.7 kg in four days, recorded on fridge sheet), poor sleep Wednesday and Thursday, now uses two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite but secretly eats salty food (pickles hidden behind bread box). Marta said she would flag the weight gain for the nurse.
+
+Speaking with Mr. Nowak, he downplayed symptoms ("old car"), but on checking admitted a small dent on his shin, stops once on stairs, and sleeps with an extra pillow, wakes with chest tightness like someone sitting on it, and relieves it in the armchair. Marta said this is not "just age," may be fluid buildup, and medication can be adjusted. He fears hospital ("not going back, food was a crime"); Marta promised nothing but said it is often just a dose change at home. He agreed the nurse may call today.
+
+Missed pills: he fell asleep watching a whale documentary. The skipped one is the yellow diuretic (water pill), which he dislikes because taking it in the evening makes him get up three times at night, which he finds humiliating. Hospital told him evening dosing, or he got used to it. Marta will ask the nurse to confirm with the doctor and likely move it to morning, which may also reduce fall risk. He asked Julia to write it down.
+
+Physiotherapy: one and a half sessions last week. Monday with therapist Kuba (walking with a cane, which he dislikes); Thursday stopped after 20 minutes due to tiredness, more next week. Balance slightly better. Almost slipped in the bathroom Sunday, grabbed towel rail, no fall. Grab bars and non-slip mat not yet installed; Julia's husband has promised for three weeks. Marta will tell Julia it is urgent (Mr. Nowak asked that Julia relay it so the husband isn't offended); if not done by Monday, the program's home-safety service can send someone.
+
+Blood sugar (morning readings): 7.9 Monday, 8.6 Wednesday, 10.2 Thursday (after eating a third of a cake at Uncle Staszek's), 9.1 today. Marta noted the readings. He reported foggy vision in the left eye, attributed to the cataract.
+
+Upcoming appointments (Julia keeps the calendar): echocardiogram next Wednesday at 10:30, about 40 minutes, painless (he dislikes cold gel; Marta will mention it); cardiology consultation with Dr. Wiśniewska on the Friday after (he likes her); cataract surgery, left eye, on the 24th of next month, a day procedure requiring someone to accompany him. Beforehand he needs a pre-operative eye clinic check-up and a cardiologist's note that his heart is stable; surgery might be postponed if fluid is uncontrolled, which motivates him to take the water pill. Julia has arranged time off for the surgery day but cannot take him to the echo because she works that morning. Marta will arrange the program's medical transport; he accepts a driver but wants a quiet one (not one who talks politics) and needs an arm to the entrance. Marta noted "prefers quiet driver, needs arm to the entrance."
+
+Mood: he admitted it is hard sometimes; he used to fix everything and dislikes being a burden. Marta reassured him. His grandson visits Sundays and teaches him chess on the tablet, the best part of his week. Marta offered a weekly program volunteer visit; he wants cards, not chess.
+
+Marta's summary of the plan: nurse calls today about weight gain, swelling, night breathlessness, and asks the doctor about moving the water pill to the morning; grab bars installed this week; echo next Wednesday with quiet driver; cardiology Friday; physiotherapy continues with full sessions; Marta will look into a card-playing volunteer. Mr. Nowak asked to negotiate pickles (two a week); Marta said to discuss portions with the nurse, not hidden. Safety instruction: if weight rises more than 1 kg overnight or breathlessness worsens, call the number on the card immediately, or emergency services if he cannot breathe.
+
+Back with Julia: she said he admitted the night symptoms, which is unusual. Marta will have the nurse call within the hour; Julia will send a photo of the weight sheet later today. Next check-in next Friday, or sooner if anything changes.
 ```
 
 </details>
 
-<details><summary>compress_Gemma26B: Gemma26B_ThinkOff, prompt p01, target 200 words (249 tokens)</summary>
+<details><summary>compress_Gemma26B: Gemma26B_ThinkOff, prompt p01, target 200 words: 187 words, 249 tokens (click to show the whole text)</summary>
 
 ```text
 Marta from the Home Care Support Program called Mr. Nowak for a weekly check-in. His daughter, Julia, reported concerns regarding his recent weight gain of 1.7 kilos, ankle swelling, shortness of breath, and poor sleep. She also noted he missed a dose of his diuretic due to nighttime bathroom trips.
 
-During the conversation with Mr. Nowak, he admitted to experiencing chest tightness at night and difficulty breathing on stairs. He explained that he skips his evening diuretic because frequent nighttime urination is humiliating. Marta plans to have a nurse contact him to discuss adjusting his med [...]
+During the conversation with Mr. Nowak, he admitted to experiencing chest tightness at night and difficulty breathing on stairs. He explained that he skips his evening diuretic because frequent nighttime urination is humiliating. Marta plans to have a nurse contact him to discuss adjusting his medication schedule to the morning, which may alleviate both the swelling and the nighttime discomfort.
+
+Other issues addressed included a near-fall in the bathroom, prompting a need for urgent installation of grab bars and non-slip mats. Mr. Nowak’s blood sugar levels have also been elevated following dietary indiscretions. Looking ahead, the plan includes an echocardiogram next Wednesday—for which Marta will arrange quiet transport—a cardiology consultation on Friday, and upcoming cataract surgery. To support his mental well-being, Marta will look into arranging a weekly volunteer visit for card games.
 ```
 
 </details>
 
-<details><summary>DSPM: the shortest version (192 tokens)</summary>
+<details><summary>DSPM: the shortest version: 77 words, 192 tokens (click to show the whole text)</summary>
 
 ```text
 [DEC] Patient agrees
@@ -695,7 +995,7 @@ During the conversation with Mr. Nowak, he admitted to experiencing chest tightn
 
 </details>
 
-<details><summary>SkLLM: the shortest version (171 tokens)</summary>
+<details><summary>SkLLM: the shortest version: 113 words, 171 tokens (click to show the whole text)</summary>
 
 ```text
 Marta, a Home Care Support agent, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. Key health concerns include a 1.7kg weight gain, ankle swelling, shortness of breath, and nocturnal chest tightness, likely due to fluid retention. Mr. Nowak also admitted to skipping diuretic medication to avoid nighttime bathroom trips. 
@@ -703,7 +1003,8 @@ Marta, a Home Care Support agent, conducted a weekly check-in with Mr. Nowak and
 **Action Plan:**
 * **Medical:** A nurse will call to discuss medication adjustments (moving the diuretic to mornings) and address fluid issues.
 * **Safety:** Urgent installation of bathroom grab bars is required.
-* **Follow-ups:** Upcoming echocardiogram, c [...]
+* **Follow-ups:** Upcoming echocardiogram, cardiology consultation, and cataract surgery are scheduled.
+* **Support:** Transport and a volunteer for card games will be arranged.
 ```
 
 </details>
