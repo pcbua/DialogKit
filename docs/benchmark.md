@@ -13,7 +13,7 @@ All numbers are in the tables below; the "shorter" tables leave out versions tha
 3. **The local Gemma compressors are much weaker.** `compress_Gemma26B`: 44–45% mean accuracy at 14–20% of the tokens; DSPM and SkLLM compress hardest (5–21% of the tokens) and keep the fewest facts (mean accuracy 16–30%).
 4. **`compress_Gemma26B` often does not compress.** On d001 37 of 90 and on d003 28 of 90 versions are as long as or longer than the original (up to 278%); the best scores of this method come from such versions, so read the "shorter" tables.
 5. **Compression removes facts; it does not make the reader worse.** Among the questions the reader does answer, accuracy stays high at every length (medians of the length bins: 75–100%, see the charts); what grows with shortening is the share of questions with no answer. The reader's replies without a letter are real refusals ("The provided text does not contain..."), see the examples.
-6. **Prompt p03 (the most detailed one) gives the best accuracy** on the same compressor; the clean comparison is Gemma with thinking off, where all prompts keep the requested length (see the prompt comparison section).
+6. **Prompts: compared at the same real length, p01 ("just shorten it") is the weakest in 5 of 6 comparable cases; p02 and p03 (which say what to keep) are close to each other.** The higher means of p03 over the same targets come mostly from its longer texts (see the prompt comparison section).
 7. **Noise level:** a difference of one question between two versions is within the repeatability of the reader (see the last section).
 
 ## Charts: how each method works depending on the length of the compressed text
@@ -651,25 +651,33 @@ Dialogue to Shorten:
 
 In short: **p01** only asks to shorten the dialogue to about N words; **p02** also says why (the text will replace the chat history) and what to keep (names, intentions, facts, agreements); **p03** is the most detailed: an expert role, keep the `Speaker: line` format, a list of details to keep (names, numbers, dates, decisions, agreed actions) and a strict word budget.
 
-### Accuracy
+### Accuracy against the real length, one line per prompt
 
-Mean accuracy over the same targets; **bold** = the best prompt in the row. "Best on targets" counts on how many targets the prompt had the highest accuracy (ties count for every prompt that has them).
+A longer text keeps more facts, and the prompts produce texts of different real length from the same target. So the prompts can only be compared **at the same real length**: in the charts below, look at the lines at the same x, best inside the gray range, which is the range of lengths all three prompts really produced.
 
-| compressor | dialogue | targets | p01 | p02 | p03 | best on targets p01 / p02 / p03 |
-|---|---|---:|---:|---:|---:|---:|
-| compress_Gemma26B, thinking off | d001 | 15 | 38.5% | 38.0% | **54.8%** | 3 / 1 / 11 |
-| compress_Gemma26B, thinking off | d002 | 15 | 29.6% | 22.6% | **41.9%** | 0 / 1 / 14 |
-| compress_Gemma26B, thinking off | d003 | 15 | 41.8% | 35.0% | **48.2%** | 2 / 0 / 13 |
-| compress_Gemma26B, thinking medium | d001 | 15 | 62.0% | 76.4% | **79.2%** | 2 / 3 / 10 |
-| compress_Gemma26B, thinking medium | d002 | 15 | 50.9% | 56.3% | **62.2%** | 2 / 2 / 11 |
-| compress_Gemma26B, thinking medium | d003 | 15 | 57.3% | 57.8% | **68.3%** | 4 / 2 / 9 |
-| Frontier: ChatGPT default | d001 | 6 | 75.7% | 77.7% | **81.0%** | 0 / 2 / 5 |
-| Frontier: Gemini 3 Medium | d001 | 6 | 65.0% | 65.7% | **76.7%** | 3 / 0 / 5 |
-| Frontier: Sonnet 5.5 Medium | d001 | 6 | 81.3% | 85.3% | **88.0%** | 4 / 1 / 3 |
+![Accuracy against real length for prompts p01, p02, p03 on compress_Gemma26B, thinking off and thinking medium, d001 to d003](img/benchmark_prompts_gemma.png)
+
+![Accuracy against real length for prompts p01, p02, p03 on ChatGPT, Gemini 3 and Sonnet 5.5, d001](img/benchmark_prompts_frontier.png)
+
+### Accuracy at the same length
+
+The value of each prompt's line at one common length: the middle (on the log scale) of the range that all three prompts produced. "fit r" tells how well length explains the accuracy for each prompt (1.0 = all dots on the line); with a low r the line, and this comparison, mean little. Each line is fitted to only 6 (Frontier) or 15 (Gemma) versions, so differences of a few points are not reliable.
+
+| compressor | dialogue | common length range | compared at | p01 | p02 | p03 | fit r p01 / p02 / p03 |
+|---|---|---:|---:|---:|---:|---:|---:|
+| compress_Gemma26B, thinking off | d001 | 6%–21% | 12% | 24% | 31% | **33%** | 0.85 / 0.95 / 0.99 |
+| compress_Gemma26B, thinking off | d002 | 2%–7% | 4% | 22% | 20% | **26%** | 0.94 / 0.92 / 0.97 |
+| compress_Gemma26B, thinking off | d003 | 4%–17% | 9% | 27% | 32% | **35%** | 0.97 / 0.94 / 0.87 |
+| compress_Gemma26B, thinking medium | d001 | 118%–257% | 174% | 75% | 80% | **81%** | 0.81 / 0.32 / -0.34 |
+| compress_Gemma26B, thinking medium | d002 | 43%–69% | 55% | 61% | **70%** | 66% | 0.51 / 0.85 / -0.26 |
+| compress_Gemma26B, thinking medium | d003 | 72%–212% | 124% | 58% | 67% | **73%** | -0.20 / 0.92 / -0.58 |
+| Frontier: ChatGPT default | d001 | 14%–59% | 28% | 67% | 72% | **75%** | 0.97 / 0.97 / 0.99 |
+| Frontier: Gemini 3 Medium | d001 | 15%–31% | 22% | 50% | **63%** | 61% | 0.97 / 0.99 / 0.96 |
+| Frontier: Sonnet 5.5 Medium | d001 | 17%–43% | 27% | 56% | **84%** | 81% | 0.99 / 0.98 / 0.98 |
 
 ### Real length of the texts
 
-A longer text keeps more facts, so the accuracy of a prompt has to be read together with how long its texts really are. "words / target" is the median of (real words / target words): 1.0 means the compressor kept the requested length. "not shorter" counts versions that are as long as the original or longer.
+How each prompt treats the requested length. "words / target" is the median of (real words / target words): 1.0 means the compressor kept the requested length. "not shorter" counts versions that are as long as the original or longer.
 
 | compressor | dialogue | words / target p01 / p02 / p03 | % of original tokens (median) p01 / p02 / p03 | not shorter p01 / p02 / p03 |
 |---|---|---:|---:|---:|
@@ -683,12 +691,30 @@ A longer text keeps more facts, so the accuracy of a prompt has to be read toget
 | Frontier: Gemini 3 Medium | d001 | 1.29 / 0.87 / 1.51 | 40% / 28% / 47% | 0 / 0 / 0 |
 | Frontier: Sonnet 5.5 Medium | d001 | 1.71 / 1.10 / 1.26 | 58% / 32% / 44% | 0 / 0 / 0 |
 
-### What the tables say
+### What the charts and tables say
 
-- **p03 has the highest mean accuracy in 9 of 9 rows.**
-- The cleanest comparison is **Gemma with thinking off**: all three prompts keep close to the requested length (words / target about 0.7–1.1) and no version is longer than the original, so the difference comes from the prompt and not from the length. There p03 beats the better of p01 and p02 by +16 points on d001, +12 points on d002, +6 points on d003. p02 writes the shortest texts (about 0.7–0.8 of the target) and on d002 and d003 scores below p01.
-- **Gemma with thinking medium ignores the target length**: its texts are 4–9 times longer than requested, p03 the most, and on d001 and d003 many versions are not shorter than the original. In this row a higher accuracy mostly means a longer text, so it does not show which prompt compresses better.
-- **Frontier models (d001 only, 6 targets each)**: p03 is best on average for all three, but the margins are small for 6 versions (a difference of one question is 2%) and partly follow the length: Gemini writes much longer texts with p03 than with p02. ChatGPT writes slightly shorter texts with p03 and still scores best with it. For Sonnet 5.5, p01 is best on more single targets, while p03 has the best mean.
+- **At the same length, p01 is the weakest prompt in 5 of the 6 comparable rows** (the three Frontier models and Gemma with thinking off; the exception is Gemma with thinking off on d002, where p02 is 2 points lower). The clearest case is Sonnet 5.5. p01 only asks for a shorter text; p02 and p03 also say what to keep.
+- **p02 and p03 are close to each other at the same length.** On Gemma with thinking off p03 is a little ahead on all three dialogues; on the Frontier models the order changes from model to model and the differences are within the noise.
+- **The means over the same targets favor p03 mostly because p03 writes longer texts** (see "Real length"): p02 writes the shortest texts, about 0.7–0.9 of the target on Gemma with thinking off and on Gemini, so with the same target it keeps fewer facts, but not because it compresses worse.
+- **Gemma with thinking medium cannot be compared**: it ignores the requested length (texts 4–9 times longer than asked, often longer than the original), and the length explains its accuracy poorly (low or even negative fit r), so neither the means nor the lines say which prompt is better there.
+
+<details><summary>Mean accuracy over the same targets (not comparable between prompts, because the real lengths differ)</summary>
+
+Kept for reference. "Best on targets" counts on how many targets the prompt had the highest accuracy (ties count for every prompt that has them).
+
+| compressor | dialogue | targets | p01 | p02 | p03 | best on targets p01 / p02 / p03 |
+|---|---|---:|---:|---:|---:|---:|
+| compress_Gemma26B, thinking off | d001 | 15 | 38.5% | 38.0% | 54.8% | 3 / 1 / 11 |
+| compress_Gemma26B, thinking off | d002 | 15 | 29.6% | 22.6% | 41.9% | 0 / 1 / 14 |
+| compress_Gemma26B, thinking off | d003 | 15 | 41.8% | 35.0% | 48.2% | 2 / 0 / 13 |
+| compress_Gemma26B, thinking medium | d001 | 15 | 62.0% | 76.4% | 79.2% | 2 / 3 / 10 |
+| compress_Gemma26B, thinking medium | d002 | 15 | 50.9% | 56.3% | 62.2% | 2 / 2 / 11 |
+| compress_Gemma26B, thinking medium | d003 | 15 | 57.3% | 57.8% | 68.3% | 4 / 2 / 9 |
+| Frontier: ChatGPT default | d001 | 6 | 75.7% | 77.7% | 81.0% | 0 / 2 / 5 |
+| Frontier: Gemini 3 Medium | d001 | 6 | 65.0% | 65.7% | 76.7% | 3 / 0 / 5 |
+| Frontier: Sonnet 5.5 Medium | d001 | 6 | 81.3% | 85.3% | 88.0% | 4 / 1 / 3 |
+
+</details>
 
 ### Per target
 
