@@ -52,7 +52,7 @@ LLM_CONFIG = {
     "REASONING_EFFORT":   "none", # default is: medium
 }
 
-# Default seed for shuffling the answers; change it with --seed to check how stable the scores are.
+# Default seed for shuffling the answers (a new order for every query); change it with --seed to check how stable the scores are.
 DEFAULT_SEED = 42
 
 # Letters used to label the answers. The survey has 5 answers per question (1 correct + 4 wrong), the rest is a reserve.
@@ -119,17 +119,19 @@ def load_surveys(data_toml: dict) -> tuple[dict, dict]:
             originals[data_id] = d
     return surveys, originals
 
-def shuffle_survey(survey: list, seed: int) -> list:
+def shuffle_survey(survey: list, rng: random.Random) -> list:
     """returns the survey with answers in a random order: [{question, answers, correct_letter}, ...]
 
     Why shuffle: in the data file the correct answer is always first. Without shuffling the LLM would score 100%
     by always answering "A", so the correct answer must land on a random letter.
 
-    Decision: the order is drawn once per question, here, and then reused for every compressed version.
-    All versions get exactly the same test (same letters), so a difference in score comes from the compressed
-    text and not from a luckier order of answers. The seed makes the whole run repeatable.
+    Decision: this function is called once for every benchmarked text, so every LLM query (text + question) gets
+    its own, freshly drawn order of answers. LLMs have favourite letters and positions. With one order shared by
+    all texts, a question whose correct answer landed on a favourite letter would be "easy" in every line of the
+    report, and a whole run would lean the same way. Drawing a new order for each query spreads that effect evenly:
+    no question and no text is lucky or unlucky all the time.
+    The random generator is passed in and comes from one seed, so the whole run is still repeatable.
     """
-    rng = random.Random(seed)
     shuffled = list()
     for q in survey:
         answers = [q["correct"]] + q["wrong"]
@@ -208,17 +210,56 @@ def build_messages(compressed_text: str, q: dict) -> list:
         {"role": "user",      "content": QUESTION_TEMPLATE.replace("{question}", q["question"]).replace("{answers}", answers)},
     ]
 
-def parse_letter(reply: str, n_answers: int) -> str | None:
-    """extracts the chosen letter from the LLM reply, returns None if there is no clear choice
+def _normalize(text: str) -> str:
+    """lower case, with punctuation and repeated spaces removed; for comparing a reply with the answer texts"""
+    return re.sub(r"[\W_]+", " ", text).strip().lower()
 
-    The LLM is asked for a bare letter, but it may still decorate it, e.g. "B)", "**B**" or "Answer: B".
-    The first stand-alone letter from the valid range is taken. Stand-alone means it is not a part of a word,
-    so "Answer: B" gives B and not A.
+def parse_letter(reply: str, answers: list) -> str | None:
+    """finds which answer the LLM chose, returns its letter or None if there is no clear choice
+
+    The LLM is asked for a bare letter, but it does not always obey. The reply is checked against a list of
+    known shapes, from the most certain to the least certain, and the first shape that fits decides:
+      1. a bare letter, maybe decorated:          "B", "b", "B)", "(B)", "**B**"
+      2. a letter that opens the reply:           "B) Edward's daughter.", "B. Because ...", "B, not C"
+      3. a letter announced in words:             "Answer: B", "The answer is B", "Option B", "B is correct"
+      4. the text of an answer without a letter:  "Edward's daughter." (also when cut off by the token limit)
+      5. one capital letter somewhere in a reply: "I think B"
+    Decision: when the reply is not clear, None is returned and the question counts as not answered. A guess here
+    would be worse than no answer: it would add random hits and misses to the scores. Two rules follow from that:
+      - Small letters count only in shapes 1 and 2. Elsewhere "a" is almost always just a word ("a nurse").
+      - In shape 5 two different letters ("B or C") mean no choice, and an "A" that starts a sentence before
+        a small-letter word is taken for the word "A" ("A nurse answered"), not for the letter.
     """
-    if not reply:
+    if not reply or not reply.strip():
         return None
-    match = re.search(rf"(?<![A-Za-z])([{LETTERS[:n_answers]}])(?![A-Za-z])", reply.strip().upper())
-    return match.group(1) if match else None
+    text    = reply.strip()
+    letters = LETTERS[:len(answers)] # only letters that label an answer are valid, e.g. A-E for 5 answers
+    alone   = rf"(?<![A-Za-z])([{letters}])(?![A-Za-z])" # a capital letter that is not a part of a word
+
+    # 1. a bare letter, maybe decorated
+    match = re.fullmatch(rf"[\W_]*([{letters}])[\W_]*", text, flags=re.IGNORECASE)
+    if match:
+        return match.group(1).upper()
+    # 2. a letter that opens the reply, followed by a separator
+    match = re.match(rf"[\W_]*([{letters}])\s*[).:,\-]", text, flags=re.IGNORECASE)
+    if match:
+        return match.group(1).upper()
+    # 3. a letter announced in words
+    match = (re.search(rf"(?i:\b(?:answer|option|choice|letter)\b(?:\s+is)?)[\s:*(\"']*{alone}", text)
+             or re.search(rf"{alone}\s+(?i:is)\b", text))
+    if match:
+        return match.group(1)
+    # 4. the text of exactly one answer, whole or only its beginning (a short beginning could fit by accident)
+    said = _normalize(text)
+    fitting = [i for i, a in enumerate(answers) if _normalize(a) == said or (len(said) >= 8 and _normalize(a).startswith(said))]
+    if len(fitting) == 1:
+        return LETTERS[fitting[0]]
+    # 5. exactly one capital letter in the reply
+    # the word "A" is dropped first: a capital "A" that starts a sentence and is followed by a small-letter word
+    # ("A nurse answered"), but not by "or"/"and" ("A or D" lists two letters)
+    without_word_a = re.sub(r"(?:^|(?<=[.!?]\s))A(?=\s+(?!(?:or|and)\b)[a-z])", " ", text)
+    found = set(re.findall(alone, without_word_a))
+    return found.pop() if len(found) == 1 else None
 
 async def ask_question(semaphore, llm_client, compressed_text: str, q: dict) -> str | None:
     """asks the LLM one question, returns the chosen letter or None (no valid answer or failed query)
@@ -249,7 +290,7 @@ async def ask_question(semaphore, llm_client, compressed_text: str, q: dict) -> 
             return None
     if DEBUG:
         print(f"Q: {q['question']} | Expected: {q['correct_letter']} | Reply: {reply!r}")
-    return parse_letter(reply, len(q["answers"]))
+    return parse_letter(reply, q["answers"])
 
 async def benchmark_variant(semaphore, llm_client, variant: dict, survey: list) -> dict:
     """asks all survey questions about one compressed version and returns its score
@@ -296,12 +337,11 @@ async def main() -> None:
     output_path     = Path( args.output ) if args.output else None
     validate_paths([data_path, compressed_path], output_path)
 
-    # load the surveys and draw the order of answers (once, shared by all compressed versions)
+    # load the surveys
     surveys, originals = load_surveys(load_toml(data_path, "data with survey"))
     if not surveys:
         print(f"Error: No 'single_choice_survey' found in: '{data_path}'", file=sys.stderr)
         sys.exit(1)
-    surveys = {data_id: shuffle_survey(survey, args.seed) for data_id, survey in surveys.items()}
 
     # pick the compressed versions that match the surveys
     variants = select_variants(load_toml(compressed_path, "compressed dialogues"), surveys)
@@ -324,7 +364,10 @@ async def main() -> None:
     # Decision: everything is started at once (the semaphore limits the real load), but the lines are printed
     # in a fixed order: baselines, then compressed versions as in the compressed file. Each line appears as soon as
     # it and all lines before it are ready, so a long run shows progress and two runs are easy to compare.
-    tasks = [asyncio.create_task(benchmark_variant(semaphore, llm_client, v, surveys[v["data_id"]])) for v in variants]
+    # The order of answers is drawn here, text by text, from one seeded generator: a new order for every query,
+    # and the same orders again when the run is repeated with the same seed.
+    rng = random.Random(args.seed)
+    tasks = [asyncio.create_task(benchmark_variant(semaphore, llm_client, v, shuffle_survey(surveys[v["data_id"]], rng))) for v in variants]
     print_header()
     scores = list()
     for task in tasks:

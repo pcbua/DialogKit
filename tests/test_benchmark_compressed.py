@@ -5,6 +5,7 @@
 # (a wrong letter, a leaked answer, an unfair order) would spoil every conclusion drawn from them.
 # That is why the rules of the benchmark are pinned down one by one below.
 import re
+import random
 import asyncio
 import pytest
 import requests
@@ -78,7 +79,7 @@ def test_load_surveys_skips_entries_without_a_survey_and_broken_rows(capsys):
 
 def test_shuffle_keeps_all_answers_and_marks_the_correct_one():
     survey = numbered_survey(50)
-    for original, shuffled in zip(survey, script.shuffle_survey(survey, seed=42)):
+    for original, shuffled in zip(survey, script.shuffle_survey(survey, random.Random(42))):
         assert shuffled["question"] == original["question"]
         assert sorted(shuffled["answers"]) == sorted([original["correct"]] + original["wrong"])
         position = script.LETTERS.index(shuffled["correct_letter"])
@@ -86,17 +87,22 @@ def test_shuffle_keeps_all_answers_and_marks_the_correct_one():
 
 def test_shuffle_spreads_the_correct_answer_over_the_letters():
     """in the data file the correct answer is always first; if it stayed first, answering 'A' would score 100%"""
-    letters = [q["correct_letter"] for q in script.shuffle_survey(numbered_survey(50), seed=42)]
+    letters = [q["correct_letter"] for q in script.shuffle_survey(numbered_survey(50), random.Random(42))]
     assert set(letters) == set("ABCDE")
 
 def test_shuffle_is_repeatable_for_a_seed_and_differs_between_seeds():
     survey = numbered_survey(50)
-    assert script.shuffle_survey(survey, seed=42) == script.shuffle_survey(survey, seed=42)
-    assert script.shuffle_survey(survey, seed=42) != script.shuffle_survey(survey, seed=43)
+    assert script.shuffle_survey(survey, random.Random(42)) == script.shuffle_survey(survey, random.Random(42))
+    assert script.shuffle_survey(survey, random.Random(42)) != script.shuffle_survey(survey, random.Random(43))
+
+def test_shuffle_draws_a_new_order_on_every_call():
+    """one generator is used for a whole run, so every benchmarked text gets its own order of answers"""
+    survey, rng = numbered_survey(50), random.Random(42)
+    assert script.shuffle_survey(survey, rng) != script.shuffle_survey(survey, rng)
 
 def test_shuffle_skips_a_question_with_more_answers_than_letters(capsys):
     survey = [{"question": "Q?", "correct": "right", "wrong": [f"wrong {i}" for i in range(len(script.LETTERS))]}]
-    assert script.shuffle_survey(survey, seed=42) == []
+    assert script.shuffle_survey(survey, random.Random(42)) == []
     assert "Too many answers" in capsys.readouterr().err
 
 # ---- what gets benchmarked -------------------------------------------------------------------------------------------
@@ -137,29 +143,67 @@ def test_messages_without_a_text_have_no_history():
     assert [m["role"] for m in messages] == ["system", "user"]
     assert "Question: Who is Julia?" in messages[1]["content"]
 
+# The answers used in the parser tests: A) ... E), like in a real question.
+ANSWERS = ["Edward's wife.", "Edward's daughter, Julia.", "A nurse from the care program.", "Edward's neighbor.", "Nobody answered."]
+
 @pytest.mark.parametrize("reply, expected", [
-    ("B",                "B"),
-    ("b",                "B"),
-    (" B \n",            "B"),
-    ("B)",               "B"),
-    ("**B**",            "B"),
-    ("(C)",              "C"),
-    ("Answer: B",        "B"),  # the 'A' of 'Answer' is a part of a word, not a choice
-    ("The answer is D.", "D"),
-    ("B, not C",         "B"),  # the first choice counts
-    ("",                 None),
-    (None,               None),
-    ("I do not know.",   None),
-    ("Edward",           None), # letters inside a word are not a choice
-    ("F",                None), # there is no answer F among 5 answers
-    ("42",               None),
-])
-def test_parse_letter(reply, expected):
-    assert script.parse_letter(reply, n_answers=5) == expected
+    # 1. a bare letter, maybe decorated
+    ("B",                         "B"),
+    ("b",                         "B"),
+    (" B \n",                     "B"),
+    ("B)",                        "B"),
+    ("(C)",                       "C"),
+    ("**B**",                     "B"),
+    ("\"D\"",                     "D"),
+    # 2. a letter that opens the reply
+    ("B) Edward's daughter",      "B"),
+    ("b) Edward's daughter",      "B"),
+    ("C. A nurse",                "C"),
+    ("B: because Julia said so",  "B"),
+    ("B, not C",                  "B"),
+    ("D - the neighbor",          "D"),
+    # 3. a letter announced in words
+    ("Answer: B",                 "B"),  # the 'A' of 'Answer' is a part of a word, not a choice
+    ("The answer is D.",          "D"),
+    ("The correct answer is **C**", "C"),
+    ("Option E",                  "E"),
+    ("I am not sure, but B is correct", "B"),
+    # 4. the text of an answer without a letter
+    ("Edward's daughter, Julia.", "B"),
+    ("edward's daughter julia",   "B"),  # letter case and punctuation do not matter
+    ("A nurse from the care",     "C"),  # an answer cut off by the token limit; its first word is not the letter A
+    ("Nobody answered.",          "E"),
+    # 5. one capital letter somewhere in the reply
+    ("I think B",                 "B"),
+    ("Probably it's C!",          "C"),
+], ids=repr)
+def test_parse_letter_finds_the_choice(reply, expected):
+    assert script.parse_letter(reply, ANSWERS) == expected
+
+@pytest.mark.parametrize("reply", [
+    "",
+    "   ",
+    None,
+    "I do not know.",
+    "42",
+    "Edward",                        # letters inside a word are not a choice; too short to be the beginning of an answer
+    "Edward's",                      # the beginning of three different answers
+    "Nobody",                        # fits one answer only, but a single short word could fit by accident
+    "F",                             # there is no answer F among 5 answers
+    "B or C",                        # two choices are no choice
+    "Either A or D.",
+    "A or D",
+    "A neighbor called, I believe.", # 'A' is a word here, and this is not the text of any answer
+    "The answer is a nurse",         # a small 'a' in a sentence is a word, not a letter
+    "it could be a or b",
+], ids=repr)
+def test_parse_letter_gives_no_answer_when_the_reply_is_not_clear(reply):
+    """a guess would add random hits and misses to the scores, so an unclear reply counts as not answered"""
+    assert script.parse_letter(reply, ANSWERS) is None
 
 def test_parse_letter_accepts_only_as_many_letters_as_there_are_answers():
-    assert script.parse_letter("C", n_answers=3) == "C"
-    assert script.parse_letter("D", n_answers=3) is None
+    assert script.parse_letter("C", ["one", "two", "three"]) == "C"
+    assert script.parse_letter("D", ["one", "two", "three"]) is None
 
 # ---- asking and scoring ----------------------------------------------------------------------------------------------
 
@@ -246,16 +290,28 @@ def test_script_prints_baselines_first_and_then_every_version_in_file_order(benc
     # the version of another dialogue was not benchmarked: 5 texts x 3 questions
     assert len(reader.calls) == 15
 
-def test_script_gives_every_version_the_same_test_and_never_shows_the_evidence(benchmark_files, run_main, llm_server_up, reader):
+def test_script_draws_a_new_order_of_answers_for_every_query_and_never_shows_the_evidence(benchmark_files, run_main, llm_server_up, reader):
     run_main(script, *benchmark_files)
-    answers_seen = {}
+    orders_seen = {}
     for query in reader.calls:
         given_text, question, answers = split_query(query)
-        # a fair comparison: the same question always comes with the same letters
-        assert answers_seen.setdefault(question, answers) == answers
+        # whatever the order, it is always the same five answers of that question
+        assert CORRECT_ANSWERS[question] in answers.values() and len(answers) == 5
+        orders_seen.setdefault(question, set()).add(tuple(answers.values()))
         # the evidence column quotes the original text, showing it would give the answer away
         assert "Evidence" not in str(query["messages"])
-    assert len(answers_seen) == 3
+    # each question was asked about 5 texts; one shared order would mean the answers are drawn once, not per query
+    assert len(orders_seen) == 3
+    assert all(len(orders) > 1 for orders in orders_seen.values())
+
+def test_script_run_is_repeatable_with_the_same_seed(benchmark_files, run_main, llm_server_up, reader):
+    """the same seed gives exactly the same queries, another seed gives other orders of answers"""
+    def queries_of_a_run(seed):
+        reader.calls.clear()
+        run_main(script, *benchmark_files, "--seed", seed)
+        return [query["messages"] for query in reader.calls]
+    assert queries_of_a_run(1) == queries_of_a_run(1)
+    assert queries_of_a_run(1) != queries_of_a_run(2)
 
 def test_script_saves_detailed_scores_to_the_output_file(benchmark_files, run_main, read_toml, tmp_path, llm_server_up, reader):
     output_path = tmp_path / "out" / "benchmark.toml"
