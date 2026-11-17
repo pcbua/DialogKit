@@ -85,10 +85,11 @@ Example script run:
 This will:
 - take every compressed version from `[[results]]` that belongs to the data file (the same `data_id`), other versions are skipped,
 - ask every survey question about every compressed version, each question in a separate chat, with answers in a random order (the same order for all versions; change it with `--seed`),
-- print one line per compressed version with the number of correct answers,
+- first print two reference points: the score with no text at all (what can be guessed from the questions alone) and the score with the full original text (the best this LLM can do),
+- then print one line per compressed version with the number of correct answers, in the order of the compressed file,
 - save detailed scores to the optional `--output` TOML file, including the numbers of wrongly answered questions.
 
-Above run will execute 4500 short LLM queries (= 90 compressed versions \* 50 questions).
+Above run will execute 4600 short LLM queries (= (2 reference points + 90 compressed versions) \* 50 questions).
 
 # Other Tools
 

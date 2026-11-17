@@ -12,6 +12,8 @@
 #   - A good compression keeps the facts. So we hide the original text, show the LLM one compressed version
 #     and ask every survey question. The share of correct answers is the score of that compressed version.
 #   - Every compressed version that belongs to the given data file is benchmarked, and the scores are printed side by side.
+#   - Two reference points are printed first: the score with no text at all (the floor) and the score with the full
+#     original text (the ceiling). The compressed versions follow, one line each.
 import sys
 import argparse
 from pathlib import Path
@@ -95,14 +97,14 @@ def load_toml(path: Path, what: str = None):
     with open(path, "rb") as f:
         return tomllib.load(f)
 
-def load_surveys(data_toml: dict) -> dict:
-    """returns {data_id: survey} for every [[data]] entry that has a survey
+def load_surveys(data_toml: dict) -> tuple[dict, dict]:
+    """returns ({data_id: survey}, {data_id: original [[data]] entry}) for every [[data]] entry that has a survey
 
     A survey row in the data file looks like this:
         [question, correct answer, "wrong answer | wrong answer | ...", evidence]
     The evidence quotes the original text and is for humans only. It is never shown to the LLM, it would give the answer away.
     """
-    surveys = dict()
+    surveys, originals = dict(), dict()
     for d in data_toml.get("data", []):
         data_id = d.get("data_id", None)
         questions = list()
@@ -114,7 +116,8 @@ def load_surveys(data_toml: dict) -> dict:
             questions.append({"question": row[0].strip(), "correct": row[1].strip(), "wrong": wrong_answers})
         if data_id and questions:
             surveys[data_id] = questions
-    return surveys
+            originals[data_id] = d
+    return surveys, originals
 
 def shuffle_survey(survey: list, seed: int) -> list:
     """returns the survey with answers in a random order: [{question, answers, correct_letter}, ...]
@@ -158,6 +161,24 @@ def select_variants(compressed_toml: dict, surveys: dict) -> list:
         print(f"Note: Skipped {skipped} compressed version(s) that do not belong to the data file (other 'data_id') or have no text.")
     return variants
 
+def make_baselines(originals: dict) -> list:
+    """returns two reference points per data file entry, in the same shape as a compressed version
+
+    A score of a compressed text means little on its own: is 60% good or bad? Two extra runs give the scale:
+      - "No Text":       the LLM gets no text at all. This is the floor: what can be guessed from the questions
+                         alone (general knowledge, giveaway wording of answers). Pure luck gives 20% for 5 answers.
+      - "Original Text": the LLM gets the full, uncompressed text. This is the ceiling: what this LLM can answer
+                         when nothing was lost. A compressed text is good when it is close to this number, not to 100%.
+    """
+    baselines = list()
+    for data_id, d in originals.items():
+        common = {"data_id": data_id, "prompt_id": "-", "target_words": 0}
+        baselines.append({**common, "type": "No Text", "source_llm": "(no text)", "text": ""})
+        if d.get("text", None):
+            baselines.append({**common, "type": "Original Text", "source_llm": "(original text)", "text": d["text"],
+                              "text_words": d.get("text_words", 0), "text_tokens": d.get("text_tokens", 0)})
+    return baselines
+
 def check_llm_server() -> None:
     """stops the script with one clear message when the LLM server cannot be reached
 
@@ -172,12 +193,18 @@ def check_llm_server() -> None:
         sys.exit(1)
 
 def build_messages(compressed_text: str, q: dict) -> list:
-    """builds the chat: system prompt, the compressed text as history, then one question"""
+    """builds the chat: system prompt, the compressed text as history, then one question
+
+    With an empty text (the "No Text" baseline) the history is left out, so the LLM sees only the question.
+    """
     answers = "\n".join(f"{LETTERS[i]}) {a}" for i, a in enumerate(q["answers"]))
-    return [
-        {"role": "system",    "content": SYSTEM_PROMPT},
+    history = [
         {"role": "user",      "content": HISTORY_USER_TEMPLATE.replace("{text}", compressed_text.strip())},
         {"role": "assistant", "content": HISTORY_ASSISTANT},
+    ] if compressed_text.strip() else []
+    return [
+        {"role": "system",    "content": SYSTEM_PROMPT},
+        *history,
         {"role": "user",      "content": QUESTION_TEMPLATE.replace("{question}", q["question"]).replace("{answers}", answers)},
     ]
 
@@ -236,6 +263,7 @@ async def benchmark_variant(semaphore, llm_client, variant: dict, survey: list) 
     n_correct = len(survey) - len(wrong_questions)
     return {
         # what was benchmarked: copied from the compressed file, to tell the versions apart
+        "type":            variant.get("type", "Compressed Dialogue"),
         "data_id":         variant.get("data_id", "-"),
         "prompt_id":       variant.get("prompt_id", "-"),
         "source_llm":      variant.get("source_llm", "-"),
@@ -250,14 +278,15 @@ async def benchmark_variant(semaphore, llm_client, variant: dict, survey: list) 
         "wrong_questions": wrong_questions, # numbers of the questions (from 1, in survey order) that were answered wrong
     }
 
-def print_scores(scores: list) -> None:
-    """prints one line per compressed version, in the order of the compressed file"""
+def print_header() -> None:
     header = f"{'data_id':<8} {'prompt':<7} {'source_llm':<24} {'target':>6} {'words':>6} {'tokens':>6} {'correct':>9} {'accuracy':>8} {'no answer':>9}"
     print(header)
     print("-" * len(header))
-    for s in scores:
-        correct = f"{s['correct']}/{s['questions']}"
-        print(f"{s['data_id']:<8} {s['prompt_id']:<7} {s['source_llm']:<24} {s['target_words']:>6} {s['text_words']:>6} {s['text_tokens']:>6} {correct:>9} {s['accuracy']:>8.1%} {s['no_answer']:>9}")
+
+def print_score(s: dict) -> None:
+    """prints one line: the score of one text (a baseline or a compressed version)"""
+    correct = f"{s['correct']}/{s['questions']}"
+    print(f"{s['data_id']:<8} {s['prompt_id']:<7} {s['source_llm']:<24} {s['target_words']:>6} {s['text_words']:>6} {s['text_tokens']:>6} {correct:>9} {s['accuracy']:>8.1%} {s['no_answer']:>9}", flush=True)
 
 @uu.time_it
 async def main() -> None:
@@ -268,7 +297,7 @@ async def main() -> None:
     validate_paths([data_path, compressed_path], output_path)
 
     # load the surveys and draw the order of answers (once, shared by all compressed versions)
-    surveys = load_surveys(load_toml(data_path, "data with survey"))
+    surveys, originals = load_surveys(load_toml(data_path, "data with survey"))
     if not surveys:
         print(f"Error: No 'single_choice_survey' found in: '{data_path}'", file=sys.stderr)
         sys.exit(1)
@@ -279,8 +308,12 @@ async def main() -> None:
     if not variants:
         print(f"Error: No compressed dialogue for data_id {sorted(surveys)} found in: '{compressed_path}'", file=sys.stderr)
         sys.exit(1)
+    # the reference points go first: they are the scale for reading all the lines that follow
+    baselines = make_baselines(originals)
+    n_compressed = len(variants)
+    variants = baselines + variants
     n_queries = sum(len(surveys[v["data_id"]]) for v in variants)
-    print(f"Benchmarking {len(variants)} compressed version(s), {n_queries} LLM queries.")
+    print(f"Benchmarking {len(baselines)} baseline(s) and {n_compressed} compressed version(s), {n_queries} LLM queries.")
 
     # query the LLM; all versions are started together and the semaphore keeps the load at what the server can take
     check_llm_server()
@@ -288,9 +321,15 @@ async def main() -> None:
     print(f"Querying LLM: {LLM_CONFIG_NAME} ({LLM_CONFIG['BASE_URL']}), Concurrency: {concurrency}")
     semaphore  = asyncio.Semaphore(concurrency)
     llm_client = AsyncOpenAI(base_url=f"{LLM_CONFIG['BASE_URL']}/v1", api_key=LLM_CONFIG.get("API_KEY", "EMPTY"))
-    scores = await asyncio.gather(*[benchmark_variant(semaphore, llm_client, v, surveys[v["data_id"]]) for v in variants])
-
-    print_scores(scores)
+    # Decision: everything is started at once (the semaphore limits the real load), but the lines are printed
+    # in a fixed order: baselines, then compressed versions as in the compressed file. Each line appears as soon as
+    # it and all lines before it are ready, so a long run shows progress and two runs are easy to compare.
+    tasks = [asyncio.create_task(benchmark_variant(semaphore, llm_client, v, surveys[v["data_id"]])) for v in variants]
+    print_header()
+    scores = list()
+    for task in tasks:
+        scores.append(await task)
+        print_score(scores[-1])
     n_no_answer = sum(s["no_answer"] for s in scores)
     if n_no_answer:
         print(f"Warning: {n_no_answer} of {n_queries} queries gave no valid answer (counted as wrong). Check the errors above.", file=sys.stderr)
