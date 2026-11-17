@@ -117,14 +117,24 @@ def answered_accuracy(x: dict) -> float:
     return x["correct"] / answered if answered else float("nan")
 
 def per_dialogue(runs: list) -> dict:
-    """{data_id: {"floor": No Text result, "ceiling": Original Text result, "versions": [(run, result)]}}"""
+    """{data_id: {"floor": No Text result, "ceiling": Original Text result, "versions": [(run, result)]}}
+
+    The reference points are computed again in every run of a dialogue and can differ by a question (noise).
+    Decision: the value that most runs got is used (on a tie, the first of them), so the report does not depend
+    on which result file happens to come first.
+    """
     out = defaultdict(lambda: {"floor": None, "ceiling": None, "versions": []})
+    refs = defaultdict(list)
     for run in runs:
         for x in run["results"]:
-            d = out[x["data_id"]]
-            if x["type"] == "No Text":         d["floor"] = d["floor"] or x
-            elif x["type"] == "Original Text": d["ceiling"] = d["ceiling"] or x
-            else:                              d["versions"].append((run, x))
+            if x["type"] in REFERENCE:
+                refs[(x["data_id"], x["type"])].append(x)
+            else:
+                out[x["data_id"]]["versions"].append((run, x))
+    for (data_id, kind), xs in refs.items():
+        votes = Counter((x["correct"], x["no_answer"]) for x in xs)
+        top = max(votes.values())
+        out[data_id]["floor" if kind == "No Text" else "ceiling"] = next(x for x in xs if votes[(x["correct"], x["no_answer"])] == top)
     return dict(sorted(out.items()))
 
 def reference_differences(runs: list) -> list:
@@ -566,7 +576,20 @@ def draw_charts(runs: list, img_dir: Path) -> list:
     def original_line(ax):
         if ax.get_xlim()[0] < 1.0 < ax.get_xlim()[1]:
             ax.axvline(1.0, color=AXIS, lw=1.2, ls=(0, (4, 3)))
-            ax.text(1.03, 0.02, "as long as\nthe original", color=MUTED, fontsize=7.5, va="bottom", ha="left", transform=ax.get_xaxis_transform())
+            ax.text(1.03, 0.02, "as long as\nthe original", color=MUTED, fontsize=7.5, va="bottom", ha="left", transform=ax.get_xaxis_transform(),
+                    bbox=dict(boxstyle="square,pad=0.1", fc=SURFACE, ec="none", alpha=0.85))
+
+    def label_line_ends(ax, ends):
+        """names the lines at their right ends; labels that would overlap are moved apart vertically"""
+        ax.figure.canvas.draw()
+        placed = list()
+        for m, (x, y) in sorted(ends, key=lambda e: -e[1][1]):
+            px, py = ax.transData.transform((x, y))
+            dy = 0
+            while any(abs(px - qx) < 90 and abs(py + dy - qy) < 11 for qx, qy in placed):
+                dy -= 11
+            placed.append((px, py + dy))
+            ax.annotate(m, (x, y), xytext=(6, dy * 72 / ax.figure.dpi), textcoords="offset points", fontsize=8, color=INK2, va="center", ha="left", zorder=6)
 
     def save(fig, name, title, subtitle, handles, height):
         fig.legend(handles=handles, loc="lower center", ncol=len(handles), frameon=False, fontsize=9.5, labelcolor=INK2)
@@ -594,8 +617,10 @@ def draw_charts(runs: list, img_dir: Path) -> list:
             ax.set_xlim(min(xs_all) / 1.25, max(xs_all) * 1.25)
             if metric == "accuracy":
                 ax.axhline(d["floor"]["accuracy"], color=AXIS, lw=1.0, ls=(0, (1, 2)))
-                ax.text(0.99, d["floor"]["accuracy"] + 0.01, f"no text = {d['floor']['accuracy']:.0%}", color=MUTED, fontsize=8, va="bottom", ha="right", transform=ax.get_yaxis_transform())
+                ax.text(0.01, d["floor"]["accuracy"] + 0.01, f"no text = {d['floor']['accuracy']:.0%}", color=MUTED, fontsize=8, va="bottom", ha="left", transform=ax.get_yaxis_transform(),
+                        bbox=dict(boxstyle="square,pad=0.1", fc=SURFACE, ec="none", alpha=0.85), zorder=7)
                 ax.axhline(d["ceiling"]["accuracy"], color=AXIS, lw=1.0)
+            ends = list()
             for m in METHOD_ORDER:
                 pts = [(x["text_tokens"] / orig, value[metric](x)) for run, x in d["versions"] if run["method"] == m]
                 pts = [(a, b) for a, b in pts if not math.isnan(b)]
@@ -607,7 +632,8 @@ def draw_charts(runs: list, img_dir: Path) -> list:
                 if len(line) >= 2:
                     ax.plot([a for a, _ in line], [b for _, b in line], color=color, lw=2.2, zorder=4)
                     ax.scatter([a for a, _ in line], [b for _, b in line], s=46, marker=marker, color=color, edgecolors=SURFACE, linewidths=1.4, zorder=5)
-                    ax.annotate(m, line[-1], xytext=(6, 0), textcoords="offset points", fontsize=8, color=INK2, va="center", ha="left", zorder=6)
+                    ends.append((m, line[-1]))
+            label_line_ends(ax, ends)
             original_line(ax); x_ticks(ax)
             ax.set_title(f"{did}: {d['ceiling']['questions']} questions, original {orig} tokens", loc="left", fontsize=10.5, color=INK, pad=8)
             ax.set_xlabel("real length of the compressed text, % of the original (log scale)", fontsize=9, color=INK2)

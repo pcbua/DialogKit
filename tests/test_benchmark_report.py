@@ -120,3 +120,12 @@ def test_dspm_with_and_without_the_tag_legend_are_two_systems(write_toml):
     report = script.build_report(runs)
     assert "| DSPM-NoLegend | 1 |" in report and "| DSPM+Legend | 1 |" in report
     assert "--tag-legend" in report # the command of the legend run is shown with the option
+
+def test_reference_point_is_the_value_most_runs_got(write_toml, read_toml):
+    files = []
+    for name, floor in (("benchmark.A.t001.toml", 2), ("benchmark.B.t001.toml", 1), ("benchmark.C.t001.toml", 1)):
+        doc = bench_file(f"data/compress.{name.split('.')[1]}.toml", [result(prompt="NA")])
+        doc["results"][0]["correct"] = floor
+        files.append(write_toml(name, doc))
+    dialogues = script.per_dialogue(script.load_runs(files))
+    assert dialogues["t001"]["floor"]["correct"] == 1 # two runs got 1, one run (the first file) got 2
