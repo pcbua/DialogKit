@@ -153,7 +153,7 @@ async def main() -> None:
     }
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=1)
+        json.dump(output, f, ensure_ascii=False) # one line: thousands of rows, kept small
     n_errors = sum(r["finish"] == "error" for r in rows)
     print(f"Replies: {len(rows)}, with a letter: {sum(r['parsed'] is not None for r in rows)}, without a letter: {len(letterless)}, failed: {n_errors}; asked again: {len(long_rows)}")
     print(f"Saved: '{output_path}'")
