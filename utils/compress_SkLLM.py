@@ -10,6 +10,7 @@ from pathlib import Path
 import tomllib # for reading TOML
 import tomli_w # for writing TOML
 import asyncio
+from concurrent.futures import ThreadPoolExecutor
 import glob
 from datetime import date
 import useful_utils as uu
@@ -123,6 +124,13 @@ async def main() -> None:
     if not input_files:
         print(f"Warning: No files matched the glob pattern: {args.glob_pattern}")
         return
+
+    # Scikit-LLM is blocking code, so every query runs in a worker thread (see asyncio.to_thread below).
+    # By default asyncio gives only min(32, CPU cores + 4) threads, e.g. 12 on an 8 core machine. The extra queries
+    # then wait for a free thread, so fewer than CONCURRENCY queries reach the LLM server at the same time.
+    # The threads only wait for the network, they do not need CPU cores, so the pool is sized to CONCURRENCY.
+    max_concurrency = max((cfg.get("CONCURRENCY", 1) for cfg in LLM_CONFIGS.values()), default=1)
+    asyncio.get_running_loop().set_default_executor(ThreadPoolExecutor(max_workers=max_concurrency))
 
     # iterate all LLM configs
     llm_results = list() # start with empty list
