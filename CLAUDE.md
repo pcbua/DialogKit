@@ -26,6 +26,7 @@ not redo or undo them. The user's own docs: `README.md`, `CONTRIBUTING.md`, `doc
 - **`--tag-legend`** (for DSPM): the DSPM author's legend of the tags `[CON] [DEC] [CODE] [EQ] [ENT] [STR]` before the text and "treat [CON] as hard rules" after it; the text stays in the chat history; reference points get no legend. The report shows DSPM as `DSPM-NoLegend` and `DSPM+Legend`.
 
 ## Report (`docs/benchmark.md`)
+- To rerun everything (all runs, replies, report, notes check): the project skill `/benchmark-rerun` (`.claude/skills/benchmark-rerun/SKILL.md`).
 - Generated: `uv run --group report utils/benchmark_report.py --notes docs/benchmark_notes.md --replies data/benchmark_replies.d001.json --output docs/benchmark.md`. Raw replies come from `utils/benchmark_replies.py` (repeats the benchmark queries exactly).
 - **Every number is computed from the files.** Conclusions go only into the hand-written `docs/benchmark_notes.md` (copied verbatim to the top; it starts with the user's "Preliminary Results" warning, keep it). After a rerun, re-check every number in the notes.
 - **Compare prompts p01/p02/p03 at the same real length** (fitted line per prompt), never by plain means over targets: the prompts write texts of different length, and longer texts keep more facts.
