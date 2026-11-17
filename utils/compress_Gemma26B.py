@@ -12,7 +12,7 @@ import asyncio
 import glob
 from datetime import date
 import useful_utils as uu
-from openai import OpenAI, AsyncOpenAI
+from openai import AsyncOpenAI
 
 DEBUG = False # poor's people debugging
 
@@ -111,18 +111,30 @@ def iterate_llms(llm_configs: dict):
     yield from llm_configs.items()
 
 async def process_with_llm(semaphore, llm_client, llm_config: dict, prompt: dict, data_text: str, n_words: int):
+    """compresses one text with the LLM, returns the compressed text or None when it failed
+
+    The work has two steps: first ask the server how many tokens the prompt takes, then give the LLM
+    all the remaining room of its context window for the answer.
+    """
     result_str    = None
     # prepare prompts
     system_prompt = prepare_prompt(prompt["system_prompt_template"], data_text, n_words)
     user_prompt   = prepare_prompt(prompt["user_prompt_template"],   data_text, n_words)
     # get number of output tokens, query LLM to count input tokens
-    input_tokens  = uu.get_precise_token_count(
+    # The count is a plain blocking HTTP call. It runs in a worker thread, because a blocking call made directly
+    # here would freeze the whole asyncio loop: no other query could start or finish until the count comes back.
+    input_tokens  = await asyncio.to_thread(
+        uu.get_precise_token_count,
         llm_config.get("BASE_URL", None),
         llm_config.get("MODEL_NAME", None),
         system_prompt,
         user_prompt,
     )
     output_tokens = llm_config.get("MAX_MODEL_LEN", 0) - input_tokens - 1 # one token safety margin
+    if output_tokens <= 0:
+        # the prompt alone fills the context window; the server would reject the query with a less clear message
+        print(f"Error: The prompt has {input_tokens} tokens, no room left for the answer (MAX_MODEL_LEN: {llm_config.get('MAX_MODEL_LEN', 0)}).", file=sys.stderr)
+        return None
     # vLLM specific parameters
     extra_body = {
         "min_p":              llm_config.get("MIN_P", 0.0),
@@ -147,7 +159,17 @@ async def process_with_llm(semaphore, llm_client, llm_config: dict, prompt: dict
                 extra_body        = extra_body, # vLLM specific, min_p, reasoning, ..
             )
             # TBD: not sure how to skip reasoning/thinking output
-            result_str = response.choices[0].message.content.strip() # take results
+            choice = response.choices[0]
+            # 'content' is None when the LLM produced no final answer, e.g. all tokens were used for thinking;
+            # report it by name instead of failing on None.strip() with a confusing error
+            if choice.message.content is None:
+                print(f"Error: The LLM returned no text (finish reason: {choice.finish_reason}).", file=sys.stderr)
+                return None
+            # 'length' means the LLM ran out of tokens and the text is cut in the middle; it is kept
+            # (most of it is still useful), but the user should know that this result is incomplete
+            if choice.finish_reason == "length":
+                print(f"Warning: The LLM answer was cut off at the token limit (Prompt: {prompt['prompt_id']}, T.Words: {n_words}).", file=sys.stderr)
+            result_str = choice.message.content.strip() # take results
         except Exception as e:
             print(f"Error: An unexpected error occurred during LLM call: {e}", file=sys.stderr)
             result_str = None
