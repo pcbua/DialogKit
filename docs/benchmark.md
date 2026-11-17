@@ -12,7 +12,26 @@ All numbers are in the tables below; the "shorter" tables leave out versions tha
 2. **Frontier models keep the most facts per token (d001 only).** Mean accuracy 77% at a median of 37% of the original tokens; the best strongly compressed versions: Sonnet 5.5 Medium at 32% of the original gives 90%, at 25% gives 84%. Frontier files exist only for d001.
 3. **The local Gemma compressors are much weaker.** `compress_Gemma26B`: 44–45% mean accuracy at 14–20% of the tokens; DSPM and SkLLM compress hardest (5–21% of the tokens) and keep the fewest facts (mean accuracy 16–30%).
 4. **`compress_Gemma26B` often does not compress.** On d001 37 of 90 and on d003 28 of 90 versions are as long as or longer than the original (up to 278%); the best scores of this method come from such versions, so read the "shorter" tables.
-5. **Noise level:** a difference of one question between two versions is within the repeatability of the reader (see the last section).
+5. **Compression removes facts; it does not make the reader worse.** Among the questions the reader does answer, accuracy stays high at every length (medians of the length bins: 75–100%, see the charts); what grows with shortening is the share of questions with no answer. The reader's replies without a letter are real refusals ("The provided text does not contain..."), see the examples.
+6. **Noise level:** a difference of one question between two versions is within the repeatability of the reader (see the last section).
+
+## Charts: how each method works depending on the length of the compressed text
+
+Each dot is one compressed version, the line is the median of the versions in a length bin (bins with fewer than 3 versions are not drawn). The x axis is the length of the compressed text as a share of the original, on a log scale; right of the dashed line the text is longer than the original. The numbers behind the dots are in the tables of each dialogue below.
+
+### Accuracy
+
+![Accuracy of the reader vs length of the compressed text, for d001, d002 and d003, one marker shape and color per method](img/benchmark_accuracy_vs_length.png)
+
+The longer the text, the more facts the reader finds, for every method and every dialogue. At the same length Frontier models are ahead on d001, and the local Gemma compressors are close to each other. The lines are not smooth because there are only a few versions per bin (the zigzag of `compress_Gemma26B` on d002 and d003 is that noise, not a trend).
+
+### Why the accuracy falls: the reader stops answering
+
+![Share of questions with no letter in the reply vs length of the compressed text](img/benchmark_noanswer_vs_length.png)
+
+![Accuracy among answered questions vs length of the compressed text](img/benchmark_answered_accuracy_vs_length.png)
+
+The first chart is the mirror image of the accuracy chart: the shorter the text, the more questions end without a letter. The second chart leaves those out: **among the questions the reader does answer, accuracy stays high at every length** (the medians of the length bins lie between 75% and 100%; the lowest values come from the very shortest DSPM and SkLLM versions, which answer so few questions that their value is noisy). So compression mostly **removes facts**, and the facts that remain are used correctly.
 
 ## How to read the numbers
 
@@ -575,6 +594,207 @@ Some versions are as long as, or longer than, the original (the compressor did n
 | NA | Gemma26B | 200 | 200 | 259 | 7% | 24/134 | 17.9% | 105 | 82.8% |
 | NA | Gemma26B | 150 | 140 | 188 | 5% | 20/134 | 14.9% | 107 | 74.1% |
 | NA | Gemma26B | 100 | 95 | 137 | 4% | 12/134 | 9.0% | 117 | 70.6% |
+
+## Examples: real prompts
+
+Every question is a separate chat of four messages (system, the compressed text as earlier chat history, an assistant acknowledgement, the question). Below is the real text sent to the reader for question 1 of d001; the compressed dialogue is replaced by the tag `<COMPRESSED_DIALOGUE>`. The correct answer to this question is **E**; the order of answers is shuffled once (seed 42) and is the same for every version.
+
+```text
+[system]
+You answer single choice questions about a text. The user first gives you the text, and then asks a question with lettered answers. Use only the information from the given text. Reply with the letter of the correct answer and nothing else.
+
+[user]
+This is the text. Read it, I will ask you a question about it.
+
+<COMPRESSED_DIALOGUE>
+
+[assistant]
+I have read the text. I am ready for the question.
+
+[user]
+Choose the correct answer. Reply with the letter only.
+
+Question: Who answered the phone initially, and what is her relationship to Mr. Nowak?
+
+Answers:
+A) A neighbor answered; she lives next door.
+B) His wife answered; she is Mr. Nowak's spouse.
+C) His son answered; he is Mr. Nowak's son.
+D) A nurse answered; she works for the care program.
+E) Julia answered; she is Mr. Nowak's daughter.
+```
+
+For the **No Text** reference point the history is left out and the reader sees only this:
+
+```text
+[system]
+You answer single choice questions about a text. The user first gives you the text, and then asks a question with lettered answers. Use only the information from the given text. Reply with the letter of the correct answer and nothing else.
+
+[user]
+Choose the correct answer. Reply with the letter only.
+
+Question: Who answered the phone initially, and what is her relationship to Mr. Nowak?
+
+Answers:
+A) A neighbor answered; she lives next door.
+B) His wife answered; she is Mr. Nowak's spouse.
+C) His son answered; he is Mr. Nowak's son.
+D) A nurse answered; she works for the care program.
+E) Julia answered; she is Mr. Nowak's daughter.
+```
+
+What goes into `<COMPRESSED_DIALOGUE>` (the first 600 characters of one real version of each method; the original dialogue d001 has 2065 words):
+
+<details><summary>Frontier model: Sonnet 5.5 Medium, prompt p02, target 600 words (998 tokens)</summary>
+
+```text
+Marta (Home Care Support Program agent) called Mr. Edward Nowak for the Friday check-in; his daughter Julia answered first. Julia reported: ankle swelling returned (Tuesday socks left deep marks, trouble with shoes), breathlessness on stairs to bathroom, weight 83.4 kg Monday vs 85.1 kg this morning (gain of 1.7 kg in four days, recorded on fridge sheet), poor sleep Wednesday and Thursday, now uses two pillows, found in armchair at 3 a.m., skipped evening pills Wednesday. No falls since one two weeks ago; slightly dizzy when standing fast; no chest pain; good appetite but secretly eats salty f [...]
+```
+
+</details>
+
+<details><summary>compress_Gemma26B: Gemma26B_ThinkOff, prompt p01, target 200 words (249 tokens)</summary>
+
+```text
+Marta from the Home Care Support Program called Mr. Nowak for a weekly check-in. His daughter, Julia, reported concerns regarding his recent weight gain of 1.7 kilos, ankle swelling, shortness of breath, and poor sleep. She also noted he missed a dose of his diuretic due to nighttime bathroom trips.
+
+During the conversation with Mr. Nowak, he admitted to experiencing chest tightness at night and difficulty breathing on stairs. He explained that he skips his evening diuretic because frequent nighttime urination is humiliating. Marta plans to have a nurse contact him to discuss adjusting his med [...]
+```
+
+</details>
+
+<details><summary>DSPM: the shortest version (192 tokens)</summary>
+
+```text
+[DEC] Patient agrees
+[DEC] Potential treatment
+[DEC] Agent 1
+[DEC] Patient will
+[DEC] Agent will
+[DEC] Negotiate frequency
+[DEC] Agent Mr.
+[DEC] Note Wednesday
+[DEC] Communication Julia
+[DEC] Nurse proposes
+[DEC] If Monday,
+[DEC] Patient Mr.
+[CON] Emergency 1
+[DEC] Requesting Mr.
+[DEC] Propose moving
+[DEC] Patient refuses
+[CON] Evening administration
+[CON] Cataract surgery
+[CON] Pre-operative check-up
+[DEC] Patient Thursday
+[DEC] Flag 1.7
+[DEC] Caregiver requires
+[DEC] Patient disputes
+[DEC] Postponement of
+[DEC] Cataract 24th
+```
+
+</details>
+
+<details><summary>SkLLM: the shortest version (171 tokens)</summary>
+
+```text
+Marta, a Home Care Support agent, conducted a weekly check-in with Mr. Nowak and his daughter, Julia. Key health concerns include a 1.7kg weight gain, ankle swelling, shortness of breath, and nocturnal chest tightness, likely due to fluid retention. Mr. Nowak also admitted to skipping diuretic medication to avoid nighttime bathroom trips. 
+
+**Action Plan:**
+* **Medical:** A nurse will call to discuss medication adjustments (moving the diuretic to mornings) and address fluid issues.
+* **Safety:** Urgent installation of bathroom grab bars is required.
+* **Follow-ups:** Upcoming echocardiogram, c [...]
+```
+
+</details>
+
+## Examples: real replies of the reader
+
+To see the replies themselves, all 8800 queries of d001 (every compressed version of every file, plus the two reference points) were asked once more with exactly the same prompts and settings, and the raw replies were kept. The scores of this re-run match the benchmark: Original Text 50/50 in both, and 5060 vs 5061 correct answers over all compressed versions (the difference of one is the non-determinism described at the end of this file).
+
+| form of the reply | queries | share |
+|---|---:|---:|
+| a bare letter, as the prompt asks (e.g. `C`) | 5350 | 60.8% |
+| a letter inside a longer reply | 38 | 0.4% |
+| **no letter at all** | 3412 | 38.8% |
+
+The reader never returned a decorated letter alone (such as `**B**` or `B)`): it either gives the bare letter or leaves the schema. The 38 "letters inside a longer reply" are 34 replies where the parser mistook the article *a* or an option list for answer A (see the last part of this section) and 4 where the reader started with the letter and added a note or the text of the answer (e.g. `B (Note: Looking at the text`). The share of replies without a letter, by source:
+
+
+| source | queries | bare letter | no letter |
+|---|---:|---:|---:|
+| reference points | 100 | 56% | 44% |
+| Gemma26B direct | 4500 | 61% | 38% |
+| DSPM | 750 | 30% | 70% |
+| SkLLM | 750 | 21% | 79% |
+| Frontier models | 2700 | 79% | 20% |
+
+### Replies to question 1
+
+The same question as in the prompt above (correct answer: **E**), as answered by a few real versions:
+
+| text given to the reader | reply | verdict |
+|---|---|---|
+| none (No Text) | `Please provide the text so I can answer` | no letter, counted as wrong |
+| the full original dialogue | `E` | correct |
+| Frontier, Sonnet 5.5 p02, target 600 | `E` | correct |
+| compress_Gemma26B, p01, target 200 | `E` | correct |
+| DSPM (shortest) | `The provided text does not contain information regarding` | no letter, counted as wrong |
+| SkLLM (shortest) | `E` | correct |
+
+### When the reader does not answer by the schema
+
+3412 of 8800 replies (39%) had no letter. The replies are cut after 8 tokens (the benchmark setting), so below is the beginning of each reply and how often such a beginning occurred, and then examples of what the same question gives when the reader is allowed to write up to 200 tokens.
+
+| beginning of the reply (as cut at 8 tokens) | queries | share of no-letter replies |
+|---|---:|---:|
+| `The provided text does not contain information regarding` | 2254 | 66.1% |
+| `None of the provided answers are mentioned in` | 415 | 12.2% |
+| `I cannot answer this question because the text` | 346 | 10.1% |
+| `None of the above.` | 131 | 3.8% |
+| `I am sorry, but the provided text` | 130 | 3.8% |
+| `Please provide the text so I can answer` | 42 | 1.2% |
+| `Based on the text provided, there is` | 30 | 0.9% |
+| `The provided text states "Next Wednesday is` | 29 | 0.8% |
+| (other beginnings) | 35 | 1.0% |
+
+Examples with the full reply (up to 200 tokens), every one of them a question that counts as wrong in the benchmark:
+
+- **Gemma26B**, question 10 (correct: D), 8-token reply `None of the above. (Note:`
+  
+  > None of the above. (Note: The provided text does not contain information about hidden food in the kitchen.)
+
+- **Gemma26B**, question 43 (correct: A), 8-token reply `The provided text does not contain information regarding`
+  
+  > The provided text does not contain information regarding the specific date of the cataract surgery or which eye is to be treated first. Therefore, none of the options can be confirmed using only the information from the given text.
+
+- **Gemma26B**, question 26 (correct: A), 8-token reply `I cannot answer this question because the provided`
+  
+  > I cannot answer this question because the provided text does not contain information regarding the duration of Mr. Nowak's physiotherapy session.
+
+- **Gemma26B**, question 43 (correct: A), 8-token reply `I am sorry, but the provided text`
+  
+  > I am sorry, but the provided text does not contain information regarding the date of Mr. Nowak's cataract surgery or which eye was to be treated first. Therefore, I cannot answer the question using only the information from the given text.
+
+- **reference point (No Text)**, question 5 (correct: D), 8-token reply `Please provide the text so I can answer`
+  
+  > Please provide the text so I can answer the question.
+
+- **Gemma26B**, question 4 (correct: E), 8-token reply `The text provided does not state which day`
+  
+  > The text provided does not state which day of the week the check-in call occurred; it only mentions the date of the echocardiogram (Wednesday), the cardiology consultation (Friday), and the deadline for grab bar installation (Monday). Therefore, the correct answer cannot be determined from the text.
+
+- **Gemma26B**, question 42 (correct: E), 8-token reply `Based on the text provided, there is`
+  
+  > Based on the text provided, there is no mention of a "Dr. Wiśniewska." Therefore, the information required to answer the question is not present in the text.
+
+### Does the 8-token limit hide real answers?
+
+A random sample of 400 of the 3412 letter-less replies was asked again with a budget of 200 tokens. 363 replies ended on their own, 37 were cut at 200 tokens. Only **29** of the 400 (7%) contain an explicit choice of a letter (found with a simple pattern: "answer is X", "**X**" or a line with only the letter), and **8** of those are correct. So the letter-less replies are real refusals, not answers hidden behind a long introduction; a longer budget would change the score very little. The numbers are from a sample and from a heuristic, so read them as an order of magnitude.
+
+### A weakness of the answer parser
+
+`parse_letter` takes the first stand-alone letter A–E of the reply (upper-cased). In 34 cases of this re-run (0.39% of the queries) this was not an answer but the article *a* or an option list: `The provided text does not contain a specific...` and `None of the provided options (A,...` were read as the answer **A**. Only 3 of them were counted as correct (by chance, when A was the correct answer), so the effect on the scores is negligible; the other 31 were wrong anyway. It would still be cleaner to accept a letter only at the beginning of the reply; the script was left unchanged here.
 
 ## Repeatability check
 
