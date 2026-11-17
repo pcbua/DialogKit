@@ -33,7 +33,7 @@ from collections import defaultdict, Counter
 import benchmark_compressed as bc
 
 PROMPTS        = ("p01", "p02", "p03")
-METHOD_ORDER   = ["Gemma26B direct", "DSPM", "SkLLM", "Frontier models"]
+METHOD_ORDER   = ["Gemma26B direct", "DSPM-NoLegend", "DSPM+Legend", "SkLLM", "Frontier models"]
 SOURCE_ORDER   = ["Gemma26B_ThinkOff", "Gemma26B_ThinkMedium", "ChatGPT default", "Gemini 3 Medium", "Sonnet 5.5 Medium"]
 LENGTH_BINS    = [0.04, 0.08, 0.15, 0.25, 0.4, 0.65, 1.0, 1.6, 3.0] # bin edges of the charts, share of the original length
 MIN_PER_BIN    = 3    # a bin of the charts needs this many versions to get a median
@@ -59,11 +59,11 @@ def run_name(compressed_path: str) -> str:
     stem = Path(compressed_path).stem
     return stem[len("compress."):] if stem.startswith("compress.") else stem
 
-def method_of(compressed_path: str) -> str:
-    """the compression method of a compressed file, from its name"""
+def method_of(compressed_path: str, tag_legend: bool = False) -> str:
+    """the compression method of a compressed file, from its name; DSPM read with and without the tag legend are two systems"""
     name = run_name(compressed_path)
     if name.startswith("SkLLM"):    return "SkLLM"
-    if name.startswith("DSPM"):     return "DSPM"
+    if name.startswith("DSPM"):     return "DSPM+Legend" if tag_legend or name.endswith("+Legend") else "DSPM-NoLegend"
     if name.startswith("Frontier"): return "Frontier models"
     return "Gemma26B direct"
 
@@ -75,8 +75,8 @@ def load_runs(paths: list) -> list:
             t = tomllib.load(f)
         if t.get("benchmark", {}).get("type") != "Benchmark Compressed Dialogue":
             continue
-        compressed = t["benchmark"]["compressed_path"]
-        runs.append({"file": Path(path).name, "run": run_name(compressed), "method": method_of(compressed),
+        compressed, legend = t["benchmark"]["compressed_path"], t["benchmark"].get("tag_legend", False)
+        runs.append({"file": Path(path).name, "run": run_name(compressed) + ("+Legend" if legend else ""), "method": method_of(compressed, legend),
                      "benchmark": t["benchmark"], "config": next(iter(t.get("configs", {}).values()), {}), "results": t["results"]})
     return runs
 
@@ -223,7 +223,7 @@ def build_report(runs: list, replies: dict = None, notes: str = None, img: str =
     w("```")
     for r in runs:
         b = r["benchmark"]
-        w(f"uv run utils/benchmark_compressed.py {b['data_path']} {b['compressed_path']} --base-url <LLM server> --output data/{r['file']}")
+        w(f"uv run utils/benchmark_compressed.py {b['data_path']} {b['compressed_path']}{' --tag-legend' if b.get('tag_legend') else ''} --base-url <LLM server> --output data/{r['file']}")
     w("```")
     w("")
 
@@ -401,7 +401,7 @@ def replies_section(replies: dict, runs: list) -> str:
       f"({example['source_llm']}, prompt {example['prompt_id']}, target {example['target_words']} words, run {example['run']}); "
       f"the compressed dialogue is replaced by the tag `<COMPRESSED_DIALOGUE>`. The correct answer in this query is **{example['expected']}**.")
     w("")
-    w("```text"); w(chat_text(bc.build_messages("<COMPRESSED_DIALOGUE>", q))); w("```")
+    w("```text"); w(chat_text(bc.build_messages("<COMPRESSED_DIALOGUE>", q, example.get("tag_legend", False)))); w("```")
     w("")
     nt = next((r for r in rows if r["type"] == "No Text" and r["qidx"] == 0 and r["run"] == example["run"]), None)
     if nt:
@@ -430,7 +430,7 @@ def replies_section(replies: dict, runs: list) -> str:
     w("")
     shown = set()
     for path in replies["compressed_paths"]:
-        method = method_of(path)
+        method = method_of(path, replies.get("tag_legend", False))
         if method in shown:
             continue
         results = bc.load_toml(Path(path)).get("results", [])
@@ -535,7 +535,11 @@ def draw_charts(runs: list, img_dir: Path) -> list:
     from matplotlib.patches import Patch
     # colors: categorical slots in a fixed order, checked for color-blind separation; a marker shape per series as well
     SURFACE, INK, INK2, MUTED, GRID, AXIS = "#fcfcfb", "#0b0b0b", "#52514e", "#898781", "#e1e0d9", "#c3c2b7"
-    METHOD_STYLE = {"Gemma26B direct": ("#2a78d6", "o"), "DSPM": ("#eb6834", "s"), "SkLLM": ("#1baf7a", "^"), "Frontier models": ("#eda100", "D")}
+    # Color follows the method: the four older methods keep their colors; DSPM+Legend gets violet, which passes the
+    # adjacent-pair color checks in this order (magenta and red were too close to the orange of DSPM-NoLegend).
+    # With five series some pairs (blue/violet, orange/yellow) are close, so every method also has its own marker
+    # shape and a direct label at the end of its line.
+    METHOD_STYLE = {"Gemma26B direct": ("#2a78d6", "o"), "DSPM-NoLegend": ("#eb6834", "s"), "DSPM+Legend": ("#6250d6", "v"), "SkLLM": ("#1baf7a", "^"), "Frontier models": ("#eda100", "D")}
     PROMPT_STYLE = {"p01": ("#2a78d6", "o"), "p02": ("#eb6834", "s"), "p03": ("#1baf7a", "^")}
     img_dir.mkdir(parents=True, exist_ok=True)
     dialogues = per_dialogue(runs)
@@ -603,6 +607,7 @@ def draw_charts(runs: list, img_dir: Path) -> list:
                 if len(line) >= 2:
                     ax.plot([a for a, _ in line], [b for _, b in line], color=color, lw=2.2, zorder=4)
                     ax.scatter([a for a, _ in line], [b for _, b in line], s=46, marker=marker, color=color, edgecolors=SURFACE, linewidths=1.4, zorder=5)
+                    ax.annotate(m, line[-1], xytext=(6, 0), textcoords="offset points", fontsize=8, color=INK2, va="center", ha="left", zorder=6)
             original_line(ax); x_ticks(ax)
             ax.set_title(f"{did}: {d['ceiling']['questions']} questions, original {orig} tokens", loc="left", fontsize=10.5, color=INK, pad=8)
             ax.set_xlabel("real length of the compressed text, % of the original (log scale)", fontsize=9, color=INK2)

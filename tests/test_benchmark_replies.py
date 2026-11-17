@@ -48,17 +48,23 @@ def test_run_name_is_the_compressed_file_name_without_the_prefix():
     assert script.run_name("data/compress.Frontier.p02.d001.toml") == "Frontier.p02.d001"
     assert script.run_name("other.toml") == "other"
 
-def test_queries_are_exactly_those_of_the_benchmark_for_the_same_seed(files, run_main, server):
+@pytest.mark.parametrize("legend", [False, True])
+def test_queries_are_exactly_those_of_the_benchmark_for_the_same_seed(files, run_main, server, legend):
     data_path, good, poor = files
     expected = list()
     for compressed in (good, poor): # the benchmark: one run per compressed file
         server.calls.clear()
-        run_main(bench, data_path, compressed, "--seed", 7)
+        run_main(bench, data_path, compressed, "--seed", 7, *(["--tag-legend"] if legend else []))
         expected += queries_of(server.calls)
-    planned = script.plan_queries(bench.load_toml(data_path), {"Good": bench.load_toml(good), "Poor": bench.load_toml(poor)}, 7)
-    built = sorted((q["text"] and bench.build_messages(q["text"], q["question"])[1]["content"] or "",
-                    bench.build_messages(q["text"], q["question"])[-1]["content"]) for q in planned)
-    assert built == sorted(expected)
+    planned = script.plan_queries(bench.load_toml(data_path), {"Good": bench.load_toml(good), "Poor": bench.load_toml(poor)}, 7, legend)
+    built = list()
+    for q in planned:
+        messages = bench.build_messages(q["text"], q["question"], q["tag_legend"])
+        built.append((messages[1]["content"] if len(messages) == 4 else "", messages[-1]["content"]))
+    assert sorted(built) == sorted(expected)
+
+def test_a_run_with_the_tag_legend_has_its_own_name():
+    assert script.run_name("data/compress.DSPM.toml", tag_legend=True) == "DSPM+Legend"
 
 def test_a_different_seed_gives_a_different_order_of_answers(files):
     data_path, good, _ = files

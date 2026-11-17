@@ -376,3 +376,30 @@ def test_script_stops_when_an_input_file_is_missing(benchmark_files, run_main, t
         run_main(script, benchmark_files[0], tmp_path / "missing.toml")
     assert stop.value.code == 1
     assert "does not exist" in capsys.readouterr().err
+
+# ---- the legend of the DSPM tags (--tag-legend) ------------------------------------------------------------------
+
+def test_messages_with_tag_legend_put_the_text_between_the_legend_and_the_con_rule():
+    q = {"question": "Who is Julia?", "answers": ["Edward's daughter.", "Edward's wife."], "correct_letter": "A"}
+    history = script.build_messages("[DEC] Julia is the daughter.", q, tag_legend=True)[1]["content"]
+    assert history.index(script.TAG_LEGEND) < history.index("[DEC] Julia is the daughter.") < history.index(script.TAG_RULE)
+    assert "[CON] = a hard constraint that must be followed" in history
+    # without the option nothing changes
+    plain = script.build_messages("[DEC] Julia is the daughter.", q)[1]["content"]
+    assert script.TAG_LEGEND not in plain and script.TAG_RULE not in plain
+
+def test_script_with_tag_legend_gives_the_legend_only_with_compressed_texts(benchmark_files, run_main, llm_server_up, reader, read_toml, tmp_path):
+    output_path = tmp_path / "scores.toml"
+    run_main(script, *benchmark_files, "--tag-legend", "--output", output_path)
+    with_text = [c for c in reader.calls if len(c["messages"]) == 4]
+    original = [c for c in with_text if "Agent:  Hello, this is Marta" in c["messages"][1]["content"]]
+    compressed = [c for c in with_text if c not in original]
+    assert original and all(script.TAG_LEGEND not in c["messages"][1]["content"] for c in original)
+    assert compressed and all(script.TAG_LEGEND in c["messages"][1]["content"] for c in compressed)
+    assert read_toml(output_path)["benchmark"]["tag_legend"] is True
+
+def test_script_without_tag_legend_records_that_in_the_output(benchmark_files, run_main, llm_server_up, reader, read_toml, tmp_path):
+    output_path = tmp_path / "scores.toml"
+    run_main(script, *benchmark_files, "--output", output_path)
+    assert all(script.TAG_LEGEND not in m["content"] for c in reader.calls for m in c["messages"])
+    assert read_toml(output_path)["benchmark"]["tag_legend"] is False

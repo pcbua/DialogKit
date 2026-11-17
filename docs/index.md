@@ -79,6 +79,7 @@ Example script run: `TQDM_DISABLE=1 uv run --with 'scikit-llm>=1.4' utils/compre
 
 To use it, first start LLM server (as above) or change script settings to use LLM in the cloud.
 By default the script talks to `http://localhost:8000`; if the server runs on another machine, give its address with `--base-url`.
+For DSPM, whose memory is a list of tagged lines (`[CON]`, `[DEC]`, `[ENT]`, ...), add `--tag-legend`: the reader then gets the legend of the tags and the rule "treat [CON] as hard rules" around every compressed text (the wording of the DSPM author). The text stays in the chat history like for every other method, and the reference points get no legend. The result file records `tag_legend = true`, and the report shows such a run as a separate system, `DSPM+Legend`.
 
 Example script run:
 `uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.Gemma26B.toml --output data/benchmark.Gemma26B.d001.toml`
