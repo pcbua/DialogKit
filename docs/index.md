@@ -73,6 +73,24 @@ To use it, first start LLM server (as above) or change script settings to use LL
 
 Example script run: `TQDM_DISABLE=1 uv run --with 'scikit-llm>=1.4' utils/compress_SkLLM.py "data/data.*.toml" data/compress.SkLLM.toml`
 
+## Tool: Benchmark Compressed Dialogue with Local LLM
+
+`utils/benchmark_compressed.py` - A utility script that checks how much information survived the compression. The LLM gets only the compressed text (as chat history) and answers the single choice survey from the data file (`single_choice_survey`). The share of correct answers is the score of the compressed text.
+
+To use it, first start LLM server (as above) or change script settings to use LLM in the cloud.
+
+Example script run:
+`uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.Gemma26B.toml --output data/benchmark.Gemma26B.d001.toml`
+
+This will:
+- take every compressed version from `[[results]]` that belongs to the data file (the same `data_id`), other versions are skipped,
+- ask every survey question about every compressed version, each question in a separate chat, with answers in a random order (the same order for all versions; change it with `--seed`),
+- first print two reference points: the score with no text at all (what can be guessed from the questions alone) and the score with the full original text (the best this LLM can do),
+- then print one line per compressed version with the number of correct answers, in the order of the compressed file,
+- save detailed scores to the optional `--output` TOML file, including the numbers of wrongly answered questions.
+
+Above run will execute 4600 short LLM queries (= (2 reference points + 90 compressed versions) \* 50 questions).
+
 # Other Tools
 
 ## Tool: Count the Number of Tokens and Words
