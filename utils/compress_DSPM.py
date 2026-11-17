@@ -16,7 +16,7 @@ import useful_utils as uu
 from dspm import AsyncDSPMMemory
 from openai import AsyncOpenAI
 
-DEBUG = True # poor's people debugging
+DEBUG = False # poor's people debugging
 
 # word count target budget (after compression), the actual word count in the results may be slightly different
 TARGET_WORDS = [1200, 1100, 1000, 900, 800, 700, 600, 500, 400, 350, 300, 250, 200, 150, 100]
@@ -61,10 +61,16 @@ def iterate_llms(llm_configs: dict):
     yield from llm_configs.items()
 
 async def process_with_dspm(dspm_mem, data_text: str) -> str:
+    """feeds the dialogue to DSPM turn by turn and returns the compressed context that DSPM builds from it
+
+    DSPM is a chat memory, and its turns are given here with two chat roles: "user" and "assistant". Our dialogues
+    have more speakers, so the Agent becomes the "assistant" and everybody else becomes the "user". The whole line,
+    with the speaker name, is passed as the turn text; without the name the Patient and the Caregiver would look the same.
+    """
     # extract dialogue lines (turns) from data_text
     for line in data_text.split('\n'):
         if ":" in line:
-            role, text = line.split(":", 1)
+            role = line.split(":", 1)[0] # the speaker name is everything before the first colon
             # not sure how to handle dialogues involving more than two participants, here's one option:
             await dspm_mem.async_add_turn("user" if role.strip().upper() != "AGENT" else "assistant", line.strip())
     # extract compressed prompt
