@@ -6,11 +6,9 @@ import sys
 import time
 import inspect
 from functools import wraps
-from pathlib import Path
-from typing import Any, Callable, TypeVar, Union
+from typing import Any, Callable, TypeVar
 import importlib, importlib.metadata
 import requests
-from requests.exceptions import ConnectionError, HTTPError
 import re
 
 F = TypeVar("F", bound=Callable[..., Any])
@@ -57,7 +55,11 @@ def count_words(text: str) -> int:
     return len(words)
 
 def get_precise_token_count(base_url: str, model_name: str, system_content: str, user_content: str) -> int:
-    """calculates the exact number of tokens as the model sees them, including the system prompt and user prompt"""
+    """calculates the exact number of tokens as the model sees them, including the system prompt and user prompt
+
+    Any failure to get the count stops the script with a short message. The callers cannot continue without it:
+    the count decides how many tokens are left for the LLM answer, so a guessed value would silently cut the output.
+    """
     if not base_url or not model_name:
         print(f"Error: Problem with LLM; Base URL: {base_url}; Model name: {model_name}", file=sys.stderr)
         sys.exit(1)
@@ -76,13 +78,21 @@ def get_precise_token_count(base_url: str, model_name: str, system_content: str,
             timeout=30,
         )
         response.raise_for_status()
-    except ConnectionError:
+        return response.json()["count"]
+    # the exceptions are named with the full path on purpose: a bare 'ConnectionError' is also a Python built-in,
+    # and importing the one from 'requests' under the same name hides the built-in in the whole module
+    except requests.exceptions.ConnectionError:
         print(f"Error: Could not connect to the LLM service at '{base_url}'. Is the server running?", file=sys.stderr)
-        sys.exit(1)
-    except HTTPError as e:
+    except requests.exceptions.HTTPError as e:
         print(f"HTTP Error {e.response.status_code}: {e.response.text}", file=sys.stderr)
-        sys.exit(1)
-    return response.json()["count"]
+    except requests.exceptions.Timeout:
+        # a busy server (e.g. many long generations running) may not answer in time; without this branch
+        # the script ended with a long traceback instead of a clear message
+        print(f"Error: The LLM service at '{base_url}' did not answer the token count request in time.", file=sys.stderr)
+    except (requests.exceptions.RequestException, ValueError, KeyError) as e:
+        # anything else: other network problems, or an answer that is not the expected JSON with "count"
+        print(f"Error: Unexpected answer to the token count request from '{base_url}': {e!r}", file=sys.stderr)
+    sys.exit(1)
 
 def get_version(mod_name):
     """returns version of python package/module"""
@@ -110,7 +120,7 @@ def get_version(mod_name):
     except importlib.metadata.PackageNotFoundError:
         return "unknown"
 
-def print_versions(modules: []):
+def print_versions(modules: list):
     print("Versions:")
     for name in modules:
         print(f"- {name} == {get_version(name)}")
