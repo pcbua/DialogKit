@@ -1,3 +1,7 @@
+# ⚠️ Note: Preliminary Results
+These are early results from a benchmark developed and run by Claude, and they still require human review. 
+Additionally, please note that DSPM is designed for two-participant dialogues, whereas the test dialogues presented here involve three participants.
+
 # Benchmark: compressed dialogues read by Gemma
 
 Date: 2026-11-17 · Reader: `cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit` (config `Gemma26B_ThinkOff`) on a vLLM server · Seed: 42
