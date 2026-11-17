@@ -16,6 +16,10 @@ dependencies = [
 dev = [
     "pytest>=8.0",
 ]
+# Only for drawing the charts of utils/benchmark_report.py: uv run --group report utils/benchmark_report.py ...
+report = [
+    "matplotlib>=3.8",
+]
 
 # Run all tests with: uv run pytest
 [tool.pytest.ini_options]

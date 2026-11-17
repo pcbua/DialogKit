@@ -95,6 +95,31 @@ This will:
 
 Above run will execute 4600 short LLM queries (= (2 reference points + 90 compressed versions) \* 50 questions).
 
+## Tool: Raw Replies of the Benchmark
+
+`utils/benchmark_replies.py` - Repeats the queries of the benchmark and keeps what the LLM really wrote. The benchmark saves only scores; this shows e.g. what the reader says when it does not answer with a letter.
+
+Example script run:
+`uv run utils/benchmark_replies.py data/data.d001.toml data/compress.*.toml --base-url http://192.168.0.53:8000 --output data/benchmark_replies.d001.json`
+
+This will:
+- treat every compressed file as one benchmark run and ask exactly the queries of `benchmark_compressed.py` (same prompts, settings and order of answers for the same `--seed`), so the replies belong to the scores in the benchmark files,
+- save every reply with the letter `parse_letter` read from it,
+- ask a random sample of the letter-less replies again with a larger answer budget (`--long-sample`, `--long-tokens`), to check that the short budget of the benchmark does not cut off answers.
+
+## Tool: Benchmark Report
+
+`utils/benchmark_report.py` - Writes one Markdown report with charts from the benchmark result files (`data/benchmark.*.toml`) and, optionally, the replies from `benchmark_replies.py`.
+
+Example script run:
+`uv run --group report utils/benchmark_report.py --notes docs/benchmark_notes.md --replies data/benchmark_replies.d001.json --output docs/benchmark.md`
+
+This will:
+- compute every number of the report from the files (nothing is typed in by hand), so a new benchmark gives a matching report,
+- copy the hand-written notes (`--notes`, the conclusions and warnings) verbatim to the top,
+- compare the prompts p01/p02/p03 at the same real length of the compressed text, not by the requested target length,
+- draw the charts into `docs/img/` (needs matplotlib from the `report` dependency group; use `--no-charts` without it).
+
 # Other Tools
 
 ## Tool: Count the Number of Tokens and Words
