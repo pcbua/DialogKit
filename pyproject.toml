@@ -10,3 +10,20 @@ dependencies = [
     "toml>=0.10.2",
     "tomli-w>=1.2.0",
 ]
+
+# Tools needed only for development, not for running the scripts. 'uv run' installs this group automatically.
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+# Run all tests with: uv run pytest
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# 'utils' holds plain scripts, not a package; this lets the tests import them by name (e.g. 'import useful_utils')
+pythonpath = ["utils", "tests"]
+# tests marked 'live' talk to a real LLM server, so they are left out unless asked for
+addopts = "-m 'not live' --strict-markers"
+markers = [
+    "live: needs a running LLM server; run with: uv run pytest -m live",
+]
