@@ -78,9 +78,13 @@ Example script run: `TQDM_DISABLE=1 uv run --with 'scikit-llm>=1.4' utils/compre
 `utils/benchmark_compressed.py` - A utility script that checks how much information survived the compression. The LLM gets only the compressed text (as chat history) and answers the single choice survey from the data file (`single_choice_survey`). The share of correct answers is the score of the compressed text.
 
 To use it, first start LLM server (as above) or change script settings to use LLM in the cloud.
+By default the script talks to `http://localhost:8000`; if the server runs on another machine, give its address with `--base-url`.
 
 Example script run:
 `uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.Gemma26B.toml --output data/benchmark.Gemma26B.d001.toml`
+
+The same, with the LLM server on another machine:
+`uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.Gemma26B.toml --base-url http://192.168.0.53:8000 --output data/benchmark.Gemma26B.d001.toml`
 
 This will:
 - take every compressed version from `[[results]]` that belongs to the data file (the same `data_id`), other versions are skipped,

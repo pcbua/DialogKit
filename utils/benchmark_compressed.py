@@ -5,6 +5,7 @@
 # How to use it:
 #   uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.Gemma26B.toml
 #   uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.Gemma26B.toml --output data/benchmark.Gemma26B.d001.toml
+#   uv run utils/benchmark_compressed.py data/data.d001.toml data/compress.Gemma26B.toml --base-url http://192.168.0.53:8000   # LLM on another machine
 #
 # The idea in short:
 #   - A data file holds the original text and a survey: questions with one correct answer and a few wrong ones.
@@ -79,6 +80,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("compressed_path", type=str, help="Path to the TOML file with compressed dialogues in [[results]] (e.g., 'data/compress.Gemma26B.toml')")
     parser.add_argument("--output",        type=str, default=None, help="Optional path to the output TOML file with detailed scores (must not exist)")
     parser.add_argument("--seed",          type=int, default=DEFAULT_SEED, help=f"Seed for the random order of answers (default: {DEFAULT_SEED})")
+    parser.add_argument("--base-url",      type=str, default=None, help=f"Address of the LLM server, e.g. 'http://192.168.0.53:8000' (default: the BASE_URL from LLM_CONFIG, now '{LLM_CONFIG['BASE_URL']}')")
     return parser.parse_args()
 
 def validate_paths(input_paths: list, output_path: Path = None) -> None:
@@ -295,6 +297,10 @@ async def main() -> None:
     compressed_path = Path( args.compressed_path )
     output_path     = Path( args.output ) if args.output else None
     validate_paths([data_path, compressed_path], output_path)
+    if args.base_url:
+        # Decision: the address is taken from the command line, not hardcoded for one machine. It overrides LLM_CONFIG,
+        # so the check of the server, the client and the saved 'configs' in the --output file all use the same address.
+        LLM_CONFIG["BASE_URL"] = args.base_url.strip().rstrip("/")
 
     # load the surveys and draw the order of answers (once, shared by all compressed versions)
     surveys, originals = load_surveys(load_toml(data_path, "data with survey"))
