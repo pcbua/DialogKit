@@ -73,6 +73,22 @@ HISTORY_USER_TEMPLATE = "This is the text. Read it, I will ask you a question ab
 HISTORY_ASSISTANT     = "I have read the text. I am ready for the question."
 QUESTION_TEMPLATE     = "Choose the correct answer. Reply with the letter only.\n\nQuestion: {question}\n\nAnswers:\n{answers}"
 
+# Legend of the tags used by DSPM ([CON], [DEC], ...), added around the compressed text with --tag-legend.
+# Why: DSPM writes its memory as tagged lines, and its author advises to tell the reader what the tags mean and to treat
+# [CON] lines as hard rules. The wording below is the author's.
+# Decision: the text stays where every other method has it (chat history), only the legend is added, so DSPM is still
+# read in the same role as the other methods. The reference points (No Text, Original Text) never get the legend.
+TAG_LEGEND = (
+    "The text is a compressed conversation memory. The tag at the start of a line says what the line is:\n"
+    "[CON] = a hard constraint that must be followed\n"
+    "[DEC] = a decision that was made\n"
+    "[CODE] = a code reference or snippet signature\n"
+    "[EQ] = a numeric fact or equation\n"
+    "[ENT] = a named entity\n"
+    "[STR] = a structural element (file, section, schema)"
+)
+TAG_RULE = "Use this as prior context. Treat [CON] tags as hard rules you must never violate."
+
 def parse_arguments() -> argparse.Namespace:
     """parse command-line arguments"""
     parser = argparse.ArgumentParser(description="Benchmarks compressed dialogues: the Gemma LLM gets only the compressed text and answers the single choice survey from the data file. Reports the share of correct answers for every compressed version.")
@@ -80,6 +96,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("compressed_path", type=str, help="Path to the TOML file with compressed dialogues in [[results]] (e.g., 'data/compress.Gemma26B.toml')")
     parser.add_argument("--output",        type=str, default=None, help="Optional path to the output TOML file with detailed scores (must not exist)")
     parser.add_argument("--seed",          type=int, default=DEFAULT_SEED, help=f"Seed for the random order of answers (default: {DEFAULT_SEED})")
+    parser.add_argument("--tag-legend",    action="store_true", help="Explain the DSPM tags ([CON], [DEC], ...) to the reader around every compressed text; the reference points get no legend")
     parser.add_argument("--base-url",      type=str, default=None, help=f"Address of the LLM server, e.g. 'http://192.168.0.53:8000' (default: the BASE_URL from LLM_CONFIG, now '{LLM_CONFIG['BASE_URL']}')")
     return parser.parse_args()
 
@@ -196,14 +213,18 @@ def check_llm_server() -> None:
         print(f"Error: Could not reach the LLM service at '{base_url}'. Is the server running? ({e})", file=sys.stderr)
         sys.exit(1)
 
-def build_messages(compressed_text: str, q: dict) -> list:
+def build_messages(compressed_text: str, q: dict, tag_legend: bool = False) -> list:
     """builds the chat: system prompt, the compressed text as history, then one question
 
     With an empty text (the "No Text" baseline) the history is left out, so the LLM sees only the question.
+    With tag_legend the text is put between the legend of the DSPM tags and the rule for [CON] lines.
     """
     answers = "\n".join(f"{LETTERS[i]}) {a}" for i, a in enumerate(q["answers"]))
+    text = compressed_text.strip()
+    if tag_legend:
+        text = f"{TAG_LEGEND}\n\n{text}\n\n{TAG_RULE}"
     history = [
-        {"role": "user",      "content": HISTORY_USER_TEMPLATE.replace("{text}", compressed_text.strip())},
+        {"role": "user",      "content": HISTORY_USER_TEMPLATE.replace("{text}", text)},
         {"role": "assistant", "content": HISTORY_ASSISTANT},
     ] if compressed_text.strip() else []
     return [
@@ -263,7 +284,7 @@ def parse_letter(reply: str, answers: list) -> str | None:
     found = set(re.findall(alone, without_word_a))
     return found.pop() if len(found) == 1 else None
 
-async def ask_question(semaphore, llm_client, compressed_text: str, q: dict) -> str | None:
+async def ask_question(semaphore, llm_client, compressed_text: str, q: dict, tag_legend: bool = False) -> str | None:
     """asks the LLM one question, returns the chosen letter or None (no valid answer or failed query)
 
     Decision: every question is asked in a separate, fresh chat. Asking all questions in one growing chat would be
@@ -279,7 +300,7 @@ async def ask_question(semaphore, llm_client, compressed_text: str, q: dict) -> 
         try:
             response = await llm_client.chat.completions.create(
                 model       = LLM_CONFIG.get("MODEL_NAME", "-"),
-                messages    = build_messages(compressed_text, q),
+                messages    = build_messages(compressed_text, q, tag_legend),
                 max_tokens  = LLM_CONFIG.get("MAX_ANSWER_TOKENS", 8),
                 temperature = LLM_CONFIG.get("TEMPERATURE", 0.0),
                 top_p       = LLM_CONFIG.get("TOP_P", 1.0),
@@ -294,14 +315,14 @@ async def ask_question(semaphore, llm_client, compressed_text: str, q: dict) -> 
         print(f"Q: {q['question']} | Expected: {q['correct_letter']} | Reply: {reply!r}")
     return parse_letter(reply, q["answers"])
 
-async def benchmark_variant(semaphore, llm_client, variant: dict, survey: list) -> dict:
+async def benchmark_variant(semaphore, llm_client, variant: dict, survey: list, tag_legend: bool = False) -> dict:
     """asks all survey questions about one compressed version and returns its score
 
     Decision: a missing or unreadable answer counts as a wrong answer. If the LLM cannot answer from the compressed
     text, the text failed that question. Such cases are also counted separately ('no_answer'), because a big number
     usually means a technical problem (server, context window) and not a bad compression.
     """
-    letters = await asyncio.gather(*[ask_question(semaphore, llm_client, variant["text"], q) for q in survey])
+    letters = await asyncio.gather(*[ask_question(semaphore, llm_client, variant["text"], q, tag_legend) for q in survey])
     wrong_questions = [i + 1 for i, (letter, q) in enumerate(zip(letters, survey)) if letter != q["correct_letter"]]
     n_correct = len(survey) - len(wrong_questions)
     return {
@@ -373,7 +394,10 @@ async def main() -> None:
     # The order of answers is drawn here, text by text, from one seeded generator: a new order for every query,
     # and the same orders again when the run is repeated with the same seed.
     rng = random.Random(args.seed)
-    tasks = [asyncio.create_task(benchmark_variant(semaphore, llm_client, v, shuffle_survey(surveys[v["data_id"]], rng))) for v in variants]
+    if args.tag_legend:
+        print("The compressed texts are given with the legend of the DSPM tags (--tag-legend); the reference points are not.")
+    tasks = [asyncio.create_task(benchmark_variant(semaphore, llm_client, v, shuffle_survey(surveys[v["data_id"]], rng),
+                                                   args.tag_legend and v.get("type") not in ("No Text", "Original Text"))) for v in variants]
     print_header()
     scores = list()
     for task in tasks:
@@ -394,6 +418,7 @@ async def main() -> None:
                 'compressed_path': str(compressed_path),
                 'reader_llm':      LLM_CONFIG_NAME,
                 'seed':            args.seed,
+                'tag_legend':      args.tag_legend,
             },
             'results': scores,
         }

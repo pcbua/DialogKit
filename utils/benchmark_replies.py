@@ -40,15 +40,16 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--seed",           type=int, default=bc.DEFAULT_SEED, help=f"Seed for the order of answers, the same as in the benchmark (default: {bc.DEFAULT_SEED})")
     parser.add_argument("--base-url",       type=str, default=None, help=f"Address of the LLM server (default: the BASE_URL of benchmark_compressed.py, now '{bc.LLM_CONFIG['BASE_URL']}')")
     parser.add_argument("--long-sample",    type=int, default=DEFAULT_LONG_SAMPLE, help=f"How many letter-less replies to ask again with a larger budget; 0 turns it off (default: {DEFAULT_LONG_SAMPLE})")
+    parser.add_argument("--tag-legend",     action="store_true", help="Give the DSPM tag legend with the compressed texts, as benchmark_compressed.py --tag-legend does")
     parser.add_argument("--long-tokens",    type=int, default=DEFAULT_LONG_TOKENS, help=f"The larger answer budget in tokens (default: {DEFAULT_LONG_TOKENS})")
     return parser.parse_args()
 
-def run_name(compressed_path: str) -> str:
-    """'data/compress.Frontier.p02.d001.toml' -> 'Frontier.p02.d001'; the same name the benchmark result files use"""
+def run_name(compressed_path: str, tag_legend: bool = False) -> str:
+    """'data/compress.Frontier.p02.d001.toml' -> 'Frontier.p02.d001'; '+Legend' is added for a run with --tag-legend"""
     stem = Path(compressed_path).stem
-    return stem[len("compress."):] if stem.startswith("compress.") else stem
+    return (stem[len("compress."):] if stem.startswith("compress.") else stem) + ("+Legend" if tag_legend else "")
 
-def plan_queries(data_toml: dict, compressed_tomls: dict, seed: int) -> list:
+def plan_queries(data_toml: dict, compressed_tomls: dict, seed: int, tag_legend: bool = False) -> list:
     """returns every query of the benchmark runs, in the order the benchmark builds them
 
     compressed_tomls maps a run name to the loaded compressed file. For each run this repeats what main() of
@@ -71,13 +72,14 @@ def plan_queries(data_toml: dict, compressed_tomls: dict, seed: int) -> list:
                     "prompt_id":    v.get("prompt_id", "-"),
                     "target_words": v.get("target_words", 0),
                     "text_tokens":  v.get("text_tokens", 0),
+                    "tag_legend":   tag_legend and v.get("type") not in ("No Text", "Original Text"),
                     "qidx":         qidx,
                     "question":     q,      # {question, answers, correct_letter}
                     "text":         v["text"],
                 })
     return queries
 
-async def ask(semaphore, llm_client, text: str, q: dict, max_tokens: int) -> dict:
+async def ask(semaphore, llm_client, text: str, q: dict, max_tokens: int, tag_legend: bool = False) -> dict:
     """asks one question about one text with the benchmark settings, returns {reply, finish, prompt_tokens}"""
     extra_body = {
         "enable_reasoning": bc.LLM_CONFIG.get("ENABLE_REASONING", True),
@@ -89,7 +91,7 @@ async def ask(semaphore, llm_client, text: str, q: dict, max_tokens: int) -> dic
             try:
                 response = await llm_client.chat.completions.create(
                     model       = bc.LLM_CONFIG.get("MODEL_NAME", "-"),
-                    messages    = bc.build_messages(text, q),
+                    messages    = bc.build_messages(text, q, tag_legend),
                     max_tokens  = max_tokens,
                     temperature = bc.LLM_CONFIG.get("TEMPERATURE", 0.0),
                     top_p       = bc.LLM_CONFIG.get("TOP_P", 1.0),
@@ -120,7 +122,7 @@ async def main() -> None:
     if args.base_url:
         bc.LLM_CONFIG["BASE_URL"] = args.base_url.strip().rstrip("/")
 
-    queries = plan_queries(bc.load_toml(data_path), {run_name(p): bc.load_toml(Path(p)) for p in args.compressed_paths}, args.seed)
+    queries = plan_queries(bc.load_toml(data_path), {run_name(p, args.tag_legend): bc.load_toml(Path(p)) for p in args.compressed_paths}, args.seed, args.tag_legend)
     if not queries:
         print(f"Error: Nothing to ask: no survey in '{data_path}' or no matching compressed version.", file=sys.stderr)
         sys.exit(1)
@@ -130,13 +132,13 @@ async def main() -> None:
     semaphore  = asyncio.Semaphore(bc.LLM_CONFIG.get("CONCURRENCY", 1))
     llm_client = AsyncOpenAI(base_url=f"{bc.LLM_CONFIG['BASE_URL']}/v1", api_key=bc.LLM_CONFIG.get("API_KEY", "EMPTY"))
     max_tokens = bc.LLM_CONFIG.get("MAX_ANSWER_TOKENS", 8)
-    answers = await asyncio.gather(*[ask(semaphore, llm_client, q["text"], q["question"], max_tokens) for q in queries])
+    answers = await asyncio.gather(*[ask(semaphore, llm_client, q["text"], q["question"], max_tokens, q["tag_legend"]) for q in queries])
     rows = [row_of(q, a) for q, a in zip(queries, answers)]
 
     # Second pass. Decision: the sample is drawn with its own generator from the seed, so it is repeatable too.
     letterless = [i for i, r in enumerate(rows) if r["parsed"] is None and r["finish"] != "error"]
     sample = sorted(random.Random(args.seed).sample(letterless, min(args.long_sample, len(letterless)))) if args.long_sample > 0 else []
-    long_answers = await asyncio.gather(*[ask(semaphore, llm_client, queries[i]["text"], queries[i]["question"], args.long_tokens) for i in sample])
+    long_answers = await asyncio.gather(*[ask(semaphore, llm_client, queries[i]["text"], queries[i]["question"], args.long_tokens, queries[i]["tag_legend"]) for i in sample])
     long_rows = [{**rows[i], "long_reply": a["reply"], "long_finish": a["finish"]} for i, a in zip(sample, long_answers)]
 
     output = {
@@ -145,6 +147,7 @@ async def main() -> None:
         "data_path":         str(data_path),
         "compressed_paths":  [str(p) for p in args.compressed_paths],
         "seed":              args.seed,
+        "tag_legend":        args.tag_legend,
         "reader_llm":        bc.LLM_CONFIG_NAME,
         "config":            dict(bc.LLM_CONFIG),
         "long_tokens":       args.long_tokens,

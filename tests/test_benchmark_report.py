@@ -53,7 +53,8 @@ def test_binned_median_skips_bins_with_too_few_points():
 
 def test_method_and_run_names_come_from_the_compressed_file():
     assert script.method_of("data/compress.SkLLM.toml") == "SkLLM"
-    assert script.method_of("data/compress.DSPM.toml") == "DSPM"
+    assert script.method_of("data/compress.DSPM.toml") == "DSPM-NoLegend"
+    assert script.method_of("data/compress.DSPM.toml", tag_legend=True) == "DSPM+Legend"
     assert script.method_of("data/compress.Frontier.p01.d001.toml") == "Frontier models"
     assert script.method_of("data/compress.Gemma26B.toml") == "Gemma26B direct"
     assert script.run_name("data/compress.Frontier.p01.d001.toml") == "Frontier.p01.d001"
@@ -109,3 +110,22 @@ def test_script_stops_when_there_are_no_result_files(run_main, tmp_path, capsys)
     with pytest.raises(SystemExit):
         run_main(script, "--results", str(tmp_path / "none.*.toml"), "--output", tmp_path / "r.md", "--no-charts")
     assert "No benchmark result files" in capsys.readouterr().err
+
+def test_dspm_with_and_without_the_tag_legend_are_two_systems(write_toml):
+    plain  = bench_file("data/compress.DSPM.toml", [result(prompt="NA", tokens=20, correct=3)])
+    legend = bench_file("data/compress.DSPM.toml", [result(prompt="NA", tokens=20, correct=5)])
+    legend["benchmark"]["tag_legend"] = True
+    runs = script.load_runs([write_toml("benchmark.DSPM.t001.toml", plain), write_toml("benchmark.DSPM-Legend.t001.toml", legend)])
+    assert sorted((r["run"], r["method"]) for r in runs) == [("DSPM", "DSPM-NoLegend"), ("DSPM+Legend", "DSPM+Legend")]
+    report = script.build_report(runs)
+    assert "| DSPM-NoLegend | 1 |" in report and "| DSPM+Legend | 1 |" in report
+    assert "--tag-legend" in report # the command of the legend run is shown with the option
+
+def test_reference_point_is_the_value_most_runs_got(write_toml, read_toml):
+    files = []
+    for name, floor in (("benchmark.A.t001.toml", 2), ("benchmark.B.t001.toml", 1), ("benchmark.C.t001.toml", 1)):
+        doc = bench_file(f"data/compress.{name.split('.')[1]}.toml", [result(prompt="NA")])
+        doc["results"][0]["correct"] = floor
+        files.append(write_toml(name, doc))
+    dialogues = script.per_dialogue(script.load_runs(files))
+    assert dialogues["t001"]["floor"]["correct"] == 1 # two runs got 1, one run (the first file) got 2
