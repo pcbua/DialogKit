@@ -41,4 +41,7 @@ not redo or undo them. The user's own docs: `README.md`, `CONTRIBUTING.md`, `doc
 
 ## Open points (2026-11-17)
 - `parse_letter` reads the refusal `None of the provided options (A,` as answer A (13 of 9300 replies; scores unchanged, `no_answer` slightly too low). Not fixed yet.
-- Survey cue: in the d001 survey the correct answer is the longest of the five in 15 of 50 questions; all 6 questions the reader answered without any text were such questions. Not yet checked for d002/d003 or reported.
+- Survey cue: in the d001 survey the correct answer is the longest of the five in 15 of 50 questions; all 6 questions the reader answered without any text were such questions. The user knows and decided (2026-11-18) not to pursue it: "LLM tego nie wie". Do not raise it again unless new data change the picture.
+
+## Decided (2026-11-18)
+- `No Text` stays in the report as it is, as the baseline (floor). No extra section about it.
