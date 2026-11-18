@@ -153,14 +153,14 @@ single_choice_survey = [
     ],
     [
         "What signs of ankle swelling did Julia notice on Tuesday?",
-        "His socks left deep marks, and he had difficulty getting his shoes on.",
-        "His ankles were red, and he complained of sharp ankle pain. | His shoes had become loose, and his socks kept slipping down. | His feet were cold, and his toenails had changed color. | His calves were bruised, and he had trouble walking on level ground.",
+        "His socks left deep marks, and his shoes were hard to put on.",
+        "His ankles were red, and he complained of a sharp pain in them. | His shoes had become loose, and his socks kept slipping down. | His feet were cold, and his toenails had changed color overnight. | His calves were bruised, and he had trouble walking on level ground.",
         "Evidence: \"On Tuesday his socks left deep marks and he had trouble getting his shoes on.\"",
     ],
     [
         "What explanation did Mr. Nowak give for his tight shoes?",
-        "He said he had bought them in a hurry, rather than the tightness being caused by swelling.",
-        "He said his socks had shrunk in the wash. | He said he had injured his feet while walking. | He said he had bought thick socks that morning. | He said his shoes were tight because he had walked too far.",
+        "He said they were tight because he bought them in a hurry.",
+        "He said his socks had shrunk in the wash and squeezed his feet. | He said he had injured his feet while walking to the shop. | He said he had bought thick socks that morning. | He said his shoes were tight because he had walked too far.",
         "Evidence: \"The shoes are tight because I bought them in a hurry, not because of the swelling.\"",
     ],
     [
@@ -183,8 +183,8 @@ single_choice_survey = [
     ],
     [
         "What did Mr. Nowak say happened when he missed his evening pills on Wednesday?",
-        "He said he forgot and fell asleep in front of the television while a documentary about whales was on.",
-        "He took the pills and then went for a walk. | He forgot while watching a football match. | He left the pills beside the television and went to bed. | He skipped them because he had run out of medication.",
+        "He forgot and fell asleep in front of a whale documentary on TV.",
+        "He took the pills and then went for a short walk around the block. | He forgot while watching a football match with his grandson. | He left the pills beside the television and went to bed early. | He skipped them because he had run out of his medication.",
         "Evidence: \"I forgot. I fell asleep in front of the television. There was a documentary about whales.\"",
     ],
     [
@@ -195,26 +195,26 @@ single_choice_survey = [
     ],
     [
         "Which medication did Mr. Nowak particularly dislike taking in the evening, and why?",
-        "The water pill (diuretic), because it made him get up repeatedly to use the bathroom at night.",
-        "The yellow blood-pressure pill, because it made him cough. | The little white sleeping pill, because it made him drowsy. | The painkiller, because it upset his stomach. | The diabetes medication, because it made him thirsty.",
+        "The water pill, because it kept him going to the bathroom at night.",
+        "The yellow blood-pressure pill, because it made him cough at night. | The little white sleeping pill, because it left him drowsy all morning. | The painkiller, because it upset his stomach after a late meal. | The diabetes medication, because it made him thirsty.",
         "Evidence: \"The water one. I'm in the bathroom all the time.\"",
     ],
     [
         "How many times a night did Mr. Nowak say he was usually up to use the bathroom when he took the water pill in the evening?",
         "Three times.",
-        "Once. | Twice. | Four times. | Five times.",
+        "Only once. | Two times. | Four times. | Five or six times.",
         "Evidence: \"If I take it in the evening, I'm up three times at night.\"",
     ],
     [
         "What change in the water pill's schedule did Marta suggest, and whose confirmation did she say they should seek?",
         "She suggested moving it to the morning, with the nurse confirming the change with his doctor.",
-        "She suggested skipping the water pill on days when he felt tired, without consulting anyone. | She suggested moving it to lunchtime, with Julia deciding whether the change was suitable. | She suggested doubling the morning dose after the nurse reviewed his weight. | She suggested stopping it until after the cataract surgery, with the pharmacist confirming.",
+        "She suggested skipping the water pill on days when he felt tired, without consulting anyone. | She suggested moving it to lunchtime, with Julia deciding on her own whether the change was suitable. | She suggested doubling the morning dose after the nurse reviewed his weight. | She suggested stopping it until after the cataract surgery, with the pharmacist confirming.",
         "Evidence: \"Let's ask the nurse to confirm with your doctor, and I'm fairly sure we can move it to the morning.\"",
     ],
     [
         "What did Mr. Nowak say about who had told him to take the water pill in the evening?",
-        "He said it may have been the hospital, but added that he might simply have got used to taking it then.",
-        "He said Julia had instructed him to take it in the evening. | He said Dr. Wiśniewska had explicitly ordered evening doses. | He said his pharmacist had changed the schedule last week. | He said the physiotherapist had recommended evening doses.",
+        "He said it may have been the hospital, or that he simply got used to it.",
+        "He said Julia had told him to take it in the evening, after his meal. | He said Dr. Wiśniewska had explicitly ordered evening doses at his last visit. | He said his pharmacist had changed the schedule to evenings last week. | He said the physiotherapist had recommended evening doses to help him sleep.",
         "Evidence: \"The hospital. Or maybe I just got used to it.\"",
     ],
     [
@@ -225,14 +225,14 @@ single_choice_survey = [
     ],
     [
         "What chest symptom did Mr. Nowak describe at night after falling asleep?",
-        "He woke with tightness in his chest, as if somebody were sitting on it.",
-        "He woke with a severe headache and blurred vision. | He woke with a sharp pain in his left leg. | He woke feeling dizzy, but reported no chest discomfort. | He woke coughing repeatedly but did not describe chest tightness.",
+        "He woke with chest tightness, as if someone were sitting on it.",
+        "He woke with a severe headache and blurred vision in one eye. | He woke with a sharp, burning pain in his left leg and foot. | He woke with a racing heartbeat and sweating all over his body. | He woke with a dry cough that kept him up until morning.",
         "Evidence: \"I fall asleep, then wake up and my chest feels tight, like somebody is sitting on it.\"",
     ],
     [
         "What did Mr. Nowak do when he woke with chest tightness, and what happened afterward?",
         "He went to the armchair, and the tightness passed.",
-        "He stayed in bed until the tightness disappeared. | He went to the bathroom and drank some water. | He woke Julia and asked her to call the hospital. | He opened a window and stood outside.",
+        "He stayed in bed until the tightness disappeared. | He went to the bathroom and drank some water. | He woke Julia and asked her to call the hospital. | He opened the window and stood there breathing the cold air.",
         "Evidence: \"Then I go to the armchair and it passes.\"",
     ],
     [
@@ -292,7 +292,7 @@ single_choice_survey = [
     [
         "How long had Julia's husband been saying he would install the bathroom safety equipment?",
         "Three weeks.",
-        "One week. | Two weeks. | One month. | Two months.",
+        "About a week. | Two weeks. | Over a month. | Two months.",
         "Evidence: \"He's been saying it for three weeks.\"",
     ],
     [
@@ -340,7 +340,7 @@ single_choice_survey = [
     [
         "When was Mr. Nowak's echocardiogram scheduled?",
         "Next Wednesday at 10:30.",
-        "Next Thursday at 10:30. | Next Wednesday at 9:30. | Next Friday at 10:30. | Next Monday at 11:00.",
+        "Next Thursday at 10:30. | Next Wednesday at 11:30. | Next Saturday at 10:30. | Next Tuesday at 11:00.",
         "Evidence: \"The echocardiogram, the heart ultrasound, is scheduled for next Wednesday at 10:30.\"",
     ],
     [
@@ -351,8 +351,8 @@ single_choice_survey = [
     ],
     [
         "How long was the echocardiogram expected to take, and what did Mr. Nowak remember disliking about his previous one?",
-        "About forty minutes; he remembered that the gel was cold because it had not been warmed up.",
-        "About twenty minutes; he remembered that the gel had been warm and comfortable. | About an hour; he remembered that the probe had been painful. | About forty minutes; he remembered that the gel had been warmed up too much. | About thirty minutes; he remembered that the room had been cold.",
+        "About forty minutes; he disliked that the gel had been cold, not warmed up.",
+        "About twenty minutes; he remembered that the gel had been warm and comfortable. | About an hour; he remembered that the probe had pressed painfully on his ribs. | About forty minutes; he remembered that the gel had been warmed up too much. | About thirty minutes; he remembered that the examination room had been cold.",
         "Evidence: \"It takes about forty minutes.\" / \"Cold gel. I remember. Last time they didn't warm it up.\"",
     ],
     [
@@ -381,8 +381,8 @@ single_choice_survey = [
     ],
     [
         "Why might Mr. Nowak's cataract surgery be postponed?",
-        "If his heart was not stable, the procedure might be delayed until his fluid was under control.",
-        "If he developed an eye infection before the procedure. | If Julia could not arrange transport for the appointment. | If the cataract stopped affecting his vision. | If he could not remember the date of the operation.",
+        "If his heart was not stable; it could wait until his fluid was under control.",
+        "If he developed an eye infection or redness in the days before the procedure. | If Julia could not arrange transport to the hospital on the day of surgery. | If the cataract stopped affecting his vision enough to need an operation. | If the hospital had no free operating slot that month.",
         "Evidence: \"They might postpone it a bit, until your fluid is under control.\"",
     ],
     [
@@ -393,8 +393,8 @@ single_choice_survey = [
     ],
     [
         "What did Mr. Nowak request about the driver for his medical transport?",
-        "He wanted a quiet driver who would not talk about politics during the journey.",
-        "He wanted a driver who would discuss politics throughout the journey. | He wanted a driver who would keep the radio playing loudly. | He wanted a driver who would take the fastest route regardless of traffic. | He wanted a driver who would not help him walk to the entrance.",
+        "He wanted a quiet driver, not one who talks about politics all the way.",
+        "He wanted a driver who would discuss politics with him throughout the journey. | He wanted a driver who would keep the radio playing loudly the whole way. | He wanted a driver who would take the fastest route regardless of traffic. | He wanted a driver who would not help him walk to the entrance.",
         "Evidence: \"Please not the one who talks about politics the whole way.\" / \"I'll request a quiet one.\"",
     ],
     [
@@ -405,7 +405,7 @@ single_choice_survey = [
     ],
     [
         "What did Mr. Nowak say about his feelings regarding reduced independence, and what did he identify as the best part of his week?",
-        "He said he did not like feeling like a burden; he identified his grandson's Sunday visits, when they play chess on a tablet, as the best part of the week.",
+        "He said he did not like being a burden; the best part of his week was Sunday chess with his grandson.",
         "He said he felt proud of relying on Julia, and his favorite part of the week was watching television alone. | He said he missed repairing things but did not feel like a burden; his favorite activity was physiotherapy with Kuba. | He said he worried about being a burden, and his favorite part of the week was visiting Uncle Staszek to eat cake. | He said he felt lonely because his grandson no longer visited, and he preferred playing cards alone.",
         "Evidence: \"I don't like being a burden.\" / \"My grandson comes on Sundays. He's teaching me chess on the tablet. He beats me and laughs. It's the best part of the week.\"",
     ],

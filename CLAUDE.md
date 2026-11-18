@@ -41,7 +41,8 @@ not redo or undo them. The user's own docs: `README.md`, `CONTRIBUTING.md`, `doc
 
 ## Open points (2026-11-17)
 - `parse_letter` reads the refusal `None of the provided options (A,` as answer A (13 of 9300 replies; scores unchanged, `no_answer` slightly too low). Not fixed yet.
-- Survey cue: in the d001 survey the correct answer is the longest of the five in 15 of 50 questions; all 6 questions the reader answered without any text were such questions. The user knows and decided (2026-11-18) not to pursue it: "LLM tego nie wie". Do not raise it again unless new data change the picture.
+- Survey cue (fixed 2026-11-18): the correct answer used to be the longest of the five far more often than by chance (d001 30%, d002 59%, d003 54%; chance 20%), and nearly all questions the reader answered without any text were such questions. The answers of those 165 questions in d001-d003 were rewritten (correct answer trimmed and/or wrong answers made longer and more plausible, facts unchanged); now the correct answer is never clearly the longest. Checked on Gemma, 5 answer orders: Original Text still 100% in all three, No Text fell (d001 14.4% -> 10.0%, d002 11.1% -> 7.4%, d003 5.8% -> 3.0%). The questions still guessed without text are common-sense ones (the "safe" medical advice), not length. d004 was at chance level and was not changed.
+- **The benchmark results and `docs/benchmark.md` were made with the old surveys.** Rerun everything (`/benchmark-rerun`) before drawing conclusions; the user plans this for the coming days.
 
 ## Decided (2026-11-18)
 - `No Text` stays in the report as it is, as the baseline (floor). No extra section about it.

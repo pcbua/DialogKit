@@ -185,13 +185,13 @@ single_choice_survey = [
     [
         "What program did the caller say they represented?",
         "Community Health Monitoring Program",
-        "National Home Recovery Service | Senior Wellness Support Network | Community Cardiology Association | Home Nursing Assessment Program",
+        "National Home Recovery Service | Senior Wellness Support Network | Community Cardiology Association | Regional Home Nursing Assessment Program",
         "\"I am calling from the Community Health Monitoring Program to check in on his recovery and daily well-being.\"",
     ],
     [
         "Who answered the initial phone call?",
         "Mr. Harrison’s daughter",
-        "Mr. Harrison himself | Mr. Harrison’s wife | A hired nurse | Mr. Harrison’s son",
+        "Mr. Harrison himself | Mr. Harrison’s wife | A nurse from the clinic | Mr. Harrison’s grandson",
         "\"This is his daughter and primary caregiver speaking.\"",
     ],
     [
@@ -215,19 +215,19 @@ single_choice_survey = [
     [
         "When did the caregiver say the back pain seemed worse?",
         "In the morning when he first stands, and sometimes after lunch",
-        "Only late at night | Only after outdoor walks | Immediately after breakfast | Only while lying down",
+        "Only late at night, when he turns over in bed | Mostly after his outdoor walks with the physical therapist | Immediately after breakfast, and again before going to sleep | Only while lying down, especially on the firm mattress",
         "\"It seems worse in the mornings when he first tries to stand up, and sometimes after he eats lunch.\"",
     ],
     [
         "How did Mr. Harrison describe his back pain during the call?",
         "A dull ache across his lower spine",
-        "A sharp pain in his upper spine | A burning sensation in his hip | A throbbing pain in his neck | A tingling sensation in his hands",
+        "A sharp pain in his upper spine | A burning sensation in his right hip | A throbbing pain in his neck | A tingling sensation in his hands and feet",
         "\"It feels like a dull ache right across my lower spine\"",
     ],
     [
         "When did Mr. Harrison say the ache was especially noticeable while sitting?",
         "When he shifted his weight in the chair",
-        "When he drank water | When he read the newspaper | When he ate breakfast | When he watched television standing up",
+        "When he leaned forward to drink water | When he held up the newspaper to read | When he ate breakfast at the table | When he watched television standing up",
         "\"mostly when I shift my weight in this chair.\"",
     ],
     [
@@ -257,7 +257,7 @@ single_choice_survey = [
     [
         "When does Mr. Harrison take his prescribed pills according to the caregiver?",
         "Every morning and evening",
-        "Only at breakfast | Only before bed | At noon and midnight | Once each Sunday",
+        "Only at breakfast | Only before bed each night | At noon and before midnight | Once a day, with lunch",
         "\"he takes them right on time every morning and evening.\"",
     ],
     [
@@ -269,7 +269,7 @@ single_choice_survey = [
     [
         "What did Mr. Harrison drink before his mild headache went away?",
         "A large glass of water",
-        "A cup of coffee | A glass of milk | Chamomile tea | Orange juice",
+        "A cup of strong coffee | A glass of warm milk | Chamomile tea | A glass of orange juice",
         "\"it went away after he drank a large glass of water.\"",
     ],
     [
@@ -293,13 +293,13 @@ single_choice_survey = [
     [
         "When did the caregiver book the medical transport van?",
         "Yesterday afternoon",
-        "This morning | Last Friday | Two weeks ago | Tomorrow morning",
+        "Early this morning | Last Friday | Two weeks ago, on Monday | Tomorrow morning",
         "\"I booked the medical transport van yesterday afternoon\"",
     ],
     [
         "What supplies was the caregiver running low on?",
         "Adult incontinence pads",
-        "Disposable gloves | Compression stockings | Calcium tablets | Wound dressings",
+        "Disposable gloves | Compression stockings | Calcium tablets in bulk | Wound dressings",
         "\"We are running a bit low on adult incontinence pads\"",
     ],
     [
@@ -311,7 +311,7 @@ single_choice_survey = [
     [
         "What did the caregiver say she kept forgetting to do?",
         "Pick up incontinence pads from the pharmacy",
-        "Book the MRI scan | Measure blood pressure | Prepare dinner | Refill the pill organizer",
+        "Book the MRI scan with the hospital | Measure his blood pressure in the evening | Order more calcium tablets online | Refill the weekly pill organizer on Sunday",
         "\"I keep forgetting to pick them up from the pharmacy.\"",
     ],
     [
@@ -359,13 +359,13 @@ single_choice_survey = [
     [
         "What exercise goal did the agent suggest for the next morning?",
         "Stand up from his armchair three times during television commercials",
-        "Walk around the block three times | Climb stairs five times | Walk continuously for thirty minutes | Do ten squats",
+        "Walk around the block three times with his daughter after breakfast | Climb the stairs five times while holding the handrail | Walk continuously for thirty minutes in the hallway | Do ten squats next to the kitchen counter before every meal",
         "\"standing up from your armchair three times during the commercials of your favorite morning show\"",
     ],
     [
         "What did the agent advise Mr. Harrison to use for support when standing?",
         "His arms and the armchair’s sturdy armrests",
-        "A kitchen counter | His daughter’s shoulders | A wall-mounted rail | A newly purchased walking frame",
+        "The edge of the kitchen counter | His daughter’s shoulders and arms | A rail mounted on the wall by the chair | A newly purchased walking frame with wheels",
         "\"if I use the sturdy armrests to push myself up.\"",
     ],
     [
@@ -389,25 +389,25 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say about his independence?",
         "He found it hard to be patient when he could not do everything independently",
-        "He preferred never to walk again | He refused all help from his daughter | He wanted to stop seeing the physical therapist | He planned to move into a hospital",
+        "He said he would rather stay in his chair than walk again with help | He refused all help from his daughter and wanted to manage everything alone | He wanted to stop seeing the physical therapist because he felt independent | He planned to move into a care home to stop being a burden",
         "\"It is hard to be patient when you are used to doing everything independently your whole life.\"",
     ],
     [
         "What did Mr. Harrison say his daughter does for his daily care?",
         "Cooks his meals and helps him keep up with favorite television programs",
-        "Drives him to work and manages his business | Gives him injections every morning | Does his crossword puzzles for him | Takes him swimming each day",
+        "Drives him to the office every day and manages the paperwork for his business | Gives him his injections every morning and changes his dressings | Reads the newspaper aloud and does his crossword puzzles for him | Takes him swimming each day and helps him with his leg stretches",
         "\"She cooks all my meals and makes sure I do not miss my favorite television programs.\"",
     ],
     [
         "What complaint did Mr. Harrison have about his morning yellow pill?",
         "It left a slightly bitter taste in his mouth",
-        "It was too large to swallow | It caused severe nausea | It made his vision go dark | It caused stomach cramps",
+        "It was too large and hard to swallow | It caused nausea for an hour afterward | It made his vision go dark for a while after taking it | It gave him stomach cramps before lunch",
         "\"The little yellow pill in the morning leaves a slightly bitter taste in my mouth.\"",
     ],
     [
         "What did the agent suggest drinking after the yellow pill?",
         "Juice or flavored water",
-        "Black coffee | Plain hot tea | Carbonated water only | A spoonful of honey",
+        "Black coffee | Plain hot tea with lemon | Carbonated water only | A spoonful of honey",
         "\"Drinking juice or flavored water right after taking it usually helps.\"",
     ],
     [
@@ -443,7 +443,7 @@ single_choice_survey = [
     [
         "What question did Mr. Harrison want the cardiologist to address?",
         "When he could stop wearing the compression stocking on his left leg",
-        "Whether he could stop taking calcium | Whether he could cancel the eye appointment | When he could stop measuring blood pressure | Whether he could stop using the heating pad",
+        "Whether he could stop taking the calcium tablets in the afternoon | Whether he could cancel the eye appointment that the caregiver had marked | When he could stop measuring his blood pressure every single morning | Whether he could stop using the heating pad on his back",
         "\"when I can finally stop wearing this compression stocking on my left leg.\"",
     ],
     [
@@ -455,7 +455,7 @@ single_choice_survey = [
     [
         "When did Mr. Harrison usually wake to use the bathroom?",
         "Around three in the morning",
-        "Around midnight | Around one in the morning | Around five in the morning | Around six in the morning",
+        "Around midnight | Around one in the morning | Around five in the morning | Just before six in the morning",
         "\"I usually wake up around three in the morning to use the bathroom\"",
     ],
     [
@@ -467,7 +467,7 @@ single_choice_survey = [
     [
         "What did Mr. Harrison usually drink around eight in the evening?",
         "A cup of chamomile tea",
-        "Hot chocolate | Orange juice | Black coffee | Warm milk",
+        "A mug of hot chocolate | A glass of orange juice | Black coffee | A glass of warm milk",
         "\"I usually have a cup of chamomile tea around eight o’clock\"",
     ],
     [
@@ -485,37 +485,37 @@ single_choice_survey = [
     [
         "Which meal did Mr. Harrison describe as a typical light dinner?",
         "Soup or baked fish with vegetables",
-        "Fried chicken and chips | Steak with mashed potatoes | Creamy pasta | Burgers and fries",
+        "Fried chicken and chips | Steak with mashed potatoes | Creamy pasta with mushrooms | Burgers and fries with a side salad",
         "\"Usually something light like soup or baked fish with vegetables.\"",
     ],
     [
         "What did Mr. Harrison plan to do during the quiet afternoon if his hands allowed?",
         "Work on a crossword puzzle",
-        "Garden outdoors | Visit a neighbor | Go shopping | Practice piano",
+        "Do some gardening outdoors | Visit a neighbor | Go shopping | Practice the piano for an hour",
         "\"maybe a crossword puzzle if my hands do not feel too stiff.\"",
     ],
     [
         "Which crossword difficulty did Mr. Harrison prefer?",
         "Medium difficulty in the daily newspaper",
-        "Easy puzzles only | The hardest Sunday puzzles | Expert magazine puzzles | Cryptic puzzles exclusively",
+        "Easy puzzles only, from a children’s book | The hardest Sunday puzzles | Expert puzzles from a weekly magazine | Cryptic puzzles exclusively",
         "\"I stick to the medium difficulty in the daily newspaper.\"",
     ],
     [
         "Why did Mr. Harrison avoid the Sunday crossword puzzles?",
         "They were sometimes too frustrating",
-        "The print was too small | They were unavailable locally | His daughter completed them first | They took less than a minute",
+        "The print was too small to read | They were not sold in the local shop | His daughter always completed them first | They took him less than a minute",
         "\"The Sunday ones are sometimes just too frustrating.\"",
     ],
     [
         "Where did Mr. Harrison keep his reading glasses?",
         "On the small wooden table next to his armchair",
-        "In his shirt pocket | On the kitchen counter | In his bedroom drawer | On top of the television",
+        "In his shirt pocket, in a hard case | On the kitchen counter beside the kettle | In the top drawer of his bedside table | On top of the television in the living room, in their case",
         "\"on the small wooden table next to my armchair.\"",
     ],
     [
         "How often did the caregiver measure Mr. Harrison’s blood pressure?",
         "Every morning after he woke up",
-        "Every evening before dinner | Twice a week after exercise | Every Sunday night | Only when he had a headache",
+        "Every evening before dinner | Twice a week, after his exercise | Every Sunday night | Only when he had a headache",
         "\"every single morning right after I wake up.\"",
     ],
     [
@@ -527,7 +527,7 @@ single_choice_survey = [
     [
         "What did Mr. Harrison worry might raise his blood pressure?",
         "His morning coffee",
-        "His evening tea | Crossword puzzles | Reading glasses | Baked fish",
+        "His evening tea | Crossword puzzles | The salt in his soup | Baked fish",
         "\"I was a bit worried my morning coffee was pushing my pressure up.\"",
     ],
     [
@@ -545,13 +545,13 @@ single_choice_survey = [
     [
         "Where did the caregiver mark the eye appointment?",
         "On the kitchen wall calendar with a red circle",
-        "In a paper notebook | On a refrigerator sticky note | In the patient’s pill organizer | On a living-room desk calendar",
+        "In a paper notebook kept by the phone | On a sticky note stuck to the refrigerator door | On a card tucked into the patient’s pill organizer | On the desk calendar in the living room",
         "\"a huge red circle on the kitchen wall calendar\"",
     ],
     [
         "What vision change did Mr. Harrison notice while reading?",
         "Lines blurred after more than thirty minutes without resting his eyes",
-        "Words doubled immediately after waking | His vision went dark after ten minutes | He saw flashing lights after coffee | He could not read large print",
+        "Words doubled for a while every morning, right after he woke up | His vision went dark at the edges after about ten minutes of reading | He saw flashing lights in one eye after his morning cup of coffee | He could no longer read even the large print in the daily newspaper",
         "\"Sometimes the lines blur if I read for more than thirty minutes straight without resting my eyes.\"",
     ],
     [
@@ -569,13 +569,13 @@ single_choice_survey = [
     [
         "How did the transport driver help Mr. Harrison?",
         "The driver helped him step carefully into the van",
-        "The driver measured his blood pressure | The driver prepared his meals | The driver arranged his MRI results | The driver organized his pills",
+        "The driver measured his blood pressure before leaving | The driver carried his bag and his folder of documents | The driver brought his MRI results from the hospital | The driver checked that he had taken his morning pills",
         "\"the driver is always very polite and helps me step carefully up into the van.\"",
     ],
     [
         "What dessert was Mr. Harrison hoping to have after his cardiology appointment?",
         "Homemade apple pie with vanilla ice cream",
-        "Chocolate cake with whipped cream | Lemon tart with custard | Strawberry cheesecake | Apple crumble with chocolate sauce",
+        "Chocolate cake with whipped cream | Lemon tart with warm custard | Strawberry cheesecake from the bakery | Warm apple crumble with chocolate sauce and cream",
         "\"a thick slice of homemade apple pie with a scoop of vanilla ice cream.\"",
     ],
     [
@@ -587,13 +587,13 @@ single_choice_survey = [
     [
         "What tablet did Mr. Harrison take each afternoon with milk?",
         "A large orange calcium tablet",
-        "A white vitamin D pill | A yellow multivitamin | A blue iron tablet | A pink aspirin",
+        "A white vitamin D pill | A yellow multivitamin tablet | A small blue iron tablet | A pink aspirin",
         "\"The large orange calcium tablet every afternoon with a glass of milk.\"",
     ],
     [
         "What did Mr. Harrison say motivated him to follow instructions about bone health?",
         "His doctor had lectured him about bone density the previous year",
-        "His daughter had bought him a treadmill | His physical therapist had banned milk | His cardiologist had prescribed orange juice | His late wife had scheduled daily scans",
+        "His daughter had bought him a treadmill and wanted him to use it | His physical therapist had warned him about a fall in the bathroom | His cardiologist had prescribed orange juice with every meal | His late wife had always reminded him to drink his milk",
         "\"my doctor lectured me about bone density last year\"",
     ],
     [
@@ -617,19 +617,19 @@ single_choice_survey = [
     [
         "When did the agent propose the next follow-up call?",
         "This coming Friday afternoon",
-        "Next Monday morning | Wednesday evening | Next Thursday morning | Saturday afternoon",
+        "Next Monday morning | Wednesday evening | Next Thursday morning | Saturday afternoon, after lunch",
         "\"We can schedule our next follow-up call for this coming Friday afternoon\"",
     ],
     [
         "At what time was the next follow-up call scheduled?",
         "Two o’clock in the afternoon",
-        "Ten in the morning | Noon | Four in the afternoon | Eight in the evening",
+        "Ten in the morning | Noon | Four o’clock in the afternoon | Eight in the evening",
         "\"I will set our system to call you this Friday at two o’clock sharp.\"",
     ],
     [
         "How did the caregiver record the next call appointment?",
         "In her phone calendar with a reminder alert",
-        "On a paper napkin | On the kitchen wall calendar | In Mr. Harrison’s medical folder | On the back of a prescription",
+        "On a paper napkin by the phone | On the kitchen wall calendar, next to the eye appointment | In Mr. Harrison’s medical folder | On the back of an old prescription slip",
         "\"I have noted that down on my phone calendar with a reminder alert.\"",
     ],
     [
@@ -641,7 +641,7 @@ single_choice_survey = [
     [
         "What should the caregiver do if something urgent happened before Friday?",
         "Use the program’s direct helpline number",
-        "Wait for the next scheduled call | Contact the crossword newspaper | Call the transport driver only | Send a letter to the ophthalmologist",
+        "Wait for the next scheduled call | Contact the cardiologist’s office | Ask the transport driver for help | Write a letter to the ophthalmologist about it",
         "\"If anything urgent comes up before Friday, remember you have our direct helpline number on the fridge.\"",
     ],
     [
@@ -659,7 +659,7 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say he ate instead of the lumpy oatmeal on Friday?",
         "Whole wheat toast with strawberry jam",
-        "Scrambled eggs with cheese | Pancakes with maple syrup | Plain yogurt with fruit | Cereal with banana",
+        "Scrambled eggs with cheese | Pancakes with maple syrup | Plain yogurt with fresh berries | A bowl of cereal with a sliced banana",
         "\"She toasted some whole wheat bread with a bit of strawberry jam\"",
     ],
     [
@@ -671,7 +671,7 @@ single_choice_survey = [
     [
         "What kind of bread did Mr. Harrison’s daughter toast?",
         "Whole wheat bread",
-        "White bread | Rye bread | Sourdough bread | Cornbread",
+        "White bread | Rye bread | Sourdough bread | Multigrain rolls",
         "\"She toasted some whole wheat bread\"",
     ],
     [
@@ -689,13 +689,13 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say about his joints?",
         "He complained about them to his daughter in the mornings",
-        "They never caused discomfort | They hurt only during MRI scans | They improved after drinking coffee | He never discussed them",
+        "They never caused him discomfort, even in cold weather | They hurt only while he was lying in the MRI scanner | They felt better after his first cup of coffee each day | He never mentioned them to anyone",
         "\"every single morning when I complain about my joints.\"",
     ],
     [
         "What major health event did Mr. Harrison refer to when discussing his recovery?",
         "A serious operation during the winter",
-        "A minor dental procedure in spring | A broken arm the previous week | An eye operation yesterday | A knee injury during summer",
+        "A minor dental procedure in the spring | A broken arm the previous week | An eye operation the day before | A knee injury during the summer",
         "\"how serious the operation actually was back in winter.\"",
     ],
     [
@@ -713,7 +713,7 @@ single_choice_survey = [
     [
         "What did the agent suggest about the leg stretches?",
         "Save them until after the afternoon rest to avoid overdoing it",
-        "Do them immediately for an hour | Replace them with running | Avoid all stretching permanently | Do them only at midnight",
+        "Do them right away, for a full hour, before lunch | Replace them with short runs in the garden | Stop all stretching until the cardiologist has seen him next week | Do them late at night, just before he goes to sleep",
         "\"save the stretches for after you finish your afternoon rest, so you do not overdo it.\"",
     ],
     [
@@ -731,31 +731,31 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say he usually did around two o’clock on Friday afternoons?",
         "Sat around listening to the radio",
-        "Walked in the garden | Went to the pharmacy | Did his physical therapy session | Watched an MRI video",
+        "Walked slowly around the garden | Went to the pharmacy with his daughter | Did his physical therapy session | Watched an old film on television",
         "\"we are just sitting around listening to the radio around two o’clock.\"",
     ],
     [
         "What did the agent ask the caregiver to arrange for the supplies?",
-        "Nothing further was requested; the agent said delivery was arranged for Wednesday morning",
-        "A pharmacy pickup on Friday | A hospital visit on Tuesday | A courier delivery on Sunday night | A new prescription for calcium",
+        "Nothing; the agent said delivery was arranged for Wednesday morning",
+        "A pickup at the pharmacy on Friday, after the follow-up call | A visit to the hospital on Tuesday to collect the pads | A courier delivery on Sunday night, when someone is sure to be at home | A new prescription for calcium from the family doctor",
         "\"I have arranged for the incontinence supply delivery on Wednesday morning.\"",
     ],
     [
         "What did the agent promise to do with Mr. Harrison’s question about the compression stocking?",
         "Note it and ensure the cardiologist addressed it",
-        "Answer it definitively during the call | Ask the transport driver to decide | Cancel the cardiology appointment | Send the question to the pharmacy",
+        "Answer it definitively during the call | Ask the transport driver to decide | Pass it on to his physical therapist at the next session | Send the question to the pharmacy",
         "\"ensure the cardiologist addresses it first thing during your visit.\"",
     ],
     [
         "What did Mr. Harrison say about his daughter’s cooking skills?",
         "He joked that she should open a restaurant",
-        "He said she disliked cooking | He said she cooked only on Sundays | He asked her to stop preparing meals | He said she worked as a chef",
+        "He said she disliked cooking | He said she cooked only on Sundays | He asked her to stop preparing his meals | He said she used to work as a chef",
         "\"Sometimes I tell her she should open a restaurant\"",
     ],
     [
         "What did Mr. Harrison’s daughter say about a small slice of pie?",
         "They might negotiate it after his cardiology appointment",
-        "He could eat as much as he wanted immediately | He could have it before the MRI only | She had already bought a whole pie | The cardiologist had forbidden all desserts",
+        "He could eat as much as he wanted, starting immediately | He could have it only before the MRI, not after it | She had already bought a whole pie for the weekend | The cardiologist had forbidden all desserts for a month",
         "\"we might negotiate a small slice after my cardiology appointment next week.\"",
     ],
     [
@@ -773,19 +773,19 @@ single_choice_survey = [
     [
         "What did the caregiver say about the helpline number’s placement?",
         "It was easy to see in an emergency",
-        "It was locked in a drawer | It was stored only in an email | It was hidden in a cupboard | It was kept at the pharmacy",
+        "It was locked in a drawer | It was stored only in an email | It was written in the medical folder | It was kept in her handbag",
         "\"right at eye level so I cannot possibly miss it in an emergency.\"",
     ],
     [
         "What did Mr. Harrison say he was doing when the agent called him directly?",
         "Sitting and trying to keep his legs warm",
-        "Walking down the hallway | Preparing dinner | Driving to the cardiologist | Doing his morning stretches",
+        "Walking slowly down the hallway | Helping prepare dinner | Riding in the transport van on the way to the cardiologist | Doing his morning stretches",
         "\"I am sitting here trying to keep my legs warm\"",
     ],
     [
         "What did the caregiver say about Mr. Harrison’s medication timing?",
         "He took his pills on time each morning and evening",
-        "He often missed evening doses | He took all pills only on Sundays | He took them only after lunch | He had stopped the prescribed pills",
+        "He often missed his evening doses when he fell asleep | He took all of his pills together on Sunday | He took them only after lunch, with milk | He had stopped taking the prescribed pills",
         "\"he takes them right on time every morning and evening.\"",
     ],
     [
@@ -797,7 +797,7 @@ single_choice_survey = [
     [
         "What did the agent say could help Mr. Harrison’s energy after waking at night?",
         "Trying his evening tea an hour earlier to see whether nighttime trips decreased",
-        "Drinking more tea at bedtime | Skipping dinner | Drinking coffee at three in the morning | Avoiding all daytime naps immediately",
+        "Drinking an extra cup of tea at bedtime so that he would fall asleep more quickly | Skipping dinner on most evenings so that he would sleep more deeply | Drinking a cup of coffee when he wakes at three in the morning | Avoiding all daytime naps starting immediately",
         "\"you might want to try having that tea an hour earlier to see if it reduces the midnight trips.\"",
     ],
     [
@@ -809,7 +809,7 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say about his blood pressure readings?",
         "They varied by a few points depending on how he slept",
-        "They were always exactly the same | They were usually above 180 over 100 | They were measured only monthly | They fell to zero after coffee",
+        "They were always exactly the same every morning | They were usually above 180 over 100 | They were measured only once a month by a visiting nurse | They dropped sharply after his morning coffee",
         "\"give or take a few points depending on how I slept.\"",
     ],
     [
@@ -821,7 +821,7 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say about his late wife?",
         "He considered her the wisest person he had ever met",
-        "He said she disliked medical care | He said she was his physical therapist | He said she had arranged this call | He said he had never met her",
+        "He said she had never trusted doctors or hospitals | He said she had worked as his physical therapist | He said she had arranged this kind of call for him | He said she had been a nurse at the local hospital",
         "\"The wisest person I ever met in my entire life\"",
     ],
     [
@@ -833,7 +833,7 @@ single_choice_survey = [
     [
         "What did the agent say would happen before ending the call with the caregiver?",
         "The agent would finalize arrangements on their end",
-        "The agent would cancel the delivery | The agent would book a new eye appointment | The agent would send a new pill organizer | The agent would arrange a garden visit",
+        "The agent would cancel the Wednesday delivery | The agent would book a new eye appointment | The agent would send a new pill organizer by post | The agent would arrange a visit from a physical therapist",
         "\"Let me speak with your daughter one last time to finalize everything on our end.\"",
     ],
     [
@@ -845,19 +845,19 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say he wanted to discuss with the specialist?",
         "When he could stop wearing the left-leg compression stocking",
-        "Whether he could stop eating fish | Whether he could replace his reading glasses | Whether he could stop using the phone | Whether he could cancel all future visits",
+        "Whether he could stop eating fish at dinner | Whether he could get new reading glasses for the newspaper | Whether he could stop the morning blood pressure checks | Whether he could cancel all of his future visits",
         "\"I just want to know when I can finally stop wearing this compression stocking on my left leg.\"",
     ],
     [
         "What did the agent say about the caregiver’s support?",
         "It was dedicated and appreciated by the health team",
-        "It was unnecessary | It delayed the appointments | It should be replaced by a transport driver | It was not mentioned",
+        "It was not really necessary any longer | It sometimes delayed the appointments | It could soon be replaced by a home nursing service from the program | It was not mentioned at all",
         "\"Thank you for your incredible dedication and care for Mr. Harrison.\"",
     ],
     [
         "What did Mr. Harrison say he planned to do with the orange juice idea?",
         "Ask his daughter to keep some on the breakfast table",
-        "Drink it only at midnight | Replace it with black coffee | Avoid all juice | Take it with his calcium tablet every evening",
+        "Drink it only late at night, before bed | Replace it with a cup of black coffee | Avoid juice of every kind | Take it with his calcium tablet every evening instead of milk",
         "\"I will tell my daughter to keep some orange juice handy on the breakfast table.\"",
     ],
     [
@@ -869,7 +869,7 @@ single_choice_survey = [
     [
         "What did the agent say about the home delivery when speaking to the caregiver again?",
         "The incontinence supplies were arranged for Wednesday morning",
-        "Delivery was cancelled | The supplies would arrive Friday night | The caregiver had to collect them herself | The delivery was scheduled for next month",
+        "The delivery had been cancelled by the pharmacy | The supplies would arrive on Friday night | The caregiver had to collect them herself at the pharmacy | The delivery was scheduled for the very beginning of next month instead",
         "\"I have arranged for the incontinence supply delivery on Wednesday morning.\"",
     ],
     [
@@ -881,85 +881,85 @@ single_choice_survey = [
     [
         "What did the agent ask about Mr. Harrison’s medication after discussing his routine?",
         "Whether he had questions about his medications",
-        "Whether he wanted to stop all medications | Whether he had changed doctors | Whether he had taken someone else’s pills | Whether he wanted to cancel his scan",
+        "Whether he wanted to stop all of his medications | Whether he had changed doctors recently | Whether he had taken someone else’s pills | Whether he wanted to cancel his MRI scan",
         "\"Do you have any questions about your medications?\"",
     ],
     [
         "What did Mr. Harrison say about his recovery progress?",
         "Sometimes he felt as though he was making no progress",
-        "He felt fully recovered already | He said he was improving every hour | He said he had stopped trying | He said his mobility was worse every day",
+        "He felt that he had already fully recovered | He said he was improving every hour of the day | He said he had stopped trying to get better | He said his mobility was getting noticeably worse every single day",
         "\"sometimes I feel like I am making zero progress at all.\"",
     ],
     [
         "What did the agent say about the patient’s dignity?",
         "Every patient deserves dignity and respect",
-        "Dignity depends on mobility | Only long-term patients deserve respect | Respect is needed only during transport | Patients should not ask questions",
+        "Dignity depends on how well one can move | Only long-term patients deserve respect | Respect matters most during transport | Patients should not ask so many questions",
         "\"Every patient deserves dignity and respect every step of the way.\"",
     ],
     [
         "What was Mr. Harrison’s concern about reading the newspaper?",
         "Lines sometimes blurred after prolonged reading",
-        "The paper was always missing | The print was too large | The pages made his hands cold | The words were in another language",
+        "The newspaper was often missing in the morning | The print had become too large to read | Holding the pages made his hands cold | The crossword section was too small",
         "\"Sometimes the lines blur if I read for more than thirty minutes straight without resting my eyes.\"",
     ],
     [
         "What did the agent say about the next cardiology visit and the stocking question?",
         "The cardiologist would be asked to address it first",
-        "The agent would remove the stocking personally | The transport service would decide | The question would be postponed indefinitely | The eye doctor would answer it",
+        "The agent would remove the stocking personally | The transport service would decide | The question would be postponed indefinitely | The eye doctor would answer it at the next appointment",
         "\"ensure the cardiologist addresses it first thing during your visit.\"",
     ],
     [
         "What did Mr. Harrison say about his favorite television programs?",
         "His daughter made sure he did not miss them",
-        "He no longer watched television | He watched only the news | He watched them at the clinic | His caregiver prohibited television",
+        "He no longer watched television at all | He watched only the news in the evening | He watched them at the clinic while waiting | His caregiver prohibited television after nine",
         "\"makes sure I do not miss my favorite television programs.\"",
     ],
     [
         "What did the agent say about the next check-in time?",
         "Friday at two o’clock sharp",
-        "Friday at noon | Thursday at two o’clock | Monday at four o’clock | Saturday at eight o’clock",
+        "Friday at noon | Thursday at two o’clock | Monday at four o’clock | Saturday at eight o’clock sharp",
         "\"I will set our system to call you this Friday at two o’clock sharp.\"",
     ],
     [
         "What was the caregiver’s role in Mr. Harrison’s care?",
         "She was his daughter and primary caregiver",
-        "She was his neighbor and driver | She was his cardiologist | She was a paid pharmacy clerk | She was his physical therapist",
+        "She was his neighbor and occasional driver | She was his cardiologist | She was a paid nurse from an agency | She was his physical therapist and friend",
         "\"This is his daughter and primary caregiver speaking.\"",
     ],
     [
         "What did Mr. Harrison say he sometimes did when his daughter fixed his tea?",
         "Told her she was his angel in disguise",
-        "Asked her to cancel his appointments | Complained that she never cooked | Asked her to leave the house | Told her to stop helping him",
+        "Asked her to cancel his appointments | Complained that the tea was too weak | Asked her to add more sugar and milk | Told her he could make it himself",
         "\"I tell her that whenever she fixes my tea.\"",
     ],
     [
         "What did the agent say about Mr. Harrison’s recovery after the major procedure?",
         "There would be good days and sluggish days",
-        "Every day would be equally easy | He should expect no fatigue | Recovery should finish in a single day | He should avoid all movement",
+        "Every day would be equally easy from now on | He should expect no fatigue at all | Recovery should be complete within a week | He should avoid all movement for now",
         "\"There are bound to be good days and sluggish days.\"",
     ],
     [
         "What did Mr. Harrison say about his legs during the weekend?",
         "They felt too heavy on Friday and Saturday",
-        "They felt stronger than ever | They were swollen only on Sunday | They felt normal throughout | They hurt only after dinner",
+        "They felt stronger than ever before | They were swollen only on Sunday evening | They felt normal throughout the weekend | They hurt only after dinner",
         "\"my legs felt too heavy on Friday and Saturday.\"",
     ],
     [
         "What did the agent ask the caregiver about transport?",
         "Whether transport for the upcoming cardiology appointment was organized",
-        "Whether the van had been sold | Whether the patient could drive himself | Whether the eye doctor offered transport | Whether the driver had measured his blood pressure",
+        "Whether the van that usually takes him had been sold | Whether the patient could drive himself to the clinic | Whether the eye doctor offered transport for his patients | Whether the driver had measured his blood pressure before the last trip",
         "\"is transport fully organized?\"",
     ],
     [
         "What did the caregiver say about the transport arrangements?",
         "She had booked a medical transport van",
-        "She planned to call a taxi on the day | She had cancelled the trip | The hospital was sending an ambulance | A neighbor would drive them",
+        "She planned to call a taxi on the day | She had cancelled the trip | The hospital was sending an ambulance | A neighbor would drive them both there",
         "\"I booked the medical transport van yesterday afternoon\"",
     ],
     [
         "What did the agent say the caregiver should do if an urgent issue arose before Friday?",
         "Call the direct helpline number kept on the fridge",
-        "Wait until the following month | Contact the newspaper office | Leave a note for the driver | Wait for the next routine appointment",
+        "Wait until the following month’s appointment | Contact the newspaper office | Leave a note for the transport driver | Wait for the next routine appointment at the clinic",
         "\"If anything urgent comes up before Friday, remember you have our direct helpline number on the fridge.\"",
     ],
     [
@@ -971,7 +971,7 @@ single_choice_survey = [
     [
         "What was Mr. Harrison’s main stated spring mobility goal?",
         "To walk in the garden when the roses bloom",
-        "To run a marathon | To climb a mountain | To walk to the pharmacy alone every day | To return to work full-time",
+        "To run a short race in the park | To climb the stairs without help | To walk to the pharmacy and back alone every day | To return to work part-time by summer",
         "\"I want to be able to walk in the garden by the time the roses bloom in spring.\"",
     ],
     [
@@ -983,7 +983,7 @@ single_choice_survey = [
     [
         "What did Mr. Harrison say he had covered with the agent during the call?",
         "His back pain and his apple pie reward, among other things",
-        "Only his medication costs | Only his eye appointment | His plans to travel abroad | His daughter’s employment",
+        "Only the cost of his medication and the transport | Only his eye appointment and the reading glasses he keeps losing | His plans to travel abroad with his daughter | His daughter’s new job and her working hours",
         "\"we covered everything from my back pain to my apple pie reward.\"",
     ],
 ]
