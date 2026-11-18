@@ -11,6 +11,7 @@ not redo or undo them. The user's own docs: `README.md`, `CONTRIBUTING.md`, `doc
 - The LLM server (vLLM, `cyankiwi/gemma-4-26B-A4B-it-AWQ-4bit`, max length 16384, 32 parallel) may run on another machine: pass `--base-url`. Ask the user for the address if it is not known.
 - `uv.lock` is in `.gitignore`. Optional dependency group `report` (matplotlib) is only for charts.
 - Write repo files in English; talk to the user in Polish.
+- Diagrams are welcome in docs: use Mermaid blocks inside the .md files (flows, pipelines, structure; the user's viewer renders them). Data charts stay matplotlib PNGs made by the scripts.
 
 ## Data
 - `data/data.d00N.toml`: dialogues with a `single_choice_survey`. **`d004` is a story (`type = "Story"`) and is skipped on purpose** by the compress scripts; story compression may come later. Do not report or "fix" that.
