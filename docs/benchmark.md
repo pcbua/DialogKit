@@ -1,6 +1,8 @@
 # ⚠️ Note: Preliminary Results
 These are early results from a benchmark developed and run by Claude, and they still require human review. 
-Additionally, please note that DSPM is designed for two-participant dialogues, whereas the test dialogues presented here involve three participants.
+Additionally, please note that:
+- DSPM uses turn-based compression, and other methods compress entire dialogues, so this is not an apple to apple comparison.
+- DSPM is designed for two-participant dialogues, whereas the test dialogues presented here involve three participants.
 
 ## Main observations
 
